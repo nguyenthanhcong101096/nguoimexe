@@ -1,0 +1,56 @@
+header {
+  @include flexbox(space-between,center);
+  height: 56px;
+  position: fixed;
+  min-width: 1280px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-white;
+  z-index: 100;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+
+  .header-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+
+  .header-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 24px;
+      padding-right: 24px;
+
+      &:nth-child(4) {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-right: 1px solid $color-lightest-gray;
+      }
+    }
+    
+    
+    :hover {
+      color: $color-pink;
+    }
+  }
+  
+  .button {
+    padding-right: 0;
+    padding: 10px;
+    font-weight: normal;
+    border-radius: 20px;
+  }
+  
+  .search {
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+  }
+}

@@ -1,0 +1,44 @@
+$screen-pc: 1200px !default;
+$screen-mobile: 793px !default;
+
+$container-margin-xs: 16px;
+
+$color-white: #fff;
+$color-black: rgba(0, 0, 0, 0.8);
+$color-dark: #333;
+$color-number: #25282a;
+$color-gray: #ccc;
+$color-light-gray: #f8f8f8;
+$color-lightest-gray: #ddd;
+$color-warm-gray: #8a8a8a;
+$color-true-gray: #e5e5e5;
+$color-pinkish-gray: #bababa;
+$color-red: #f4364c;
+$color-light-red: #ffe9eb;
+$color-pink: #db93b0;
+$color-red-pink: #f4364c;
+$color-lighter-pink: #ffdada;
+$color-frog-green: #6bbe10;
+$color-orange: #dd8d00;
+$color-number: #25282a;
+$color-light-green: #dcffd0;
+$color-blue: #278bff;
+$color-default: #b3d4fc;
+$col-num: 12 !default;
+$col-gutter: 32px !default;
+$col-gutter-half: $col-gutter / 2 !default;
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+$font-size-xl: 32px;
+$font-size-lg: 28px;
+$font-size-md: 24px;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+
+$letter-spacing-base: 0.04em;
+
+$line-height-base: 1.5;
+
+$radius: 4px;

@@ -1,0 +1,24 @@
+.box {
+  padding: 24px;
+  margin-bottom: 10%;
+}
+
+.card {
+  padding-left: 10px;
+  border-left-style: solid;
+  border-left-width: 4px;
+  transition: all .5s ease;
+  &:hover {
+    background-color: #d22355;
+    // transform: scale(1.1);
+  }
+}
+
+.card-body {
+  height: auto;
+  background-color: white;
+  @include respond-to-mobile() {
+    padding: 24px 16px;
+    background-color: $color-light-gray;
+  }
+}

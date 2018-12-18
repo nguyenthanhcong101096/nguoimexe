@@ -1,0 +1,167 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $color-white;
+  color: $color-black;
+  letter-spacing: normal;
+  &.no-scroll {
+    overflow: hidden;
+    header {
+      display: none;
+    }
+  }
+}
+
+.main {
+  margin-top: 56px;
+}
+
+.content-body {
+  padding-top: 3%;
+  padding-left: 20%;
+  padding-right: 20%;
+  height: 100%;
+  // background-color: #d22355 !important;
+  @include respond-to-mobile() {
+    padding: 24px 16px;
+    background-color: $color-light-gray;
+  }
+}
+
+.content-head {
+  padding: 12px 32px;
+  background-color: white;
+  border-bottom: 1px solid $color-true-gray;
+  @include respond-to-mobile() {
+    display: block;
+    padding: 16px;
+  }
+}
+
+.header {
+  @include flexbox(space-between, center);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  border-bottom: 1px solid $color-true-gray;
+  transition: all .4s ease;
+  &.scroll {
+    opacity: 0.6;
+    height: 40px;
+  }
+  @include respond-to-mobile() {
+    display: block;
+    padding: 16px;
+  }
+}
+
+.footer {
+  @include flexbox(space-between, center);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $color-light-gray;
+  border-bottom: 1px solid $color-true-gray;
+  transition: all .4s ease;
+  &.scroll {
+    opacity: 0.6;
+    height: 40px;
+  }
+  @include respond-to-mobile() {
+    display: block;
+    padding: 16px;
+  }
+}
+
+.scroller {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  @include respond-to-mobile() {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.setting-area {
+  width: 568px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.user-info {
+  position: fixed;
+  top: 9%;
+  height: 400px;
+  width: 270px;
+  padding: 15px;
+  background-color: white;
+  transition: all .4s ease-in-out;
+  &.scroll {
+    top: 6%;
+  }
+}
+
+.icon-25 {
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  transition: all .4s ease;
+  &.small {
+    height: 0;
+    width: 0;
+  }
+}
+
+.icon-35 {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+  transition: all .4s ease;
+  &.small {
+    height: 0;
+    width: 0;
+  }
+}
+
+
+.icon-50 {
+  height: 100px;
+  width: 100px;
+  margin-right: 5px;
+}
+
+.group-horizontal {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  background-color: #f8f8f8;
+}
+
+
+.editor {
+  height: auto;
+}
+
+.login-area {
+  padding: 24px;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+.post-create {
+  margin-top: 5%;
+  width: 50%;
+  height: 100%;
+  padding: 24px;
+}
