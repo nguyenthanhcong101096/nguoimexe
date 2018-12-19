@@ -23,6 +23,7 @@ header {
     font-size: 0;
     
     li {
+      font-weight: bold;
       display: inline-block;
       vertical-align: middle;
       padding-left: 24px;
@@ -33,11 +34,6 @@ header {
         padding-bottom: 12px;
         border-right: 1px solid $color-lightest-gray;
       }
-    }
-    
-    
-    :hover {
-      color: $color-pink;
     }
   }
   
