@@ -366,8 +366,7 @@ hr {
 }
 p {
   margin: 0;
-  font-size: 16px;
-  margin-bottom:5px;
+  font-size: 13px;
 }
 .lead {
   margin-bottom: 20px;
@@ -398,7 +397,7 @@ mark,
 
 li {
   font-size: 15px;
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
 }
 
 ul,
@@ -875,6 +874,10 @@ output {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  
+  @media screen and (max-width: 676px) {
+    padding: 3px 6px;
+  }
 }
 .btn:focus,
 .btn:active:focus,

@@ -1,14 +1,16 @@
 header.header
-  div: img.header-logo src=asset_pack_path('images/img_logo.png')
+  div: img.header-logo src=asset_pack_path('images/img_icon.jpeg')
   ul.header-menu
-    li: a[href="/"]
-          p.u-text-blue Forum
-    li: a[href="/c"]
-           p.u-text-blue Hỏi đáp
-    li: a: p.u-text-blue Phụ kiện
-    li: div[style='display: flex; align-items: center']
-          input[type="search" placeholder="Tìm kiếm" class="search u-mr-8"]
-          a href="#"
-            img[class='icon-40' src=asset_pack_path('images/img_search.png')]
-    li: a[class='button u-bg-blue u-text-white'] Đăng nhập
-  
+    li: a[class="horizontal btn"]
+          img[class="avatar-header mr-8" src=asset_pack_path('images/img_shop.png')]
+          p.menu Kênh người bán
+    li: a[class="horizontal btn"]
+          img[class="avatar-header mr-8" src=asset_pack_path('images/img_mobile.png')]
+          p.menu Tải ứng dụng
+    li: a[href="google.com" class="btn horizontal"]
+          img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
+          p.menu Đăng nhập
+    li: a[class="horizontal btn"]
+          img[class="avatar-header mr-8" src=asset_pack_path('images/img_flag_vn.png')]
+          p.menu Viet Nam
+            

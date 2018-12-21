@@ -25,13 +25,12 @@ button.active.focus,
 }
 
 .btn {
-  padding: 11px 16px;
+  width: auto;
   color: $color-black;
-  font-size: $font-size-base;
-  font-weight: 500;
+  font-size: 13px;
   line-height: 1;
   background-color: $color-white;
-  border-radius: $radius;
+  border-radius: 50px;
   border: 1px solid $color-true-gray;
 
   &:hover {
@@ -46,5 +45,10 @@ button.active.focus,
     background-color: $color-red;
     border: 1px solid $color-red;
     color: $color-white;
+  }
+  
+  @media screen and (max-width: 676px) {
+    border: 0;
+    background-color: transparent;
   }
 }

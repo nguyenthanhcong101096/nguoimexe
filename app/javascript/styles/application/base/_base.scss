@@ -43,11 +43,12 @@ body {
 .header {
   @include flexbox(space-between, center);
   position: fixed;
+  min-width: auto;
   top: 0;
   right: 0;
   left: 0;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 72px;
+  padding-right: 72px;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: white;
@@ -57,60 +58,11 @@ body {
     opacity: 0.6;
     height: 40px;
   }
-  @include respond-to-mobile() {
-    display: block;
-    padding: 16px;
-  }
-}
 
-.footer {
-  @include flexbox(space-between, center);
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding-left: 20%;
-  padding-right: 20%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: $color-light-gray;
-  border-bottom: 1px solid $color-true-gray;
-  transition: all .4s ease;
-  &.scroll {
-    opacity: 0.6;
-    height: 40px;
-  }
-  @include respond-to-mobile() {
-    display: block;
-    padding: 16px;
-  }
-}
-
-.scroller {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  @include respond-to-mobile() {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
-}
-
-.setting-area {
-  width: 568px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.user-info {
-  position: fixed;
-  top: 9%;
-  height: 400px;
-  width: 270px;
-  padding: 15px;
-  background-color: white;
-  transition: all .4s ease-in-out;
-  &.scroll {
-    top: 6%;
+  @media screen and (max-width: 790px) {
+    min-width: auto;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -166,4 +118,13 @@ body {
   width: 50%;
   height: 100%;
   padding: 24px;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.mr-8 {
+  margin-right: 8px;
 }
