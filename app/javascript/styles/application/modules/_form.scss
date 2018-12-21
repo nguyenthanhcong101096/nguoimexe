@@ -2,7 +2,9 @@
   width: 100%;
   padding: 7px 16px;
   border: 0.5px solid $color-true-gray;
-
+  margin-bottom: 8px;
+  font-size: 13px;
+  
   &:focus,
   &:active {
     outline: none;

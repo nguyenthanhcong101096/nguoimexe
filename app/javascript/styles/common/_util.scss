@@ -18,8 +18,12 @@
   margin-top: 0 !important;
 }
 
+.u-font-weight {
+  font-weight: 500;
+}
+
 .u-text-red {
-  color: $color-red-pink;
+  color: #ff5722;
 }
 
 .u-text-orange {
@@ -62,7 +66,7 @@
 }
 
 .u-bg-red {
-  background-color: #d22355;
+  background-color: #ff5722;
 }
 
 .u-text-bold {
@@ -118,6 +122,11 @@
   width: 40px;
 }
 
+.icon-20 {
+  height: 20px;
+  width: 20px;
+}
+
 .u-col-centered {
   float: none;
   margin: 0 auto;
@@ -129,4 +138,8 @@
 
 .u-text-normal {
   font-weight: normal;
+}
+
+.justify-left {
+  justify-content: flex-end;
 }
