@@ -9,6 +9,8 @@
         .form-group
           = f.text_field :email, placeholder: 'example@example.com', autofocus: true, autocomplete: 'email', class: 'form-control radius'
           = f.password_field :password, placeholder: 'password', autocomplete: 'off', class: 'form-control radius'
+          - flash.each do |key, value|
+            h6.u-text-red.text-left =value
         .horizontal.u-mt-32.justify-left
           ul.ul-menu
             li: a.u-text-red Quên mật khẩu
