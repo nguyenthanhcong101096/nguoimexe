@@ -21,9 +21,6 @@
       .btn-sms
         img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')
         p Verify by sms
-      .btn-facebook
+      = link_to(user_google_oauth2_omniauth_authorize_path, class: 'btn-facebook') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_icon_fb.png')
         p Continue with facebook
-    
-    
-    
