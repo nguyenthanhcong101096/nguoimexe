@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: %i[sessions passwords]
+  devise_for :users, skip: %i[sessions passwords], :controllers => { :omniauth_callbacks => "callbacks" }
   
   post 'signin'   => 'user_session#create'
   delete 'signout' => 'user_session#destroy'
