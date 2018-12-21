@@ -5,15 +5,18 @@
       h4.u-font-weight Đăng nhập
       h5.u-text-red.u-font-weight Đăng kí
     .form
-      .form-group
-        input.form-control.radius placeholder="Email" type="text"
-        input.form-control.radius placeholder="Mật khẩu" type="password"
-      .horizontal.u-mt-32.justify-left
-        ul.ul-menu
-          li: a.u-text-red Quên mật khẩu
-          li: h5 Trợ giúp ?
-      .horizontal.u-mt-32.justify-left
-          button.btn-default.u-bg-red.u-text-white type="submit" Đăng Nhập 
+      = form_for(:user, url: signin_path) do |f|
+        .form-group
+          = f.text_field :email, placeholder: 'example@example.com', autofocus: true, autocomplete: 'email', class: 'form-control radius'
+          = f.password_field :password, placeholder: 'password', autocomplete: 'off', class: 'form-control radius'
+          - flash.each do |key, value|
+            h6.u-text-red.text-left =value
+        .horizontal.u-mt-32.justify-left
+          ul.ul-menu
+            li: a.u-text-red Quên mật khẩu
+            li: h5 Trợ giúp ?
+        .horizontal.u-mt-32.justify-left
+            button.btn-default.u-bg-red.u-text-white type="submit" Đăng Nhập 
     .social.horizontal.space-between
       .btn-sms
         img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')

@@ -7,9 +7,15 @@ header.header
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_mobile.png')]
           p.menu Tải ứng dụng
-    li: div[class="btn horizontal js-button-login"]
-          img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
-          p.menu Đăng nhập
+    li 
+      - if user_signed_in? 
+          div[class="btn horizontal"]
+            img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
+            p.menu =current_user&.email
+      - else
+          div[class="btn horizontal js-button-login"]
+            img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
+            p.menu Đăng Nhập
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_flag_vn.png')]
           p.menu Viet Nam
