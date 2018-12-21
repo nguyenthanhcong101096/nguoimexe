@@ -52,3 +52,59 @@ button.active.focus,
     background-color: transparent;
   }
 }
+
+.btn-default {
+  padding: 8px;
+  color: $color-black;
+  font-size: 14px;
+  line-height: 1;
+  background-color: $color-white;
+  border-radius: 50px;
+  border: 1px solid $color-true-gray;
+  
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn-sms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(17, 181, 12);
+  padding: 8px;
+  color: white;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
+  }
+  
+  @media screen and (max-width: 420px) {
+    margin-bottom: 16px;
+  }
+}
+
+.btn-facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(58, 89, 152);
+  padding: 8px;
+  color: white;
+  width: 100%;
+  
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
+  }
+}
+
+.btn-close {
+  padding: 3px;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
+  }
+}

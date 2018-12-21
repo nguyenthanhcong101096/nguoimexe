@@ -23,7 +23,6 @@ body {
   padding-left: 20%;
   padding-right: 20%;
   height: 100%;
-  // background-color: #d22355 !important;
   @include respond-to-mobile() {
     padding: 24px 16px;
     background-color: $color-light-gray;
@@ -123,8 +122,51 @@ body {
 .horizontal {
   display: flex;
   align-items: center;
+  
+  @media screen and (max-width: 420px) {
+    flex-wrap: wrap; 
+  }
 }
 
 .mr-8 {
   margin-right: 8px;
+}
+
+.login {
+  box-shadow: 1px 1px 2px 0 #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  height: 400px;
+  width: 500px;
+  padding: 32px;
+  opacity: 0;
+  
+  &.animation {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+  }
+  
+  @media screen and (max-width: 420px) {
+    top: 56px;
+    left: 0;
+    transform: translate(0, 0);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.space-between {
+  @include flexbox(space-between, center);
+}
+
+.form {
+  padding: 32px 0;
+}
+
+.form-login {
+  position: relative;
 }
