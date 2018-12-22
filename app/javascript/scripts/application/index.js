@@ -1,5 +1,7 @@
-import { clickLoginPopup } from './common'
+// import { clickLoginPopup, clickRegisterPopup } from './common'
+
+import Signup from './signup';
 
 window.addEventListener('DOMContentLoaded', function () {
-  clickLoginPopup()
+  new Signup().init()
 })

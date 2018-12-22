@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
    
-  get 'profile'    => 'users#show' 
+  resources :users, only: %i[create update destroy]
+  get 'profile'    => 'users#show'
+  get 'register'   => 'users#new'
   
   get '/'          => 'dashboard#index', as: 'root'
   get '*path'      => 'pages#page_404'
