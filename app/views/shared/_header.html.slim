@@ -9,7 +9,7 @@ header.header
           p.menu Tải ứng dụng
     li 
       - if user_signed_in? 
-          div[class="btn horizontal"]
+          = link_to(profile_path, class: 'btn horizontal') do
             img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
             p.menu =current_user&.email
       - else
