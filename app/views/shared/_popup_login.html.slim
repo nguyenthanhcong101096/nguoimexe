@@ -8,10 +8,10 @@
     .form
       = form_for(:user, url: signin_path) do |f|
         .form-group
-          = f.text_field :email, placeholder: 'example@example.com', autofocus: true, autocomplete: 'email', class: 'form-control radius'
+          = f.text_field :phone, placeholder: 'Nhập số điện thoại', autofocus: true, class: 'form-control radius'
           = f.password_field :password, placeholder: 'password', autocomplete: 'off', class: 'form-control radius'
           - flash.each do |key, value|
-            h6.u-text-red.text-left =value
+            h6.u-text-red.text-left = value
         .horizontal.u-mt-32.justify-left
           ul.ul-menu
             li: a.u-text-red Quên mật khẩu
@@ -30,15 +30,28 @@
       .u-font-weight.btn.js-btn-back Trở lại
       .form
         h3.text-center Join Us as a Member!
-        = form_for(:user, url: verify_path) do |f|
+        = form_for(:user, url: verify_path, html: { class: 'js-form-phone' }) do |f|
           .form-group
             .verify.horizontal
-              input type="number" id="phone" name="phone" style="width: 70%; height: 100%; border: 0;" placeholder="Nhập số điện thoại"
-              button.btn-verify.u-bg-red.u-text-white.text-center type="submit"
+              input type="hidden" id="step" name="step" value="1"
+              input type="number" id="phone" name="phone" style="width: 70%; height: 100%; border: 0; font-size: 13px;" placeholder="Nhập số điện thoại"
+              button.btn-verify-phone.u-bg-red.u-text-white.text-center type="submit"
                 p Xác thực
-      .social.horizontal.space-between
-        .btn-sms
-          img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')
-          p Verify by sms
-        = link_to(user_google_oauth2_omniauth_authorize_path, class: 'btn-facebook') do
-          img.icon-20.mr-8 src=asset_pack_path('images/img_icon_fb.png')
+        = form_for(:user, url: verify_path, html: { class: 'js-form-verify hidden'}) do |f|
+          .form-group
+            .verify.horizontal
+              input type="hidden" id="step" name="step" value="2"
+              input type="number" id="code" name="code" style="width: 70%; height: 100%; border: 0; font-size: 13px;" placeholder="Nhập mã xác nhận"
+              button.btn-verify-code.u-bg-red.u-text-white.text-center type="submit"
+                p Nhập mã code
+            - flash.each do |key, value|
+              h6.u-text-red.text-left = value
+        = form_for(:user, url: verify_path, html: { class: 'js-form-create-user hidden'}) do |f|
+          .form-group
+              input type="hidden" id="step" name="step" value="3"
+              = f.text_field :address, placeholder: 'Nhập địa chỉ', autofocus: true, class: 'form-control radius'
+              = f.text_field :username, placeholder: 'Nhập username', autofocus: true, class: 'form-control radius'
+              = f.password_field :password, placeholder: 'Nhập mật khẩu', autocomplete: 'off', class: 'form-control radius'
+              = f.password_field :password_confirmation, placeholder: 'Nhập lại mật khẩu', autocomplete: 'off', class: 'form-control radius'
+          .horizontal.u-mt-32.justify-left
+            button.btn-default.u-bg-red.u-text-white type="submit" Đăng kí 

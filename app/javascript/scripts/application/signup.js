@@ -8,6 +8,11 @@ export default class Signup {
     this.btnRegister = document.querySelector('.js-btn-register')
     this.btnClose = document.querySelectorAll('.btn-close')
     this.btnBack = document.querySelector('.js-btn-back')
+    this.btnSubmitPhone = document.querySelector('.btn-verify-phone')
+    this.formPhone = document.querySelector('.js-form-phone')
+    this.formVerify = document.querySelector('.js-form-verify')
+    this.formCreateUser = document.querySelector('.js-form-create-user')
+    this.btnSubmitCode = document.querySelector('.btn-verify-code')
   }
 
   init() {
@@ -16,6 +21,8 @@ export default class Signup {
     this.clickRegisterPopup()
     this.clickClosePopup()
     this.clickBackToLogin()
+    this.clickVerifyPhone()
+    this.clickVerifyCode()
   }
 
   clickLoginPopup = () => {
@@ -44,11 +51,25 @@ export default class Signup {
       })
     })
   }
-  
-  clickBackToLogin =()=> {
-    this.btnBack.addEventListener('click', ()=> {
+
+  clickBackToLogin = () => {
+    this.btnBack.addEventListener('click', () => {
       this.formLogin.classList.remove('hidden')
       this.formRegister.classList.add('hidden')
+    })
+  }
+
+  clickVerifyPhone = () => {
+    this.btnSubmitPhone.addEventListener('click',()=>{
+      this.formPhone.classList.add('hidden')
+      this.formVerify.classList.remove('hidden')
+    })
+  }
+  
+  clickVerifyCode = () => {
+    this.btnSubmitCode.addEventListener('click',()=>{
+      this.formVerify.classList.add('hidden')
+      this.formCreateUser.classList.remove('hidden')
     })
   }
 }
