@@ -17,15 +17,15 @@ class SignUpService
       @user = User.new(phone: @params[:phone])
       valid_params.merge(phone: @params[:phone], step: '2')
     when '2'
-      result = @verify.verify?(@params[:code], @params[:phone])
-      { status: result ? 'success' : 'success', step: '3', errors: { code: ['verify code invalid'] } }
+      auhty = @verify.verify?(@params[:code], @params[:phone])
+      { status: auhty ? 'success' : 'error', step: '3', errors: { code: ['verify code invalid'] } }
     when '3'
-      @user = User.new(@user_params)
-      if @user.save
+      @user = User.create(@user_params)
+      if valid_params[:errors].present?
+        valid_params
+      else
         @controller.sign_in(@user)
         { status: 'success', step: '4' }
-      else
-        valid_params
       end
     end
   end
