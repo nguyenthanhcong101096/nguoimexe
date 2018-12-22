@@ -145,7 +145,7 @@ body {
   transform: translate(-50%, -50%);
   background-color: #f8f8f8;
   border-radius: 10px;
-  height: 400px;
+  height: auto;
   width: 500px;
   padding: 32px;
   opacity: 0;
@@ -172,6 +172,7 @@ body {
   padding: 32px 0;
 }
 
+.form-register,
 .form-login {
   position: relative;
 }

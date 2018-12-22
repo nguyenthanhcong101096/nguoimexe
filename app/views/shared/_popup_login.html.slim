@@ -1,9 +1,10 @@
-.login.hidden.u-bg-white
-  .form-login
+.login.hidden.u-bg-white data="#{current_user&.id ? true : false }"
+  .form-login.js-form-login
     img.icon-20.btn-close src=asset_pack_path('images/img_close.png')
     .horizontal.space-between
       h4.u-font-weight Đăng nhập
-      h5.u-text-red.u-font-weight Đăng kí
+      .js-btn-register.btn
+        h5.u-text-red.u-font-weight Đăng kí
     .form
       = form_for(:user, url: signin_path) do |f|
         .form-group
@@ -16,7 +17,7 @@
             li: a.u-text-red Quên mật khẩu
             li: h5 Trợ giúp ?
         .horizontal.u-mt-32.justify-left
-            button.btn-default.u-bg-red.u-text-white type="submit" Đăng rNhập 
+            button.btn-default.u-bg-red.u-text-white type="submit" Đăng Nhập 
     .social.horizontal.space-between
       .btn-sms
         img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')
@@ -24,3 +25,26 @@
       = link_to(user_google_oauth2_omniauth_authorize_path, class: 'btn-facebook') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_icon_fb.png')
         p Continue with facebook
+  .form-register.js-form-register.hidden
+    img.icon-20.btn-close src=asset_pack_path('images/img_close.png')
+      .u-font-weight.btn.js-btn-back Trở lại
+      .form
+        h3.text-center Join Us as a Member!
+        = form_for(:user, url: users_path) do |f|
+          .form-group
+            = f.text_field :email, placeholder: 'Nhập email của bạn', autofocus: true, autocomplete: 'email', class: 'form-control radius'
+            = f.password_field :password, placeholder: 'Nhập mật khẩu', autocomplete: 'off', class: 'form-control radius'
+            = f.password_field :password_confirmation, placeholder: 'Nhập lại mật khẩu', autocomplete: 'off', class: 'form-control radius'
+            = f.text_field :phone, placeholder: 'Nhập số điện thoại', autofocus: true, class: 'form-control radius'
+            - flash.each do |key, value|
+              h6.u-text-red.text-left =value
+          .horizontal.u-mt-32.justify-left
+              button.btn-default.u-bg-red.u-text-white type="submit" Đăng Kí 
+      .social.horizontal.space-between
+        .btn-sms
+          img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')
+          p Verify by sms
+        = link_to(user_google_oauth2_omniauth_authorize_path, class: 'btn-facebook') do
+          img.icon-20.mr-8 src=asset_pack_path('images/img_icon_fb.png')
+          p Continue with facebook
+        
