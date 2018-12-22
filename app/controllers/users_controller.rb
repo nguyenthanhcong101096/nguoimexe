@@ -1,15 +1,10 @@
-class UsersController < ApplicationController
-  def create
-    binding.pry
-    @user = User.create!(user_params)
-    sign_in(@user)
-    redirect_to root_path
+class UsersController < ApplicationController  
+  def verify_sms
+    Verify.new().valid_phone_number?(params[:phone])
+    
   end
-  def show; end
   
-  private
-  
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :phone)
+  def show
+    binding.pry
   end
 end
