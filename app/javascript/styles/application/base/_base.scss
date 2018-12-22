@@ -16,6 +16,11 @@ body {
   margin-top: 100px;
   padding-left: 20%;
   padding-right: 20%;
+  @media screen and (max-width: 790px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 56px;
+  }
 }
 
 .content-body {
