@@ -108,3 +108,13 @@ button.active.focus,
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
   }
 }
+
+.btn-verify-code,
+.btn-verify-phone {
+  padding: 16px;
+  width: 30%;
+
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
+  }
+}

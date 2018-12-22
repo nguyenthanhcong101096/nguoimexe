@@ -11,7 +11,7 @@ header.header
       - if user_signed_in? 
           = link_to(profile_path, class: 'btn horizontal') do
             img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
-            p.menu =current_user&.email
+            p.menu =current_user&.username
       - else
           div[class="btn horizontal js-button-login"]
             img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]

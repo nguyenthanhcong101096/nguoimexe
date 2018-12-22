@@ -1,5 +1,9 @@
+import axios from 'axios'
+
 export default class Signup {
   constructor() {
+    this.paramsSignup = {}
+    
     this.popup = document.querySelector('.login')
     this.flag = this.popup.getAttribute('data')
     this.btnPopup = document.querySelector('.js-button-login')
@@ -8,6 +12,9 @@ export default class Signup {
     this.btnRegister = document.querySelector('.js-btn-register')
     this.btnClose = document.querySelectorAll('.btn-close')
     this.btnBack = document.querySelector('.js-btn-back')
+    this.formPhone = document.querySelector('.js-form-phone')
+    this.formVerify = document.querySelector('.js-form-verify')
+    this.formCreateUser = document.querySelector('.js-form-create-user')
   }
 
   init() {
@@ -16,6 +23,7 @@ export default class Signup {
     this.clickRegisterPopup()
     this.clickClosePopup()
     this.clickBackToLogin()
+    this.onClickBtnNext()
   }
 
   clickLoginPopup = () => {
@@ -44,11 +52,83 @@ export default class Signup {
       })
     })
   }
-  
-  clickBackToLogin =()=> {
-    this.btnBack.addEventListener('click', ()=> {
+
+  clickBackToLogin = () => {
+    this.btnBack.addEventListener('click', () => {
       this.formLogin.classList.remove('hidden')
       this.formRegister.classList.add('hidden')
     })
+  }
+
+
+  onClickBtnNext = () => {
+    const btnNext = document.querySelectorAll('.js-btn-signup-step')
+    btnNext.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const currentStep = btn.getAttribute('data-step')
+        axios.post('/verify', this.paramsAtSignUp(currentStep), { headers: { 'Content-Type': 'multipart/form-data' }})
+        .then(response => {
+          if(response.data.status === 'error'){
+            console.log(response.data)
+            this.displayErrors(response.data.errors)
+          }else{
+            console.log(response.data)
+            this.displayNextSignupStep(response.data.step)
+          }
+        })
+      })
+    })
+  }
+  
+  displayNextSignupStep (step) {
+    if(step === "2"){
+      this.formPhone.classList.add('hidden')
+      this.formVerify.classList.remove('hidden')
+    }
+    if(step === "3"){
+      this.formVerify.classList.add('hidden')
+      this.formCreateUser.classList.remove('hidden')
+    }
+    if(step === "4")
+      window.location = "http://localhost:3000";
+  }
+  
+  
+  displayErrors (errors) {
+    Object.keys(errors).forEach(k => { document.querySelector(`.js-error-${k}`).innerHTML = errors[k][0] })
+  }
+  
+  paramsAtSignUp (step) {
+    let params = {}
+    
+    switch (step) {
+      case '1':
+        params = {
+          phone: document.querySelector('input[name=phone]').value
+        }
+        break;
+      case '2':
+        params = {
+          code: document.querySelector('input[name=code]').value
+        }
+        break;
+      case '3': 
+        params = {
+          address: document.querySelector('input[name=address]').value,
+          username: document.querySelector('input[name=username]').value,
+          password: document.querySelector('input[name=password]').value,
+          password_confirmation: document.querySelector('input[name=password_confirmation]').value
+        }
+        break;
+    }
+    
+    Object.assign(this.paramsSignup, params)
+    
+    let formData = new FormData()
+    Object.keys(Object.assign(params, { step: step })).forEach(key => {
+      formData.append(key, params[key])
+    })
+
+    return formData
   }
 }
