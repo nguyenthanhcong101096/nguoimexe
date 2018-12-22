@@ -1,22 +1,24 @@
-class UsersController < ApplicationController 
-  before_action :verify, only: %i[verify_sms]
+class UsersController < ApplicationController
+  before_action :verify, only: %i[register_by_phone]
   
-  def verify_sms
+  def register_by_phone
     case params[:step]
     when '1'
       @verify.valid_phone_number?(params[:phone])
+      @user = User.new(phone: params[:phone])
       session[:phone] = params[:phone]
+      render json: ValidateUserParamsService.new(@user, params[:step]).for_signup.merge(phone: params[:phone], step: '2')
     when '2'
-      result = @verify.check_verify?(params[:code], session[:phone].to_s)
-      session[:verify] = result
+      result = @verify.check_verify?(params[:code], session[:phone])
+      render json: { status: result ? 'success' : 'success', step: '3', errors: { code: ['Verify invalid'] } }
     when '3'
-      if session[:verify]
-        @user = User.create!(user_params.merge(phone: session[:phone].to_s))
-        sign_in(@user)
-        redirect_to root_path
-      else
-        redirect_to page_404_path
-      end
+        @user = User.new(user_params.merge(phone: session[:phone]))
+        if @user.save
+          sign_in(@user)
+          render json: { status: 'success', step: '4' }
+        else
+          render json: ValidateUserParamsService.new(@user, params[:step]).for_signup, status: :ok
+        end
     end
   end
   
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:address, :password, :password_confirmation)
+    params.permit(:username, :address, :password, :password_confirmation)
   end
   
   def verify

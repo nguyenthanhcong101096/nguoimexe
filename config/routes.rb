@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
    
-  post 'verify'    => 'users#verify_sms'
+  post 'verify'    => 'users#register_by_phone'
   get 'profile'    => 'users#show'
   
   get '/'          => 'dashboard#index', as: 'root'
