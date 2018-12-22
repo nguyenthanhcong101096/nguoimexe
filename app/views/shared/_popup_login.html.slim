@@ -38,6 +38,9 @@
               button.btn-verify-phone.u-bg-red.u-text-white.text-center.js-btn-signup-step data-step="1" type="submit"
                 p Xác thực
             h5.u-text-red.mt-8.js-error-phone
+            
+        input.js-hold-phone type="hidden" id="hold-phone" name="hold-phone"
+        
         .js-form-verify.hidden
           .form-group
             .verify.horizontal
@@ -45,6 +48,7 @@
               button.btn-verify-code.u-bg-red.u-text-white.text-center.js-btn-signup-step data-step="2" type="submit"
                 p Nhập mã code
             h5.u-text-red.mt-8.js-error-code
+            
         .js-form-create-user.hidden
           .form-group
               input.form-control.radius type="text" id="address" name="address" placeholder="Nhâp địa chỉ"

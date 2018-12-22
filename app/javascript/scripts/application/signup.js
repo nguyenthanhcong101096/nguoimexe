@@ -15,6 +15,7 @@ export default class Signup {
     this.formPhone = document.querySelector('.js-form-phone')
     this.formVerify = document.querySelector('.js-form-verify')
     this.formCreateUser = document.querySelector('.js-form-create-user')
+    this.holdPhone = document.querySelector('.js-hold-phone')
   }
 
   init() {
@@ -69,27 +70,26 @@ export default class Signup {
         axios.post('/verify', this.paramsAtSignUp(currentStep), { headers: { 'Content-Type': 'multipart/form-data' }})
         .then(response => {
           if(response.data.status === 'error'){
-            console.log(response.data)
             this.displayErrors(response.data.errors)
           }else{
-            console.log(response.data)
-            this.displayNextSignupStep(response.data.step)
+            this.displayNextSignupStep(response.data)
           }
         })
       })
     })
   }
   
-  displayNextSignupStep (step) {
-    if(step === "2"){
+  displayNextSignupStep (data) {
+    if(data.step === "2"){
+      this.holdPhone.value =data.phone
       this.formPhone.classList.add('hidden')
       this.formVerify.classList.remove('hidden')
     }
-    if(step === "3"){
+    if(data.step === "3"){
       this.formVerify.classList.add('hidden')
       this.formCreateUser.classList.remove('hidden')
     }
-    if(step === "4")
+    if(data.step === "4")
       window.location = "http://localhost:3000";
   }
   
@@ -109,11 +109,13 @@ export default class Signup {
         break;
       case '2':
         params = {
-          code: document.querySelector('input[name=code]').value
+          code: document.querySelector('input[name=code]').value,
+          phone: document.querySelector('input[name=hold-phone]').value,
         }
         break;
       case '3': 
         params = {
+          phone: document.querySelector('input[name=hold-phone]').value,
           address: document.querySelector('input[name=address]').value,
           username: document.querySelector('input[name=username]').value,
           password: document.querySelector('input[name=password]').value,
