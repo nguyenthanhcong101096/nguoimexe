@@ -1,9 +1,9 @@
 .row {
   margin-left: -$col-gutter-half;
   margin-right: -$col-gutter-half;
-  
-  @media screen and (max-width: 790px) {
-    display: inline-flex;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
   }
 }
 
@@ -25,7 +25,7 @@
   padding-right: 8px;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 600px) {
   .col-1,
   .col-2,
   .col-3,
