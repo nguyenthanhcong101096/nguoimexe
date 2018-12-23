@@ -4,18 +4,16 @@
     .horizontal.space-between
       h4.u-font-weight Đăng nhập
     .form
-      = form_for(:user, url: signin_path) do |f|
-        .form-group
-          = f.text_field :phone, placeholder: 'Nhập số điện thoại', autofocus: true, class: 'form-control'
-          = f.password_field :password, placeholder: 'password', autocomplete: 'off', class: 'form-control'
-          - flash.each do |key, value|
-            h6.u-text-red.text-left = value
-        .horizontal.u-mt-32.justify-left
-          ul.ul-menu
-            li: h5.u-text-red Quên mật khẩu
-            li: h5.js-btn-register Đăng kí tài khoản
-        .horizontal.u-mt-32.justify-left
-            button.btn-default.u-bg-red.u-text-white type="submit" Đăng Nhập 
+      .form-group
+        input.form-control type="number" id="login_phone" name="login_phone" placeholder="Nhập số điện thoại"
+        input.form-control type="password" id="login_password" name="login_password" placeholder="Nhập mật khẩu"
+      h5.u-text-red.mt-8.js-error-login
+      .horizontal.u-mt-32.justify-left
+        ul.ul-menu
+          li: h5.u-text-red Quên mật khẩu
+          li: h5.js-btn-register Đăng kí tài khoản
+      .horizontal.u-mt-32.justify-left
+          button.btn-default.js-btn-login.u-bg-red.u-text-white type="submit" Đăng Nhập 
     / .social.horizontal.space-between
     /   .btn-sms
     /     img.icon-20.mr-8 src=asset_pack_path('images/img_icon_sms.png')

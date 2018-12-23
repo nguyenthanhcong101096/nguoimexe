@@ -1,12 +1,11 @@
 class UserSessionController < ApplicationController
   def create
-    @user = User.find_by(phone: params[:user][:phone])
-    if @user&.valid_password?(params[:user][:password])
+    @user = User.find_by(phone: params[:phone])
+    if @user&.valid_password?(params[:password])
       sign_in(@user)
-      redirect_to root_path
+      render json: { status: 'ok', message: 'Login success' }
     else
-      redirect_to root_path
-      flash[:success] = "Email and Password invalid"
+      render json: { status: 'error', message: 'Phone number or Pasword is incorrect' }
     end
   end
   
