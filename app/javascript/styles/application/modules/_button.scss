@@ -50,6 +50,10 @@ button.active.focus,
   @media screen and (max-width: 676px) {
     border: 0;
     background-color: transparent;
+    
+    &:hover {
+      box-shadow: 0;
+    }
   }
 }
 
@@ -101,9 +105,9 @@ button.active.focus,
 .btn-close {
   padding: 3px;
   position: absolute;
-  top: -30px;
-  right: -30px;
-  
+  top: -16px;
+  right: -16px;
+    
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
   }
@@ -112,7 +116,7 @@ button.active.focus,
 .btn-verify-code,
 .btn-verify-phone {
   padding: 16px;
-  width: 30%;
+  width: 40%;
 
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   

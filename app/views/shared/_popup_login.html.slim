@@ -9,7 +9,7 @@
       = form_for(:user, url: signin_path) do |f|
         .form-group
           = f.text_field :phone, placeholder: 'Nhập số điện thoại', autofocus: true, class: 'form-control radius'
-          = f.password_field :passwordd, placeholder: 'password', autocomplete: 'off', class: 'form-control radius'
+          = f.password_field :password, placeholder: 'password', autocomplete: 'off', class: 'form-control radius'
           - flash.each do |key, value|
             h6.u-text-red.text-left = value
         .horizontal.u-mt-32.justify-left
@@ -34,7 +34,7 @@
         .js-form-phone
           .form-group
             .verify.horizontal
-              input type="number" id="phone" name="phone" style="width: 70%; height: 100%; border: 0; font-size: 13px;" placeholder="Nhập số điện thoại"
+              input type="number" id="phone" name="phone" style="width: 60%; border: 0; font-size: 13px; padding-left: 8px; height:100%;" placeholder="Nhập số điện thoại"
               button.btn-verify-phone.u-bg-red.u-text-white.text-center.js-btn-signup-step data-step="1" type="submit"
                 p Xác thực
             h5.u-text-red.mt-8.js-error-phone
@@ -44,7 +44,7 @@
         .js-form-verify.hidden
           .form-group
             .verify.horizontal
-              input type="number" id="code" name="code" style="width: 70%; height: 100%; border: 0; font-size: 13px;" placeholder="Nhập mã xác nhận"
+              input type="number" id="code" name="code" style="width: 60%; height: 100%; border: 0; font-size: 13px; padding-left: 8px; height:100%" placeholder="Nhập mã xác nhận"
               button.btn-verify-code.u-bg-red.u-text-white.text-center.js-btn-signup-step data-step="2" type="submit"
                 p Nhập mã code
             h5.u-text-red.mt-8.js-error-code
