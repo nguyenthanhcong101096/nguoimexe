@@ -7,4 +7,18 @@ module ApplicationHelper
       content_tag(:p, obj.errors.full_messages_for(key).first, class: 'form-input-hint')
     end
   end
+  
+  def switch_language(language)
+    case language
+    when :en
+      text, img, locale = ['Việt Nam', 'images/img_flag_vn.png', :vi]
+    when :vi
+      text, img, locale = ['England', 'images/img_flag_en.png', :en]
+    end
+    
+    content_tag(:a, class: 'horizontal btn js-language-switcher', locale: url_for(locale: locale)) do
+      image_tag(asset_pack_path(img), class: 'avatar-header mr-8') + 
+      content_tag(:p, text, class: 'menu')
+    end
+  end
 end
