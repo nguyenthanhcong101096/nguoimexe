@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     render json: SignUpService.new(params, user_params, self).execute!
   end
   
+  def reset_password
+    render json: ResetPasswordViaPhoneService.new(params, self).execute!
+  end
+  
   def show; end
   
   private
