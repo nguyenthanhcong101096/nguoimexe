@@ -3,10 +3,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $color-white;
 
-  // @include respond-to-not-mobile() {
-  //   min-width: 1206px;
-  // }
-
   @include respond-to-mobile() {
     background-color: $color-true-gray;
   }
@@ -58,8 +54,9 @@ body {
     float: left;
     position: relative;
     min-height: 1px;
-    padding-left: $col-gutter-half;
-    padding-right: $col-gutter-half;
+    margin-bottom: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 }
 

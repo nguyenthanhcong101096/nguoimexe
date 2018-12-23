@@ -4,12 +4,11 @@
 }
 
 .card {
-  padding-left: 10px;
-  border-left-style: solid;
-  border-left-width: 4px;
-  transition: all .5s ease;
+  background-color: white;
+  border-radius: 3px;
+  height: 250px;
   &:hover {
-    background-color: #d22355;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -32,10 +31,5 @@
 }
 
 .card-body {
-  height: auto;
-  background-color: white;
-  @include respond-to-mobile() {
-    padding: 24px 16px;
-    background-color: $color-light-gray;
-  }
+  padding: 8px;
 }
