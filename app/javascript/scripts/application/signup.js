@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class Signup {
   constructor() {
     this.paramsSignup = {}
-    
+
     this.popup = document.querySelector('.login')
     this.flag = this.popup.getAttribute('data')
     this.btnPopup = document.querySelector('.js-button-login')
@@ -16,6 +16,7 @@ export default class Signup {
     this.formVerify = document.querySelector('.js-form-verify')
     this.formCreateUser = document.querySelector('.js-form-create-user')
     this.holdPhone = document.querySelector('.js-hold-phone')
+    this.btnLogin = document.querySelector('.js-btn-login')
   }
 
   init() {
@@ -25,6 +26,7 @@ export default class Signup {
     this.clickClosePopup()
     this.clickBackToLogin()
     this.onClickBtnNext()
+    this.onClickLogin()
   }
 
   clickLoginPopup = () => {
@@ -61,46 +63,65 @@ export default class Signup {
     })
   }
 
+  onClickLogin = () => {
+    let params = {
+      phone: '0338529345',
+      password: 'password'
+      // phone: document.querySelector('input[name=login_phone]').value,
+      // password: document.querySelector('input[name=login_password]').value
+    }
+    
+    this.btnLogin.addEventListener('click', () => {
+      axios.post('/signin', this.paramsAtSession('login'), { headers: { 'Content-Type': 'multipart/form-data' } })
+        .then(response => {
+          if (response.data.status === 'error') {
+            document.querySelector('.js-error-login').innerHTML = response.data.message
+          } else {
+            window.location = '/'
+          }
+        })
+    })
+  }
 
   onClickBtnNext = () => {
     const btnNext = document.querySelectorAll('.js-btn-signup-step')
     btnNext.forEach(btn => {
       btn.addEventListener('click', () => {
         const currentStep = btn.getAttribute('data-step')
-        axios.post('/verify', this.paramsAtSignUp(currentStep), { headers: { 'Content-Type': 'multipart/form-data' }})
-        .then(response => {
-          if(response.data.status === 'error'){
-            this.displayErrors(response.data.errors)
-          }else{
-            this.displayNextSignupStep(response.data)
-          }
-        })
+        axios.post('/verify', this.paramsAtSession(currentStep), { headers: { 'Content-Type': 'multipart/form-data' } })
+          .then(response => {
+            if (response.data.status === 'error') {
+              this.displayErrors(response.data.errors)
+            } else {
+              this.displayNextSignupStep(response.data)
+            }
+          })
       })
     })
   }
-  
-  displayNextSignupStep (data) {
-    if(data.step === "2"){
-      this.holdPhone.value =data.phone
+
+  displayNextSignupStep(data) {
+    if (data.step === "2") {
+      this.holdPhone.value = data.phone
       this.formPhone.classList.add('hidden')
       this.formVerify.classList.remove('hidden')
     }
-    if(data.step === "3"){
+    if (data.step === "3") {
       this.formVerify.classList.add('hidden')
       this.formCreateUser.classList.remove('hidden')
     }
-    if(data.step === "4")
+    if (data.step === "4")
       window.location = "http://localhost:3000";
   }
-  
-  
-  displayErrors (errors) {
+
+
+  displayErrors(errors) {
     Object.keys(errors).forEach(k => { document.querySelector(`.js-error-${k}`).innerHTML = errors[k][0] })
   }
-  
-  paramsAtSignUp (step) {
+
+  paramsAtSession(step) {
     let params = {}
-    
+
     switch (step) {
       case '1':
         params = {
@@ -113,7 +134,7 @@ export default class Signup {
           phone: document.querySelector('input[name=hold-phone]').value,
         }
         break;
-      case '3': 
+      case '3':
         params = {
           phone: document.querySelector('input[name=hold-phone]').value,
           address: document.querySelector('input[name=address]').value,
@@ -122,10 +143,16 @@ export default class Signup {
           password_confirmation: document.querySelector('input[name=password_confirmation]').value
         }
         break;
+      case 'login':
+        params = {
+          phone: document.querySelector('input[name=login_phone]').value,
+          password: document.querySelector('input[name=login_password]').value,
+        }
+        break;
     }
-    
+
     Object.assign(this.paramsSignup, params)
-    
+
     let formData = new FormData()
     Object.keys(Object.assign(params, { step: step })).forEach(key => {
       formData.append(key, params[key])
