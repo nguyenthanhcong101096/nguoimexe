@@ -64,13 +64,6 @@ export default class Signup {
   }
 
   onClickLogin = () => {
-    let params = {
-      phone: '0338529345',
-      password: 'password'
-      // phone: document.querySelector('input[name=login_phone]').value,
-      // password: document.querySelector('input[name=login_password]').value
-    }
-    
     this.btnLogin.addEventListener('click', () => {
       axios.post('/signin', this.paramsAtSession('login'), { headers: { 'Content-Type': 'multipart/form-data' } })
         .then(response => {
