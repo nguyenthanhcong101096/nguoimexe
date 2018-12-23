@@ -6,17 +6,22 @@ export default class Signup {
 
     this.popup = document.querySelector('.login')
     this.flag = this.popup.getAttribute('data')
+    this.holdPhone = document.querySelector('.js-hold-phone')
+    
     this.btnPopup = document.querySelector('.js-button-login')
-    this.formLogin = document.querySelector('.js-form-login')
-    this.formRegister = document.querySelector('.js-form-register')
     this.btnRegister = document.querySelector('.js-btn-register')
     this.btnClose = document.querySelectorAll('.btn-close')
     this.btnBack = document.querySelector('.js-btn-back')
+    this.btnLogin = document.querySelector('.js-btn-login')
+    this.btnForgetPassword = document.querySelector('.js-forget-password')
+    this.btnBackResetToLogin = document.querySelector('.js-btn-back-login')
+    
+    this.formResetPassword = document.querySelector('.js-form-reset-password')
     this.formPhone = document.querySelector('.js-form-phone')
     this.formVerify = document.querySelector('.js-form-verify')
     this.formCreateUser = document.querySelector('.js-form-create-user')
-    this.holdPhone = document.querySelector('.js-hold-phone')
-    this.btnLogin = document.querySelector('.js-btn-login')
+    this.formRegister = document.querySelector('.js-form-register')
+    this.formLogin = document.querySelector('.js-form-login')
   }
 
   init() {
@@ -27,6 +32,8 @@ export default class Signup {
     this.clickBackToLogin()
     this.onClickBtnNext()
     this.onClickLogin()
+    this.clickResetPassword()
+    this.clickBackRestToLogin()
   }
 
   clickLoginPopup = () => {
@@ -39,6 +46,20 @@ export default class Signup {
     })
   }
 
+  clickResetPassword =()=>{
+    this.btnForgetPassword.addEventListener('click', ()=>{
+      this.formLogin.classList.add('hidden')
+      this.formResetPassword.classList.remove('hidden')
+    })
+  }
+  
+  clickBackRestToLogin =()=>{
+    this.btnBackResetToLogin.addEventListener('click', ()=>{
+      this.formLogin.classList.remove('hidden')
+      this.formResetPassword.classList.add('hidden')
+    })
+  }
+  
   clickRegisterPopup = () => {
     if (!this.btnRegister) return
 

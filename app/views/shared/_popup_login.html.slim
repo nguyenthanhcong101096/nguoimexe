@@ -2,7 +2,7 @@
   .form-login.js-form-login
     img.icon-20.btn-close src=asset_pack_path('images/img_close.png')
     .horizontal.space-between
-      h4.u-font-weight Đăng nhập
+      h4 Đăng nhập
     .form
       .form-group
         input.form-control type="number" name="login_phone" placeholder="Nhập số điện thoại"
@@ -10,10 +10,19 @@
       h5.u-text-red.mt-8.js-error-login
       .horizontal.u-mt-32.justify-left
         ul.ul-menu
-          li: h5.u-text-red Quên mật khẩu
+          li: h5.u-text-red.js-forget-password Quên mật khẩu
           li: h5.js-btn-register Đăng kí tài khoản
       .horizontal.u-mt-32.justify-left
           button.btn-default.js-btn-login.u-bg-red.u-text-white type="submit" Đăng Nhập 
+  .js-form-reset-password.hidden
+    h4 Đặt lại mật khẩu
+    h5.u-mt-32 Vui lòng nhập số điện thoại bạn đã đăng ký trên Ineed
+    .form-reset-password
+      input.form-control.u-mt-16 type="number" name="reset_phone" placeholder="Nhập số điện thoại"
+    .horizontal.u-mt-16
+      button.btn-default.u-bg-blue-sky.u-text-white.js-btn-back-login type="submit" Quay lại
+      button.btn-default.u-bg-red.u-text-white type="submit" Tiếp tục
+      
   .form-register.js-form-register.hidden
     img.icon-20.btn-close src=asset_pack_path('images/img_close.png')
       .u-font-weight.js-btn-back Trở lại
@@ -37,8 +46,8 @@
                 p Nhập mã xác nhập
             h5.u-text-red.mt-8.js-error-code
             
-        .js-form-create-user
-          .form-group.hidden
+        .js-form-create-user.hidden
+          .form-group
               input.form-control type="text" name="address" placeholder="Nhâp địa chỉ"
               input.form-control type="text" name="username" placeholder="Nhâp username"
               input.form-control type="password" name="password" placeholder="Nhâp mật khẩu"
