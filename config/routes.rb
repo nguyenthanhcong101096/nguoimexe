@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'signout'    => 'user_session#destroy'
    
   post 'verify'    => 'users#register_by_phone'
+  post 'reset_pwd' => 'users#reset_password'
   get 'profile'    => 'users#show'
   
   get '/'          => 'dashboard#index', as: 'root'

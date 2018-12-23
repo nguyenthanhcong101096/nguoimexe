@@ -15,13 +15,27 @@
       .horizontal.u-mt-32.justify-left
           button.btn-default.js-btn-login.u-bg-red.u-text-white type="submit" Đăng Nhập 
   .js-form-reset-password.hidden
-    h4 Đặt lại mật khẩu
-    h5.u-mt-32 Vui lòng nhập số điện thoại bạn đã đăng ký trên Ineed
+    h4.u-mb-32 Đặt lại mật khẩu
+    h5.u-text-red.mt-8.js-error
     .form-reset-password
+      h5 Vui lòng nhập số điện thoại bạn đã đăng ký trên Ineed
       input.form-control.u-mt-16 type="number" name="reset_phone" placeholder="Nhập số điện thoại"
-    .horizontal.u-mt-16
-      button.btn-default.u-bg-blue-sky.u-text-white.js-btn-back-login type="submit" Quay lại
-      button.btn-default.u-bg-red.u-text-white type="submit" Tiếp tục
+      .horizontal.u-mt-16
+        button.btn-default.u-bg-blue-sky.u-text-white.js-btn-back-login type="submit" Quay lại
+        button.btn-default.u-bg-red.u-text-white.js-btn-reset-step data-step="verify-phone" type="submit" Tiếp tục
+    .form-verify-sms-code.hidden
+      input.form-control.u-mt-16 type="number" name="reset_code" placeholder="Nhập mã xác nhận"
+      h5.mt-8 Nhập mã xác nhận được gửi qua số điện thoại của bạn
+      .horizontal.u-mt-16
+        button.btn-default.u-bg-blue-sky.u-text-white.js-btn-back-login type="submit" Quay lại
+        button.btn-default.u-bg-red.u-text-white.js-btn-reset-step data-step="verify-code" type="submit" Tiếp tục
+    .form-change-password-via-sms.hidden
+      input.form-control.u-mt-16 type="password" name="reset_password" placeholder="Nhập mật khẩu mới"
+      input.form-control.u-mt-8 type="password" name="reset_password_confirmation" placeholder="Nhập mật lại khẩu mới"
+      h5.mt-8 Nhập mã xác nhận được gửi qua số điện thoại của bạn
+      .horizontal.u-mt-16
+        button.btn-default.u-bg-blue-sky.u-text-white.js-btn-back-login type="submit" Quay lại
+        button.btn-default.u-bg-red.u-text-white.js-btn-reset-step data-step="change-password-via-sms" type="submit" Chấp nhận
       
   .form-register.js-form-register.hidden
     img.icon-20.btn-close src=asset_pack_path('images/img_close.png')
