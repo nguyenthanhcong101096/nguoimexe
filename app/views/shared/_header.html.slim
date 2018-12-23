@@ -3,10 +3,10 @@ header.header
   ul.header-menu
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_shop.png')]
-          p.menu Kênh người bán
+          p.menu = t('.channel')
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_mobile.png')]
-          p.menu Tải ứng dụng
+          p.menu = t('.down_app')
     li 
       - if user_signed_in? 
           = link_to(profile_path, class: 'btn horizontal') do
@@ -16,7 +16,5 @@ header.header
           div[class="btn horizontal js-button-login"]
             img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
             p.menu Đăng Nhập
-    li: a[class="horizontal btn"]
-          img[class="avatar-header mr-8" src=asset_pack_path('images/img_flag_vn.png')]
-          p.menu Việt Nam
+    li = switch_language(I18n.locale)
             
