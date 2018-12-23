@@ -22,20 +22,13 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   }
   
-  @media screen and (max-width: 790px) {
-    height: auto;
-    .count {
-      display: none;
-    }
+  @media screen and (max-width: 850px) {
+    height: 80px;
   }
 }
 
 .card-title-left {
-  padding: 4px;
-  
-  @media screen and (max-width: 790px) {
-    padding-left: 8px;
-  }
+  padding-left: 8px;
 }
 
 .card-body {
@@ -44,11 +37,5 @@
   @include respond-to-mobile() {
     padding: 24px 16px;
     background-color: $color-light-gray;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .cate-menu {
-    display: none;
   }
 }

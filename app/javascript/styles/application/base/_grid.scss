@@ -1,9 +1,44 @@
-.row {
-  margin-left: -$col-gutter-half;
-  margin-right: -$col-gutter-half;
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $color-white;
 
-  @media screen and (max-width: 600px) {
+  // @include respond-to-not-mobile() {
+  //   min-width: 1206px;
+  // }
+
+  @include respond-to-mobile() {
+    background-color: $color-true-gray;
+  }
+
+  &.no-scroll {
+    header,
+    .main,
+    .post-sticky-nav {
+      display: none;
+    }
+  }
+}
+
+.container {
+  margin-left: $container-margin;
+  margin-right: $container-margin;
+
+  @include respond-to-not-mobile() {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 780px;
+  }
+}
+
+.row {
+  @include respond-to-not-mobile() {
+    margin-left: -$col-gutter-half;
+    margin-right: -$col-gutter-half;
   }
 }
 
@@ -19,29 +54,17 @@
 .col-10,
 .col-11,
 .col-12 {
-  position: relative;
-  min-height: 1px;
-  padding-left: 8px;
-  padding-right: 8px;
+  @include respond-to-not-mobile() {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: $col-gutter-half;
+    padding-right: $col-gutter-half;
+  }
 }
 
-@media screen and (min-width: 600px) {
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11,
-  .col-12 {
-    float: left;
-  }
-
-  @for $i from 1 through $col-num {
+@for $i from 1 through $col-num {
+  @include respond-to-not-mobile() {
     .col-#{$i} {
       width: percentage($i / $col-num);
     }
