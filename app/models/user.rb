@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:google_oauth2]
          
   validates :phone, uniqueness: true
-         
+  validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: "bad format" }
+  
   def email_required?
     false
   end

@@ -63,8 +63,8 @@ button.active.focus,
   font-size: 14px;
   line-height: 1;
   background-color: $color-white;
-  border-radius: 50px;
-  border: 1px solid $color-true-gray;
+  border: 0;
+  width: 100%;
   
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
@@ -115,10 +115,16 @@ button.active.focus,
 
 .btn-verify-code,
 .btn-verify-phone {
-  padding: 16px;
+  padding: 8px;
   width: 40%;
+  border: 0;
 
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);   
+  }
+  
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    margin-top: 8px;
   }
 }
