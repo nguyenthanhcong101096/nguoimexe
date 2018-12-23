@@ -10,7 +10,6 @@
   transition: all .5s ease;
   &:hover {
     background-color: #d22355;
-    // transform: scale(1.1);
   }
 }
 
@@ -45,5 +44,11 @@
   @include respond-to-mobile() {
     padding: 24px 16px;
     background-color: $color-light-gray;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cate-menu {
+    display: none;
   }
 }
