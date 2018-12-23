@@ -1,4 +1,7 @@
 vi:
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"
   shared:
     header:
       channel: Kênh bán hàng

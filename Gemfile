@@ -38,6 +38,8 @@ gem 'faker'
 gem 'slim-rails'
 gem 'html2slim'
 
+gem 'activeadmin'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
