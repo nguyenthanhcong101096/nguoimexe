@@ -1,7 +1,7 @@
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: #e6eaed!important;
+  background-color: white;
   color: $color-black;
   letter-spacing: normal;
   &.no-scroll {
@@ -14,12 +14,17 @@ body {
 
 .main {
   margin-top: 100px;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 72px;
+  padding-right: 72px;
   @media screen and (max-width: 790px) {
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 56px;
+    margin-top: 80px;
+  }
+  
+  @media screen and (max-width: 970px) {
+    padding-left: 15px;
+    padding-right: 15px; 
   }
 }
 

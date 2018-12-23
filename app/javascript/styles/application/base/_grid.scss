@@ -1,20 +1,41 @@
-.container {
-  margin-right: $container-margin-xs;
-  margin-left: $container-margin-xs;
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $color-white;
 
-  &.container-registration {
-    max-width: 1200px;
-    padding: 32px 0 80px;
+  @include respond-to-mobile() {
+    background-color: $color-true-gray;
+  }
 
-    @include respond-to-pc() {
-      margin: 0 auto;
+  &.no-scroll {
+    header,
+    .main,
+    .post-sticky-nav {
+      display: none;
     }
   }
 }
 
+.container {
+  margin-left: $container-margin;
+  margin-right: $container-margin;
+
+  @include respond-to-not-mobile() {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 780px;
+  }
+}
+
 .row {
-  margin-left: -$col-gutter-half;
-  margin-right: -$col-gutter-half;
+  @include respond-to-not-mobile() {
+    margin-left: -$col-gutter-half;
+    margin-right: -$col-gutter-half;
+  }
 }
 
 .col-1,
@@ -29,53 +50,19 @@
 .col-10,
 .col-11,
 .col-12 {
-  position: relative;
-  min-height: 1px;
-  padding-left: $col-gutter-half;
-  padding-right: $col-gutter-half;
+  @include respond-to-not-mobile() {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    margin-bottom: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
-@include respond-to-pc() {
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11,
-  .col-12 {
-    float: left;
-  }
-
-  @for $i from 1 through $col-num {
+@for $i from 1 through $col-num {
+  @include respond-to-not-mobile() {
     .col-#{$i} {
-      width: percentage($i / $col-num);
-    }
-  }
-}
-
-@include respond-to-tablet() {
-  .col-md-1,
-  .col-md-2,
-  .col-md-3,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-7,
-  .col-md-8,
-  .col-md-9,
-  .col-md-10,
-  .col-md-11,
-  .col-md-12 {
-    float: left;
-  }
-
-  @for $i from 1 through $col-num {
-    .col-md-#{$i} {
       width: percentage($i / $col-num);
     }
   }

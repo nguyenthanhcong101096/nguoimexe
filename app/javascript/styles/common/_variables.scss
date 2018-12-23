@@ -26,9 +26,10 @@ $color-light-green: #dcffd0;
 $color-blue: #278bff;
 $color-default: #b3d4fc;
 $col-num: 12 !default;
-$col-gutter: 32px !default;
+$col-gutter: 16px !default;
 $col-gutter-half: $col-gutter / 2 !default;
-
+$container-margin: 10px;
+$container-width: 1300px;
 $font-family-sans-serif: 'Roboto', sans-serif;
 
 $font-size-xl: 32px;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= stylesheet_pack_tag 'application' %>
-  <title>Rao vặt - Bạn muốn tôi cần...</title>
+  <title>Người Mê Xe - Mua/Bán</title>
   <script>
     WebFontConfig = {
       google: {
@@ -26,6 +26,7 @@
 <body>
   <%= render 'shared/header' %>
   <%= yield %>
+  <%= render 'shared/footer' %>
   <%= render 'shared/popup_login' %>
   <%= javascript_pack_tag 'application' %>
 </body>
