@@ -11,7 +11,7 @@ module ApplicationHelper
   def switch_language(language)
     case language
     when :en
-      text, img, locale = ['Việt Nam', 'images/img_flag_vn.png', :vi]
+      text, img, locale = ['Vietnamese', 'images/img_flag_vn.png', :vi]
     when :vi
       text, img, locale = ['England', 'images/img_flag_en.png', :en]
     end
