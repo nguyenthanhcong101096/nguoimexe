@@ -1,17 +1,28 @@
-/ .main
-/   img[ style="height: 100px; width: 80%;" src=asset_pack_path('images/adver.png')]
-/   div[style="display: flex; padding-top: 16px;"]
-/     h4 Top 3 |
-/     h5  - thời gian cập nhật 12:35 29/12/2018
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
-/   = render 'ranking'
+
+.main
+  h3.u-text-bold DANH MỤC XE
+  .row.u-mt-8
+    .col-3
+      .card-sm.horizontal.space-between
+        .card-title-left
+          h4.u-text-bold Xe moto
+          h5.count 2.9K bài đăng
+        img.img-cate src=asset_pack_path('images/img_xe_moto.jpg')
+    .col-3
+      .card-sm.horizontal.space-between
+        .card-title-left
+          h4.u-text-bold Xe ôtô
+          h5.count 6.9K bài đăng
+        img.img-cate src=asset_pack_path('images/img_xe_oto.png')
+    .col-3
+      .card-sm.horizontal.space-between
+        .card-title-left
+          h4.u-text-bold Xe đạp
+          h5.count 1.3K bài đăng
+        img.img-cate src=asset_pack_path('images/img_xe_dap.jpg')
+    .col-3
+      .card-sm.horizontal.space-between
+        .card-title-left
+          h4.u-text-bold Xe khác
+          h5.count 9K bài đăng
+        img.img-cate src=asset_pack_path('images/img_xe_khac.jpg')

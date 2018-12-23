@@ -1,20 +1,10 @@
-.container {
-  margin-right: $container-margin-xs;
-  margin-left: $container-margin-xs;
-
-  &.container-registration {
-    max-width: 1200px;
-    padding: 32px 0 80px;
-
-    @include respond-to-pc() {
-      margin: 0 auto;
-    }
-  }
-}
-
 .row {
   margin-left: -$col-gutter-half;
   margin-right: -$col-gutter-half;
+  
+  @media screen and (max-width: 790px) {
+    display: inline-flex;
+  }
 }
 
 .col-1,
@@ -31,11 +21,11 @@
 .col-12 {
   position: relative;
   min-height: 1px;
-  padding-left: $col-gutter-half;
-  padding-right: $col-gutter-half;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-@include respond-to-pc() {
+@media screen and (min-width: 650px) {
   .col-1,
   .col-2,
   .col-3,
@@ -53,29 +43,6 @@
 
   @for $i from 1 through $col-num {
     .col-#{$i} {
-      width: percentage($i / $col-num);
-    }
-  }
-}
-
-@include respond-to-tablet() {
-  .col-md-1,
-  .col-md-2,
-  .col-md-3,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-7,
-  .col-md-8,
-  .col-md-9,
-  .col-md-10,
-  .col-md-11,
-  .col-md-12 {
-    float: left;
-  }
-
-  @for $i from 1 through $col-num {
-    .col-md-#{$i} {
       width: percentage($i / $col-num);
     }
   }

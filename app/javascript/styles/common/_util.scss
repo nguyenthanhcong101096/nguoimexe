@@ -143,6 +143,21 @@
   width: 20px;
 }
 
+.img-cate {
+  height: 120px;
+  width: auto;
+  
+  @media screen and (max-width: 1200px) {
+    height: 80px;
+    width: auto;
+  }
+  
+  @media screen and (max-width: 970px) {
+    height: 60px;
+    width: auto;
+  }
+}
+
 .u-col-centered {
   float: none;
   margin: 0 auto;
