@@ -12,7 +12,7 @@ header.header
     li 
       - if user_signed_in? 
           = link_to(profile_path, class: 'btn horizontal') do
-            img[class="avatar-header mr-8" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-1/c48.94.743.743a/s320x320/42837239_1421573067945417_3044495676667854848_n.jpg?_nc_cat=107&_nc_ht=scontent.fsgn2-1.fna&oh=c9dce35839db0661c283a6cbd990a82f&oe=5CA01F55"]
+            img.avatar-header.mr-8 src=asset_url(current_user.avatar_url(:medium))
             p.menu =current_user&.username
       - else
           div[class="btn horizontal js-button-login"]
