@@ -26,14 +26,14 @@
     h3.u-text-bold Mô tả xe
     blockquote.u-mt-8 = @post.describe
   .row.u-mt-32.u-bg-gray
-    .col-8.col-sm-12 style="padding:32px;"
+    .col-7.col-sm-12 style="padding:32px;"
       .comments
         h3.u-text-bold Bình luận
         textarea.form-control.u-mt-32 rows="3" type="text" placeholder="Nhập bình luận của bạn..."
         .comment-box.pb-16
           = render partial: 'comment', collection: @comments
           h6.u-text-red Xem thêm bình luận
-    .col-4.col-sm-12
+    .col-5.col-sm-12
       h3.u-text-bold.u-mt-32.u-mb-32.u-text-center 5 Bài mới nhất
       = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
       
