@@ -6,6 +6,7 @@ class Verify
   
   def send_code
     response = Authy::PhoneVerification.start(country_code: '+84', phone_number: @params[:phone])
+    binding.pry
     response.success?
   end
   
