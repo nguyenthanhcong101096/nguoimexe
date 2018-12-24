@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   resources :posts, only: %i[show]
-  resources :comments, only: %i[index], defaults: { format: :html }
+  resources :comments, only: %i[index create], defaults: { format: :html }
   
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
