@@ -34,9 +34,12 @@
       .comments
         h3.u-text-bold Bình luận
         textarea.form-control.u-mt-32 rows="3" type="text" placeholder="Nhập bình luận của bạn..."
-        .comment-box.pb-16
-          = render partial: 'comment', collection: @comments
-          h6.u-text-red Xem thêm bình luận
+        .comment-body.js-comment-body.pb-16
+          - @comments.each do |comment|
+            = render partial: 'comment', locals: { comment: comment }
+          .comment-latest.js-comment-latest
+        - if @post.comments.count > 5
+          .btn-default.u-text-center.u-text-red.js-btn-comment-loadmore data-post-id=@post.id data-comment-min-id=@comments.last.id Xem thêm bình luận
     .col-4.col-sm-12
       h3.u-text-bold.u-mt-16.u-mb-32.u-text-center 5 Bài mới nhất
       = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
