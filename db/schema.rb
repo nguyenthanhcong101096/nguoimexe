@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181224084643) do
+ActiveRecord::Schema.define(version: 20181224122649) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20181224084643) do
     t.string   "title"
     t.string   "describe"
     t.bigint   "user_id",                                  null: false
+    t.bigint   "vehicle_kind_id",                          null: false
     t.string   "status",              default: "spending", null: false
     t.text     "featured_image_data"
     t.string   "product_date",        default: "undefine"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20181224084643) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["vehicle_kind_id"], name: "index_posts_on_vehicle_kind_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,6 +78,12 @@ ActiveRecord::Schema.define(version: 20181224084643) do
     t.string   "type_account"
     t.index ["phone"], name: "index_users_on_phone", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vehicle_kinds", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -25,6 +25,9 @@
   .describe.u-mt-16
     h3.u-text-bold Mô tả xe
     blockquote.u-mt-8 = @post.describe
+  .horizontal.align-center
+    h4.mr-8 Tag:
+    pre = "##{@post.vehicle_kind.name}"
   .row.u-mt-32.u-bg-gray
     .col-8.col-sm-12 style="padding:16px;"
       .comments

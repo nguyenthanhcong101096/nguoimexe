@@ -39,6 +39,7 @@ gem 'slim-rails'
 gem 'html2slim'
 
 gem 'activeadmin'
+gem 'enumerize'
 
 group :development, :test do
   gem 'pry-rails'

@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :describe
       t.bigint :user_id, null: false
+      t.bigint :vehicle_kind_id, null: false
       t.string :status, null: false, default: 'spending'
       t.text :featured_image_data
       t.string :product_date, default: 'undefine'
@@ -12,5 +13,6 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     end
     
     add_index :posts, :user_id
+    add_index :posts, :vehicle_kind_id
   end
 end
