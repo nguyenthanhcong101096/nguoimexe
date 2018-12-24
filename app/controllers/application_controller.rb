@@ -1,6 +1,21 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
   
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  
+  def not_found
+    respond_to do |f|
+      f.html do
+        render 'pages/page_404', layout: 'application', status: :not_found
+      end
+      f.json { render json: { message: 'Not Found' }, status: :not_found }
+    end
+  end
+  
+  def render_422(error_message)
+    render json: { message: 'Unprocessable Entity', errors: error_message}, status: :unprocessable_entity
+  end
+  
   private
   
   def set_locale

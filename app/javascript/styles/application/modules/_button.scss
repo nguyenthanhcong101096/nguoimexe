@@ -59,12 +59,20 @@ button.active.focus,
 
 .btn-default {
   padding: 8px;
+  margin-right: 8px;
   color: $color-black;
   font-size: 14px;
   line-height: 1;
   background-color: $color-white;
   border: 0;
-  width: 100%;
+  
+  &.btn-w-full {
+    width: 100%;
+  }
+  
+  &.btn-border-red {
+    border: 1px solid #ff5722;
+  }
   
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);

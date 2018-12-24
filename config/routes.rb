@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: %i[sessions passwords], :controllers => { :omniauth_callbacks => "callbacks" }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, skip: %i[sessions passwords], :controllers => { :omniauth_callbacks => "callbacks" }
+  
+  resources :posts, only: %i[show]
   
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
