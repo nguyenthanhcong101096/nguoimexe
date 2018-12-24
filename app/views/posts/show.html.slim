@@ -1,2 +1,40 @@
 .main
-  h1 = @post.title
+  .row
+    .col-5.col-sm-12
+      .pb-16
+        img src=asset_pack_path('images/img_demo.jpg')
+    .col-7.col-sm-12
+      .pb-16
+        h3 = @post.title
+        .price.pb-8.u-bg-gray.u-mt-16
+          .informatio.horizontal
+            img[class="icon-60 radius mr-8" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-1/c48.94.743.743a/s320x320/42837239_1421573067945417_3044495676667854848_n.jpg?_nc_cat=107&_nc_ht=scontent.fsgn2-1.fna&oh=c9dce35839db0661c283a6cbd990a82f&oe=5CA01F55"]
+            div
+              h4.u-text-bold Nguyễn Thành Công
+              .horizontal
+                .btn-default.btn-border-red
+                  h4.u-text-red Gọi ngay
+                .btn-default
+                  h4 Xem Shop
+          h3.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
+  .describe.u-mt-16
+    h3.u-text-bold Mô tả xe
+    blockquote.u-mt-8 = @post.describe
+    blockquote.u-mt-8 = @post.describe
+  .row.u-mt-32
+    .col-8.col-sm-12 style="padding-right: 32px;"
+      .comments
+        h3.u-text-bold Bình luận
+        textarea.form-control.u-mt-32 type="text" placeholder="Nhập bình luận của bạn..."
+        .comment-box.pb-16
+          = render 'comment'
+          = render 'comment'
+          = render 'comment'
+          = render 'comment'
+          = render 'comment'
+          = render 'comment'
+          h6.u-text-red Xem thêm bình luận
+    .col-4.col-sm-12
+      h3.u-text-bold.u-mb-32 5 Bài mới nhất
+      = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
+      
