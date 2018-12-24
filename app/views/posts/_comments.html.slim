@@ -1,0 +1,9 @@
+.comments
+  h3.u-text-bold Bình luận
+  textarea.form-control.u-mt-32 rows="3" type="text" placeholder="Nhập bình luận của bạn..."
+  .comment-body.js-comment-body.pb-16
+    - comments.each do |comment|
+      = render partial: 'comment', locals: { comment: comment }
+    .comment-latest.js-comment-latest
+  - if post.comments.count > 5
+    .btn-default.u-text-center.u-text-red.js-btn-comment-loadmore data-post-id=post.id data-comment-min-id=comments.last.id Xem thêm bình luận
