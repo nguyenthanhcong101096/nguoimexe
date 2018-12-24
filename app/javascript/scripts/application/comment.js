@@ -26,3 +26,26 @@ export const onClickBtnCommentLoadMore = () => {
       }).catch(error => { throw error })
   })
 }
+
+export const onClickBtnCommentCreate = () => {
+  const commentBox = document.querySelector('.js-comment-box')
+
+  delegate(document, '.js-btn-comment-create', 'click', (event) => {
+    const postId = event.target.getAttribute('data-post-id')
+    const message = commentBox.value
+
+    if (!postId) return
+
+    axios.post('/comments', { post_id: postId, context: message })
+      .then(response => {
+        commentLatest.insertAdjacentHTML('beforeend', response.data.comment)
+        commentBox.value = ''
+        return response
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 422) {
+          console.log(error.response.data.errors.message)
+        }
+      })
+  })
+}

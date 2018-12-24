@@ -70,6 +70,18 @@ button.active.focus,
     width: 100%;
   }
   
+  &.btn-w-200 {
+    width: 200px;
+  }
+  
+  &.btn-w-100 {
+    width: 100px;
+  }
+  
+  &.btn-w-150 {
+    width: 150px;
+  }
+  
   &.btn-border-red {
     border: 1px solid #ff5722;
   }
