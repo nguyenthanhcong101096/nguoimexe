@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   
   def show
     @posts = Post.all.limit(8)
+    @comments = @post.comments.limit(10).order(id: :asc)
   end
   
   private
