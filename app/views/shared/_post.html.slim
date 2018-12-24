@@ -6,7 +6,7 @@
         h5 = truncate(post.title, length: 90)
       .card-footer.horizontal
         img.mr-8 style="height: 20px; width: 20px; border-radius: 50px;" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-1/c48.94.743.743a/s320x320/42837239_1421573067945417_3044495676667854848_n.jpg?_nc_cat=107&_nc_ht=scontent.fsgn2-1.fna&oh=c9dce35839db0661c283a6cbd990a82f&oe=5CA01F55"
-        h6.u-text-bold CongNt
+        h6.u-text-bold = post.user_username
 - else
   .col-2.col-sm-6
     = link_to(post_path(post.id), html: { class: 'card' }) do
@@ -15,4 +15,4 @@
         h5 = truncate(post.title, length: 90)
       .card-footer.horizontal
         img.mr-8 style="height: 20px; width: 20px; border-radius: 50px;" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-1/c48.94.743.743a/s320x320/42837239_1421573067945417_3044495676667854848_n.jpg?_nc_cat=107&_nc_ht=scontent.fsgn2-1.fna&oh=c9dce35839db0661c283a6cbd990a82f&oe=5CA01F55"
-        h6.u-text-bold CongNt
+        h6.u-text-bold = post.user_username
