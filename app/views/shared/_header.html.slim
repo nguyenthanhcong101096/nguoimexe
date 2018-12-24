@@ -1,5 +1,7 @@
 header.header
-  div: img.header-logo src=asset_pack_path('images/img_logo.png')
+  div
+    = link_to root_path do
+      img.header-logo src=asset_pack_path('images/img_logo.png')
   ul.header-menu
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_shop.png')]
