@@ -38,7 +38,7 @@ export const onClickBtnCommentCreate = () => {
 
     axios.post('/comments', { post_id: postId, context: message })
       .then(response => {
-        commentLatest.insertAdjacentHTML('beforeend', response.data.comment)
+        commentLatest.insertAdjacentHTML('beforebegin', response.data.comment)
         commentBox.value = ''
         return response
       })
