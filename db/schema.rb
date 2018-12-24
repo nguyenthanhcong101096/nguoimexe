@@ -54,7 +54,9 @@ ActiveRecord::Schema.define(version: 20181224122649) do
     t.bigint   "vehicle_kind_id",                          null: false
     t.string   "status",              default: "spending", null: false
     t.text     "featured_image_data"
-    t.string   "product_date",        default: "undefine"
+    t.string   "product_date",        default: "Unknown"
+    t.string   "brand",               default: "Unknown",  null: false
+    t.float    "registration",        default: 0.0,        null: false
     t.float    "price",               default: 0.0,        null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false

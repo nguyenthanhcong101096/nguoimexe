@@ -8,7 +8,7 @@
         h3 = @post.title
         .pb-8.u-bg-gray.u-mt-16
           .informatio.horizontal
-            img[class="icon-60 radius mr-8" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-1/c48.94.743.743a/s320x320/42837239_1421573067945417_3044495676667854848_n.jpg?_nc_cat=107&_nc_ht=scontent.fsgn2-1.fna&oh=c9dce35839db0661c283a6cbd990a82f&oe=5CA01F55"]
+            img class="icon-60 radius mr-8" src=asset_url(@post.user_avatar_url(:medium))
             div
               h4.u-text-bold = @post.user_username
               .horizontal
@@ -18,9 +18,10 @@
                   h4 Xem Shop
           div.u-mt-16
             h3.u-text-bold.u-text-red Chi Tiết
-            h4 Thương Hiệu: Trump
-            h4 Năm sản xuất: 2015
-            h4 Địa chỉ bán: 244 Cống Quỳnh, Quận 1, Hồ Chí Minh
+            h4 Thương Hiệu Trump
+            h4 Năm sản xuất 2015
+            h4 Vehicle Registration Certificate
+            h4 244 Cống Quỳnh, Quận 1, Hồ Chí Minh
           h3.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
   .describe.u-mt-16
     h3.u-text-bold Mô tả xe
