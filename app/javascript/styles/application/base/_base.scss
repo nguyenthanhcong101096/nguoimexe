@@ -23,6 +23,11 @@ body {
     margin-top: 0;
     background-color: white;
   }
+  
+  @media screen and (max-width: 1200px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .content-body {
@@ -65,10 +70,9 @@ body {
     height: 40px;
   }
 
-  @media screen and (max-width: 790px) {
-    min-width: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+  @media screen and (max-width: 1200px) {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
