@@ -3,8 +3,14 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :title
       t.string :describe
-
+      t.bigint :user_id, null: false
+      t.string :status, null: false, default: 'spending'
+      t.text :featured_image_data
+      t.string :product_date, default: 'undefine'
+      t.float :price, null: false, default: 0.0
       t.timestamps
     end
+    
+    add_index :posts, :user_id
   end
 end
