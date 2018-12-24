@@ -182,6 +182,18 @@
   justify-content: flex-end;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  @include flexbox(space-between, center);
+}
+
+.align-center {
+  @include flexbox(flex-start, baseline);
+}
+
 .divider {
   height: 3px;
   background-color: #ff5722;

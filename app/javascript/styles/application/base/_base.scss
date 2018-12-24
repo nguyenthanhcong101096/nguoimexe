@@ -172,10 +172,6 @@ body {
   }
 }
 
-.space-between {
-  @include flexbox(space-between, center);
-}
-
 .form {
   padding: 32px 0;
 }
