@@ -25,9 +25,10 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-
-  @media screen and (max-width: 768px) {
-    width: 780px;
+  
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -64,6 +65,36 @@ body {
 @for $i from 1 through $col-num {
   @include respond-to-not-mobile() {
     .col-#{$i} {
+      width: percentage($i / $col-num);
+    }
+  }
+}
+
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12 {
+  @media (max-width: 670px) {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    margin-bottom: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@for $i from 1 through $col-num {
+  @media (max-width: 670px) {
+    .col-sm-#{$i} {
       width: percentage($i / $col-num);
     }
   }
