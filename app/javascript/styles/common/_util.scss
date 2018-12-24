@@ -194,4 +194,7 @@
 
 .pb-16 {
   padding: 16px;
+  @include respond-to-mobile() {
+    padding: 0;
+  }
 }
