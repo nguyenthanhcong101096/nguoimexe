@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
+
   devise_for :users, skip: %i[sessions passwords], :controllers => { :omniauth_callbacks => "callbacks" }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -15,4 +17,6 @@ Rails.application.routes.draw do
   
   get '/'          => 'dashboard#index', as: 'root'
   get '*path'      => 'pages#page_404'
+  
+  mount ActionCable.server => '/cable'
 end

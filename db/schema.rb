@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181224122649) do
+ActiveRecord::Schema.define(version: 20181225152544) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20181224122649) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "activities", force: :cascade do |t|
+    t.bigint   "user_id",                        null: false
+    t.bigint   "target_user_id",                 null: false
+    t.string   "kind"
+    t.string   "message"
+    t.string   "url"
+    t.boolean  "read",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "admin_users", force: :cascade do |t|
