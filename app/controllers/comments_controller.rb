@@ -10,6 +10,8 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params.merge(post: @post))
 
     if @comment.save
+      TrackAndNotifyCommentWorker.perform_async(@post.user_id, @post.id, 'comment', 'Đã bình luận bài viết của bạn')
+      
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
       render json: { comment: html_block }, status: :ok
     else

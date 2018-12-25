@@ -41,6 +41,8 @@ gem 'html2slim'
 gem 'activeadmin'
 gem 'enumerize'
 
+gem 'sidekiq'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
