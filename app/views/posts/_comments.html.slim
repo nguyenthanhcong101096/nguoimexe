@@ -4,7 +4,7 @@
   .btn-default.btn-w-150.js-btn-comment-create data-post-id=post.id
     h4 Thêm bình luận
   .comment-body.js-comment-body.pb-16.u-mt-32
-    .comment-latest.js-comment-latest
+    .comment-latest.js-comment-latest id="comment-latest"
     - comments.each do |comment|
       = render partial: 'comment', locals: { comment: comment }
   - if post.comments.count > 5
