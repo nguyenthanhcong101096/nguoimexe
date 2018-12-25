@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'redis'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
@@ -19,17 +20,16 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails'
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.5'
+gem 'pg'
 
 gem 'webpacker', '~> 3.5'
 gem 'react-rails'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'pg_search'
-
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'pg'
 
 gem 'rspec-rails'
 gem 'factory_bot_rails'
