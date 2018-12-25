@@ -8,9 +8,17 @@ class CommentsController < ApplicationController
   
   def create
     @comment = current_user.comments.build(comment_params.merge(post: @post))
-
+    
     if @comment.save
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
+      
+      Notification.create(
+        post_id: @post.id,
+        user_id: current_user.id,
+        comment_id: @comment.id,
+        read: false 
+      )
+      
       render json: { comment: html_block }, status: :ok
     else
       render_422(@comment.errors.messages)
