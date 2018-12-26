@@ -1,0 +1,7 @@
+.notification
+  = link_to(activity.url) do
+    .horizontal
+      img.icon-30.radius.mr-8 src=activity.user.avatar_url(:medium)
+      h5.u-text-gray.u-text-bold = activity.message
+      img.icon-20 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ic_close_48px.svg/2000px-Ic_close_48px.svg.png"
+  end

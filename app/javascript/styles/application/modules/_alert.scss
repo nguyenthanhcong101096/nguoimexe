@@ -1,0 +1,13 @@
+.notifications-list {
+  width: 300px; 
+  top: 56px; 
+  right: 0;
+  position: fixed
+}
+
+.notification {
+  padding: 8px;
+  background-color: white;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
