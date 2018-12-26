@@ -4,7 +4,7 @@ import Signup from './signup';
 
 window.addEventListener('DOMContentLoaded', function () {
   clickChangeLanguage()
-  
+   
   onClickBtnCommentLoadMore()
   onClickBtnCommentCreate()
   
