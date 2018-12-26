@@ -9,6 +9,10 @@ class NotificationJob < ApplicationJob
   
   def render_notify (current_user, target_user, kind, url)
     activity = Activity.track(current_user, target_user, kind, url)
-    html = "<p>#{activity.message}</p>"
+    html = render_notification_comment(activity)
+  end
+  
+  def render_notification_comment(activity)
+    ApplicationController.renderer.render(partial: 'posts/notification_comment', locals: { activity: activity} )
   end
 end
