@@ -6,5 +6,5 @@
     .comment-latest.js-comment-latest id="comment-latest"
     - comments.each do |comment|
       = render partial: 'comment', locals: { comment: comment }
-  - if post.comments.count > 5
+  - if post.comments.count > 10
     button.btn-default.u-text-center.u-text-red.js-btn-comment-loadmore data-post-id=post.id data-comment-min-id=comments.last.id Xem thêm bình luận
