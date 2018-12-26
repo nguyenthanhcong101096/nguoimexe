@@ -11,6 +11,16 @@ class CommentsController < ApplicationController
 
     if @comment.save
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
+      
+      unless current_user == @post.user
+        current_user.activities.create( 
+        target_user: @post.user, 
+        kind: 'comment', 
+        message: "#{current_user.username} đã bình luận về bài viết của bạn",
+        url: request.base_url + "/posts/#{@post.id}"
+      )
+      end
+       
       render json: { comment: html_block }, status: :ok
     else
       render_422(@comment.errors.messages)

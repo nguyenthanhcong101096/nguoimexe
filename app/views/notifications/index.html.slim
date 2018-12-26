@@ -1,3 +1,6 @@
 .main
   h1 Notifications#index
   div id="messages"
+  - @activities.each do |ac|
+    = link_to(ac.url) do
+      h5 = ac.message 
