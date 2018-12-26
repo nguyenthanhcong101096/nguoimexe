@@ -1,3 +1,6 @@
 App.notifications = App.cable.subscriptions.create "NotificationsChannel",
   received: (data) ->
-    $('#messages').append data['html']
+    notifications = $('#notifications')
+    notification_user_channel = notifications.attr('notificaton-user-channel')
+    if notification_user_channel == "#{data['channel_user']}"
+      notifications.append data['html']
