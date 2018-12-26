@@ -16,10 +16,9 @@ export const configEditor = () => {
   
   if(!form) return
   var quill = new Quill('#editor-container', {
-    placeholder: 'Nhập vô',
-    theme: 'snow',
+    placeholder: 'Viết mô tả vào đây',
+    theme: 'bubble',
     modules: {
-      
       toolbar: toolbarOptions
     }
   });

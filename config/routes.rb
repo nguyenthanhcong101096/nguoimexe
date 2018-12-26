@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-  resources :posts, only: %i[show]
+  resources :posts, only: %i[new create show]
   resources :comments, only: %i[index create], defaults: { format: :html }
   resources :users, only: %i[show]
   
