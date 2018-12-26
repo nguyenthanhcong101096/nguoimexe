@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :activities
   
   before_create :default_avatar, unless: :avatar
+  after_create_commit :slug
   
   devise :database_authenticatable, :registerable,         
          :recoverable, :rememberable, :validatable,
@@ -38,5 +39,9 @@ class User < ApplicationRecord
     self.avatar = file
   ensure
     File.delete(file.path)
+  end
+  
+  def slug
+    self.slug_name = self.username.parameterize
   end
 end

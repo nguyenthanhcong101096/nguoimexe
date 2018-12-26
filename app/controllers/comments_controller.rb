@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post, only: %i[index create]
+  
   def index
     @comments = @post.comments.where('id < ?', params[:min_id]).limit(10).order(id: :desc)
     html_blocks = @comments.each_with_object([]) { |comment, arr| arr << render_to_string(partial: 'posts/comment', locals: { comment: comment }) }
