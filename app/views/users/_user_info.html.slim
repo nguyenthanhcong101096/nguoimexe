@@ -11,9 +11,12 @@
         h5 46 Following
   - if current_user == user
     .u-mt-32
-      button.btn-default.horizontal
+      = link_to(edit_user_path(user), class: 'btn-default horizontal u-mb-8') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_setting.png')
         h5.u-text-bold Chỉnh sữa thông tin
+      button.btn-default.horizontal
+        img.icon-20.mr-8 src=asset_pack_path('images/img_change_password.png')
+        h5.u-text-bold Thay đổi password
       button.btn-default.horizontal
         img.icon-20.mr-8 src=asset_pack_path('images/img_writer.png')
         h5.u-text-bold Đăng tin

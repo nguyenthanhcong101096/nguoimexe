@@ -1,0 +1,19 @@
+.main
+  .row
+    .col-4.col-sm-12
+      = render_information_profile(from_view: true, current_user: @user)
+    .col-8.col-sm-12
+      pre Chỉnh sửa thông tin
+      .row.pb-8
+        .form style="padding-left: 50px; padding-right:50px;"
+          = form_for @user do |f|
+            .group-control 
+              h4 Tên người dùng
+              = f.text_field :username, class: 'u-mt-8 form-control', placeholder: "Tên người dùng"
+            .group-control.u-mt-16 
+              h4 Số điện thoại
+              = f.text_field :phone, class: 'u-mt-8 form-control', placeholder: "Số điện thoại"
+            .group-control.u-mt-16 
+              h4 Địa chỉ liên hệ
+              = f.text_field :address, class: 'u-mt-8 form-control', placeholder: "Địa chỉ người dùng"
+            = f.submit 'Thay đổi', class: 'btn-default u-bg-red u-text-white'
