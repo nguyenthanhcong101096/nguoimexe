@@ -26,10 +26,9 @@
 <body>
   <%= render 'shared/header' %>
   <%= yield %>
-  
+  <%= react_component('form_post') %>
   <%= render 'shared/popup_login' %>
   <%= render_user_notification_channel %>
-  
   <%= javascript_pack_tag 'application' %>
   <%= javascript_include_tag 'application' %>
 </body>
