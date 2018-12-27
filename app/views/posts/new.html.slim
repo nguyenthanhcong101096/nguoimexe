@@ -17,6 +17,8 @@
                   input[type="file" class="js-writer-avatar" name="pictures[]" id="pictures" multiple]
                   label for="pictures"
                     img[id="pictures-preview" class="img-post" src=asset_pack_path('images/img_add_picture.png')]
+                  = f.fields_for :pictures do |p|
+                    = p.file_field :post_img, multiple: true, name: "pictures[post_img][]"
                   .list-pictures.horizontal
               .category.pb-8
                 h4.u-text-bold LOẠI XE
@@ -34,4 +36,3 @@
                 .horizontal.u-mt-8
                   blockquote 125.000.000VNĐ
               input type="submit" value="Chấp nhận" class='form-control u-text-bold u-mt-16'
-

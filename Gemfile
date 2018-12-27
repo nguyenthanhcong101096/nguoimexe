@@ -55,7 +55,6 @@ group :development do
   gem 'spring'
   gem 'bugsnag'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'sqlite3'
 end
 
 group :staging, :production do
