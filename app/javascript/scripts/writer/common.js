@@ -7,19 +7,9 @@ export const onAddPictures = () => {
   if (!inputFileAvatar) return
   inputFileAvatar.addEventListener('change', (e) => {
     if (inputFileAvatar.files && inputFileAvatar.files[0]) {
-      // let reader = new FileReader()
-      // const avatar = inputFileAvatar.files[0]
-
       renderListPicture(inputFileAvatar.files).map(e => {
         listPictures.appendChild(e)
       })
-
-      // reader.onload = (e) => {
-
-      //   pictures.setAttribute('src', e.target.result)
-      // }
-
-      // reader.readAsDataURL(avatar)
     }
   })
 }
@@ -39,5 +29,6 @@ const renderListPicture = (imageFiles) => {
 
     items.push(node)
   })
+  console.log(items)
   return items
 }

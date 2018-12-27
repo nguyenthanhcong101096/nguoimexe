@@ -63,8 +63,9 @@ ActiveRecord::Schema.define(version: 20181226135827) do
 
   create_table "post_images", force: :cascade do |t|
     t.bigint   "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "post_image_data"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "posts", force: :cascade do |t|

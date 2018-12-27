@@ -23,7 +23,7 @@ module ApplicationHelper
   end
   
   def render_information_profile(from_view: false, locals: {}, current_user: nil)
-    activities = Activity.where(target_user: current_user).order(created_at: :desc)
+    activities = Activity.where(target_user: current_user).order(created_at: :desc).limit(5)
     if from_view
       render(partial: 'users/user_info', locals: { activities: activities, user: current_user }.merge(locals))
     else

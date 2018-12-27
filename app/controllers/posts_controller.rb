@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   def new; end
   
   def create
-    
+    # PostImage.create_img_post(params, Post.last)
+    a = params[:pictures].is_a?(ActionDispatch::Http::UploadedFile)
+    binding.pry
   end
   
   def show
