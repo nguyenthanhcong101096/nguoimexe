@@ -12,7 +12,8 @@ export const onAddPictures = () => {
       
       reader.onload = (e) => {
         this.avatarDataUri = e.target.result
-        pictures.setAttribute('src', e.target.result)
+        // pictures.setAttribute('src', e.target.result)
+        console.log(this.avatarDataUri)
       }
 
       reader.readAsDataURL(avatar)
