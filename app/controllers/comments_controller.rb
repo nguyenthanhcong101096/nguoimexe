@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
 
       unless current_user == @post.user
-        NotificationJob.perform_later(current_user, @post.user, 'comment', request.base_url + "/posts/#{@post.id}", Activity.counter(@post.user))
+        activity = Activity.track(current_user, @post.user, 'comment', request.base_url + "/posts/#{@post.id}")
+        NotificationJob.perform_later(activity, Activity.counter(@post.user))
       end
       
       render json: { comment: html_block }, status: :ok
