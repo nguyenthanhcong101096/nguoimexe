@@ -31,5 +31,6 @@
           h4.mr-8 Tag:
           pre = "##{@post.vehicle_kind.name}"
     .col-5.col-sm-12
+      div id="render-comments" comment-channel=@post.id
       = render partial: 'comments', locals: { comments: @comments, post: @post }
       
