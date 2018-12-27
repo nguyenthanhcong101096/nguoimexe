@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :posts, only: %i[new create show]
   resources :comments, only: %i[index create], defaults: { format: :html }
-  resources :users, only: %i[show]
+  resources :users, only: %i[show edit update]
   
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
