@@ -1,9 +1,9 @@
 .main
   .row
     .col-4.col-sm-12
-      = render 'users/left_bar'
+      = render_information_profile(from_view: true, current_user: current_user)
     .col-8.col-sm-12
-      pre Viết bài
+      pre Đăng tin
       div class='horizontal'
         div class='post-create'
           = form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f|
@@ -33,5 +33,5 @@
                 h4.u-text-bold GIÁ BÁN
                 .horizontal.u-mt-8
                   blockquote 125.000.000VNĐ
-              input type="submit" value="Đăng tin" class='form-control u-text-bold u-mt-16'
+              input type="submit" value="Chấp nhận" class='form-control u-text-bold u-mt-16'
 

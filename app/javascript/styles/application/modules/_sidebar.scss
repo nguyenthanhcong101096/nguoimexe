@@ -7,11 +7,9 @@
 }
 
 .slide-bar {
-  border-right: 1px solid $color-lightest-gray;
-  height: 100%;
   
-  @media screen and (max-width: 790px) {
-    border-right: 0;
-    border-bottom: 1px solid $color-lightest-gray;
-  }
+  // @media screen and (max-width: 790px) {
+  //   border-right: 0;
+  //   border-bottom: 1px solid $color-lightest-gray;
+  // }
 }

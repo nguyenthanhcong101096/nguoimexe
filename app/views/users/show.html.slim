@@ -1,6 +1,8 @@
 .main
   .row
-    .col-4
-      = render 'left_bar'
-    .col-8
-      p col-8
+    .col-4.col-sm-12
+      = render_information_profile(from_view: true, current_user: @user)
+    .col-8.col-sm-12
+      pre Tin Đăng của bạn
+      .row.pb-8
+        = render partial: 'shared/post', collection: @posts, locals: { col: 'col-4' }
