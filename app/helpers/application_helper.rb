@@ -21,4 +21,13 @@ module ApplicationHelper
       content_tag(:p, text, class: 'menu')
     end
   end
+  
+  def render_information_profile(from_view: false, locals: {}, current_user: nil)
+    activities = Activity.where(target_user: current_user)
+    if from_view
+      render(partial: 'users/left_bar', locals: { activities: activities, user: current_user }.merge(locals))
+    else
+      render_to_string(partial: 'users/left_bar', locals: { activities: activities, user: current_user, has_col_class: true }.merge(locals))
+    end
+  end
 end
