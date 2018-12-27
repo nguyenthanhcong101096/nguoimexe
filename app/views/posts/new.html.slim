@@ -4,7 +4,7 @@
       = render_information_profile(from_view: true, current_user: current_user)
     .col-8.col-sm-12
       pre Đăng tin
-      div class='horizontal'
+      div class='horizontal' style="padding-left:32px; padding-right:32px;"
         div class='post-create'
           = form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f|
             = f.text_field :title, class: 'form-control no-border font-size-14 u-text-bold', placeholder: 'Nhập tiêu đề'

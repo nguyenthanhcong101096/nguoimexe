@@ -17,10 +17,10 @@
       = link_to(change_password_user_path(user), class: 'btn-default horizontal u-mb-8') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_change_password.png')
         h5.u-text-bold Thay đổi password
-      button.btn-default.horizontal
+      = link_to(new_post_path, class: 'btn-default horizontal u-mb-8') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_writer.png')
         h5.u-text-bold Đăng tin
-      button.btn-default.horizontal
+      = link_to(signout_path, class: 'btn-default horizontal') do
         img.icon-20.mr-8 src=asset_pack_path('images/img_logout.png')
         h5.u-text-bold Đăng xuất
   pre.u-mt-32 Những người bạn theo dổi
