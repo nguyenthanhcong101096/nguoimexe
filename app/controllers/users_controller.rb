@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     render json: ResetPasswordViaPhoneService.new(params, self).execute!
   end
   
-  def show; end
+  def show
+    @posts = @user.posts
+  end
   
   private
   
