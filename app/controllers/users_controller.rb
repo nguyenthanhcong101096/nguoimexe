@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update change_password set_password]
   
   def register_by_phone
     render json: SignUpService.new(params, user_params, self).execute!
@@ -10,6 +10,16 @@ class UsersController < ApplicationController
   end
   
   def edit; end
+  
+  def change_password; end
+  
+  def set_password
+    if @user.update_with_password(password_params)
+      redirect_to user_path
+    else
+      render :change_password
+    end
+  end
   
   def update
     if @user.update(user_update_params)
@@ -24,6 +34,10 @@ class UsersController < ApplicationController
   end
   
   private
+  
+  def password_params
+    params.require(:user).permit(:current_password, :password, :password_confirmation)
+  end
   
   def user_update_params
     params.require(:user).permit(:username, :address, :phone)
