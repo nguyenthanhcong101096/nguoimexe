@@ -22,6 +22,10 @@ class Activity < ApplicationRecord
     user_name.concat(message)
   end
   
+  def self.counter(user)
+    Activity.where(read: false, target_user: user).count
+  end
+  
   def created_date
     created_at.strftime('%d %b. %Y')
   end
