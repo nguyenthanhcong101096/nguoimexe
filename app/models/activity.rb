@@ -21,4 +21,8 @@ class Activity < ApplicationRecord
     message = ACTIVITY_OF_KIND.find { |act| act[:kind] == kind }[:message]
     user_name.concat(message)
   end
+  
+  def created_date
+    created_at.strftime('%d %b. %Y')
+  end
 end

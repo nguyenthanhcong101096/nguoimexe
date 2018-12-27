@@ -29,4 +29,4 @@
     = link_to(act.url) do
       .horizontal.u-mb-8
         img.icon-20.mr-8 src=asset_url(act.user.avatar_url(:medium))
-        h5 = act.message
+        h5 = act.message.concat(" #{act.created_date}")
