@@ -25,7 +25,7 @@
         h5.u-text-bold Đăng xuất
   pre.u-mt-32 Những người bạn theo dổi
   - 10.times do
-    img.icon-40.mr-8.u-mb-8 src=asset_url(user.avatar_url(:medium))
+    img.icon-40.mr-8.u-mb-8 src=user.avatar_url
   pre.u-mt-32 Những tin đăng của bạn (6 approve - 2 reject)
   pre.u-mt-32 Những hoạt động gần đây
   - activities.each do |act|
