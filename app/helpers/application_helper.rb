@@ -30,4 +30,14 @@ module ApplicationHelper
       render_to_string(partial: 'users/user_info', locals: { activities: activities, user: current_user, has_col_class: true }.merge(locals))
     end
   end
+  
+  def render_notification_header(user)
+    activities   = Activity.where(target_user: user)
+    count_notify = activities.count
+    render(partial: 'shared/notification', locals: {activities: activities, count_notify: count_notify})
+  end
+  
+  def render_user_notification_channel
+    render(partial: 'shared/user_notification_channel')
+  end
 end

@@ -9,6 +9,9 @@ header.header
     li: a[class="horizontal btn"]
           img[class="avatar-header mr-8" src=asset_pack_path('images/img_mobile.png')]
           p.menu = t('.down_app')
+    - if user_signed_in? 
+      li
+        = render_notification_header(current_user)
     li 
       - if user_signed_in? 
           = link_to(current_user, class: 'btn horizontal') do
