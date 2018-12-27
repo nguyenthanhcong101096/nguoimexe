@@ -7,7 +7,6 @@ export const configEditor = () => {
     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
     [{ 'list': 'ordered' }, { 'list': 'bullet'}],
     ['bold', 'italic', 'underline', 'strike', 'code'],
-    ['image'],
     ['link', 'blockquote']
   ];
 

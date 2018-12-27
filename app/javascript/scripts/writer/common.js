@@ -3,32 +3,41 @@ export const onAddPictures = () => {
   const pictures = document.querySelector('#pictures-preview')
   const listPictures = document.querySelector('.list-pictures')
 
+
   if (!inputFileAvatar) return
   inputFileAvatar.addEventListener('change', (e) => {
     if (inputFileAvatar.files && inputFileAvatar.files[0]) {
-      let reader = new FileReader()
-      const avatar = inputFileAvatar.files[0]
-      console.log(inputFileAvatar.files)
-      
-      reader.onload = (e) => {
-        this.avatarDataUri = e.target.result
-        // pictures.setAttribute('src', e.target.result)
-        console.log(this.avatarDataUri)
-      }
+      // let reader = new FileReader()
+      // const avatar = inputFileAvatar.files[0]
 
-      reader.readAsDataURL(avatar)
+      renderListPicture(inputFileAvatar.files).map(e => {
+        listPictures.appendChild(e)
+      })
+
+      // reader.onload = (e) => {
+
+      //   pictures.setAttribute('src', e.target.result)
+      // }
+
+      // reader.readAsDataURL(avatar)
     }
   })
 }
 
 const renderListPicture = (imageFiles) => {
   var items = []
-  var node = document.createElement("img")
-  
-  for (var i = 0, j = imageFiles.length; i < j; i++) {
-    const avatar = imageFiles[i]
-    const image = node.setAttribute('src', avatar)
-    items.push(image)
-  }
+  Array.from(imageFiles).map((item, index) => {
+    if(index > 5) return 
+    
+    let reader = new FileReader()
+    var node = document.createElement("img")
+    reader.readAsDataURL(item)
+    
+    reader.onload = (e) => {
+      node.setAttribute('src', e.target.result)
+    }
+
+    items.push(node)
+  })
   return items
 }
