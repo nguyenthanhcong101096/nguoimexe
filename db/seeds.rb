@@ -8,5 +8,7 @@ users = FactoryBot.create_list(:user, 5)
 
 admin = AdminUser.create!(phone: '0338529345', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
+follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_user: user) }
+
 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
 200.times { comment = FactoryBot.create(:comment, user: User.all.sample, post: Post.all.sample) }

@@ -3,6 +3,12 @@ class User < ApplicationRecord
   has_many :comments
   has_many :activities
   
+  has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
+  has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
+
+  has_many :following, through: :active_relationships, source: :target_user
+  has_many :followers, through: :passive_relationships, source: :user
+  
   before_create :default_avatar, unless: :avatar
   after_create_commit :slug
   
@@ -21,6 +27,18 @@ class User < ApplicationRecord
 
   def email_changed?
     false
+  end
+  
+  def follow?(user_id)
+    following_ids.include?(user_id)
+  end
+
+  def follow(target_user)
+    following << target_user
+  end
+
+  def unfollow(target_user)
+    following.delete(target_user)
   end
   
   def self.from_omniauth(auth)
