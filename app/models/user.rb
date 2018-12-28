@@ -29,6 +29,18 @@ class User < ApplicationRecord
     false
   end
   
+  def follow?(user_id)
+    following_ids.include?(user_id)
+  end
+
+  def follow(target_user)
+    following << target_user
+  end
+
+  def unfollow(target_user)
+    following.delete(target_user)
+  end
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.type_account = 'email'

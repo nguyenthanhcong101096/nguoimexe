@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from AppErrors::Error409, with: :conflict
+  
+  def conflict
+    render json: { message: 'Conflict' }, status: :conflict
+  end
   
   def not_found
     respond_to do |f|
