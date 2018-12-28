@@ -1,14 +1,13 @@
 class NotificationJob < ApplicationJob
   queue_as :default
 
-  def perform(activity, counter)
-    ActionCable.server.broadcast "notifications_#{activity.target_user.id}_channel",counter: counter, html: render_notify(activity)
+  def perform(activity)
+    ActionCable.server.broadcast "notifications_#{activity.target_user.id}_channel", html: render_notify(activity)
   end
   
   private
   
   def render_notify (activity)
-    
     html = render_notification_comment(activity)
   end
   
