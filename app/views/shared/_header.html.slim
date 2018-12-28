@@ -11,7 +11,9 @@ header.header
           p.menu = t('.down_app')
     - if user_signed_in? 
       li
-        = render_notification_header(current_user)
+        = render_notification_activity(current_user)
+      li
+        = render_notification_message(current_user)
     li 
       - if user_signed_in? 
           = link_to(current_user, class: 'horizontal') do

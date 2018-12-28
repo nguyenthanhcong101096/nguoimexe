@@ -37,9 +37,15 @@ module ApplicationHelper
     end
   end
 
-  def render_notification_header(user)
+  def render_notification_activity(user)
     activities   = Activity.where(target_user: user)
     count_notify = activities.count
     render(partial: 'shared/notification', locals: { activities: activities, count_notify: count_notify })
+  end
+  
+  def render_notification_message(user)
+    activities   = Activity.where(target_user: user)
+    count_notify = activities.count
+    render(partial: 'shared/notification_message', locals: { activities: activities, count_notify: count_notify })
   end
 end
