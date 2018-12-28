@@ -3,6 +3,8 @@ class UserSessionController < ApplicationController
     @user = User.find_by(phone: params[:phone])
     if @user&.valid_password?(params[:password])
       sign_in(@user)
+      cookies.signed[:user_id] = @user.id
+      
       render json: { status: 'ok', message: 'Login success' }
     else
       render json: { status: 'error', message: 'Phone number or Pasword is incorrect' }
