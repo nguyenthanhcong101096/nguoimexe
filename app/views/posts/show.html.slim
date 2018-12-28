@@ -16,8 +16,12 @@
                   h4.u-text-red Gọi ngay
                 .btn-default
                   h4 Trang cá nhân
-                .btn-default
-                  h4 Theo dõi
+                - type = current_user&.follow?(@post.user_id)
+                button[class="btn-default js-follow-user" user-id=@post.user_id type=(type ? 'unfollow' : 'follow')]
+                  - if type
+                      h4.js-text-follow Bỏ theo dõi
+                  - else
+                      h4.js-text-follow Theo dõi
           pre.u-mt-16
             h4.u-text-bold.u-text-red Chi Tiết
             h4 Thương Hiệu Trump

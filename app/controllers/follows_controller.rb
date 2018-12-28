@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
     user = User.find(params[:user_id])
     raise AppErrors::Error409 if current_user.follow?(user.id)
     current_user.follow(user)
-    head(200)
+    render json: { status: 'ok', message: 'success' }
   end
   
   def destroy
