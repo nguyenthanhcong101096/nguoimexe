@@ -25,8 +25,4 @@ class Activity < ApplicationRecord
   def self.counter(user)
     Activity.where(read: false, target_user: user).count
   end
-  
-  def created_date
-    created_at.strftime('%d %b. %Y')
-  end
 end
