@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_post, only: %i[index create]
   
+  include TrackNotificationActivity
+  
   def index
     @comments = @post.comments.where('id < ?', params[:min_id]).limit(10).order(id: :desc)
     html_blocks = @comments.each_with_object([]) { |comment, arr| arr << render_to_string(partial: 'posts/comment', locals: { comment: comment }) }
@@ -13,10 +15,7 @@ class CommentsController < ApplicationController
     if @comment.save
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
 
-      unless current_user == @post.user
-        activity = Activity.track(current_user, @post.user, 'comment', request.base_url + "/posts/#{@post.id}")
-        NotificationJob.perform_later(activity, Activity.counter(@post.user))
-      end
+      push_notification(@post.user, 'comment', "/posts/#{@post.id}")
       
       render json: { comment: html_block }, status: :ok
     else

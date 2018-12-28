@@ -1,8 +1,11 @@
 class FollowsController < ApplicationController
+  include TrackNotificationActivity
+  
   def create
     user = User.find(params[:user_id])
     raise AppErrors::Error409 if current_user.follow?(user.id)
     current_user.follow(user)
+    push_notification(user, 'follow', "unknow")
     render json: { status: 'ok', message: 'success' }
   end
   
