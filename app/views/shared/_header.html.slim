@@ -14,12 +14,12 @@ header.header
         = render_notification_header(current_user)
     li 
       - if user_signed_in? 
-          = link_to(current_user, class: 'btn horizontal') do
+          = link_to(current_user, class: 'horizontal') do
             img.avatar-header.mr-8 src=asset_url(current_user.avatar_url(:medium))
             p.menu =current_user&.username
       - else
           div[class="btn horizontal js-button-login"]
             img[class="avatar-header mr-8" src=asset_pack_path('images/img_default_avatar.png')]
             p.menu = t('.login')
-    li = switch_language(I18n.locale)
+    / li = switch_language(I18n.locale)
             

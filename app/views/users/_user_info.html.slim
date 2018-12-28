@@ -7,8 +7,6 @@
       h5 = user.phone
       .horizontal
         h5.mr-8 ="#{user.posts.count} Bài viết"
-        h5.mr-8 14 Followed
-        h5 46 Following
   - if current_user == user
     .u-mt-32
       = link_to(edit_user_path(user), class: 'btn-default horizontal u-mb-8') do
