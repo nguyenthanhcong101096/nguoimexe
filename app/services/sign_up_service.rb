@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SignUpService
   def initialize(params, user_params, controller)
     @params      = params
@@ -5,11 +7,11 @@ class SignUpService
     @verify      = Verify.new(params)
     @controller  = controller
   end
-  
+
   def execute!
     sign_up_via_phone_number
   end
-  
+
   def sign_up_via_phone_number
     case @params[:step]
     when '1'
@@ -29,9 +31,9 @@ class SignUpService
       end
     end
   end
-  
+
   private
-  
+
   def valid_params
     ValidateUserParamsService.new(@user, @params[:step]).for_signup
   end

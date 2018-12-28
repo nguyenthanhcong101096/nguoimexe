@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe = "
 Chia sẻ với báo giới, HLV Park Hang-seo xác nhận: “Chúng tôi vốn dự định xem Đình Trọng là một trong những phương án thay thế cho Xuân Hưng. Chúng ta cần các cầu thủ có sự ăn ý trong thi đấu và phối hợp. Quyết định có thay thế và gọi lại Đình Trọng hay không sẽ dựa vào kết quả báo cáo cụ thể từ các bác sĩ”.
 

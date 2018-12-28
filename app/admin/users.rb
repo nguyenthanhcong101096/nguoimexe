@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register User do
   ActiveAdmin.register User do
     index do
@@ -9,5 +11,4 @@ ActiveAdmin.register User do
       actions
     end
   end
-  
 end

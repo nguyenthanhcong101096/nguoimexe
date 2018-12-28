@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = true
+  config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_cable.url = "ws://localhost:3000/cable"
+  config.action_cable.url = 'ws://localhost:3000/cable'
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -30,7 +32,7 @@ config.webpacker.check_yarn_integrity = true
   end
 
   config.webpacker.check_yarn_integrity = false
-  
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

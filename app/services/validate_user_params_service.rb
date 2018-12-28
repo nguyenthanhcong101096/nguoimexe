@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 class ValidateUserParamsService
   STEP_ERRORS_OF_VALIDATE = [
     { step: '1', keys: %i[phone] },
-    { step: '3', keys: %i[password password_confirmation] },
-  ]
-  
+    { step: '3', keys: %i[password password_confirmation] }
+  ].freeze
+
   def initialize(user, step)
     @user = user
     @step = step
   end
-  
+
   def for_signup
     return { errors: {}, status: 'ok' } if @user.valid?
-    
+
     keys = STEP_ERRORS_OF_VALIDATE.find { |v| v[:step] == @step }[:keys]
     errors = full_errors(keys)
     { errors: errors, status: errors.present? ? 'error' : 'ok' }
   end
-  
+
   private
 
   def full_errors(keys)
