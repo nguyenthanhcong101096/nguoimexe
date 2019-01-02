@@ -3,9 +3,9 @@
     .col-3
       = render 'shared/left_bar'
     .col-6
-      .search-box
-        input.form-control placeholder="Tìm kiếm bạn bè"
-      div style="height: 90vh;"
+      / .search-box
+      /   input.form-control.radius-10 placeholder="Tìm kiếm bạn bè"
+      div style="height: 100vh;"
         .newfeeds  
           .row
             = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }

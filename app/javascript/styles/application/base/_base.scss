@@ -218,7 +218,7 @@ body {
 
 .search-box {
   background-color: white;
-  width: 50%;
+  width: 100%;
   padding: 16px;
 }
 
@@ -237,4 +237,8 @@ body {
 
 .containerr {
   min-width: 1400px;
+}
+
+.radius-10 {
+  border-radius: 15px;
 }
