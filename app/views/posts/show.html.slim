@@ -11,7 +11,7 @@
             h3 = @post.title
             .pb-8.u-bg-gray.u-mt-16
               .informatio.horizontal
-                img class="icon-60 radius mr-8" src=asset_url(@post.user_avatar_url(:medium))
+                img class="icon-60 mr-8" src=asset_url(@post.user_avatar_url(:medium))
                 div
                   = link_to(@post.user_username, @post.user, html: { class: 'u-text-bold'})
                   h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh ✅
