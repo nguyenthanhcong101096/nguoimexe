@@ -5,5 +5,5 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
     
     counter_notification  = parseInt(counter.text());
     counter.text(counter_notification + 1);
-    notifications.append data['html'];
+    notifications.after data['html'];
       

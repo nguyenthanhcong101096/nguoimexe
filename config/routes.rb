@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post 'verify'    => 'users#register_by_phone'
   post 'reset_pwd' => 'users#reset_password'
 
+  get 'markup'     => 'dashboard#markup'
+   
   get '/'          => 'dashboard#index', as: 'root'
   get '*path'      => 'pages#page_404'
 

@@ -1,0 +1,45 @@
+.containerr
+  .row
+    .col-3
+      .left-bar
+        .horizontal.pb-16
+          img.u-mt-16 class="icon-60 mr-8" src="https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/47574496_1788979694535736_7120664122995245056_n.jpg?_nc_cat=101&_nc_ht=scontent.fsgn4-1.fna&oh=871fa208d6399c13031297995ea2b725&oe=5C933575"
+          .info
+            h4.u-mt-16.u-text-bold Nguyễn thành công
+            h5.u-text-gray 244 cống quỳnh, quận 1, hồ chí minh
+        .menu-tab.pb-16
+          h4.u-text-gray Menus
+          .horizontal.u-mt-16
+            img class="icon-20 mr-8" src=asset_pack_path('images/img_newfeeds.png')
+            h4.u-text-gray NewFeeds
+          .horizontal.u-mt-16
+            img class="icon-20 mr-8" src=asset_pack_path('images/img_msg.png')
+            .horizontal
+              h4.u-text-gray.mr-8 Messages 
+              h4.u-text-red 12
+          .horizontal.u-mt-16
+            img class="icon-20 mr-8" src=asset_pack_path('images/icon_notfi.png')
+            .horizontal
+              h4.u-text-gray.mr-8 Notifications 
+              h4.u-text-red 12
+          .horizontal.u-mt-16
+            img class="icon-20 mr-8" src=asset_pack_path('images/img_bookmark.png')
+            h4.u-text-gray Saved
+          .horizontal.u-mt-16
+            img class="icon-20 mr-8" src=asset_pack_path('images/icon_setting.png')
+            h4.u-text-gray Settings
+        .group.pb-16
+          h4.u-text-gray Group
+          h5 Người mê xe
+          h5 Moto 67 Hà nội
+    .col-6
+      .search-box
+        input.form-control placeholder="Tìm kiếm bạn bè"
+      div style="height: 90vh;"
+        .newfeeds  
+          .row
+            = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
+    .col-3
+      h3.u-text-gray.u-mt-16 Top bài viết
+      .top-post
+        = render 'ranking'

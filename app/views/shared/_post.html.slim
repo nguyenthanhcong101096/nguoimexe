@@ -1,8 +1,19 @@
-div[class="#{col} col-sm-6"]
-  = link_to(post_path(post.id), html: { class: 'card' }) do
-    img src=asset_pack_path('images/img_demo.jpg')
-    .card-body
-      h5 = truncate(post.title, length: 90)
-    .card-footer.horizontal
-      img.mr-8 style="height: 20px; width: 20px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
-      h6.u-text-bold = post.user_username
+/ div[class="#{col} col-sm-6"]
+/   = link_to(post_path(post.id), html: { class: 'card' }) do
+/     img src=asset_pack_path('images/img_demo.jpg')
+/     .card-body
+/       h5 = truncate(post.title, length: 90)
+/     .card-footer.horizontal
+/       img.mr-8 style="height: 20px; width: 20px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+/       h6.u-text-bold = post.user_username
+
+.post
+  = link_to post_path(post.id) do
+    .horizontal.u-mb-16
+      img.mr-8 style="height: 30px; width: 30px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+      div
+        h5.u-text-gray = post.user_username
+        h5.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
+    .body.u-mb-32
+      img src=asset_pack_path('images/img_demo.jpg')
+      h3.u-mt-16 = truncate(post.title, length: 90)

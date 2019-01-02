@@ -1,32 +1,15 @@
-.main
-  .container
-    h3.u-text-bold.u-text-red DANH MỤC XE CẦN TRAO ĐỔI
-    .row.cate-menu.u-mt-8
-      .col-3.col-sm-6
-        .card-sm.horizontal.space-between
-          .card-title-left
-            h4.u-text-bold Xe moto
-            h5.count 2.9K bài đăng
-          img.img-cate src=asset_pack_path('images/img_xe_moto.jpg')
-      .col-3.col-sm-6
-        .card-sm.horizontal.space-between
-          .card-title-left
-            h4.u-text-bold Xe ôtô
-            h5.count 6.9K bài đăng
-          img.img-cate src=asset_pack_path('images/img_xe_oto.png')
-      .col-3.col-sm-6
-        .card-sm.horizontal.space-between
-          .card-title-left
-            h4.u-text-bold Xe đạp
-            h5.count 1.3K bài đăng
-          img.img-cate src=asset_pack_path('images/img_xe_dap.jpg')
-      .col-3.col-sm-6
-        .card-sm.horizontal.space-between
-          .card-title-left
-            h4.u-text-bold Xe khác
-            h5.count 9K bài đăng
-          img.img-cate src=asset_pack_path('images/img_xe_khac.jpg')
-    h3.u-mt-13.u-text-red GỢI Ý XE BÁN HÔM NAY
-    .divider.u-mb-16
-    .row
-      = render partial: 'shared/post', collection: @posts, locals: { col: 'col-3' }
+.containerr
+  .row
+    .col-3
+      = render 'shared/left_bar'
+    .col-6
+      .search-box
+        input.form-control placeholder="Tìm kiếm bạn bè"
+      div style="height: 90vh;"
+        .newfeeds  
+          .row
+            = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
+    .col-3
+      h3.u-text-gray.u-mt-16 Top bài viết
+      .top-post
+        = render 'ranking'
