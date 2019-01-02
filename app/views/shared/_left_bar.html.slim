@@ -1,0 +1,31 @@
+.left-bar
+  .horizontal.pb-16
+    img.u-mt-16 class="icon-60 mr-8" src=asset_url(current_user.avatar_url(:medium))
+    .info
+      h4.u-mt-16.u-text-bold = current_user.username
+      h5.u-text-gray 244 cống quỳnh, quận 1, hồ chí minh
+  .menu-tab.pb-16
+    h4.u-text-gray Menus
+    a.horizontal.u-mt-16 href="/"
+      img class="icon-20 mr-8" src=asset_pack_path('images/img_newfeeds.png')
+      h4.u-text-gray NewFeeds
+    .horizontal.u-mt-16
+      img class="icon-20 mr-8" src=asset_pack_path('images/img_msg.png')
+      .horizontal
+        h4.u-text-gray.mr-8 Messages 
+        h4.u-text-red 12
+    .horizontal.u-mt-16
+      img class="icon-20 mr-8" src=asset_pack_path('images/icon_notfi.png')
+      .horizontal
+        h4.u-text-gray.mr-8 Notifications 
+        h4.u-text-red 12
+    .horizontal.u-mt-16
+      img class="icon-20 mr-8" src=asset_pack_path('images/img_bookmark.png')
+      h4.u-text-gray Saved
+    .horizontal.u-mt-16
+      img class="icon-20 mr-8" src=asset_pack_path('images/icon_setting.png')
+      h4.u-text-gray Settings
+  .group.pb-16
+    h4.u-text-gray Group
+    h5 Người mê xe
+    h5 Moto 67 Hà nội
