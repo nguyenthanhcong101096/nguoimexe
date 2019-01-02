@@ -15,6 +15,8 @@
                 .btn-default.btn-border-red
                   h4.u-text-red Gọi ngay
                 .btn-default
+                  h4 Nhắn tin
+                .btn-default
                   h4 Trang cá nhân
                 - type = current_user&.follow?(@post.user_id)
                 button[class="btn-default js-follow-user" user-id=@post.user_id type=(type ? 'unfollow' : 'follow')]
