@@ -93,6 +93,13 @@ button.active.focus,
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   }
+  
+  &.radius-10 {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #3492ff;
+    color: white;
+  }
 }
 
 .btn-load-more {
