@@ -10,15 +10,9 @@
       img class="icon-20 mr-8" src=asset_pack_path('images/img_newfeeds.png')
       h4.u-text-gray NewFeeds
     .horizontal.u-mt-16
-      img class="icon-20 mr-8" src=asset_pack_path('images/img_msg.png')
-      .horizontal
-        h4.u-text-gray.mr-8 Messages 
-        h4.u-text-red 12
+      = render_notification_message(current_user)
     .horizontal.u-mt-16
-      img class="icon-20 mr-8" src=asset_pack_path('images/icon_notfi.png')
-      .horizontal
-        h4.u-text-gray.mr-8 Notifications 
-        h4.u-text-red 12
+      = render_notification_activity(current_user)
     .horizontal.u-mt-16
       img class="icon-20 mr-8" src=asset_pack_path('images/img_bookmark.png')
       h4.u-text-gray Saved
