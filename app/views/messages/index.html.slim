@@ -1,0 +1,12 @@
+.containerr
+  .row
+    .col-3.pb-16
+      .horizontal.space-between
+        h3.u-text-bold Messages
+        div.mr-8
+          img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
+          img.icon-30 src=asset_pack_path('images/img_new_msg.png')
+      .messages
+        = render 'message'
+    .col-6
+    .col-3

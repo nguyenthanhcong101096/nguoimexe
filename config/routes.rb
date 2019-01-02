@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :posts, only: %i[new create show]
   resources :comments, only: %i[index create], defaults: { format: :html }
   resources :follows, only: %i[create destroy], param: :user_id
-
+  resources :messages, only: %i[index show]
+  
   resources :users, only: %i[show edit update] do
     get 'change_password'   => 'users#change_password', on: :member
     patch 'set_password'    => 'users#set_password', on: :member

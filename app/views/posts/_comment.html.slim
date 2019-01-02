@@ -1,6 +1,6 @@
 .comment.u-mb-8
   .horizontal
-    img.icon-40.radius.mr-8 src=comment.user_avatar_url(:medium)
+    img.icon-40.mr-8 src=comment.user_avatar_url(:medium)
     div
       = link_to(comment.user_username, comment.user, html: { class: 'u-text-bold'})
       h5 = distance_of_time_in_words(comment.created_at, Time.now)

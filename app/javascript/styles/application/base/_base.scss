@@ -131,7 +131,7 @@ body {
 
 .horizontal {
   display: flex;
-  align-items: center;
+  // align-items: center;
 }
 
 .mr-8 {
@@ -241,4 +241,16 @@ body {
 
 .radius-10 {
   border-radius: 15px;
+}
+
+.message {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.messages {
+  height: 100vh;
+  overflow: scroll;
+  padding-right: 8px;
+  border-right: 1px solid #eee;
 }
