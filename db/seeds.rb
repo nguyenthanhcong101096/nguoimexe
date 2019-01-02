@@ -1,6 +1,7 @@
 VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
+# SEED USER
 hola  = FactoryBot.create(:user, phone: '0338529345', address: 'aaaa', password: 'password', password_confirmation: 'password')
 holo  = FactoryBot.create(:user, phone: '0338529346', address: 'aaaa', password: 'password', password_confirmation: 'password')
 helo  = FactoryBot.create(:user, phone: '0338529347', address: 'aaaa', password: 'password', password_confirmation: 'password')
@@ -12,3 +13,10 @@ follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_u
 
 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
 200.times { comment = FactoryBot.create(:comment, user: User.all.sample, post: Post.all.sample) }
+
+# SEED CONVERSATIONS
+conversations = FactoryBot.create_list(:conversation, 2)
+conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.first) }
+conversation_2 = [hola, User.last].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.last) }
+messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user: [hola, holo].sample) }
+messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user: [hola, User.last].sample) }

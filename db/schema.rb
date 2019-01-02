@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181228031957) do
+ActiveRecord::Schema.define(version: 20190102142456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20181228031957) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "follows", force: :cascade do |t|
     t.bigint   "user_id",        null: false
     t.bigint   "target_user_id", null: false
@@ -69,6 +74,16 @@ ActiveRecord::Schema.define(version: 20181228031957) do
     t.index ["target_user_id"], name: "index_follows_on_target_user_id", using: :btree
     t.index ["user_id", "target_user_id"], name: "index_follows_on_user_id_and_target_user_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_follows_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "msg"
+    t.bigint   "conversation_id", null: false
+    t.bigint   "user_id",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "post_images", force: :cascade do |t|
@@ -93,6 +108,16 @@ ActiveRecord::Schema.define(version: 20181228031957) do
     t.datetime "updated_at",                               null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
     t.index ["vehicle_kind_id"], name: "index_posts_on_vehicle_kind_id", using: :btree
+  end
+
+  create_table "user_chats", force: :cascade do |t|
+    t.bigint   "conversation_id", null: false
+    t.bigint   "user_id",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_user_chats_on_conversation_id", using: :btree
+    t.index ["user_id", "conversation_id"], name: "index_user_chats_on_user_id_and_conversation_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_user_chats_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

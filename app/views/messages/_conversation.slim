@@ -1,9 +1,8 @@
-- 7.times do
-  .message.u-mt-16
-    a
-      .horizontal.u-mt-8
-        img.icon-40.mr-8 src="https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-1/p320x320/48429404_531166537363507_4527978286944354304_n.jpg?_nc_cat=1&_nc_ht=scontent.fsgn4-1.fna&oh=b102d9c841b60a3a4f04e34882168193&oe=5C9482B3"
-        div
-          h4 Nguyễn thành công
-          h5.u-text-gray Trong khi khách du lịch háo hức lên Sa Pa để thưởng thức cái lạnh và mong một lần được chạm vào băng tuyết
-          h6.pull-right.u-text-gray Vài giây trước
+.message.u-mt-16
+  = link_to(message_path(conversation.id)) do
+    .horizontal.u-mt-8
+      img.icon-40.radius.mr-8 src=conversation.chat_with_user.avatar_url(:medium)
+      div
+        h4 = conversation.chat_with_user.username
+        h5.u-text-gray = conversation.last_message.msg
+        h6.pull-right.u-text-gray = distance_of_time_in_words(conversation.last_message.created_at, Time.now)
