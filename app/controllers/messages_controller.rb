@@ -4,12 +4,10 @@ class MessagesController < ApplicationController
   before_action :set_message, only: %i[show]
   
   def index
-    @conversations = Conversation.all
+    @conversation = Conversation.find(1)
   end
   
-  def show
-    @conversations = Conversation.all
-  end
+  def show; end
   
   private
   

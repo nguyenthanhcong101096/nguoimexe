@@ -9,7 +9,7 @@
           img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
           img.icon-30 src=asset_pack_path('images/img_new_msg.png')
       .conversations.pb-16
-        = render partial: 'conversation', collection: @conversations
+        = render_conversations(current_user)
     .col-6
       h3.pb-16 style="text-align: center;" = @conversation.chat_with_user.username
       .messages
