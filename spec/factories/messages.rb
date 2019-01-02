@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :message do
-    msg { "MyText" }
+    msg { Faker::Lorem.paragraph }
   end
 end
