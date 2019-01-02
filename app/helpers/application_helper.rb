@@ -48,4 +48,9 @@ module ApplicationHelper
     count_notify = activities.count
     render(partial: 'shared/notification_message', locals: { activities: activities, count_notify: count_notify })
   end
+  
+  # def render_conversations(user)
+  #   conversations = Conversation.all
+    
+  # end
 end

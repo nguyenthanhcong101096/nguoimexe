@@ -16,5 +16,7 @@ follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_u
 
 # SEED CONVERSATIONS
 conversations = FactoryBot.create_list(:conversation, 2)
-[hola, holo].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.first) }
-messages = 30.times { FactoryBot.create(:message, conversation: conversations.first, user: [hola, holo].sample) }
+conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.first) }
+conversation_2 = [hola, User.last].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.last) }
+messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user: [hola, holo].sample) }
+messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user: [hola, User.last].sample) }
