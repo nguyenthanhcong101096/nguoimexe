@@ -13,9 +13,10 @@
     .col-6
       h3.pb-16 style="text-align: center;" = @conversation.with_user(current_user).username
       .messages
-        = render partial: 'message', collection: @conversation.messages
-      .horizontal.pb-16
-        input.form-control.mr-8 placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
-        img.icon-30 src=asset_pack_path('images/img_send.png')
+        = render partial: 'message', collection: @conversation.messages.order(created_at: :asc)
+      .horizontal.center.pb-16 
+        input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
+        img.icon-20.mr-8 src=asset_pack_path('images/img_send.png')
+        img.icon-20 src=asset_pack_path('images/img_emoij.png')
     .col-3
       
