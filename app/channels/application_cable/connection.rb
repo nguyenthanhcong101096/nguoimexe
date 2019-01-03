@@ -3,7 +3,7 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :user_id
-
+    
     def connect
       self.user_id = find_verified_user.id
     end

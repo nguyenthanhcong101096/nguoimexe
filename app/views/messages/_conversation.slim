@@ -4,5 +4,5 @@
       img.icon-40.radius.mr-8 src = conversation.with_user(current_user).avatar_url(:medium)
       div
         h4.u-text-bold = conversation.with_user(current_user).username
-        h5 = conversation.last_message.msg
+        h5 id="js-last-message" = conversation.last_message.msg
         h6 = distance_of_time_in_words(conversation.last_message.created_at, Time.now)
