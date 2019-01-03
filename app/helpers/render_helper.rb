@@ -21,8 +21,8 @@ module RenderHelper
   end
   
   def render_conversations(user)
-    conversation_ids = user.user_chats.pluck(:conversation_id)
-    conversations = Conversation.where(id: conversation_ids)
+    conversation_ids = user.conversation_ids
+    conversations = Conversation.conversations_of_user(conversation_ids)
     render(partial: 'messages/conversation', collection: conversations)
   end
 end

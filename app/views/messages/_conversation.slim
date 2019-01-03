@@ -3,6 +3,6 @@
     .horizontal.u-mt-8
       img.icon-40.radius.mr-8 src = conversation.with_user(current_user).avatar_url(:medium)
       div
-        h4 = conversation.with_user(current_user).username
-        h5.u-text-gray = conversation.last_message.msg
-        h6.pull-right.u-text-gray = distance_of_time_in_words(conversation.last_message.created_at, Time.now)
+        h4.u-text-bold = conversation.with_user(current_user).username
+        h5 = conversation.last_message.msg
+        h6 = distance_of_time_in_words(conversation.last_message.created_at, Time.now)

@@ -3,8 +3,8 @@
     .horizontal.u-mb-16
       img.mr-8 style="height: 30px; width: 30px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
       div
-        h5.u-text-gray = post.user_username
-        h5.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
+        h5 = post.user_username
+        h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
     .body.u-mb-32
       img src=asset_pack_path('images/img_demo.jpg')
       h3.u-mt-16 = truncate(post.title, length: 90)
