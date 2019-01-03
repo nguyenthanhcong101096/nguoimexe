@@ -10,7 +10,6 @@ class RenderMessageJob < ApplicationJob
   private
 
   def render_new_message(message)
-    # "<h1>cong</h1"
     ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
   end
 end
