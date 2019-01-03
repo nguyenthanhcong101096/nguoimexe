@@ -131,7 +131,9 @@ body {
 
 .horizontal {
   display: flex;
-  // align-items: center;
+  &.center {
+    align-items: center;
+  }
 }
 
 .mr-8 {

@@ -3,8 +3,10 @@ class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :group_chats, through: :user_chats, source: :user
   
-  def chat_with_user
-    group_chats.last
+  scope :conversations_of_user, ->(ids) { where(id: ids) }
+  
+  def with_user user
+    group_chats.reject { |usr| usr == user }[0]
   end
   
   def last_message
