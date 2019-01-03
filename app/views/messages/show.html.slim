@@ -14,5 +14,8 @@
       h3.pb-16 style="text-align: center;" = @conversation.with_user(current_user).username
       .messages
         = render partial: 'message', collection: @conversation.messages
+      .horizontal.pb-16
+        input.form-control.mr-8 placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
+        img.icon-30 src=asset_pack_path('images/img_send.png')
     .col-3
       
