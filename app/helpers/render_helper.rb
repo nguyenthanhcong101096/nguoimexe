@@ -25,4 +25,9 @@ module RenderHelper
     conversations = Conversation.conversations_of_user(conversation_ids)
     render(partial: 'messages/conversation', collection: conversations)
   end
+  
+  def render_list_blogs
+    blogs = Blog.order("RANDOM()").limit(10).shuffle
+    render(partial: 'blogs/blog', collection: blogs)
+  end
 end

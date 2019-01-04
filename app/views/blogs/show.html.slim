@@ -3,10 +3,15 @@
     .col-3
       = render 'shared/left_bar'
     .col-6
-      .conentet style="padding: 32px 64px; height: 100vh; overflow: scroll;"
+      .conentet style="padding: 32px; height: 100vh; overflow: scroll;"
         h2.u-text-bold.u-mb-16 = @blog.title
+        .horizontal.center.u-mb-16
+          img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(@blog.user_avatar_url(:medium))
+          div
+            h4.u-text-red =@blog.user_username
+            h5.u-text-gray = @blog.created_date
         = raw  @blog.content
     .col-3
-      / div id="render-comments" comment-channel=@post.id
-      / = render partial: 'comments', locals: { comments: @comments, post: @post }
-      
+      h2.u-mt-16.u-mb-16 Bạn có thể quan tâm
+      .top-post
+        = render_list_blogs
