@@ -1,0 +1,32 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  username: postgres
+  database: nguoimexe_development
+
+test:
+  <<: *default
+  username: postgres
+  database: nguoimexe_test
+
+staging:
+  <<: *default
+  database: nguoimexe_staging
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  connect_timeout: 1
+  checkout_timeout: 5
+  variables:
+    statement_timeout: 5000
+
+production:
+  <<: *default
+  database: nguoimexe_production
+  username: nguoimexe
+  password: <%= ENV['NGUOIMEXE_DATABASE_PASSWORD'] %>
