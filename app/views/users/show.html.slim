@@ -1,8 +1,6 @@
-.main
-  .row
-    .col-4.col-sm-12
-      = render_information_profile(from_view: true, current_user: @user)
-    .col-8.col-sm-12
-      pre Tin Đăng của bạn
-      .row.pb-8
-        = render partial: 'shared/post', collection: @posts, locals: { col: 'col-4' }
+.row
+  .col-3.col-sm-12
+    = render 'shared/left_bar'
+  .col-9.col-sm-12
+    div style="padding:32px 128px; height: 100vh; overflow: scroll"
+      = render partial: 'shared/post', collection: @posts, locals: { col: 'col-4' }

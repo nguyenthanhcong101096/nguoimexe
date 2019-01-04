@@ -1,22 +1,35 @@
 - if post.is_a?(Post)
-  .post
+  .post.u-mb-32 style="border-bottom: 1px solid #eee"
+    / = link_to post_path(post.id) do
+    /   .horizontal.u-mb-16
+    /     img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+    /     div
+    /       h4 = post.user_username
+    /       h5.u-text-red #xe bán
+    /       h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
+    /   .body.u-mb-8
+    /     img src=asset_pack_path('images/img_demo.jpg')
+    /     h3.u-mt-16 = truncate(post.title, length: 90)
+    /   .footer.horizontal.u-mb-32
+    /     .horizontal.mr-8
+    /       img.mr-8.icon-20 src=asset_pack_path('images/img_comment.png')
+    /       h5.u-text-gray 56 comments
+    /     .horizontal.mr-8
+    /       img.mr-8.icon-20 src=asset_pack_path('images/img_view.png')
+    /       h5.u-text-gray 103 views
     = link_to post_path(post.id) do
       .horizontal.u-mb-16
         img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
         div
-          h4 = post.user_username
-          h5.u-text-red #xe bán
-          h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
-      .body.u-mb-8
-        img src=asset_pack_path('images/img_demo.jpg')
-        h3.u-mt-16 = truncate(post.title, length: 90)
-      .footer.horizontal.u-mb-32
-        .horizontal.mr-8
-          img.mr-8.icon-20 src=asset_pack_path('images/img_comment.png')
-          h5.u-text-gray 56 comments
-        .horizontal.mr-8
-          img.mr-8.icon-20 src=asset_pack_path('images/img_view.png')
-          h5.u-text-gray 103 views
+          .horizontal
+            h4.mr-8 = post.user_username
+            p.u-text-bold style="background-color: #d3f1dc; color: #10b742; padding:4px; border-radius: 20px;" Bán xe
+          h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)   
+      .u-mb-8
+        h3 = post.title
+      .horizontal.u-mb-8 style="height: 150px;"
+        img.mr-8 style="width: 200px;" src=asset_pack_path('images/img_demo.jpg')
+        h4.u-text-gray = truncate(post.describe, length: 300)
 - else
   .blog.u-mb-32
     = link_to blog_path(post.id) do
