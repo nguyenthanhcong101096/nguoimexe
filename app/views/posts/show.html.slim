@@ -11,7 +11,7 @@
             h3 = @post.title
             .pb-8.u-bg-gray.u-mt-16
               .informatio.horizontal
-                img class="icon-60 mr-8" src=asset_url(@post.user_avatar_url(:medium))
+                img class="icon-60 mr-8 radius" src=asset_url(@post.user_avatar_url(:medium))
                 div
                   = link_to(@post.user_username, @post.user, html: { class: 'u-text-bold'})
                   h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh ✅
@@ -28,15 +28,15 @@
                           h4.js-text-follow Bỏ theo dõi
                       - else
                           h4.js-text-follow Theo dõi
-              pre.u-mt-16
-                h4.u-text-bold.u-text-red Chi Tiết
+              .u-mt-16
+                h3.u-text-bold Chi Tiết
                 h4 Thương Hiệu Trump
                 h4 Năm sản xuất 2015
                 h4 Vehicle Registration Certificate
-                h4.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
+                h3.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
               .describe.u-mt-16
                 h3.u-text-bold Mô tả xe
-                blockquote.u-mt-8 = @post.describe
+                h4.u-mt-8 = @post.describe
             .horizontal.align-center.u-mt-16
               h4.mr-8 Tag:
               pre = "##{@post.vehicle_kind.name}"
