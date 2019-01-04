@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
   def index
     posts = Post.all.limit(10)
     blogs = Blog.all.limit(10)
-    
+
     @posts = (posts + blogs).shuffle
   end
 

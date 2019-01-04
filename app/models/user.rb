@@ -58,7 +58,7 @@ class User < ApplicationRecord
   def conversation_ids
     user_chats.pluck(:conversation_id)
   end
-  
+
   private
 
   def default_avatar

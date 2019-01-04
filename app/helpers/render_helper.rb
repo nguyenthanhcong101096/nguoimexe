@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RenderHelper
   def render_information_profile(from_view: false, locals: {}, current_user: nil)
     activities = Activity.where(target_user: current_user).order(created_at: :desc).limit(5)
@@ -19,15 +21,15 @@ module RenderHelper
     count_notify = activities.count
     render(partial: 'shared/notification_message', locals: { activities: activities, count_notify: count_notify })
   end
-  
+
   def render_conversations(user)
     conversation_ids = user.conversation_ids
     conversations = Conversation.conversations_of_user(conversation_ids)
     render(partial: 'messages/conversation', collection: conversations)
   end
-  
+
   def render_list_blogs
-    blogs = Blog.order("RANDOM()").limit(10).shuffle
+    blogs = Blog.order('RANDOM()').limit(10).shuffle
     render(partial: 'blogs/blog', collection: blogs)
   end
 end
