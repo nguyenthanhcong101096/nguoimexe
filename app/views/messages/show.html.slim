@@ -17,9 +17,9 @@
         - @conversation.messages.order(created_at: :asc).each do |message|
           = render partial: 'message', locals: { message: message } 
         div id='messages-latest'
-      .horizontal.center.pb-16
-        input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
-        img.icon-20.mr-8 src=asset_pack_path('images/img_send.png')
-        img.icon-20 src=asset_pack_path('images/img_emoij.png')
+      .horizontal.center.u-mt-16.u-mb-16
+        .emoji-picker-container.mr-8
+          input[class="form-control mr-8 js-create-message" conversation-id=@conversation.id data-emojiable="true" placeholder="Nhập tin nhắn"]
+        img.icon-20 src=asset_pack_path('images/img_send.png')
     .col-3
       
