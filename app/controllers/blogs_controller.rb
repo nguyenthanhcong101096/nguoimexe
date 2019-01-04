@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: %i[show]
   layout 'writer', only: %i[new]
   
   def new
@@ -21,5 +22,9 @@ class BlogsController < ApplicationController
   
   def params_blog
     params.require(:blog).permit(:content, :title)
+  end
+  
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 end

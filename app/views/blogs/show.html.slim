@@ -1,2 +1,12 @@
-h1 Blogs#show
-p Find me in app/views/blogs/show.html.slim
+.containerr
+  .row
+    .col-3
+      = render 'shared/left_bar'
+    .col-6
+      .conentet style="padding: 32px 64px; height: 100vh; overflow: scroll;"
+        h2.u-text-bold.u-mb-16 = @blog.title
+        = raw  @blog.content
+    .col-3
+      / div id="render-comments" comment-channel=@post.id
+      / = render partial: 'comments', locals: { comments: @comments, post: @post }
+      
