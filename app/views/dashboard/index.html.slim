@@ -6,8 +6,8 @@
       div style="height: 100vh;"
         .newfeeds  
           .row
-            = render partial: 'shared/post', collection: @posts, locals: { col: 'col-6' }
+            = render partial: 'shared/post', collection: @posts
     .col-3
-      h2.u-mt-16 Top bài viết
+      h2.u-mt-16 Bạn có thể quan tâm
       .top-post
         = render 'ranking'
