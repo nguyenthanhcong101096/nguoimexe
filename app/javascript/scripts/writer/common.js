@@ -17,7 +17,7 @@ export const onAddPictures = () => {
 const renderListPicture = (imageFiles) => {
   var items = []
   Array.from(imageFiles).map((item, index) => {
-    if(index > 5) return 
+    if(index > 10) return 
     
     let reader = new FileReader()
     var node = document.createElement("img")
@@ -31,4 +31,24 @@ const renderListPicture = (imageFiles) => {
   })
   console.log(items)
   return items
+}
+
+
+export const onAddImgBlog = () => {
+  const inputFileAvatar = document.querySelector('.js-blog-img')
+  if (!inputFileAvatar) return
+
+  inputFileAvatar.addEventListener('change', (e) => {
+    if (inputFileAvatar.files && inputFileAvatar.files[0]) {
+      let reader = new FileReader()
+      const avatar = inputFileAvatar.files[0]
+
+      reader.onload = (e) => {
+        this.avatarDataUri = e.target.result
+        document.querySelector('#pictures-preview').setAttribute('src', e.target.result)
+      }
+
+      reader.readAsDataURL(avatar)
+    }
+  })
 }

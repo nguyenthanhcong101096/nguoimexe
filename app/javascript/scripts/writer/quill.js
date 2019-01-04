@@ -15,7 +15,7 @@ export const configEditor = () => {
   
   if(!form) return
   var quill = new Quill('#editor-container', {
-    placeholder: 'Viết mô tả vào đây',
+    placeholder: 'Viết nội dung vào đây',
     theme: 'bubble',
     modules: {
       toolbar: toolbarOptions
