@@ -5,11 +5,14 @@
         img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
         div
           h4 = post.user_username
-          h5.u-text-red #newfeeds
+          h5.u-text-red #xe bán
           h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
-      .body.u-mb-32
+      .body.u-mb-8
         img src=asset_pack_path('images/img_demo.jpg')
         h3.u-mt-16 = truncate(post.title, length: 90)
+      .footer.horizontal.u-mb-32
+        h5.mr-8 56 comments
+        h5 78 views
 - else
   .blog.u-mb-32
     = link_to blog_path(post.id) do

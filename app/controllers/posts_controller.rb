@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+  
   layout 'writer', only: %i[new]
 
   before_action :set_post, only: %i[show]
