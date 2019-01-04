@@ -15,10 +15,10 @@ follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_u
 200.times { comment = FactoryBot.create(:comment, user: User.all.sample, post: Post.all.sample) }
 
 # SEED CONVERSATIONS
-# conversations = FactoryBot.create_list(:conversation, 3)
-# conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.first) }
-# conversation_2 = [hola, User.last].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.second) }
-# conversation_3 = [holo, User.last].each { |user| FactoryBot.create(:user_chat, user: user, conversation: conversations.last) }
-# messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user: [hola, holo].sample) }
-# messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.second, user: [hola, User.last].sample) }
-# messages_3 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user: [holo, User.last].sample) }
+conversations = FactoryBot.create_list(:conversation, 3)
+conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation: conversations.first) }
+conversation_2 = [hola, User.last].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation: conversations.second) }
+conversation_3 = [holo, User.last].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation: conversations.last) }
+messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user_id: [hola, holo].sample.id) }
+messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.second, user_id: [hola, User.last].sample.id) }
+messages_3 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user_id: [holo, User.last].sample.id) }

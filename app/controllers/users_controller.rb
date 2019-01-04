@@ -32,7 +32,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts
+    posts = @user.posts.all.limit(10)
+    blogs = @user.blogs.all.limit(10)
+
+    @posts = (posts + blogs).shuffle
   end
 
   private
