@@ -27,9 +27,10 @@
       .horizontal.u-mt-16
         img class="icon-20 mr-8" src=asset_pack_path('images/img_bookmark.png')
         h4.u-text-gray Saved
-      .horizontal.u-mt-16
-        img class="icon-20 mr-8" src=asset_pack_path('images/icon_setting.png')
-        h4.u-text-gray Settings
+      = link_to(edit_user_path(current_user)) do
+        .horizontal.u-mt-16
+          img class="icon-20 mr-8" src=asset_pack_path('images/icon_setting.png')
+          h4.u-text-gray Settings
     .group.pb-16
       h4.u-text-gray Group
       h5 Người mê xe

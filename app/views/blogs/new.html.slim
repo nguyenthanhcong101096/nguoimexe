@@ -2,7 +2,7 @@
   .col-3
     = render 'shared/left_bar'
   .col-9
-    div class='post-create u-mt-24 u-ml-8'
+    div class='post-create u-mt-24 pb-16'
       = form_for(:blog, url: blogs_path, html: { id: 'some-form' }) do |f|
         = f.text_field :title, class: 'form-control no-border font-size-14 u-text-bold', placeholder: 'Tiêu đề bài viết'
         .images.pb-8
