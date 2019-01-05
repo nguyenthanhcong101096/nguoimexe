@@ -1,6 +1,6 @@
 App.notifications = App.cable.subscriptions.create "StreamMessageChannel",
   received: (data) ->
-    message_channel = $('.js-create-message').attr('conversation-id')
+    message_channel = $('.js-box-message').attr('conversation-id')
     message_new  = $('#messages-latest')
     message_last = $('#js-last-message')
     if(message_channel == "#{data['message_channel']}")

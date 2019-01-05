@@ -19,7 +19,7 @@
         div id='messages-latest'
       .horizontal.center.u-mt-16.u-mb-16
         .emoji-picker-container.mr-8
-          input[class="form-control mr-8 js-create-message" conversation-id=@conversation.id data-emojiable="true" placeholder="Nhập tin nhắn"]
-        img.icon-20 src=asset_pack_path('images/img_send.png')
+          input[class="form-control js-box-message mr-8 " type="text" conversation-id=@conversation.id data-emojiable="true" placeholder="Nhập tin nhắn" rows="1"]
+        img.icon-20.js-create-message src=asset_pack_path('images/img_send.png')
     .col-3
       

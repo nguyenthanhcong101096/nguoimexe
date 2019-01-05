@@ -23,7 +23,6 @@ body {
     margin-top: 0;
     background-color: white;
   }
-  
   @media screen and (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -35,7 +34,6 @@ body {
     padding: 10px;
     background-color: white;
   }
-  
   @media screen and (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -81,7 +79,6 @@ body {
     opacity: 0.6;
     height: 40px;
   }
-
   @media screen and (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -109,7 +106,6 @@ body {
     width: 0;
   }
 }
-
 
 .icon-50 {
   height: 100px;
@@ -152,12 +148,10 @@ body {
   width: 500px;
   padding: 32px;
   opacity: 0;
-  
   &.animation {
     opacity: 1;
     transition: opacity .2s ease-in-out;
   }
-  
   @media screen and (max-width: 420px) {
     top: 56px;
     left: 0;
@@ -203,7 +197,7 @@ body {
   height: 100px;
   width: 100px;
   margin-right: 4px;
-  margin-left: 4px;  
+  margin-left: 4px;
 }
 
 .left-bar {
@@ -213,9 +207,9 @@ body {
 }
 
 .top-post {
- overflow: scroll;
- height: 90vh; 
- margin-right: 16px;
+  overflow: scroll;
+  height: 90vh;
+  margin-right: 16px;
 }
 
 .search-box {
@@ -283,5 +277,10 @@ body {
 }
 
 .emoji-menu {
-  
+  bottom: 110px !important;
+  transform: none !important;
+  position: fixed !important;
+  right: 400px !important;
+  left: auto !important;
+  top: auto !important;
 }
