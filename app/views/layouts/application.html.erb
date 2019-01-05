@@ -22,7 +22,7 @@
   <meta property="og:site_name" content="<%= yield(:page_title) %>">
   <meta property="og:description" content="<%= yield(:page_description) %>">
   <meta property="og:url" content="<%= yield(:page_url) %>">
-  <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : asset_pack_path('images/og.png') %>">
+  <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : '') %>">
   <meta property="og:type" content='website'>
 </head>
 
