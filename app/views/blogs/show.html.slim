@@ -1,7 +1,7 @@
 = provide(:page_title, @blog.title)
 = provide(:page_description, @blog.title)
 = provide(:page_url, blogs_url(id: @blog.id))
-= provide(:page_image, image_url(@blog.img_url(:medium)))
+= provide(:page_image, @blog.img_url(:medium))
 
 
 .containerr
