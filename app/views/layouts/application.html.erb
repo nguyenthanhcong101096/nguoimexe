@@ -7,7 +7,23 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= stylesheet_pack_tag 'application' %>
-  <title>Người Mê Xe - Mua/Bán</title>
+  <link rel="dns-prefetch" href="https://apis.google.com">
+  <link rel="dns-prefetch" href="https://accounts.google.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+
+  <title><%= yield(:page_title) %></title>
+  <meta name="description" content="<%= yield(:page_description) %>">
+  <meta name="application-name" content="Nguoimexe">
+
+  <link rel="canonical" href="<%= yield(:page_url) %>">
+
+  <meta property="og:title" content="<%= yield(:page_title) %>">
+  <meta property="og:site_name" content="<%= yield(:page_title) %>">
+  <meta property="og:description" content="<%= yield(:page_description) %>">
+  <meta property="og:url" content="<%= yield(:page_url) %>">
+  <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : asset_pack_path('images/og.png') %>">
+  <meta property="og:type" content='website'>
 </head>
 
 <body>
