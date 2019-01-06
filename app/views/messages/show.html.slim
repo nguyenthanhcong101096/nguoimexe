@@ -1,3 +1,8 @@
+= provide(:page_title, @conversation.with_user(current_user).username)
+= provide(:page_description, 'Tin nhắn')
+= provide(:page_url, message_path(@conversation.id))
+
+
 .containerr
   .row
     .col-3

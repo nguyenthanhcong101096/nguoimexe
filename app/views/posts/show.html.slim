@@ -1,3 +1,8 @@
+= provide(:page_title, @post.title)
+= provide(:page_description, @post.title)
+= provide(:page_url, posts_url(id: @post.id))
+/ = provide(:page_image, @post.img_url(:medium))
+
 .containerr
   .row
     .col-3
