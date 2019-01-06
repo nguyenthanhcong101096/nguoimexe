@@ -9,7 +9,19 @@
 
   <%= csrf_meta_tags %>
   <%= stylesheet_pack_tag 'application' %>
-  <title>Đăng bài</title>
+  <title><%= yield(:page_title) %></title>
+  
+  <meta name="description" content="<%= yield(:page_description) %>">
+  <meta name="application-name" content="Nguoimexe">
+
+  <link rel="canonical" href="<%= yield(:page_url) %>">
+
+  <meta property="og:title" content="<%= yield(:page_title) %>">
+  <meta property="og:site_name" content="<%= yield(:page_title) %>">
+  <meta property="og:description" content="<%= yield(:page_description) %>">
+  <meta property="og:url" content="<%= yield(:page_url) %>">
+  <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : 'c' %>">
+  <meta property="og:type" content='website'>
 </head>
 
 <body>
