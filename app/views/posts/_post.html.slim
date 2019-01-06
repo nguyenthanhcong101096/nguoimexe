@@ -1,0 +1,7 @@
+.col-6 style="padding:8px;"
+  = link_to post_path(post.id) do
+    img.mr-8 src=asset_pack_path('images/img_demo.jpg')
+    .horizontal.center.u-mt-8
+      h6.mr-8 = post.user_username
+      h6 = post.created_date
+    h4 = truncate(post.title, length: 40)

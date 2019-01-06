@@ -4,7 +4,7 @@
       = render 'shared/left_bar'
     .col-6
       div style="height: 100vh;"
-        .post-show  
+        .post-show
           .pb-16
             img src=asset_pack_path('images/img_demo.jpg')
           .pb-16
@@ -14,7 +14,7 @@
                 img class="icon-60 mr-8 radius" src=asset_url(@post.user_avatar_url(:medium))
                 div
                   = link_to(@post.user_username, @post.user, html: { class: 'u-text-bold'})
-                  h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh ✅
+                  h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh
                   .horizontal.u-mt-16
                     .btn-default.btn-border-red
                       h4.u-text-red Gọi ngay
@@ -40,6 +40,10 @@
             .horizontal.align-center.u-mt-16
               h4.mr-8 Tag:
               pre = "##{@post.vehicle_kind.name}"
+          .post-current.pb-16 style="border-top: 1px solid #eee"  
+            h2 Bài viết gần đây
+            .row
+              = render_list_posts
     .col-3
       div id="render-comments" comment-channel=@post.id
       = render partial: 'comments', locals: { comments: @comments, post: @post }
