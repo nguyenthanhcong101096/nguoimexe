@@ -1,5 +1,5 @@
 export const onAddPictures = () => {
-  const inputFileAvatar = document.querySelector('.js-writer-avatar')
+  const inputFileAvatar = document.querySelector('.js-post-img')
   const pictures = document.querySelector('#pictures-preview')
   const listPictures = document.querySelector('.list-pictures')
 
@@ -11,20 +11,25 @@ export const onAddPictures = () => {
         listPictures.appendChild(e)
       })
     }
+
+    if(listPictures.childElementCount == 6) {
+      document.querySelector('.js-post-img-label').classList.add('hidden')
+    }
   })
 }
 
 const renderListPicture = (imageFiles) => {
   var items = []
   Array.from(imageFiles).map((item, index) => {
-    if(index > 10) return 
-    
+    if(index > 5) return
+
     let reader = new FileReader()
-    var node = document.createElement("img")
+    var node = document.createElement("div")
+    node.setAttribute('img-data-id', index)
     reader.readAsDataURL(item)
-    
+
     reader.onload = (e) => {
-      node.setAttribute('src', e.target.result)
+      node.style.backgroundImage = `url(${e.target.result})`
     }
 
     items.push(node)
