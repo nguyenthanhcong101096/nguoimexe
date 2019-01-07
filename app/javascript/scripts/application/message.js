@@ -18,6 +18,8 @@ export const enterCreateMesssage = () => {
       axios.post('/messages', { conversation_id: conversationId, msg: msg })
         .then(response => {
           msgBox.value = ''
+          msgArea.scrollTop = msgArea.scrollHeight;
+          msgArea.insertAdjacentHTML('beforeend', response.data.message)
           return response
         })
         .catch(error => {

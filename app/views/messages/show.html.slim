@@ -18,10 +18,9 @@
     .col-6
       = link_to(@conversation.with_user(current_user)) do
         h3.pb-16 style="text-align: center;" = @conversation.with_user(current_user).username
-      .messages
+      .messages message-of=current_user.id
         - @conversation.messages.order(created_at: :asc).each do |message|
           = render partial: 'message', locals: { message: message } 
-        div id='messages-latest'
       .horizontal.center.pb-16
         input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
         img.icon-20.mr-8 src=asset_pack_path('images/img_send.png')
