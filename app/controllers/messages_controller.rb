@@ -11,7 +11,9 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.create(params_message)
     if message
-      render json: { status: 'ok', message: 'create messages success' }
+      html_block = render_to_string(partial: 'messages/message', locals: { message: message })
+
+      render json: { message: html_block }, status: :ok
     else
       render json: { status: 'error', message: message.errors.messages }
     end
