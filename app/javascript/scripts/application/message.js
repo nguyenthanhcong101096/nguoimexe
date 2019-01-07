@@ -1,11 +1,14 @@
 import axios from 'axios';
 
 export const enterCreateMesssage = () => {
-  const msgBox = document.querySelector('.js-create-message')
+  const msgBox = document.querySelector('.js-create-message')  
+  const msgArea = document.querySelector('.messages')
   
-  if(!msgBox) return 
+  if(!msgBox) return
   
+  msgArea.scrollTop = msgArea.scrollHeight;
   msgBox.addEventListener("keydown", (event) => {
+    
     if (event.which === 13 ) {
       event.preventDefault();
       

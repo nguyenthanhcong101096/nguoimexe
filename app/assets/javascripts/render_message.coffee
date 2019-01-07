@@ -6,5 +6,4 @@ App.notifications = App.cable.subscriptions.create "StreamMessageChannel",
     if(message_channel == "#{data['message_channel']}")
       message_new.before data['html']
       message_last.text(data['last_message'])
-      
-    
+      $(".messages").scrollTop($(".messages")[0].scrollHeight);
