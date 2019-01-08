@@ -14,15 +14,13 @@
         img.mr-8 style="width: 200px;" src=asset_pack_path('images/img_demo.jpg')
         h4.u-text-gray = truncate(post.describe, length: 300)
 - else
-  .blog.u-mb-32
-    = link_to blog_path(post.id) do
-      .horizontal.u-mb-16
-        img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
-        div
-          .horizontal.center
-            h4.mr-8 = post.user_username
-            h5.u-text-red #blog
-          h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
-      h3.u-mb-8 = post.title
-      .body.u-mb-32
-        img src=src=asset_url(post.img_url(:medium))
+  = link_to blog_path(post.id) do
+    .horizontal.center.u-mb-16
+      img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+      .horizontal.center
+        h4.mr-8 = post.user_username
+        h5.u-text-red #blog
+    h3.u-mb-8 = post.title
+    .body.u-mb-32
+      img src=src=asset_url(post.img_url(:medium))
+      h6.u-mt-8.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)

@@ -1,8 +1,7 @@
 -if message.user == current_user
   .conversation.pb-8 style="text-align: right;"
-    .mr-8
-      h5 = message.msg
-      h6 = distance_of_time_in_words(message.created_at, Time.now)
+    h5 = message.msg
+    h6 = distance_of_time_in_words(message.created_at, Time.now)
 - else
   .conversation.horizontal.pb-8
     img.icon-40.radius.mr-8 src=message.user_avatar_url(:medium)

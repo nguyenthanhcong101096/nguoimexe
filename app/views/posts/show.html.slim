@@ -7,48 +7,47 @@
   .row
     .col-3
       = render 'shared/left_bar'
-    .col-6
-      div style="height: 100vh;"
-        .post-show
-          .pb-16
-            img src=asset_pack_path('images/img_demo.jpg')
-          .pb-16
-            h3 = @post.title
-            .pb-8.u-bg-gray.u-mt-16
-              .informatio.horizontal
-                img class="icon-60 mr-8 radius" src=asset_url(@post.user_avatar_url(:medium))
-                div
-                  = link_to(@post.user_username, @post.user, html: { class: 'u-text-bold'})
-                  h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh
-                  .horizontal.u-mt-16
-                    .btn-default.btn-border-red
-                      h4.u-text-red Gọi ngay
-                    .btn-default
-                      h4 Nhắn tin
-                    .btn-default
-                      h4 Trang cá nhân
-                    - type = current_user&.follow?(@post.user_id)
-                    button[class="btn-default js-follow-user" user-id=@post.user_id type=(type ? 'unfollow' : 'follow')]
-                      - if type
-                          h4.js-text-follow Bỏ theo dõi
-                      - else
-                          h4.js-text-follow Theo dõi
-              .u-mt-16
-                h3.u-text-bold Chi Tiết
-                h4 Thương Hiệu Trump
-                h4 Năm sản xuất 2015
-                h4 Vehicle Registration Certificate
-                h3.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
-              .describe.u-mt-16
-                h3.u-text-bold Mô tả xe
-                h4.u-mt-8 = @post.describe
-            .horizontal.align-center.u-mt-16
-              h4.mr-8 Tag:
-              pre = "##{@post.vehicle_kind.name}"
-          .post-current.pb-16 style="border-top: 1px solid #eee"  
-            h2 Bài viết gần đây
-            .row
-              = render_list_posts
+    .col-6 style="height: 100vh;"
+      .post-show
+        .pb-16
+          img src=asset_pack_path('images/img_demo.jpg')
+        .pb-16
+          h3 = @post.title
+          .pb-8.u-bg-gray.u-mt-16
+            .informatio.horizontal
+              img class="icon-60 mr-8 radius" src=asset_url(@post.user_avatar_url(:medium))
+              div
+                = link_to(@post.user_username, @post.user, html: { class: 'u-text-bold'})
+                h5 244 Cống Quỳnh, Quận 1, Hồ Chí Minh
+                .horizontal.u-mt-16
+                  .btn-default.btn-border-red
+                    h4.u-text-red Gọi ngay
+                  .btn-default
+                    h4 Nhắn tin
+                  .btn-default
+                    h4 Trang cá nhân
+                  - type = current_user&.follow?(@post.user_id)
+                  button[class="btn-default js-follow-user" user-id=@post.user_id type=(type ? 'unfollow' : 'follow')]
+                    - if type
+                        h4.js-text-follow Bỏ theo dõi
+                    - else
+                        h4.js-text-follow Theo dõi
+            .u-mt-16
+              h3.u-text-bold Chi Tiết
+              h4 Thương Hiệu Trump
+              h4 Năm sản xuất 2015
+              h4 Vehicle Registration Certificate
+              h3.u-text-red.u-text-bold.u-mt-16 Giá: 145.000.000 VNĐ
+            .describe.u-mt-16
+              h3.u-text-bold Mô tả xe
+              h4.u-mt-8 = @post.describe
+          .horizontal.align-center.u-mt-16
+            h4.mr-8 Tag:
+            pre = "##{@post.vehicle_kind.name}"
+        .post-current.pb-16 style="border-top: 1px solid #eee"  
+          h2 Bài viết gần đây
+          .row
+            = render_list_posts
     .col-3
       div id="render-comments" comment-channel=@post.id
       = render partial: 'comments', locals: { comments: @comments, post: @post }
