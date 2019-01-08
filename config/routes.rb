@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[new create show]
   resources :comments, only: %i[index create], defaults: { format: :html }
   resources :follows, only: %i[create destroy], param: :user_id
-  resources :messages, only: %i[index show create]
+  resources :messages, only: %i[index new show create]
   resources :blogs, only: %i[new show create]
 
   resources :users, only: %i[show edit update] do

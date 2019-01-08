@@ -9,8 +9,8 @@
         img.icon-30.mr-8 src=asset_pack_path('images/img_back.png')
       h4.u-text-bold Messages
       div.mr-8
-        / img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
-        img.icon-30 src=asset_pack_path('images/img_new_msg.png')
+        = link_to new_message_url do
+          img.icon-30 src=asset_pack_path('images/img_new_msg.png')
     .conversations.pb-16
       = render_conversations(current_user)
   .col-6

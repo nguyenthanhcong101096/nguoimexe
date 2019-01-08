@@ -8,6 +8,8 @@ class MessagesController < ApplicationController
     @conversation = Conversation.find(current_user.conversation_ids[0])
   end
 
+  def new; end
+  
   def create
     message = current_user.messages.create(params_message)
     if message
