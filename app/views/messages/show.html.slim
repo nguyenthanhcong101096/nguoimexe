@@ -9,7 +9,7 @@
         img.icon-30.mr-8 src=asset_pack_path('images/img_back.png')
       h4.u-text-bold Messages
       div.mr-8
-        img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
+        / img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
         img.icon-30 src=asset_pack_path('images/img_new_msg.png')
     .conversations.pb-16
       = render_conversations(current_user)
@@ -22,6 +22,5 @@
     .horizontal.center.pb-16
       input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
       img.icon-20.mr-8 src=asset_pack_path('images/img_send.png')
-      img.icon-20 src=asset_pack_path('images/img_emoij.png')
   .col-3
       

@@ -2,8 +2,8 @@
 
 class BlogsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
-
   before_action :set_blog, only: %i[show]
+  
   layout 'writer', only: %i[new]
 
   def new; end
