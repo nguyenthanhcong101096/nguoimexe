@@ -11,10 +11,10 @@
       div.mr-8
         = link_to new_message_url do
           img.icon-30 src=asset_pack_path('images/img_new_msg.png')
-    .conversations.pb-16
+    .conversations
       .message.horizontal.center.pb-16
         img.icon-40.radius.mr-8 src=asset_pack_path('images/img_avatar.png')
-        h4.u-text-bold.mr-8 New nessage
+        h4 New nessage
       = render_conversations(current_user)
   .col-6
   .col-3

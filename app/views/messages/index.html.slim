@@ -11,7 +11,7 @@
       div.mr-8
         = link_to new_message_url do
           img.icon-30 src=asset_pack_path('images/img_new_msg.png')
-    .conversations.pb-16
+    .conversations
       = render_conversations(current_user)
   .col-6
     = link_to(@conversation.with_user(current_user)) do
