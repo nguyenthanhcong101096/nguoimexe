@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: %i[show]
 
   def index
-    @conversation = Conversation.find(1)
+    @conversation = Conversation.find(current_user.conversation_ids[0])
   end
 
   def create
