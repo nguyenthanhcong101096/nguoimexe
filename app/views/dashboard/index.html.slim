@@ -2,16 +2,13 @@
 = provide(:page_description, 'Miêu tả')
 = provide(:page_url, root_path)
 
-
 .containerr
   .row
     .col-3
       = render 'shared/left_bar'
-    .col-6
-      div style="height: 100vh;"
-        .newfeeds  
-          .row
-            = render partial: 'shared/post', collection: @posts
+    .col-6 style="height: 100vh;"
+      .newfeeds  
+        = render partial: 'shared/post', collection: @posts
     .col-3
       h2.u-mt-16 Bạn có thể quan tâm
       .top-post

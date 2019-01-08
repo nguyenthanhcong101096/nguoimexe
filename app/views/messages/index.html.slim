@@ -2,24 +2,22 @@
 = provide(:page_description, 'Tin nhắn')
 = provide(:page_url, messages_path)
 
-.containerr
-  .row
-    .col-3
-      .horizontal.space-between.pb-16
-        = link_to root_path do
-          img.icon-30.mr-8 src=asset_pack_path('images/img_back.png')
-        h4.u-text-bold Messages
-        div.mr-8
-          img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
-          img.icon-30 src=asset_pack_path('images/img_new_msg.png')
-      .conversations.pb-16
-        = render_conversations(current_user)
-    .col-6
-      h3.pb-16 style="text-align: center;" = @conversation.with_user(current_user).username
-      .messages
-        = render partial: 'message', collection: @conversation.messages
-      .horizontal.pb-16
-        input.form-control.mr-8 placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
-        img.icon-30 src=asset_pack_path('images/img_send.png')
-    .col-3
-      
+.row
+  .col-3
+    .horizontal.space-between.pb-16
+      = link_to root_path do
+        img.icon-30.mr-8 src=asset_pack_path('images/img_back.png')
+      h4.u-text-bold Messages
+      div.mr-8
+        img.icon-30.mr-8 src=asset_pack_path('images/img_search.png')
+        img.icon-30 src=asset_pack_path('images/img_new_msg.png')
+    .conversations.pb-16
+      = render_conversations(current_user)
+  .col-6
+    h3.pb-16 style="text-align: center;" = @conversation.with_user(current_user).username
+    .messages
+      = render partial: 'message', collection: @conversation.messages
+    .horizontal.pb-16
+      input.form-control.mr-8 placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
+      img.icon-30 src=asset_pack_path('images/img_send.png')
+  .col-3
