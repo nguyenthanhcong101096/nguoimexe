@@ -1,5 +1,7 @@
 lock "~> 3.11.0"
 
+set :scm, :git
+
 # Default value for :format is :airbrussh.
 set :format, :airbrussh
 
@@ -46,3 +48,8 @@ namespace :deploy do
     end
   end
 end
+
+
+after 'yarn:install'
+
+before('deploy:assets:precompile', 'yarn:build')

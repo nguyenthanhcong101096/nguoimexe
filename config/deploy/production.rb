@@ -4,7 +4,7 @@ set :stage, :production
 server '13.114.160.74', user: 'www', roles: %w(web app db)
 
 set :application, "nguoimexe"
-set :repo_url, "git@github.com:nguyenthanhcong101096/nguoimexe.git"
+set :repo_url, "https://github.com/nguyenthanhcong101096/nguoimexe.git"
 
 # Default branch is :master
 set :branch, "master"
