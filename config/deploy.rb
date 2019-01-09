@@ -48,8 +48,3 @@ namespace :deploy do
     end
   end
 end
-
-
-after 'yarn:install'
-
-before('deploy:assets:precompile', 'yarn:build')
