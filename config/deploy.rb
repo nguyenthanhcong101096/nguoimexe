@@ -1,7 +1,5 @@
 lock "~> 3.11.0"
 
-set :git
-
 # Default value for :format is :airbrussh.
 set :format, :airbrussh
 
