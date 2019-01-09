@@ -1,3 +1,5 @@
+rbenv_ruby = File.read('.ruby-version').strip
+
 set :stage, :production
 server '13.114.160.74', user: 'www', roles: %w(web app db)
 
