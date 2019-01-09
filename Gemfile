@@ -64,9 +64,9 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-rbenv', '~> 2.0', require: false
-  gem 'capistrano-bundler', '~> 1.2', require: false
-  gem 'capistrano3-puma', require: false
   gem 'capistrano-yarn', require: false
+  gem "capistrano3-puma"
+  gem "capistrano-bundler", require: false
 end
 
 group :staging, :production do
