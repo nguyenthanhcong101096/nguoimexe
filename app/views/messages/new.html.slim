@@ -16,6 +16,10 @@
         img.icon-40.radius.mr-8 src=asset_pack_path('images/img_avatar.png')
         h4 New nessage
       = render_conversations(current_user)
-  .col-6
-  .col-3
+  .col-9
+    .horizontal.pb-16
+      h4.mr-8 To:
+      input.form-control.no-border placeholder="Nhập tên người dùng"
+    .pb-16
+      input.form-control.mr-8.js-create-message placeholder="Nhập tin nhắn"
       

@@ -21,11 +21,14 @@ class MessagesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    redirect_to messages_path unless @check
+  end
 
   private
 
   def set_message
+    @check = current_user.conversation_ids.include?(params[:id].to_i)
     @conversation = Conversation.find(params[:id])
   end
 
