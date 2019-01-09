@@ -1,14 +1,14 @@
 set :stage, :production
-server '206.189.145.80', user: 'rails', roles: %w[web app] 
+server '13.114.160.74', user: 'www', roles: %w(web app db)
 
-set :application, "nguoimexe.ooo"
+set :application, "nguoimexe"
 set :repo_url, "https://github.com/nguyenthanhcong101096/nguoimexe.git"
 
 # Default branch is :master
 set :branch, "master"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/nguoimexe.ooo"
+set :deploy_to, "/var/www/nguoimexe"
 
 set :rails_env, :production
 set :migration_role, :web
