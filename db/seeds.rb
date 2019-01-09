@@ -2,8 +2,8 @@ VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
 # SEED USER
-hola  = FactoryBot.create(:user, phone: '0338529345', username: 'Nguyễn Thành Công', address: 'aaaa', password: 'password', password_confirmation: 'password')
-holo  = FactoryBot.create(:user, phone: '0338529346', username: 'Thiên Kim', address: 'aaaa', password: 'password', password_confirmation: 'password')
+hola  = FactoryBot.create(:user, phone: '0338529345', username: 'Nguyễn Thành Công', avatar: Rack::Test::UploadedFile.new(Rails.root.join('app', 'javascript', 'images', 'cong.png'), 'image/png'), address: 'aaaa', password: 'password', password_confirmation: 'password')
+holo  = FactoryBot.create(:user, phone: '0338529346', username: 'Thiên Kim', avatar: Rack::Test::UploadedFile.new(Rails.root.join('app', 'javascript', 'images', 'lien.png'), 'image/png'), address: 'aaaa', password: 'password', password_confirmation: 'password')
 helo  = FactoryBot.create(:user, phone: '0338529347', username: 'Trung Tâm Nhắn Tin', address: 'aaaa', password: 'password', password_confirmation: 'password')
 users = FactoryBot.create_list(:user, 5)
 
