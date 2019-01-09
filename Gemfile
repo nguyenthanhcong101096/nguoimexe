@@ -19,6 +19,8 @@ gem 'letter_avatar'
 gem 'rails', '~> 5.0.7'
 
 gem 'puma', '~> 3.0'
+gem 'figaro'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -58,6 +60,13 @@ group :development do
   gem 'rubocop', require: false
   gem 'bugsnag'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+  gem 'capistrano', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-yarn', require: false
 end
 
 group :staging, :production do

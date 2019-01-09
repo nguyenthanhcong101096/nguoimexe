@@ -26,6 +26,10 @@ Thumbs.db
 .powder
 .powenv
 
+public/*
+.env
+.rspec
+
 ## Editor generated files ##
 .*.sw[p|o|n]
 *.sw[p|o|n]
