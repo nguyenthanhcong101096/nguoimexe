@@ -4,7 +4,7 @@
       img.icon-40.radius.mr-8 src = conversation.with_user(current_user).avatar_url(:medium)
       div
         .horizontal.center
-          h4.u-text-bold.mr-8 = conversation.with_user(current_user).username
+          h4.mr-8 = conversation.with_user(current_user).username
           h5.u-text-white style="background-color: red; padding-right: 5px; padding-left: 5px; border-radius: 50px;" = conversation.count_msg_not_read(current_user)
-        h5 id="js-last-message" = conversation.last_message.msg
-        h6 = distance_of_time_in_words(conversation.last_message.created_at, Time.now)
+        h5.u-text-gray id="js-last-message" = conversation.last_message.msg
+        h6.u-text-gray = distance_of_time_in_words(conversation.last_message.created_at, Time.now)
