@@ -1,18 +1,18 @@
 - if post.is_a?(Post)
-  .post.u-mb-32 style="border-bottom: 1px solid #eee"
+  .post.u-mb-16
     = link_to post_path(post.id) do
       .horizontal.u-mb-16
-        img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+        img.mr-8.icon-30.radius src=asset_url(post.user_avatar_url(:medium))
         div
           .horizontal
             h4.mr-8 = post.user_username
-            p.u-text-bold style="background-color: #d3f1dc; color: #10b742; padding:4px; border-radius: 20px;" Bán xe
+            h5 style="background-color: #d3f1dc; color: #10b742; padding:3px; border-radius: 20px;" Bán xe
           h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)   
-      .u-mb-8
-        h3 = post.title
-      .horizontal.u-mb-8 style="height: 150px;"
+      .horizontal.u-mb-8.u-bg-gray style="height: 130px;"
         img.mr-8 style="width: 200px;" src=asset_pack_path('images/img_demo.jpg')
-        h4.u-text-gray = truncate(post.describe, length: 300)
+        .content.pb-8
+          h4 = post.title
+          h5.u-text-gray = truncate(post.describe, length: 200)
 - else
   = link_to blog_path(post.id) do
     .horizontal.center.u-mb-16
