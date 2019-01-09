@@ -75,15 +75,13 @@ GEM
       concurrent-ruby (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
-    capistrano (3.6.1)
+    capistrano (3.11.0)
       airbrussh (>= 1.0.0)
-      capistrano-harrow
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
     capistrano-bundler (1.5.0)
       capistrano (~> 3.1)
-    capistrano-harrow (0.5.3)
     capistrano-rails (1.4.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -395,7 +393,7 @@ DEPENDENCIES
   authy
   bugsnag
   byebug
-  capistrano (~> 3.6.0)
+  capistrano (~> 3.11.0)
   capistrano-bundler (~> 1.2)
   capistrano-rails (~> 1.1)
   capistrano-rbenv (~> 2.0)
