@@ -14,6 +14,8 @@ module Nguoimexe
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     
+    ActiveRecord::Base.protected_environments = %w(production)
+    
     config.assets.paths << Rails.root.join('app', 'assets', 'files')
     config.assets.paths << Rails.root.join('node_modules')
     config.assets.precompile += %w[pghero/favicon.png]
