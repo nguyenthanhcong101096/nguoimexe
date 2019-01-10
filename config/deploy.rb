@@ -99,5 +99,4 @@ namespace :deploy do
   end
 end
 
-before "deploy:assets:precompile", "deploy:yarn_install"
 
