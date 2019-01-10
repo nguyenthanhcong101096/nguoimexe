@@ -1,6 +1,6 @@
 
 server '13.114.160.74', user: 'deploy', roles: %w{web app db}
-set :ssh_options, forward_agent: true
+set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
