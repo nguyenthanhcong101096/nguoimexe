@@ -61,11 +61,12 @@ group :development do
   gem 'bugsnag'
   gem 'spring-watcher-listen', '~> 2.0.0'
   
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', '~> 1.1.8', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rbenv'
+  gem 'capistrano', '~> 3.6.0', require: false
+  gem 'capistrano-rails', '~> 1.1', require: false
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'capistrano-bundler', '~> 1.2', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-yarn', require: false
   gem 'capistrano-rvm'
 end
 
