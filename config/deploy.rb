@@ -79,7 +79,7 @@ namespace :deploy do
   end
   
   desc 'Seed the database.'
-  task :seed_db do
+  task :seed do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
@@ -90,7 +90,7 @@ namespace :deploy do
   end
   
   desc 'Reset database'
-  task :reset_db do
+  task :reset do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
@@ -102,4 +102,3 @@ namespace :deploy do
 end
 
 before('deploy:assets:precompile', 'npm:install')
-after 'deploy:migrate', 'deploy:seed_db'
