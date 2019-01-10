@@ -18,7 +18,7 @@ gem 'letter_avatar'
 
 gem 'rails', '~> 5.0.7'
 
-gem 'puma', '~> 3.0'
+gem 'puma'
 gem 'figaro'
 
 gem 'sass-rails', '~> 5.0'
@@ -62,11 +62,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   
   gem 'capistrano'
-  gem 'capistrano-rails', '~> 1.1', require: false
-  gem 'capistrano-rbenv', '~> 2.0', require: false
-  gem 'capistrano-yarn', require: false
-  gem "capistrano3-puma"
-  gem "capistrano-bundler", require: false
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rvm'
 end
 
 group :staging, :production do
