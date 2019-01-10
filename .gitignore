@@ -26,10 +26,6 @@ Thumbs.db
 .powder
 .powenv
 
-# public/*
-.env
-.rspec
-
 ## Editor generated files ##
 .*.sw[p|o|n]
 *.sw[p|o|n]
@@ -44,11 +40,12 @@ Thumbs.db
 # Ignore uploaded files in development
 /storage/*
 
-# /bundle
+/bundle
 
+/node_modules
 /yarn-error.log
 
-# /public/assets
+/public/assets
 .byebug_history
 .pry_history
 .pryrc
@@ -56,11 +53,10 @@ Thumbs.db
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/database.yml
-# /config/secrets.yml
-# /public/packs
+/public/packs
 /public/packs-test
-# /public/uploads
-# /node_modules
+/public/uploads
+/node_modules
 yarn-debug.log*
 .yarn-integrity
 /coverage
