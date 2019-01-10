@@ -13,5 +13,15 @@ module Nguoimexe
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    config.assets.paths << Rails.root.join('app', 'assets', 'files')
+    config.assets.paths << Rails.root.join('node_modules')
+    config.assets.precompile += %w[pghero/favicon.png]
+    config.assets.enabled = true
+    config.assets.gzip = false
+    config.assets.css_compressor = :sass
+    config.assets.js_compressor = :uglifier
+    config.assets.prefix = '/static'
+    
   end
 end
