@@ -59,7 +59,7 @@ namespace :npm do
   task :install do
     on roles(:web) do
       within release_path do
-        execute("cd #{release_path} && npm install")
+        execute("cd #{release_path} && npm install && bundle exec rails webpacker:install")
       end
     end
   end
@@ -74,15 +74,6 @@ namespace :deploy do
       upload!('package.json', "#{shared_path}/package.json")
       upload!('config/database.yml', "#{shared_path}/config/database.yml")
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
-    end
-  end
-  
-  desc 'Install webpack'
-  task :webpacker do
-    on roles(:app) do
-      within release_path do
-        execute :bundle, :exec, :rake, 'webpacker:install'
-      end
     end
   end
   
