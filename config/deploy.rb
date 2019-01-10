@@ -80,7 +80,7 @@ namespace :deploy do
   desc 'Seed the database.'
   task :seed_db do
     on roles(:app) do
-      within current_path do
+      within release_path do
         with(rails_env: fetch(:stage)) do
           execute :bundle, :exec, :rake, 'db:seed'
         end
@@ -91,21 +91,10 @@ namespace :deploy do
   desc 'Reset database'
   task :reset_db do
     on roles(:app) do
-      within current_path do
+      within release_path do
         with(rails_env: fetch(:stage)) do
           execute :bundle, :exec, :rake, 'db:drop db:create'
         end
-      end
-    end
-  end
-end
-
-namespace :assets do
-  before :backup_manifest, 'deploy:assets:create_manifest_json'
-  task :create_manifest_json do
-    on roles(:web) do
-      within release_path do
-        execute :mkdir, release_path.join('assets_manifest_backup')
       end
     end
   end
