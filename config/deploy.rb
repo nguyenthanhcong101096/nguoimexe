@@ -58,16 +58,16 @@ namespace :npm do
   desc 'Run rake npm install'
   task :install do
     on roles(:app) do
-      within current_path do
-        execute("cd #{current_path} && npm install")
+      within release_path do
+        execute("cd #{release_path} && npm install")
       end
     end
   end
   
   task :build do
     on roles(:app) do
-      within current_path do
-        execute("cd #{current_path} && ./bin/webpack-dev-server")
+      within release_path do
+        execute("cd #{release_path} && ./bin/webpack-dev-server")
       end
     end
   end
@@ -109,4 +109,4 @@ namespace :deploy do
 end
 
 after 'deploy:upload_yml', 'npm:install'
-before('deploy:assets:precompile', 'npm:build')
+# before('deploy:assets:precompile', 'npm:build')
