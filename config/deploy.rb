@@ -52,7 +52,6 @@ set :puma_preload_app, false
 
 
 # Global options
-# --------------
 set :ssh_options, forward_agent: true
 
 namespace :yarn do
@@ -98,3 +97,4 @@ namespace :deploy do
   end
 end
 
+before "deploy:assets:precompile", "deploy:yarn_install"
