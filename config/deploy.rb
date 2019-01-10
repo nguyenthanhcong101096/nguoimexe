@@ -59,7 +59,7 @@ namespace :npm do
   task :install do
     on roles(:app) do
       within release_path do
-        execute :yarn, :install
+        execute("cd #{release_path} && npm install")
       end
     end
   end
@@ -71,6 +71,7 @@ namespace :deploy do
     on roles(:app) do
       execute "mkdir -p #{shared_path}/config/puma"
       execute "mkdir -p #{shared_path}/node_modules"
+      upload!('package.json', "#{shared_path}/package.json")
       upload!('config/database.yml', "#{shared_path}/config/database.yml")
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
