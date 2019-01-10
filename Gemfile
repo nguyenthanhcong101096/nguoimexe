@@ -55,7 +55,7 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'spring'
   gem 'rubocop', require: false
   gem 'bugsnag'
