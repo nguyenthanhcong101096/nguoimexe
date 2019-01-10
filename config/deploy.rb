@@ -55,12 +55,10 @@ set :puma_preload_app, false
 set :ssh_options, forward_agent: true
 
 namespace :yarn do
-  desc 'Run rake yarn:install'
-  task :yarn_install do
+  desc 'Install npm packages'
+  task :install do
     on roles(:app) do
-      within release_path do
-        execute("cd #{release_path} && yarn install")
-      end
+      execute :yarn, :install
     end
   end
 end
@@ -98,5 +96,3 @@ namespace :deploy do
     end
   end
 end
-
-
