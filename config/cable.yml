@@ -17,14 +17,11 @@
 # development: *redis
 # test: *redis
 
-redis: &redis
-  adapter: redis
-  url: redis://13.114.160.74:6379/1
-  
 development:
   adapter: async
 
 test:
   adapter: async
 
-production: *redis
+production:
+  adapter: async
