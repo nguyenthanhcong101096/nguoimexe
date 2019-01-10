@@ -97,4 +97,3 @@ namespace :deploy do
   end
 end
 
-before('deploy:assets:precompile', 'yarn:install')
