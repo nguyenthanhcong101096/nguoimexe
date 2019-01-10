@@ -61,14 +61,23 @@ set :puma_preload_app, false
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+namespace :yarn do
+  desc 'Install npm packages'
+  task :install do
+    on roles(:app) do
+      execute :yarn, :install
+    end
+  end
+end
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+namespace :deploy do
+  desc 'Upload yml file.'
+  task :upload_yml do
+    on roles(:app) do
+      execute "mkdir -p #{shared_path}/config/puma"
+      execute "mkdir -p #{shared_path}/node_modules"
+      upload!('config/database.yml', "#{shared_path}/config/database.yml")
+      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
   end
   
@@ -94,3 +103,4 @@ namespace :deploy do
     end
   end
 end
+
