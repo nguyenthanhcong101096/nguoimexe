@@ -78,9 +78,15 @@ namespace :deploy do
     end
   end
   
-  desc "reload the database with seed data"
-  task :seed do
-    run "cd #{release_path}; rake db:seed RAILS_ENV=#{rails_env}"
+  desc 'Seed the database.'
+  task :seed_db do
+    on roles(:app) do
+      within release_path do
+        with(rails_env: fetch(:stage)) do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
   end
   
   desc 'Reset database'
@@ -96,3 +102,4 @@ namespace :deploy do
 end
 
 before('deploy:assets:precompile', 'npm:install')
+after 'deploy:migrate', 'deploy:seed_db'
