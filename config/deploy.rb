@@ -6,7 +6,7 @@ lock "~> 3.11.0"
 
 set :application, 'nguoimexe'
 set :repo_url, 'git@github.com:nguyenthanhcong101096/nguoimexe.git'
-set :branch, :deploy_01
+set :branch, :master
 set :deploy_to, '/home/deploy/nguoimexe'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
