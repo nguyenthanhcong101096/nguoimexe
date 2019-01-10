@@ -1,6 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 rvm_ruby = File.read('.ruby-version').strip
-lock "~> 3.11.0"
+lock "~> 3.6.1"
 
 # config valid only for current version of Capistrano
 
