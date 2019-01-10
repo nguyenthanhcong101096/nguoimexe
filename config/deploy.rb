@@ -59,7 +59,7 @@ namespace :npm do
   task :install do
     on roles(:web) do
       within release_path do
-        execute("cd #{release_path} && npm install && bundle exec rails webpacker:install")
+        execute("cd #{release_path} && npm install")
       end
     end
   end
