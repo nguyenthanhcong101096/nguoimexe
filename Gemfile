@@ -58,7 +58,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'rubocop', require: false
-  gem 'bugsnag'
+  # gem 'bugsnag'
   gem 'spring-watcher-listen', '~> 2.0.0'
   
   gem 'capistrano', '~> 3.6.0', require: false
