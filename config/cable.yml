@@ -1,3 +1,12 @@
+production:
+  url: redis://localhost:6379
+
+local: &local
+  url: redis://localhost:6379
+
+development: *local
+test: *local
+
 # development:
 #   adapter: async
 
@@ -5,23 +14,4 @@
 #   adapter: async
 
 # production:
-#   adapter: redis
-#   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-#   channel_prefix: hello-world-action-cable_production
-
-# redis: &redis
-#   adapter: redis
-#   url: redis://localhost:6379/1
-
-# production: *redis
-# development: *redis
-# test: *redis
-
-development:
-  adapter: async
-
-test:
-  adapter: async
-
-production:
-  adapter: async
+#   adapter: async
