@@ -9,6 +9,7 @@ set :repo_url, 'git@github.com:nguyenthanhcong101096/nguoimexe.git'
 set :branch, :master
 
 set :deploy_to, '/home/deploy/nguoimexe'
+set :use_sudo, false
 
 # capistrano-rails
 set :rails_env, :production
