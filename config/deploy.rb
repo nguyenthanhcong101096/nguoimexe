@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-rbenv_ruby = File.read('.ruby-version').strip
+rvm_ruby = File.read('.ruby-version').strip
 lock "~> 3.11.0"
 
 # config valid only for current version of Capistrano
@@ -13,7 +13,9 @@ set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, rbenv_ruby
+set :rvm_ruby_version, rvm_ruby
+
+set :ssh_options, forward_agent: true
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
