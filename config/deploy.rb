@@ -54,11 +54,11 @@ set :puma_preload_app, false
 # Global options
 set :ssh_options, forward_agent: true
 
-before "deploy:assets:precompile", "deploy:upload_yml"
+after 'deploy:upload_yml', 'npm:install'
 
 namespace :npm do
   desc 'Run rake npm install'
-  task :npm_install do
+  task :install do
     on roles(:app) do
       within release_path do
         execute("cd #{release_path} && npm install")
