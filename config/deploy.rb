@@ -59,7 +59,7 @@ namespace :npm do
   task :install do
     on roles(:app) do
       within release_path do
-        execute("cd #{release_path} && npm install")
+        execute("cd #{release_path} && yarn install")
       end
     end
   end
