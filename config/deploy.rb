@@ -22,7 +22,7 @@ set :keep_assets, 3
 
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts }
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts }
 set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, rvm_ruby
