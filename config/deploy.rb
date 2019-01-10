@@ -99,4 +99,4 @@ namespace :deploy do
   end
 end
 
-after 'npm:install'
+before('deploy:assets:precompile', 'npm:install')
