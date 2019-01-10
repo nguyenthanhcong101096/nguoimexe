@@ -55,10 +55,12 @@ set :puma_preload_app, false
 set :ssh_options, forward_agent: true
 
 namespace :yarn do
-  desc 'Install npm packages'
-  task :install do
+  desc 'Run rake yarn:install'
+  task :yarn_install do
     on roles(:app) do
-      execute :yarn, :install
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
     end
   end
 end
@@ -92,15 +94,6 @@ namespace :deploy do
         with(rails_env: fetch(:stage)) do
           execute :bundle, :exec, :rake, 'db:drop db:create'
         end
-      end
-    end
-  end
-  
-  desc 'Run rake yarn:install'
-  task :yarn_install do
-    on roles(:app) do
-      within release_path do
-        execute("cd #{release_path} && yarn install")
       end
     end
   end
