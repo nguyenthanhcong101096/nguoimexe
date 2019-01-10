@@ -63,6 +63,14 @@ namespace :npm do
       end
     end
   end
+  
+  task :build do
+    on roles(:app) do
+      within release_path do
+        execute("cd #{release_path} && ./bin/webpack-dev-server")
+      end
+    end
+  end
 end
 
 namespace :deploy do
@@ -100,4 +108,5 @@ namespace :deploy do
   end
 end
 
-before('deploy:assets:precompile', 'npm:install')
+after 'deploy:upload_yml', 'npm:install'
+before('deploy:assets:precompile', 'npm:build')
