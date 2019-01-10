@@ -77,6 +77,15 @@ namespace :deploy do
     end
   end
   
+  desc 'Install webpack'
+  task :webpacker do
+    on roles(:app) do
+      within release_path do
+        execute :bundle, :exec, :rake, 'webpacker:install'
+      end
+    end
+  end
+  
   desc 'Seed the database.'
   task :seed_db do
     on roles(:app) do
