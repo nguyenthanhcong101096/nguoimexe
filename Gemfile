@@ -68,7 +68,6 @@ group :development do
   gem 'capistrano3-puma', require: false
   gem 'capistrano-yarn', require: false
   gem 'capistrano-rvm'
-  gem 'capistrano-rails-db'
 end
 
 group :staging, :production do
