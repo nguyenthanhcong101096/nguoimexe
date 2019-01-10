@@ -20,8 +20,6 @@ set :rails_assets_groups, :assets
 set :normalize_asset_timestamps, ['public/static']
 set :keep_assets, 3
 
-set :sudo, 'env rvmsudo_secure_path=1 rvmsudo'
-
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts }
@@ -97,6 +95,17 @@ namespace :deploy do
         with(rails_env: fetch(:stage)) do
           execute :bundle, :exec, :rake, 'db:drop db:create'
         end
+      end
+    end
+  end
+end
+
+namespace :assets do
+  before :backup_manifest, 'deploy:assets:create_manifest_json'
+  task :create_manifest_json do
+    on roles(:web) do
+      within release_path do
+        execute :mkdir, release_path.join('assets_manifest_backup')
       end
     end
   end
