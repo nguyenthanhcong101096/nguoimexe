@@ -60,7 +60,7 @@ namespace :npm do
     on roles(:web) do
       within release_path do
         execute("cd #{release_path} && npm install")
-        execute :bundle, :exec, :rake, "webpacker:install"
+        execute :bundle, :exec, :rails, "webpacker:install"
       end
     end
   end
