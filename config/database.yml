@@ -29,4 +29,4 @@ production:
   <<: *default
   database: nguoimexe_production
   username: nguoimexe
-  password: <%= ENV['NGUOIMEXE_DATABASE_PASSWORD'] %>
+  password: password
