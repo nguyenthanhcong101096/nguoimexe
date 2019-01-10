@@ -94,7 +94,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute :bundle, :exec, :rake, 'db:drop db:create'
+          execute :bundle, :exec, :rake, 'db:drop db:create db:seed'
         end
       end
     end
