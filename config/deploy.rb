@@ -7,10 +7,22 @@ lock "~> 3.11.0"
 set :application, 'nguoimexe'
 set :repo_url, 'git@github.com:nguyenthanhcong101096/nguoimexe.git'
 set :branch, :master
+
 set :deploy_to, '/home/deploy/nguoimexe'
+
+# capistrano-rails
+set :rails_env, :production
+set :migration_role, :web
+
+set :assets_prefix, 'static'
+set :rails_assets_groups, :assets
+# If you need to touch public/images, public/javascripts, and public/stylesheets on each deploy
+set :normalize_asset_timestamps, ['public/static']
+set :keep_assets, 3
+
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules}
 set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, rvm_ruby
