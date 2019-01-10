@@ -78,15 +78,9 @@ namespace :deploy do
     end
   end
   
-  desc 'Seed the database.'
-  task :seed_db do
-    on roles(:app) do
-      within release_path do
-        with(rails_env: fetch(:stage)) do
-          execute :bundle, :exec, :rake, 'db:seed'
-        end
-      end
-    end
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{release_path}; rake db:seed RAILS_ENV=#{rails_env}"
   end
   
   desc 'Reset database'
