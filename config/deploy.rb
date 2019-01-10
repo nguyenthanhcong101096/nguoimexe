@@ -59,7 +59,7 @@ before "deploy:assets:precompile", "deploy:npm_install"
 namespace :npm do
   desc 'Run rake npm install'
   task :npm_install do
-    on roles(:web) do
+    on roles(:app) do
       within release_path do
         execute("cd #{release_path} && npm install")
       end
