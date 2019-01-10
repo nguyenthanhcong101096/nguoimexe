@@ -20,6 +20,8 @@ set :rails_assets_groups, :assets
 set :normalize_asset_timestamps, ['public/static']
 set :keep_assets, 3
 
+set :sudo, 'env rvmsudo_secure_path=1 rvmsudo'
+
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts }
