@@ -61,6 +61,7 @@ yarn-debug.log*
 .yarn-integrity
 /coverage
 
+.package-lock.json
 .package-log.json
 .env.staging
 .env.production
