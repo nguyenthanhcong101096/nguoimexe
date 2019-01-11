@@ -1,6 +1,7 @@
 # README
 
 ## setup
+### BACK-END
 ```
 rails bundle install
 ```
@@ -8,8 +9,12 @@ rails bundle install
 rails db:migrate db:seed
 ```
 ```
-./bin/webpack-dev-server
-```
-```
 rails s
 ````
+### FONT-END
+```
+npm install
+```
+```
+./bin/webpack-dev-server
+```
