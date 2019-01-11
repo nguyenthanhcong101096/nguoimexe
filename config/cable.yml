@@ -1,19 +1,19 @@
-production:
-  adapter: redis
-  url: redis://13.114.160.74/:6379
-
-local: &local
-  adapter: redis
-  url: redis://localhost:6379
-
-development: *local
-test: *local
-
-# development:
-#   adapter: async
-
-# test:
-#   adapter: async
-
 # production:
-#   adapter: async
+#   adapter: redis
+#   url: redis://13.114.160.74/:6379
+
+# local: &local
+#   adapter: redis
+#   url: redis://localhost:6379
+
+# development: *local
+# test: *local
+
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  adapter: async
