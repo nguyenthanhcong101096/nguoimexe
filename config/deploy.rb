@@ -6,7 +6,7 @@ lock "~> 3.6.1"
 
 set :application, 'nguoimexe'
 set :repo_url, 'git@github.com:nguyenthanhcong101096/nguoimexe.git'
-set :branch, :master
+set :branch, :production
 
 set :deploy_to, '/home/deploy/nguoimexe'
 set :use_sudo, false
