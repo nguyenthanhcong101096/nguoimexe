@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     sign_in(@user)
     cookies.signed[:user_id] = @user.id
   end
-  
+
   private
 
   def set_locale

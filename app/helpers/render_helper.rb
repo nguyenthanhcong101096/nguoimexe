@@ -32,7 +32,7 @@ module RenderHelper
     blogs = Blog.order('RANDOM()').limit(10).shuffle
     render(partial: 'blogs/blog', collection: blogs)
   end
-  
+
   def render_list_posts
     posts = Post.order('RANDOM()').limit(10).shuffle
     render(partial: 'posts/post', collection: posts)

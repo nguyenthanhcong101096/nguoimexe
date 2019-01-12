@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def new; end
-  
+
   def create
     message = current_user.messages.create(params_message)
     if message

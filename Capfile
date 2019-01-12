@@ -1,5 +1,7 @@
-require "capistrano/setup"
-require "capistrano/deploy"
+# frozen_string_literal: true
+
+require 'capistrano/setup'
+require 'capistrano/deploy'
 
 require 'capistrano/rvm'
 # require 'capistrano/chruby'
@@ -11,4 +13,4 @@ require 'capistrano/rails'
 require 'capistrano/puma'
 # require 'capistrano/passenger'
 
-Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
