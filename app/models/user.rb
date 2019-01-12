@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  extend Enumerize
+  
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :blogs, dependent: :destroy
@@ -25,6 +27,8 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true
   validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
 
+  enumerize :range, in: %i[enterprise person], scope: true
+  
   include ImageUploader::Attachment.new(:avatar)
 
   def email_required?
