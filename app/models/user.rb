@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :user_chats, dependent: :destroy
-
+  has_many :conversations, through: :user_chats, source: :conversation
+  
   has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
   has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
 
