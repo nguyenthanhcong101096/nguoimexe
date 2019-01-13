@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  before_action :sign_in_test
+  #before_action :sign_in_test
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
@@ -24,11 +24,11 @@ class ApplicationController < ActionController::Base
     render json: { message: 'Unprocessable Entity', errors: error_message }, status: :unprocessable_entity
   end
 
-  def sign_in_test
-    @user = User.first
-    sign_in(@user)
-    cookies.signed[:user_id] = @user.id
-  end
+  # def sign_in_test
+  #   @user = User.first
+  #   sign_in(@user)
+  #   cookies.signed[:user_id] = @user.id
+  # end
 
   private
 
