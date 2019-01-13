@@ -1,3 +1,4 @@
+# SEED KIND VEHICLE
 VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
@@ -21,3 +22,7 @@ conversation_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, user_i
 messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user_id: [hola, holo].sample.id) }
 messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.second, user_id: [hola, helo].sample.id) }
 messages_3 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user_id: [holo, helo].sample.id) }
+
+
+# SEED ENTERPRISE
+enterprise = FactoryBot.create(:enterprise, name: 'Cửa hàng Thành Công', address: '244 Cống Quỳnh, Quận 1', phone: '912819284', user_id: hola.id)

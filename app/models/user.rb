@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   extend Enumerize
   
+  has_many :enterprises, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :blogs, dependent: :destroy
@@ -58,10 +59,6 @@ class User < ApplicationRecord
       user.uid = auth.uid
       user.password = Devise.friendly_token[0, 20]
     end
-  end
-
-  def conversation_ids
-    user_chats.pluck(:conversation_id)
   end
 
   private
