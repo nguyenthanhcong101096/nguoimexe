@@ -7,10 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'redis'
+gem "redis", "~> 3.0" 
 gem 'devise'
 gem 'omniauth-google-oauth2'
-
 gem 'authy'
 
 gem 'shrine'

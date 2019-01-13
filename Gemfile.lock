@@ -296,7 +296,7 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
-    redis (4.1.0)
+    redis (3.3.5)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.0)
@@ -432,7 +432,7 @@ DEPENDENCIES
   puma
   rails (~> 5.0.7)
   react-rails
-  redis
+  redis (~> 3.0)
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
