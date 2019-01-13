@@ -21,6 +21,8 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+  config.action_cable.url = 'ws://nguoimexe.com/cable'
+  config.action_cable.allowed_request_origins = ["http://nguoimexe.com.com"]
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   config.public_file_server.enabled = true
