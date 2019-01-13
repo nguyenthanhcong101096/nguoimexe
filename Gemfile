@@ -68,6 +68,7 @@ group :development do
   gem 'capistrano3-puma', require: false
   gem 'capistrano-yarn', require: false
   gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 group :staging, :production do
