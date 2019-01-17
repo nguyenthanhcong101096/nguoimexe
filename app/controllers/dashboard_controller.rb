@@ -12,7 +12,5 @@ class DashboardController < ApplicationController
 
   def markup
     @posts = Post.all
-    binding.pry
-    forbidden_words('công')
   end
 end
