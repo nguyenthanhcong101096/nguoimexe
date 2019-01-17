@@ -23,7 +23,6 @@ body {
     margin-top: 0;
     background-color: white;
   }
-  
   @media screen and (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -35,7 +34,6 @@ body {
     padding: 10px;
     background-color: white;
   }
-  
   @media screen and (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -43,14 +41,10 @@ body {
 }
 
 .content-body {
-  padding-top: 3%;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-top: 32px;
+  padding-left: 192px;
+  padding-right: 192px;
   height: 100%;
-  @include respond-to-mobile() {
-    padding: 24px 16px;
-    background-color: $color-light-gray;
-  }
 }
 
 .content-head {
@@ -63,70 +57,10 @@ body {
   }
 }
 
-.header {
-  @include flexbox(space-between, center);
-  position: fixed;
-  min-width: auto;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding-left: 72px;
-  padding-right: 72px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: white;
-  border-bottom: 1px solid $color-true-gray;
-  transition: all .4s ease;
-  &.scroll {
-    opacity: 0.6;
-    height: 40px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-.icon-25 {
-  height: 25px;
-  width: 25px;
-  margin-right: 5px;
-  transition: all .4s ease;
-  &.small {
-    height: 0;
-    width: 0;
-  }
-}
-
-.icon-35 {
-  height: 35px;
-  width: 35px;
-  margin-right: 5px;
-  transition: all .4s ease;
-  &.small {
-    height: 0;
-    width: 0;
-  }
-}
-
-
 .icon-50 {
   height: 100px;
   width: 100px;
   margin-right: 5px;
-}
-
-.icon-big {
-  height: 80px;
-  width: 80px;
-  margin-right: 5px;
-}
-
-.login-area {
-  padding: 24px;
-  padding-left: 35%;
-  padding-right: 35%;
 }
 
 .horizontal {
@@ -140,42 +74,8 @@ body {
   margin-right: 8px;
 }
 
-.login {
-  box-shadow: 1px 1px 2px 0 #ccc;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  height: auto;
-  width: 500px;
-  padding: 32px;
-  opacity: 0;
-  
-  &.animation {
-    opacity: 1;
-    transition: opacity .2s ease-in-out;
-  }
-  
-  @media screen and (max-width: 420px) {
-    top: 56px;
-    left: 0;
-    transform: translate(0, 0);
-    height: 100%;
-    width: 100%;
-    padding: 16px;
-    border-radius: 0;
-  }
-}
-
-.form {
-  padding: 32px 0;
-}
-
-.form-register,
-.form-login {
-  position: relative;
+.mr-16 {
+  margin-right: 16px;
 }
 
 .text-left {
@@ -203,7 +103,7 @@ body {
   height: 100px;
   width: 100px;
   margin-right: 4px;
-  margin-left: 4px;  
+  margin-left: 4px;
 }
 
 .left-bar {
@@ -213,9 +113,9 @@ body {
 }
 
 .top-post {
- overflow: scroll;
- height: 90vh; 
- margin-right: 16px;
+  overflow: scroll;
+  height: 90vh;
+  margin-right: 16px;
 }
 
 .search-box {
@@ -263,4 +163,10 @@ body {
   height: 80vh;
   overflow: scroll;
   border-right: 1px solid #eee;
+}
+
+.diving {
+  height: 1px;
+  background-color: #dedede;
+  width: 100%;
 }

@@ -34,10 +34,6 @@
   background-color: #1ba0e3;
 }
 
-.u-text-orange {
-  color: $color-orange;
-}
-
 .font-size-14 {
   font-size: 14px;
 }
@@ -58,6 +54,9 @@
   color: #d22355;
 }
 
+.u-text-orange {
+  color: #ff6b00;
+}
 .u-text-white {
   color: white; 
 }
@@ -135,6 +134,18 @@
 
 .u-ml-8 {
   margin-left: 8px;
+}
+
+.u-pt-4 {
+  padding-top: 4px;  
+}
+
+.u-pl-4 {
+  padding-left: 4px;  
+}
+
+.u-pr-4 {
+  padding-right: 4px;  
 }
 
 .image {

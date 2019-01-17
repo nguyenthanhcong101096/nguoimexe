@@ -1,14 +1,11 @@
-.comments
-  div.u-mb-8
-    h3.u-text-bold Bình luận
-    textarea.form-control.u-mt-16.js-comment-box rows="2" type="text" placeholder="Nhập bình luận của bạn..."
-    .horizontal.space-between
-      button.btn-submit.btn-border-gray.btn-w-150.js-btn-comment-create data-post-id=post.id id="btn-create-comment" Thêm bình luận
-      h5.u-text-red.js-message-error
-  div.comment-body.js-comment-body.pb-16 style="overflow: scroll; height: 70vh;"
-    .comment-latest.js-comment-latest id="comment-latest"
+.u-mt-32
+  div id="render-comments" comment-channel=post.id
+  div.comment-body.js-comment-body
     - comments.each do |comment|
       = render partial: 'comment', locals: { comment: comment }
+    .comment-latest id="comment-latest"
   - if post.comments.count > 10
     h5.u-mt-8.u-text-center.u-text-red.js-btn-comment-loadmore data-post-id=post.id data-comment-min-id=comments.last.id Xem thêm bình luận
-
+  div.diving
+  textarea.form-control.u-mt-32.js-comment-box rows="5" type="text" placeholder="Nhập bình luận của bạn..."
+  button.btn.w-100.bg-orange.u-text-white.js-btn-comment-create.pull-right data-post-id=post.id id="btn-create-comment" Gửi

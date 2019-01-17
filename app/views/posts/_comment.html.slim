@@ -1,7 +1,8 @@
-.comment.u-mb-8
+.u-mb-32
   .horizontal
-    img.icon-30.radius.mr-8 src=comment.user_avatar_url(:medium)
-    div style="background-color: #f2f3f5; padding: 4px; border-radius: 5px;"
-      = link_to(comment.user_username, comment.user, html: { class: 'u-text-gray'})
-      h5 = comment.context
-      h6.u-text-gray = distance_of_time_in_words(comment.created_at, Time.now)
+    img.icon-40.radius.mr-8 src=comment.user_avatar_url(:medium)
+    div.width-100.section style="background-color: #f8f8f8; padding: 4px; border-radius: 5px;"
+      .horizontal.center
+        h4.u-text-orange.u-text-bold.mr-8 = comment.user_username
+        h6.u-text-bold.u-text-gray = distance_of_time_in_words(comment.created_at, Time.now)
+      h5.u-mt-8 = comment.context

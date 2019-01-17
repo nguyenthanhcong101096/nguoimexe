@@ -1,0 +1,67 @@
+<div>
+  <div class="horizontal">
+    <div class="width-50">
+      <img style="height: 500px;" src="<%=asset_pack_path('images/img_demo_1.png') %>" alt="post img">
+    </div>
+
+    <div class="width-25 u-pl-4">
+      <img style="height: 248px;" src="<%=asset_pack_path('images/img_demo_2.png') %>" alt="post img">
+      <img class="u-pt-4" style="height: 248px;" src="<%=asset_pack_path('images/img_demo_3.png') %>" alt="post img">
+    </div>
+
+    <div class="width-25 u-pl-4">
+      <img style="height: 248px;" src="<%=asset_pack_path('images/img_demo_4.png') %>" alt="post img">
+      <img class="u-pt-4" style="height: 248px;" src="<%=asset_pack_path('images/img_demo5.png') %>" alt="post img">
+    </div>
+  </div>
+
+  <div class="content-body">
+    <div class="horizontal">
+      <div class="width-70 mr-16">
+        <h4 class="u-text-gray">Quận bắc từ liêm, Hà nội</h1>
+          <h3 class="u-text-bold">Honda Airblade Fi 125 chính chủ mới 95%</h3>
+          <div class="horizontal u-mt-24">
+            <div class="horizontal btn w-150 mr-16">
+              <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_follow.png')%>" alt="icon">
+              <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+            </div>
+
+            <div class="horizontal btn w-150 mr-16">
+              <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_comment.png')%>" alt="icon">
+              <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+            </div>
+
+            <div class="horizontal btn w-150">
+              <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_share.png')%>" alt="icon">
+              <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+            </div>
+          </div>
+
+          <div class="horizontal center u-mt-32">
+            <h4 class="u-text-bold width-10">Mô tả</h4>
+            <div class="diving"></div>
+          </div>
+
+          <h4 class="u-mt-16">
+            <%= @post.describe %>
+          </h4>
+
+          <div class="horizontal center u-mt-32">
+            <h4 class="u-text-bold width-25">Thông tin chi tiết</h4>
+            <div class="diving"></div>
+          </div>
+
+          <div class="horizontal center u-mt-32">
+            <h4 class="u-text-bold width-15">Bình luận</h4>
+            <div class="diving"></div>
+          </div>
+          <%= render partial: 'comments', locals: { comments: @comments, post: @post } %>
+      </div>
+
+      <div class="width-40">
+        <h4 class="u-text-gray">Quận bắc từ liêm, Hà nội</h1>
+          <h3>Honda Airblade Fi 125 chính chủ mới 95%</h3>
+      </div>
+    </div>
+  </div>
+</div>
