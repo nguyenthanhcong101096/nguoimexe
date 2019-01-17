@@ -62,7 +62,7 @@ set :puma_preload_app, false
 # set :passenger_restart_options, -> { "#{deploy_to} --ignore-app-not-running" }
 
 # Global options
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options, forward_agent: true
 
 namespace :npm do
   desc 'Run rake npm install'
