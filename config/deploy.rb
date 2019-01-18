@@ -52,15 +52,6 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 
-# set :passenger_roles, :app
-# set :passenger_restart_runner, :sequence
-# set :passenger_restart_wait, 5
-# set :passenger_restart_limit, 2
-# set :passenger_restart_with_sudo, false
-# set :passenger_environment_variables, {}
-# set :passenger_restart_command, 'passenger-config restart-app'
-# set :passenger_restart_options, -> { "#{deploy_to} --ignore-app-not-running" }
-
 # Global options
 set :ssh_options, forward_agent: true
 
