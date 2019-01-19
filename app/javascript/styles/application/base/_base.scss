@@ -41,10 +41,10 @@ body {
 }
 
 .content-body {
-  padding-top: 32px;
-  padding-left: 192px;
-  padding-right: 192px;
+  margin: 0 auto;
+  padding: 32px 8px;
   height: 100%;
+  max-width: 1080px;
 }
 
 .content-head {

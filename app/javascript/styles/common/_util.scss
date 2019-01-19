@@ -211,7 +211,7 @@
 }
 
 .space-between {
-  @include flexbox(space-between, center);
+  @include flexbox(space-between, none);
 }
 
 .align-center {
@@ -230,7 +230,12 @@
 
 .pb-16 {
   padding: 16px;
-  @include respond-to-mobile() {
-    padding: 0;
-  }
+}
+
+.pb-24 {
+  padding: 24px;
+}
+
+.pb-32 {
+  padding: 32px;
 }
