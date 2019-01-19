@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  #before_action :sign_in_test
+  # before_action :sign_in_test
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict

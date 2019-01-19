@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   extend Enumerize
-  
+
   has_many :enterprises, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :user_chats, dependent: :destroy
   has_many :conversations, through: :user_chats, source: :conversation
-  
+
   has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
   has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
 
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
 
   enumerize :range, in: %i[enterprise person], scope: true
-  
+
   include ImageUploader::Attachment.new(:avatar)
 
   def email_required?
