@@ -13,6 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :username
       t.text :avatar_data
       t.string :slug_name
+      t.string :range, defualt: 'person'
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

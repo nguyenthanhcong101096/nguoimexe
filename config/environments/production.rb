@@ -21,12 +21,14 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+  config.action_cable.url = 'ws://nguoimexe.com/cable'
+  config.action_cable.allowed_request_origins = ['http://nguoimexe.com.com']
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  
+
   config.public_file_server.enabled = true
 
   config.consider_all_requests_local = true
-  
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -44,8 +46,10 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://http://13.114.160.74/cable'
-  config.action_cable.allowed_request_origins = ["http://13.114.160.74"]
+  # config.action_cable.allowed_request_origins = ["http://13.114.160.74"]
+  # config.action_cable.allowed_request_origins = ["http://nguoimexe.com"]
+  # config.action_cable.url = 'ws://http://nguoimexe.com/cable'
+  # config.action_cable.allowed_request_origins = [ 'http://nguoimexe.com' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

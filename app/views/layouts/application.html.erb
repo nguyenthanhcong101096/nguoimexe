@@ -24,6 +24,7 @@
   <meta property="og:url" content="<%= yield(:page_url) %>">
   <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : 'c' %>">
   <meta property="og:type" content='website'>
+  <%= action_cable_meta_tag %>
 </head>
 
 <body>

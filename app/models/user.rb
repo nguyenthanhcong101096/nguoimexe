@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  extend Enumerize
+
+  has_many :enterprises, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :blogs, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :user_chats, dependent: :destroy
+  has_many :conversations, through: :user_chats, source: :conversation
 
   has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
   has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
@@ -23,6 +27,8 @@ class User < ApplicationRecord
 
   validates :phone, uniqueness: true
   validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
+
+  enumerize :range, in: %i[enterprise person], scope: true
 
   include ImageUploader::Attachment.new(:avatar)
 
@@ -53,10 +59,6 @@ class User < ApplicationRecord
       user.uid = auth.uid
       user.password = Devise.friendly_token[0, 20]
     end
-  end
-
-  def conversation_ids
-    user_chats.pluck(:conversation_id)
   end
 
   private

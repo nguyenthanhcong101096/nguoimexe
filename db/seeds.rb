@@ -1,3 +1,4 @@
+# SEED KIND VEHICLE
 VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
@@ -6,8 +7,6 @@ hola  = FactoryBot.create(:user, phone: '0338529345', username: 'Nguyễn Thành
 holo  = FactoryBot.create(:user, phone: '0338529346', username: 'Thiên Kim', avatar: Rack::Test::UploadedFile.new(Rails.root.join('app', 'javascript', 'images', 'lien.png'), 'image/png'), address: 'aaaa', password: 'password', password_confirmation: 'password')
 helo  = FactoryBot.create(:user, phone: '0338529347', username: 'Trung Tâm Nhắn Tin', address: 'aaaa', password: 'password', password_confirmation: 'password')
 users = FactoryBot.create_list(:user, 5)
-
-admin = AdminUser.create!(phone: '0338529345', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_user: user) }
 
@@ -23,3 +22,7 @@ conversation_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, user_i
 messages_1 = 15.times { FactoryBot.create(:message, conversation: conversations.first, user_id: [hola, holo].sample.id) }
 messages_2 = 15.times { FactoryBot.create(:message, conversation: conversations.second, user_id: [hola, helo].sample.id) }
 messages_3 = 15.times { FactoryBot.create(:message, conversation: conversations.last, user_id: [holo, helo].sample.id) }
+
+
+# SEED ENTERPRISE
+enterprise = FactoryBot.create(:enterprise, name: 'Cửa hàng Thành Công', address: '244 Cống Quỳnh, Quận 1', phone: '912819284', user_id: hola.id)

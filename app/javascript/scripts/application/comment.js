@@ -2,7 +2,6 @@ import axios from 'axios';
 import { delegate } from 'rails-ujs'
 
 const commentBody = () => document.querySelector('.js-comment-body')
-const commentLatest = document.querySelector('.js-comment-latest')
 
 export const onClickBtnCommentLoadMore = () => {
   delegate(document, '.js-btn-comment-loadmore', 'click', (event) => {

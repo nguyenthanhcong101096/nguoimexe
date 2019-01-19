@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
 rvm_ruby = File.read('.ruby-version').strip
-lock "~> 3.6.1"
+lock '~> 3.6.1'
 
 # config valid only for current version of Capistrano
 
@@ -22,8 +24,8 @@ set :normalize_asset_timestamps, ['public/static']
 set :keep_assets, 3
 
 set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts }
+set :linked_files, %w[config/database.yml config/application.yml]
+set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/app node_modules app/javascripts]
 set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, rvm_ruby
@@ -35,11 +37,10 @@ set :bundle_without, %w[development test].join(' ')
 set :bundle_jobs, 4
 set :bundle_flags, '--deployment --quiet'
 
-
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
-set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock" # accept array for multi-bind
 set :puma_conf, "#{shared_path}/puma.rb"
 set :puma_access_log, "#{shared_path}/log/puma_error.log"
 set :puma_error_log, "#{shared_path}/log/puma_access.log"
@@ -50,7 +51,6 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
-
 
 # Global options
 set :ssh_options, forward_agent: true
@@ -77,7 +77,7 @@ namespace :deploy do
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
   end
-  
+
   desc 'Seed the database.'
   task :db_seed do
     on roles(:app) do
@@ -88,13 +88,13 @@ namespace :deploy do
       end
     end
   end
-  
+
   desc 'Reset database'
   task :db_reset do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute :rake, "db:migrate:reset"
+          execute :rake, 'db:migrate:reset'
         end
       end
     end

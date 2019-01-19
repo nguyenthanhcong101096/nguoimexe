@@ -1,18 +1,2 @@
-sau khi tạo instance và có cái IPv4 and Public DNS
-các bước tiếp theo
-
 ipv4 = 13.114.160.74
 dns = ec2-13-114-160-74.ap-northeast-1.compute.amazonaws.com
-
-1. Cấp quyền cho KEY.gem
-chmod 400 KEY.gem
-2. Connect tới instance
-ssh -i path/KEY.gem ubuntu@{Public_DNS}
-
-
-Sau khi connect thành công
-Tạo 1 user để deploy
-1. sudo adduser <new user>
-{ user: www, password: password }
-
-local_name = nguoimexe_local

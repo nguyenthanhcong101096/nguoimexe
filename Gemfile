@@ -7,10 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'redis'
+gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'omniauth-google-oauth2'
-
 gem 'authy'
 
 gem 'shrine'
@@ -60,7 +59,7 @@ group :development do
   gem 'rubocop', require: false
   # gem 'bugsnag'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  
+
   gem 'capistrano', '~> 3.6.0', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-rbenv', '~> 2.0', require: false
@@ -68,6 +67,7 @@ group :development do
   gem 'capistrano3-puma', require: false
   gem 'capistrano-yarn', require: false
   gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 group :staging, :production do

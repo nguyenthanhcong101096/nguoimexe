@@ -1,0 +1,88 @@
+<div>
+  <div class="horizontal">
+    <div class="width-50">
+      <img style="height: 500px;" src="<%=asset_pack_path('images/img_demo_1.png') %>" alt="post img">
+    </div>
+
+    <div class="width-25 u-pl-4">
+      <img style="height: 248px;" src="<%=asset_pack_path('images/img_demo_2.png') %>" alt="post img">
+      <img class="u-pt-4" style="height: 248px;" src="<%=asset_pack_path('images/img_demo_3.png') %>" alt="post img">
+    </div>
+
+    <div class="width-25 u-pl-4">
+      <img style="height: 248px;" src="<%=asset_pack_path('images/img_demo_4.png') %>" alt="post img">
+      <img class="u-pt-4" style="height: 248px;" src="<%=asset_pack_path('images/img_demo5.png') %>" alt="post img">
+    </div>
+  </div>
+
+  <div class="content-body">
+    <div class="horizontal space-between">
+      <div class="box big">
+        <div class="mr-16">
+          <h4 class="u-text-gray">Quận bắc từ liêm, Hà nội</h1>
+            <h3 class="u-text-bold">Honda Airblade Fi 125 chính chủ mới 95%</h3>
+            <div class="horizontal u-mt-24">
+              <div class="horizontal btn w-150 mr-16">
+                <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_follow.png')%>" alt="icon">
+                <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+              </div>
+
+              <div class="horizontal btn w-150 mr-16">
+                <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_comment.png')%>" alt="icon">
+                <h4 class="u-text-gray u-text-bold">Bình luận</h5>
+              </div>
+
+              <div class="horizontal btn w-150">
+                <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_share.png')%>" alt="icon">
+                <h4 class="u-text-gray u-text-bold">Chia sẽ</h5>
+              </div>
+            </div>
+
+            <div class="horizontal center u-mt-32">
+              <h4 class="u-text-bold width-10">Mô tả</h4>
+              <div class="diving"></div>
+            </div>
+
+            <h4 class="u-mt-16">
+              <%= @post.describe %>
+            </h4>
+
+            <div class="horizontal center u-mt-32">
+              <h4 class="u-text-bold width-30">Thông tin chi tiết</h4>
+              <div class="diving"></div>
+            </div>
+
+            <div class="horizontal center u-mt-32">
+              <h4 class="u-text-bold width-15">Bình luận</h4>
+              <div class="diving"></div>
+            </div>
+            <%= render partial: 'comments', locals: { comments: @comments, post: @post } %>
+        </div>
+      </div>
+
+      <div class="width-30">
+        <div class="box border pb-24">
+          <h3 class="u-text-bold">25.800.000 đ</h3>
+          <h4 class="u-text-gray">Có thể thương lượng</h4>
+          <div class="diving u-mt-24"></div>
+          <div class="horizontal center u-mt-24">
+            <img class="icon-60 radius mr-8" src="<%= @post.user_avatar_url(:medium)%>" alt="avatar">
+            <div>
+              <h4 class="u-text-bold"><%= @post.user_username %></h4>
+              <h4 class="u-text-gray">20 Tháng 1, 2019</h4>
+            </div>
+          </div>
+          <div class="horizontal u-mt-24 space-between">
+            <h4>Điện thoại</h4>
+            <h4 class="u-text-bold">180023 2938</h4>
+          </div>
+          <div class="horizontal u-mt-24 space-between">
+            <h4>Email</h4>
+            <h4 class="u-text-bold">Username@1pac.vn</h4>
+          </div>
+          <button class="btn bg-orange u-mt-24">Gọi ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
