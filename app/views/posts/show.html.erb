@@ -29,12 +29,12 @@
 
               <div class="horizontal btn w-150 mr-16">
                 <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_comment.png')%>" alt="icon">
-                <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+                <h4 class="u-text-gray u-text-bold">Bình luận</h5>
               </div>
 
               <div class="horizontal btn w-150">
                 <img class="icon-20 u-mr-8" src="<%= asset_pack_path('images/img_share.png')%>" alt="icon">
-                <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
+                <h4 class="u-text-gray u-text-bold">Chia sẽ</h5>
               </div>
             </div>
 
@@ -48,7 +48,7 @@
             </h4>
 
             <div class="horizontal center u-mt-32">
-              <h4 class="u-text-bold width-25">Thông tin chi tiết</h4>
+              <h4 class="u-text-bold width-30">Thông tin chi tiết</h4>
               <div class="diving"></div>
             </div>
 
@@ -68,7 +68,7 @@
           <div class="horizontal center u-mt-24">
             <img class="icon-60 radius mr-8" src="<%= @post.user_avatar_url(:medium)%>" alt="avatar">
             <div>
-              <h4 class="u-text-bold">Trương Minh Ngọc</h4>
+              <h4 class="u-text-bold"><%= @post.user_username %></h4>
               <h4 class="u-text-gray">20 Tháng 1, 2019</h4>
             </div>
           </div>

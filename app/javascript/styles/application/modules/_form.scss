@@ -2,6 +2,7 @@
   width: 100%;
   padding: 8px 16px;
   border: 0.5px solid $color-true-gray;
+  border-radius: 5px;
   margin-bottom: 8px;
   font-size: 13px;
   
@@ -16,16 +17,6 @@
   }
 }
 
-.form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: $font-size-sm;
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: 0.3px;
-  color: $color-black;
-}
-
 .form-group {
   margin-top: 16px;
 
@@ -38,77 +29,4 @@
     letter-spacing: 0.3px;
     color: $color-black;
   }
-}
-
-.form-has-icon {
-  position: relative;
-
-  .icon-left,
-  .icon-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .icon-left {
-    height: 24px;
-    left: 16px;
-    width: 24px;
-
-    + .form-control {
-      padding-left: 56px;
-    }
-  }
-
-  .icon-right {
-    height: 16px;
-    right: 16px;
-    width: 16px;
-
-    + .form-control {
-      padding-right: 48px;
-    }
-  }
-}
-
-.form-error {
-  background-color: rgba(244, 54, 76, 0.2);
-  border-radius: 5px;
-  color: $color-red;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  line-height: 1.14;
-  margin-top: 24px;
-  padding: 12px 5px;
-  text-align: center;
-}
-
-.form-submit {
-  margin-top: 48px;
-  text-align: center;
-
-  .btn-red {
-    width: 168px;
-  }
-}
-
-.form-input-hint {
-  color: $color-red;
-  margin-top: 8px;
-}
-
-.form-avatar {
-  text-align: center;
-
-  img {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-  }
-}
-
-.form-animation-register {
-  position: absolute;
-  top:-500px;
-  right: 0;
 }
