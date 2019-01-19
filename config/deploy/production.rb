@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-server '13.114.160.74', user: 'deploy', roles: %w[web app db]
+server '52.221.194.17', user: 'deploy', roles: %w[web app db]

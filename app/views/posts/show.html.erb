@@ -1,3 +1,9 @@
+<%= provide(:page_title, @post.title)%>
+<%= provide(:page_description, @post.title)%>
+<%= provide(:page_url, posts_url(id: @post.id))%>
+<%= provide(:page_image, @post.featured_image_url(:medium))%>
+
+
 <div>
   <div class="horizontal">
     <div class="width-50">
