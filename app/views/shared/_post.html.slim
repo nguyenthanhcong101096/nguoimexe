@@ -14,7 +14,7 @@
           h4 = post.title
           h5.u-text-gray = truncate(post.describe, length: 200)
 - else
-  = link_to blog_path(post.id) do
+  = link_to blog_path(slug: post.slug_title) do
     .horizontal.center.u-mb-16
       img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
       .horizontal.center

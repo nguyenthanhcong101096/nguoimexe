@@ -10,11 +10,14 @@ users = FactoryBot.create_list(:user, 5)
 
 follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_user: user) }
 
-30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
-200.times { comment = FactoryBot.create(:comment, user: User.all.sample, post: Post.all.sample) }
+posts         = 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
+comments_post = 200.times { comment = FactoryBot.create(:comment, user: User.all.sample, post: Post.all.sample) }
+
+img           = Rack::Test::UploadedFile.new(Rails.root.join('app', 'javascript', 'images', 'xe.png'), 'image/png')
+blog          = FactoryBot.create(:blog, user_id: hola.id, img: img, kind: 'blog', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan') 
 
 # SEED CONVERSATIONS
-conversations = FactoryBot.create_list(:conversation, 3)
+conversations  = FactoryBot.create_list(:conversation, 3)
 conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.first.id) }
 conversation_2 = [hola, helo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.second.id) }
 conversation_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.last.id) }

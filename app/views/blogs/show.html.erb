@@ -1,0 +1,20 @@
+<%= provide(:page_title, @blog.title)%>
+<%= provide(:page_description, @blog.title)%>
+<%= provide(:page_url, blogs_url(id: @blog.id))%>
+<%= provide(:page_image, @blog.img_url(:medium))%>
+
+<div class="container">
+  <div class="content-body">
+    <div class="info u-mt-32">
+      <h4 class="u-text-gray">Trải nghiệm, Đánh giá</h4>
+      <h2 class="u-mt-8"><%= @blog.title %></h2>
+      <div class="horizontal center u-mt-32">
+        <h4 class="u-text-bold mr-8">Thành Công</h4>
+        <h5 class="u-text-bold u-text-gray"> đăng lúc 08:56 20/01/2019</h5>
+      </div>
+    </div>
+    <div class="content u-mt-32">
+      <%= raw @blog.content %>
+    </div>
+  </div>
+</div>

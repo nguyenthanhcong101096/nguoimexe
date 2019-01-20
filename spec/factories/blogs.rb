@@ -2,8 +2,6 @@
 
 FactoryBot.define do
   factory :blog do
-    title { 'MyString' }
-    content { 'MyText' }
-    img_data { 'MyText' }
+    content { 'BLV Quang Huy: Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan' }
   end
 end

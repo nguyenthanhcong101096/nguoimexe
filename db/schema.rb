@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20190112161853) do
     t.text     "content"
     t.text     "img_data"
     t.bigint   "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "kind",       default: "newfeed"
+    t.string   "slug_title"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "comments", force: :cascade do |t|
