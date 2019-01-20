@@ -1,8 +1,8 @@
 {
   "application.css": "/packs/application-b130e9b910ec1d044c40876f8390b66b.css",
   "application.css.map": "/packs/application-b130e9b910ec1d044c40876f8390b66b.css.map",
-  "application.js": "/packs/application-b7278a294ab6755da34f.js",
-  "application.js.map": "/packs/application-b7278a294ab6755da34f.js.map",
+  "application.js": "/packs/application-1518e5e5e6d8a63eaf89.js",
+  "application.js.map": "/packs/application-1518e5e5e6d8a63eaf89.js.map",
   "images/cong.png": "/packs/images/cong-f8c7e9277899c0b453e53190c79ca48d.png",
   "images/icon_delete.png": "/packs/images/icon_delete-0e297a661eed67dece8497d4e089e8fb.png",
   "images/icon_notfi.png": "/packs/images/icon_notfi-db4fcac1f2a5fbb1d7b3788a138c6bd0.png",
@@ -52,7 +52,8 @@
   "server_rendering.js.map": "/packs/server_rendering-999dfb60492373732a4e.js.map",
   "writer.css": "/packs/writer-b130e9b910ec1d044c40876f8390b66b.css",
   "writer.css.map": "/packs/writer-b130e9b910ec1d044c40876f8390b66b.css.map",
-  "writer.js": "/packs/writer-318282a0a0ccbbd8d47b.js",
-  "writer.js.map": "/packs/writer-318282a0a0ccbbd8d47b.js.map",
-  "images/xe.png": "/packs/images/xe-1c651d266b325790d4ab3246fd4ad862.png"
+  "writer.js": "/packs/writer-ddc56accfd504dbdb778.js",
+  "writer.js.map": "/packs/writer-ddc56accfd504dbdb778.js.map",
+  "images/xe.png": "/packs/images/xe-1c651d266b325790d4ab3246fd4ad862.png",
+  "images/og.jpg": "/packs/images/og-ae4cbabfbec436a28c540ae4b824fa02.jpg"
 }
