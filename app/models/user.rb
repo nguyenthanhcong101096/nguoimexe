@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :user
 
   before_create :default_avatar, unless: :avatar
-  after_create_commit :slug
+  before_create :slug
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -71,6 +71,6 @@ class User < ApplicationRecord
   end
 
   def slug
-    self.slug_name = username.parameterize
+    self.slug_name = self.username.parameterize
   end
 end
