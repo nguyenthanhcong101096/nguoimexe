@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20190112161853) do
     t.string   "brand",               default: "Unknown",  null: false
     t.float    "registration",        default: 0.0,        null: false
     t.float    "price",               default: 0.0,        null: false
+    t.string   "slug_title"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
