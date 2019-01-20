@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DashboardController < ApplicationController
-  include CheckKeyWord
+  layout 'writer', only: %[markup]
 
   def index
     posts = Post.all.limit(10)
@@ -11,6 +11,6 @@ class DashboardController < ApplicationController
   end
 
   def markup
-    @posts = Post.all
+  
   end
 end
