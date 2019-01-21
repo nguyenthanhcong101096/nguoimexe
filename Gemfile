@@ -24,6 +24,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
+gem 'sitemap_generator'
+
 gem 'webpacker', '~> 3.5'
 
 gem 'active_model_serializers', '~> 0.10.0'

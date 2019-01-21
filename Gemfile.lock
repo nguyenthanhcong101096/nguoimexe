@@ -332,6 +332,8 @@ GEM
     shrine (2.14.0)
       content_disposition (~> 1.0)
       down (~> 4.1)
+    sitemap_generator (6.0.2)
+      builder (~> 3.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -425,6 +427,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   shrine
+  sitemap_generator
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
