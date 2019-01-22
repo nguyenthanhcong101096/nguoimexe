@@ -1,5 +1,32 @@
-- if post.is_a?(Post)
-  .post.u-mb-16
+/ - if post.is_a?(Post)
+/   .post.u-mb-16
+/     = link_to post_path(slug: post.slug_title) do
+/       .horizontal.u-mb-16
+/         img.mr-8.icon-30.radius src=asset_url(post.user_avatar_url(:medium))
+/         div
+/           .horizontal
+/             h4.mr-8 = post.user_username
+/             h5 style="background-color: #d3f1dc; color: #10b742; padding:3px; border-radius: 20px;" Bán xe
+/           h6.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)   
+/       .horizontal.u-mb-8.u-bg-gray style="height: 130px;"
+/         img.mr-8 style="width: 200px;" src=asset_pack_path('images/img_demo.jpg')
+/         .content.pb-8
+/           h4 = post.title
+/           h5.u-text-gray = truncate(post.describe, length: 200)
+/ - else
+/   = link_to blog_path(slug: post.slug_title) do
+/     .horizontal.center.u-mb-16
+/       img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
+/       .horizontal.center
+/         h4.mr-8 = post.user_username
+/         h5.u-text-red #blog
+/     h3.u-mb-8 = post.title
+/     .body.u-mb-32
+/       img src=src=asset_url(post.img_url(:medium))
+/       h6.u-mt-8.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)
+
+
+.post.u-mb-16
     = link_to post_path(slug: post.slug_title) do
       .horizontal.u-mb-16
         img.mr-8.icon-30.radius src=asset_url(post.user_avatar_url(:medium))
@@ -13,14 +40,3 @@
         .content.pb-8
           h4 = post.title
           h5.u-text-gray = truncate(post.describe, length: 200)
-- else
-  = link_to blog_path(slug: post.slug_title) do
-    .horizontal.center.u-mb-16
-      img.mr-8 style="height: 40px; width: 40px; border-radius: 50px;" src=asset_url(post.user_avatar_url(:medium))
-      .horizontal.center
-        h4.mr-8 = post.user_username
-        h5.u-text-red #blog
-    h3.u-mb-8 = post.title
-    .body.u-mb-32
-      img src=src=asset_url(post.img_url(:medium))
-      h6.u-mt-8.u-text-gray = distance_of_time_in_words(post.created_at, Time.now)

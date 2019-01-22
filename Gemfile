@@ -24,6 +24,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
+gem 'redis', '~> 3.0'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
+gem 'rack-mini-profiler'
+
 gem 'sitemap_generator'
 
 gem 'webpacker', '~> 3.5'

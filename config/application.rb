@@ -13,6 +13,12 @@ module Nguoimexe
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.cache_store = :redis_store, {
+      host: "localhost",
+      port: 6379,
+      db: 0,
+    }, { expires_in: 7.days }
+        
     config.active_record.protected_environments = %w[staging]
     config.assets.paths << Rails.root.join('app', 'assets', 'files')
     config.assets.paths << Rails.root.join('node_modules')
