@@ -6,6 +6,10 @@ class BlogsController < ApplicationController
 
   layout 'writer', only: %i[new]
 
+  def index
+    @posts = Blog.all.limit(10)
+  end
+  
   def new; end
 
   def create
