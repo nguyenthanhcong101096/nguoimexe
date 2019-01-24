@@ -29,9 +29,8 @@
 </head>
 
 <body>
+  <%= render 'shared/header' %>
   <%= yield %>
-
-  <%= render 'shared/popup_login' %>
   <%= render 'shared/notifications_list' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>

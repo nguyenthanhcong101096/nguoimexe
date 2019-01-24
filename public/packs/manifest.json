@@ -1,11 +1,11 @@
 {
-  "application.css": "/packs/application-b130e9b910ec1d044c40876f8390b66b.css",
-  "application.css.map": "/packs/application-b130e9b910ec1d044c40876f8390b66b.css.map",
-  "application.js": "/packs/application-3e5db6fe0279a2eaca44.js",
-  "application.js.map": "/packs/application-3e5db6fe0279a2eaca44.js.map",
+  "application.css": "/packs/application-ec3c333db977d09d80941d294093dc25.css",
+  "application.css.map": "/packs/application-ec3c333db977d09d80941d294093dc25.css.map",
+  "application.js": "/packs/application-7ca897444067b264d841.js",
+  "application.js.map": "/packs/application-7ca897444067b264d841.js.map",
   "images/cong.png": "/packs/images/cong-f8c7e9277899c0b453e53190c79ca48d.png",
   "images/icon_delete.png": "/packs/images/icon_delete-0e297a661eed67dece8497d4e089e8fb.png",
-  "images/icon_notfi.png": "/packs/images/icon_notfi-db4fcac1f2a5fbb1d7b3788a138c6bd0.png",
+  "images/icon_notfi.png": "/packs/images/icon_notfi-1d03a55dc2a41a1959b7b97fb80db42a.png",
   "images/icon_setting.png": "/packs/images/icon_setting-a7b787b98003095127246761e7aa70d9.png",
   "images/img_3_cham.png": "/packs/images/img_3_cham-aecee040db1af31516c37a2bdf1555cb.png",
   "images/img_add_picture.png": "/packs/images/img_add_picture-1b8600596c9144caa0932434f1f3ef81.png",
@@ -34,7 +34,7 @@
   "images/img_icon_sms.png": "/packs/images/img_icon_sms-a970549f730e3be574708cd1f310c725.png",
   "images/img_logout.png": "/packs/images/img_logout-eb7baf5cbb1f3b3f7586e40e0f88e7d5.png",
   "images/img_message.png": "/packs/images/img_message-106b4d2a2473d92ede89fae712900c20.png",
-  "images/img_msg.png": "/packs/images/img_msg-c5f8e39a3d291e6fe82e633e1a29d0c0.png",
+  "images/img_msg.png": "/packs/images/img_msg-5ce884e0c3fd96896280b39cb43cb335.png",
   "images/img_new_blogs.png": "/packs/images/img_new_blogs-e19e3ca3926df5c2ce41988a66adfbfc.png",
   "images/img_new_msg.png": "/packs/images/img_new_msg-98f1ebcc22f75d62bfcd2a5a74466d67.png",
   "images/img_new_post.png": "/packs/images/img_new_post-439b18cde91d8a8fbd29b6325ade9f64.png",
@@ -50,8 +50,8 @@
   "images/lien.png": "/packs/images/lien-da0e0af3cbd933d1f580c7ed460193b0.png",
   "images/og.jpg": "/packs/images/og-ae4cbabfbec436a28c540ae4b824fa02.jpg",
   "images/xe.png": "/packs/images/xe-1c651d266b325790d4ab3246fd4ad862.png",
-  "writer.css": "/packs/writer-b130e9b910ec1d044c40876f8390b66b.css",
-  "writer.css.map": "/packs/writer-b130e9b910ec1d044c40876f8390b66b.css.map",
-  "writer.js": "/packs/writer-0fb168f36da6085b8338.js",
-  "writer.js.map": "/packs/writer-0fb168f36da6085b8338.js.map"
+  "writer.css": "/packs/writer-ec3c333db977d09d80941d294093dc25.css",
+  "writer.css.map": "/packs/writer-ec3c333db977d09d80941d294093dc25.css.map",
+  "writer.js": "/packs/writer-d4e4d1e2855a97958307.js",
+  "writer.js.map": "/packs/writer-d4e4d1e2855a97958307.js.map"
 }

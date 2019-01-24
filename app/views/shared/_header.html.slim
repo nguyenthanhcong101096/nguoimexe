@@ -1,22 +1,15 @@
 header.header
   div
     = link_to root_path do
-      img.header-logo src=asset_pack_path('images/img_logo.png')
+      h4.u-text-bold NMX
   ul.header-menu
-    li: a[class="horizontal btn"]
-          img[class="avatar-header mr-8" src=asset_pack_path('images/img_shop.png')]
-          p.menu = t('.channel')
-    li: a[class="horizontal btn"]
-          img[class="avatar-header mr-8" src=asset_pack_path('images/img_mobile.png')]
-          p.menu = t('.down_app')
     - if user_signed_in? 
       li
         = render_notification_activity(current_user)
       li
         = render_notification_message(current_user)
     li 
-      div[class="btn horizontal js-button-login"]
+      div[class="horizontal js-button-login"]
         img[class="avatar-header mr-8" src=asset_pack_path('images/img_avatar.png')]
         p.menu = t('.login')
-    li = switch_language(I18n.locale)
             
