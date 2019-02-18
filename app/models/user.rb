@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :enterprises, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :blogs, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -50,6 +51,19 @@ class User < ApplicationRecord
 
   def unfollow(target_user)
     following.delete(target_user)
+  end
+
+  def like(post)
+    likes.create(likeable: post)
+  end
+
+  def dislike(post)
+    like = likes.find_by(likeable: post)
+    like.destroy
+  end
+
+  def liked_post?(post)
+    likes.exists?(likeable: post)
   end
 
   def self.from_omniauth(auth)

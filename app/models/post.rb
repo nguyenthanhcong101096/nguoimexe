@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   belongs_to :vehicle_kind
 
   has_many :comments, as: :commentable
+  has_many :likes, as: :likeable
+
   has_many :post_images, dependent: :destroy
 
   before_create :slug
