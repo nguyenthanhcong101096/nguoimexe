@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
 
-  after_commit { RenderCommentJob.perform_later self }
+  after_create_commit { RenderCommentJob.perform_later self }
   
   delegate :username, :avatar_url, to: :user, prefix: true
 end
