@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = current_user.comments.build(comment_params.merge(post: @post))
+    @comment = current_user.comments.build(comment_params.merge(commentable: @post))
 
     if @comment.save
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })

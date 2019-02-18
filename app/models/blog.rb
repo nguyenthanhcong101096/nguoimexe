@@ -2,7 +2,8 @@
 
 class Blog < ApplicationRecord
   belongs_to :user
-
+  has_many :comments, as: :commentable
+  
   include ImageUploader::Attachment.new(:img)
   
   before_create :slug
