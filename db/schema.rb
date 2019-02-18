@@ -52,13 +52,12 @@ ActiveRecord::Schema.define(version: 20190112161853) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "context",    limit: 500, null: false
-    t.bigint   "post_id"
+    t.string   "context",          limit: 500, null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.bigint   "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "conversations", force: :cascade do |t|

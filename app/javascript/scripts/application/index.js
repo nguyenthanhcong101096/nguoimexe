@@ -2,7 +2,7 @@ import { clickChangeLanguage } from './common'
 import { clickFollow } from './follow'
 import { enterCreateMesssage } from './message'
 import { onClickBtnCommentLoadMore, onClickBtnCommentCreate } from './comment'
-import Signup from './signup';
+//import Signup from './signup';
 
 window.addEventListener('DOMContentLoaded', function () {
   enterCreateMesssage()
@@ -13,5 +13,5 @@ window.addEventListener('DOMContentLoaded', function () {
   onClickBtnCommentLoadMore()
   onClickBtnCommentCreate()
   
-  new Signup().init()
+ // new Signup().init()
 })
