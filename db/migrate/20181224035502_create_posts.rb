@@ -14,7 +14,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.float :registration, null: false, default: false
       t.float :price, null: false, default: 0.0
       t.string :slug_title
-      
+
       t.timestamps
     end
 

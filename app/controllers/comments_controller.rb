@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
       html_block = render_to_string(partial: 'posts/comment', locals: { comment: @comment })
 
       push_notification(@post.user, 'comment', "/posts/#{@post.id}")
-      
+
       render json: { comment: html_block }, status: :ok
     else
       render_422(@comment.errors.messages)

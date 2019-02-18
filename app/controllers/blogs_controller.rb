@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   def index
     @posts = Blog.all.limit(10)
   end
-  
+
   def new; end
 
   def create

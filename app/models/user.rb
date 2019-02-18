@@ -71,6 +71,6 @@ class User < ApplicationRecord
   end
 
   def slug
-    self.slug_name = self.username.parameterize
+    self.slug_name = username.parameterize
   end
 end
