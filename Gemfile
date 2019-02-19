@@ -15,6 +15,8 @@ gem 'authy'
 gem 'shrine'
 gem 'letter_avatar'
 
+gem 'bugsnag'
+
 gem 'rails', '~> 5.0.7'
 
 gem 'puma'
@@ -58,7 +60,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'rubocop', require: false
-  # gem 'bugsnag'
+
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'capistrano', '~> 3.6.0', require: false
