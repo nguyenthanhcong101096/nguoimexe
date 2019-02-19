@@ -7,7 +7,6 @@ App.chat = App.cable.subscriptions.create "StreamMessageChannel",
     
     if(message_channel == "#{data['message_channel']}")
       message_last.text(data['last_message'])
-      # if(your_message != "#{data['to_user']}")
       message_new.append data['html']
       $(".messages").scrollTop($(".messages")[0].scrollHeight);
   
