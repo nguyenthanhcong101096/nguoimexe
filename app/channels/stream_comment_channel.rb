@@ -6,4 +6,9 @@ class StreamCommentChannel < ApplicationCable::Channel
   end
 
   def unsubscribed; end
+  
+  def create_comment(data)
+    post = Post.find(data['post_id'])
+    Comment.create(user_id: user_id, context: data['message'],  commentable: post)
+  end
 end

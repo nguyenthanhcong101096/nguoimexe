@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_pack_tag 'application' %>
   <%= action_cable_meta_tag %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <link rel="dns-prefetch" href="https://apis.google.com">
   <link rel="dns-prefetch" href="https://accounts.google.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -33,7 +35,6 @@
   <%= render 'shared/header' %>
   <%= yield %>
   <%= render 'shared/notifications_list' %>
-  <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </body>
 

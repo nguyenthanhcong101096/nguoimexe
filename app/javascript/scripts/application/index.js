@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', function () {
   clickFollow()
   
   onClickBtnCommentLoadMore()
-  onClickBtnCommentCreate()
   
  // new Signup().init()
 })
