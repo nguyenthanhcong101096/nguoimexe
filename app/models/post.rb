@@ -6,8 +6,7 @@ class Post < ApplicationRecord
 
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
-
-  has_many :post_images, dependent: :destroy
+  has_many :post_images, as: :post_imageable
 
   before_create :slug
 
