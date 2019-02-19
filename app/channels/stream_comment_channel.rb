@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class StreamCommentChannel < ApplicationCable::Channel
+  include TrackNotificationActivity
+  
   def subscribed
     stream_from 'comments_channel'
   end
@@ -9,6 +11,13 @@ class StreamCommentChannel < ApplicationCable::Channel
   
   def create_comment(data)
     post = Post.find(data['post_id'])
-    Comment.create(user_id: user_id, context: data['message'],  commentable: post)
+    current_user.comments.create(context: data['message'],  commentable: post)
+    push_notification(current_user, post.user, 'comment', "https://nguoimexe.com/posts/#{post.slug_title}")
+  end
+  
+  private
+  
+  def current_user
+    User.find(user_id)
   end
 end
