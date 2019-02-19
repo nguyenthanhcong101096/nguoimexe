@@ -59,6 +59,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'rubocop', require: false
+  gem 'rails_best_practices'
 
   gem 'spring-watcher-listen', '~> 2.0.0'
 

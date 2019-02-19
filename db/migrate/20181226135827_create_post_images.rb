@@ -6,7 +6,7 @@ class CreatePostImages < ActiveRecord::Migration[5.0]
       t.text :post_image_data
       t.integer :post_imageable_id
       t.string :post_imageable_type
-      
+
       t.timestamps
     end
   end

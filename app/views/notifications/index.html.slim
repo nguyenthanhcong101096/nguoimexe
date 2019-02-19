@@ -1,9 +1,0 @@
-.main
-  h1 Notifications#index
-  .horizontal
-    h3.mr-8 =@activities.count 
-    h4 thông báo chưa đọc
-  div id="notifications" notificaton-user-channel=current_user.id
-  - @activities.each do |ac|
-    = link_to(ac.url) do
-      h5 = ac.message 

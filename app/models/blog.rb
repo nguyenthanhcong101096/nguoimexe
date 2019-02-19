@@ -5,7 +5,7 @@ class Blog < ApplicationRecord
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
   has_many :post_images, as: :post_imageable
-  
+
   include ImageUploader::Attachment.new(:img)
 
   before_create :slug

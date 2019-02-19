@@ -13,7 +13,7 @@ follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_u
 posts         = 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
 
 img           = Rack::Test::UploadedFile.new(Rails.root.join('app', 'javascript', 'images', 'xe.png'), 'image/png')
-blog          = FactoryBot.create(:blog, user_id: hola.id, img: img, kind: 'blog', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan') 
+blog          = FactoryBot.create(:blog, user_id: hola.id, img: img, kind: 'blog', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan')
 
 comments_post = 100.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: Post.all.sample) }
 comments_blog = 50.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: blog) }
