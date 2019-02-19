@@ -10,7 +10,6 @@ end
 gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem 'authy'
 
 gem 'shrine'
 gem 'letter_avatar'

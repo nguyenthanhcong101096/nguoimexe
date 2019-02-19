@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     html_blocks = @comments.each_with_object([]) { |comment, arr| arr << render_to_string(partial: 'posts/comment', locals: { comment: comment }) }
     render json: { comments: html_blocks, min_id: @comments.last.id, max_id: @post.comments.first.id }, status: :ok
   end
-  
+
   private
-  
+
   def set_post
     @post = Post.find(params[:post_id])
   end

@@ -63,8 +63,6 @@ GEM
       activesupport (>= 3.0.0)
     arel (7.1.4)
     ast (2.4.0)
-    authy (2.7.4)
-      httpclient (>= 2.5.3.3)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bugsnag (6.11.0)
@@ -149,7 +147,6 @@ GEM
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
-    httpclient (2.8.3)
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.9.0)
@@ -390,7 +387,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   activeadmin
-  authy
   bugsnag
   byebug
   capistrano (~> 3.6.0)
