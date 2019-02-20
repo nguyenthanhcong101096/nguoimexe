@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_in_test
+    @test = request.subdomain
     @user = User.first
     sign_in(@user)
     cookies.signed[:user_id] = @user.id
