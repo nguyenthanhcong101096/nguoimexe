@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  constraints(Subdomain) do
+  constraints(SubdomainSale) do
     get '/' => 'groups#index'
   end
-
+  
+  constraints(SubdomainAdmin) do
+    get '/' => 'admin#index'
+  end
+  
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
   resources :posts, only: %i[new create show], param: :slug
@@ -17,12 +21,9 @@ Rails.application.routes.draw do
     get 'change_password'   => 'users#change_password', on: :member
     patch 'set_password'    => 'users#set_password', on: :member
   end
-
+  
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
-
-  post 'verify'    => 'users#register_by_phone'
-  post 'reset_pwd' => 'users#reset_password'
 
   get 'markup'     => 'dashboard#markup'
 
