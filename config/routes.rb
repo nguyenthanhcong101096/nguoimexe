@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   constraints(SubdomainSale) do
     get '/' => 'groups#index'
   end
-  
+
   constraints(SubdomainAdmin) do
     get '/' => 'admin#index'
   end
-  
+
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
   resources :posts, only: %i[new create show], param: :slug
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'change_password'   => 'users#change_password', on: :member
     patch 'set_password'    => 'users#set_password', on: :member
   end
-  
+
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
 

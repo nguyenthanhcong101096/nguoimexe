@@ -1,9 +1,9 @@
 .u-mt-32
   div id="render-comments" comment-channel=post.id
   div.comment-body.js-comment-body
+    .comment-latest id="comment-latest"
     - comments.each do |comment|
       = render partial: 'comment', locals: { comment: comment }
-    .comment-latest id="comment-latest"
   - if post.comments.count > 10
     h5.pb-16.u-text-center.u-text-red.js-btn-comment-loadmore data-post-id=post.id data-comment-min-id=comments.last.id Xem thêm bình luận
   div.diving

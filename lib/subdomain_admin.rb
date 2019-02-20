@@ -2,6 +2,6 @@
 
 class SubdomainAdmin
   def self.matches?(request)
-    request.subdomain.present? && request.subdomain == 'admin' 
+    request.subdomain.present? && request.subdomain == 'admin'
   end
 end
