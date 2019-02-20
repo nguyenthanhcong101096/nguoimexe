@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   extend Enumerize
 
+  has_many :groups, dependent: :destroy
+  has_many :user_groups, dependent: :destroy
   has_many :enterprises, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
