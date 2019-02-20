@@ -4,10 +4,7 @@ class DashboardController < ApplicationController
   layout 'writer', only: %(markup)
 
   def index
-    posts = Post.all.limit(10)
-    blogs = Blog.all.limit(10)
-
-    @posts = (posts + blogs).shuffle
+    @posts = Post.all.limit(10)
   end
 
   def markup; end

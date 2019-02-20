@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   constraints(SubdomainSale) do
-    get '/' => 'groups#index'
+    resources :posts, only: %i[new create show], param: :slug
+    get '/' => 'dashboard#index'
   end
 
   constraints(SubdomainAdmin) do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
-  resources :posts, only: %i[new create show], param: :slug
+  resources :groups, only: %i[index show]
   resources :comments, only: %i[index create], defaults: { format: :html }
   resources :follows, only: %i[create destroy], param: :user_id
   resources :messages, only: %i[index new show create]
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
 
   get 'markup'     => 'dashboard#markup'
 
-  get '/'          => 'dashboard#index', as: 'root'
+  get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'
 
   mount ActionCable.server => '/cable'

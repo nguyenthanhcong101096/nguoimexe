@@ -1,0 +1,9 @@
+<div class="content-body">
+  <h2><%= @group.name %></h2>
+  <h2>danh sách thành viên</h2>
+  <% @group.users.map do |u| %>
+  <h3><%= u.username %></h3>
+  <% end %>
+
+  <%= render partial: 'shared/post', collection: @posts %>
+</div>

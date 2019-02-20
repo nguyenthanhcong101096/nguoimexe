@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20190220015755) do
     t.text     "img_data"
     t.bigint   "user_id"
     t.string   "kind",       default: "newfeed"
+    t.string   "mod",        default: "public"
     t.string   "slug_title"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

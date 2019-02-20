@@ -8,6 +8,8 @@ class CreateBlogs < ActiveRecord::Migration[5.0]
       t.text :img_data
       t.bigint :user_id
       t.string :kind, default: 'newfeed'
+      t.string :mod, default: 'public'
+
       t.string :slug_title
 
       t.timestamps

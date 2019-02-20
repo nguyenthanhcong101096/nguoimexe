@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
 class Blog < ApplicationRecord
+  extend Enumerize
+
   belongs_to :user
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
   has_many :post_images, as: :post_imageable
+
+  scope :with_mod, ->(mod) { where(mod: mod) }
+  scope :with_kid, ->(kind) { where(kind: kind) }
+
+  enumerize :kind, in: %i[blog newfeed], scope: true
 
   include ImageUploader::Attachment.new(:img)
 
