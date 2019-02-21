@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   constraints(SubdomainAdmin) do
     get '/' => 'admin#index'
   end
+  
+  constraints(SubdomainStore) do
+    get '/' => 'stores#index'
+  end
 
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
