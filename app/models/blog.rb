@@ -3,6 +3,8 @@
 class Blog < ApplicationRecord
   extend Enumerize
 
+  before_create :slug
+  
   belongs_to :user
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
@@ -14,8 +16,6 @@ class Blog < ApplicationRecord
   enumerize :kind, in: %i[blog newfeed], scope: true
 
   include ImageUploader::Attachment.new(:img)
-
-  before_create :slug
 
   delegate :username, :id, :avatar_url, to: :user, prefix: true
 
