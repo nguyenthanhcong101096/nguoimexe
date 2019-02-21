@@ -33,7 +33,7 @@ class Post < ApplicationRecord
 
   delegate :username, :id, :avatar_url, to: :user, prefix: true
   delegate :name, to: :vehicle_kind, prefix: true
-
+  
   include ImageUploader::Attachment.new(:featured_image)
 
   def created_date
