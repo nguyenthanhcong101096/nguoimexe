@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get '/' => 'admin#index'
   end
 
+  constraints(SubdomainStore) do
+    get '/' => 'stores#index'
+  end
+
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
   resources :groups, only: %i[index show]
@@ -19,9 +23,9 @@ Rails.application.routes.draw do
   resources :blogs, only: %i[index new show create], param: :slug
 
   resources :users, only: %i[show edit update] do
-    get 'profile'           => 'users#profile', on: :collection
+    get 'profile' => 'users#profile', on: :collection
   end
-  
+
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
 

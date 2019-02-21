@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: blogs
@@ -22,7 +23,7 @@ class Blog < ApplicationRecord
   extend Enumerize
 
   before_create :slug
-  
+
   belongs_to :user
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
