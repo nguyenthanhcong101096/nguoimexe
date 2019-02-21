@@ -1,1 +1,13 @@
-<h1>Profile</h1>
+<%=provide(:page_title, @user.username ) %>
+<%=provide(:page_description, 'Miêu tả') %>
+<%=provide(:page_url, root_path) %>
+
+<div class="row">
+  <div class="col-3 col-sm-12"
+    <%= render 'shared/left_bar' %>
+  </div>
+  <div class="col-9 col-sm-12">
+    <div style="padding:32px 128px; height: 100vh; overflow: scroll"
+      <%= render partial: 'shared/post', collection: @posts, locals: { col: 'col-4' } %>
+    </div>
+</div>
