@@ -12,7 +12,6 @@
 #  updated_at          :datetime         not null
 #
 
-
 class PostImage < ApplicationRecord
   belongs_to :post_imageable, polymorphic: true
 

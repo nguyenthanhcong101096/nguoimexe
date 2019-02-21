@@ -11,7 +11,6 @@
 #  updated_at      :datetime         not null
 #
 
-
 class UserChat < ApplicationRecord
   belongs_to :conversation
   belongs_to :user

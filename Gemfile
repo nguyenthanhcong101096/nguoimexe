@@ -62,7 +62,7 @@ group :development do
   gem 'rails_best_practices'
 
   gem 'annotate'
-  
+
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'capistrano', '~> 3.6.0', require: false

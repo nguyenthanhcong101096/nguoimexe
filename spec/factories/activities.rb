@@ -15,7 +15,6 @@
 #  updated_at     :datetime         not null
 #
 
-
 FactoryBot.define do
   factory :activity do
     kind { 'MyString' }

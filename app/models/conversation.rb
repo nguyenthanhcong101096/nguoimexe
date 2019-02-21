@@ -9,7 +9,6 @@
 #  updated_at :datetime         not null
 #
 
-
 class Conversation < ApplicationRecord
   has_many :user_chats, dependent: :destroy
   has_many :messages, dependent: :destroy

@@ -13,7 +13,6 @@
 #  updated_at :datetime         not null
 #
 
-
 class Enterprise < ApplicationRecord
   belongs_to :user
 end

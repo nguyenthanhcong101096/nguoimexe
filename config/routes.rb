@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   constraints(SubdomainAdmin) do
     get '/' => 'admin#index'
   end
-  
+
   constraints(SubdomainStore) do
     get '/' => 'stores#index'
   end
@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   resources :blogs, only: %i[index new show create], param: :slug
 
   resources :users, only: %i[show edit update] do
-    get 'profile'           => 'users#profile', on: :collection
+    get 'profile' => 'users#profile', on: :collection
   end
-  
+
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
 

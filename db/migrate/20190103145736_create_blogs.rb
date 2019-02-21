@@ -12,7 +12,7 @@ class CreateBlogs < ActiveRecord::Migration[5.0]
       t.integer :like_count
       t.integer :view_count
       t.integer :comment_count
-      
+
       t.string :slug_title
 
       t.timestamps
