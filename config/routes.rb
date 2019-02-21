@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   resources :blogs, only: %i[index new show create], param: :slug
 
   resources :users, only: %i[show edit update] do
+    get 'profile'           => 'users#profile', on: :collection
     get 'change_password'   => 'users#change_password', on: :member
     patch 'set_password'    => 'users#set_password', on: :member
   end
-
+  
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
 
