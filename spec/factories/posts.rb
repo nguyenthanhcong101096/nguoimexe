@@ -1,5 +1,26 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: posts
+#
+#  id                  :integer          not null, primary key
+#  title               :string
+#  describe            :string
+#  user_id             :bigint(8)        not null
+#  vehicle_kind_id     :bigint(8)        not null
+#  status              :string           default("spending"), not null
+#  featured_image_data :text
+#  product_date        :string           default("Unknown")
+#  brand               :string           default("Unknown"), not null
+#  registration        :float            default(0.0), not null
+#  price               :float            default(0.0), not null
+#  slug_title          :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+
 describe = "
 Chia sẻ với báo giới, HLV Park Hang-seo xác nhận: “Chúng tôi vốn dự định xem Đình Trọng là một trong những phương án thay thế cho Xuân Hưng. Chúng ta cần các cầu thủ có sự ăn ý trong thi đấu và phối hợp. Quyết định có thay thế và gọi lại Đình Trọng hay không sẽ dựa vào kết quả báo cáo cụ thể từ các bác sĩ”.
 

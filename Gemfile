@@ -44,7 +44,7 @@ gem 'faker'
 gem 'slim-rails'
 gem 'html2slim'
 
-gem 'activeadmin'
+gem 'counter_culture'
 gem 'enumerize'
 
 group :development, :test do
@@ -61,6 +61,8 @@ group :development do
   gem 'rubocop', require: false
   gem 'rails_best_practices'
 
+  gem 'annotate'
+  
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'capistrano', '~> 3.6.0', require: false
