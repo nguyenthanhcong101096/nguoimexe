@@ -20,14 +20,10 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show edit update] do
     get 'profile'           => 'users#profile', on: :collection
-    get 'change_password'   => 'users#change_password', on: :member
-    patch 'set_password'    => 'users#set_password', on: :member
   end
   
   post 'signin'    => 'user_session#create'
   get 'signout'    => 'user_session#destroy'
-
-  get 'markup'     => 'dashboard#markup'
 
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'
