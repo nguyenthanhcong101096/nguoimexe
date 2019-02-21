@@ -45,11 +45,14 @@ ActiveRecord::Schema.define(version: 20190220015755) do
     t.text     "content"
     t.text     "img_data"
     t.bigint   "user_id"
-    t.string   "kind",       default: "newfeed"
-    t.string   "mod",        default: "public"
+    t.string   "kind",          default: "newfeed"
+    t.string   "mod",           default: "public"
+    t.integer  "like_count"
+    t.integer  "view_count"
+    t.integer  "comment_count"
     t.string   "slug_title"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -171,6 +174,8 @@ ActiveRecord::Schema.define(version: 20190220015755) do
     t.text     "avatar_data"
     t.string   "slug_name"
     t.string   "range"
+    t.integer  "followers_count"
+    t.integer  "following_count"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

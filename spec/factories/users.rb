@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -12,6 +11,8 @@
 #  avatar_data            :text
 #  slug_name              :string
 #  range                  :string
+#  followers_count        :integer
+#  following_count        :integer
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
@@ -21,7 +22,6 @@
 #  uid                    :string
 #  type_account           :string
 #
-
 
 FactoryBot.define do
   factory :user do
