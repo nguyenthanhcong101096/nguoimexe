@@ -5,7 +5,7 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_cable.url = 'ws://localhost:3000/cable'
+  config.action_cable.url = 'ws://localhost:5000/cable'
   config.action_cable.allowed_request_origins = [%r{http://*}, %r{https://*}]
 
   config.action_dispatch.tld_length = 0

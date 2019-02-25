@@ -1,0 +1,2 @@
+web: rails s
+hot: ./bin/webpack-dev-server
