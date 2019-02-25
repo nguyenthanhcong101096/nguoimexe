@@ -1,3 +1,7 @@
+<%= provide(:page_title, @group.name)%>
+<%= provide(:page_description, 'Group nguoimexe')%>
+<%= provide(:page_url, group_url(name: @group.name))%>
+
 <div class="content-body">
   <h2><%= @group.name %></h2>
   <%= render partial: 'shared/post', collection: @posts %>

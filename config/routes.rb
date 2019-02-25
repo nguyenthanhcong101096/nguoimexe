@@ -16,11 +16,11 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: %i[sessions passwords], controllers: { omniauth_callbacks: 'callbacks' }
 
-  resources :groups, only: %i[index show]
-  resources :comments, only: %i[index create], defaults: { format: :html }
-  resources :follows, only: %i[create destroy], param: :user_id
+  resources :groups,   only: %i[index show],            param: :name
+  resources :comments, only: %i[index create],          defaults: { format: :html }
+  resources :follows,  only: %i[create destroy],        param: :user_id
   resources :messages, only: %i[index new show create]
-  resources :blogs, only: %i[index new show create], param: :slug
+  resources :blogs,    only: %i[index new show create], param: :slug
 
   resources :users, only: %i[show edit update] do
     get 'profile' => 'users#profile', on: :collection
