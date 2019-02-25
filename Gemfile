@@ -82,4 +82,13 @@ group :staging, :production do
   gem 'lograge'
   gem 'pg'
 end
+
+group :test do
+  gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter'
+  gem 'rspec-its'
+  gem 'rspec-json_matcher'
+  gem 'shoulda-matchers'
+end
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
