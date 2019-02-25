@@ -46,6 +46,7 @@ gem 'html2slim'
 
 gem 'counter_culture'
 gem 'enumerize'
+gem 'foreman'
 
 group :development, :test do
   gem 'pry-rails'
