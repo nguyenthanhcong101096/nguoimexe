@@ -27,5 +27,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should have_many(:groups).dependent(:destroy) }
+    it { should have_many(:user_groups).dependent(:destroy) }
+    it { should have_many(:posts).dependent(:destroy) }
+    it { should have_many(:comments).dependent(:destroy) }
+    it { should have_many(:likes).dependent(:destroy) }
+    it { should have_many(:blogs).dependent(:destroy) }
+    it { should have_many(:activities).dependent(:destroy) }
+    it { should have_many(:messages).dependent(:destroy) }
+    it { should have_many(:user_chats).dependent(:destroy) }
+    it { should have_many(:conversations) }
+    it { should have_many(:active_relationships).dependent(:destroy) }
+    it { should have_many(:passive_relationships).dependent(:destroy) }
+  end
 end
