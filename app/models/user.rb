@@ -52,20 +52,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  validates :phone, uniqueness: true
   validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
 
   enumerize :range, in: %i[enterprise person], scope: true
 
   include ImageUploader::Attachment.new(:avatar)
 
-  def email_required?
-    false
-  end
-
-  def email_changed?
-    false
-  end
 
   def follow?(user_id)
     following_ids.include?(user_id)
