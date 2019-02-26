@@ -1,0 +1,57 @@
+@mixin font-size-headline--lg() {
+  @extend %font-base--headline;
+  font-family: $font-family-alphabet;
+  font-size: 40px;
+  font-weight: 600;
+
+  @include mediaquery--sm() {
+    font-size: 28px;
+  }
+}
+
+@mixin font-size-headline--md() {
+  @extend %font-base--headline;
+  font-family: $font-family-alphabet;
+  font-size: 32px;
+  font-weight: 600;
+
+  @include mediaquery--sm() {
+    font-size: 24px;
+  }
+}
+
+@mixin font-size-headline() {
+  @extend %font-base--headline;
+  font-family: $font-family-medium;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@mixin font-size-headline--sm() {
+  @extend %font-base--headline;
+  font-family: $font-family-medium;
+  font-size: 16px;
+}
+
+@mixin font-size-text--lg() {
+  font-family: $font-family-medium;
+  font-size: 18px;
+}
+
+@mixin font-size-text() {
+  font-size: 16px;
+}
+
+@mixin font-size-text--sm() {
+  font-size: 14px;
+}
+
+@mixin font-size-text--xs() {
+  font-family: $font-family-medium;
+  font-size: 12px;
+}
+
+@mixin font-size-headline--alphabet() {
+  font-family: $font-family-alphabet;
+  font-size: 18px;
+}

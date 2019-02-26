@@ -1,0 +1,19 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$col-offset;
+  margin-right: -$col-offset;
+}
+
+[class^='col-'] {
+  min-height: 1px;
+  max-width: 100%;
+  padding-left: $col-offset;
+  padding-right: $col-offset;
+}
+
+@for $i from 1 through $col-num {
+  .col--sm-#{$i} {
+    width: percentage($i / $col-num);
+  }
+}

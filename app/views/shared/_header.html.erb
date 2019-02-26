@@ -1,0 +1,59 @@
+<header id="header" class="header">
+  <div class="header__logo">
+    <a href="/">
+      <img width="74" src="<%= asset_pack_path('images/img_logo.png') %>" alt="logo">
+    </a>
+  </div>
+
+  <ul class="list list--inline header__links">
+    <li class="header__link list__item">
+      <a href="#" class="link has-border is-active">Xe máy</a>
+    </li>
+    <li class="header__link list__item">
+      <a href="#" class="link has-border">Ô tô</a>
+    </li>
+    <li class="header__link list__item">
+      <a href="#" class="link has-border">Phương tiện khác</a>
+    </li>
+    <li class="header__link list__item">
+      <a href="#" class="link has-border">Chia sẻ</a>
+    </li>
+  </ul>
+
+  <div class="header__ultility">
+    <div class="header__search-box">
+      <div class="form-body">
+        <input type="text" class="form-input search-box has-icon" placeholder="Tìm Kiếm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+          <path fill="#484848" fill-rule="evenodd" d="M13.6 12.417l4.492 4.5a.833.833 0 0 1-1.184 1.166L12.425 13.6a6.667 6.667 0 1 1 1.175-1.175v-.008zm-5.267.916a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="header__actions">
+      <ul class="header__links list list--inline">
+        <li class="header__link list__item">
+          <a href="#" class="link has-border">Đăng Bài</a>
+        </li>
+        <li class="header__link list__item">
+          <button class="btn--icon badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#484848" fill-rule="evenodd" d="M6 14H4a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v13a1 1 0 0 1-1.7.7L16.58 18H8a2 2 0 0 1-2-2v-2zm0-2V8c0-1.1.9-2 2-2h8V4H4v8h2zm14-4H8v8h9a1 1 0 0 1 .7.3l2.3 2.29V8z"/>
+            </svg>
+          </button>
+        </li>
+        <li class="header__link list__item">
+          <button class="btn--icon badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#484848" fill-rule="evenodd" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/>
+            </svg>
+          </button>
+        </li>
+        <li class="header__link list__item">
+          <button class="btn--icon">
+            <img class="header__avatar" src="<%= asset_pack_path('images/img_avatar.png') %>" alt="logo">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

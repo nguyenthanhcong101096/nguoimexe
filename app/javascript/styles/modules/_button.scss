@@ -1,0 +1,23 @@
+%button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: .04em;
+  line-height: 1;
+  max-width: 100%;
+  outline: 0;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn,
+.btn--icon {
+  @extend %button;
+}
+
+.btn--icon {
+  padding: 2px;
+}

@@ -1,0 +1,9 @@
+.list {
+  &--inline {
+    font-size: 0;
+
+    .list__item {
+      display: inline-block;
+    }
+  }
+}
