@@ -1,9 +1,9 @@
 # Dockerfile
 FROM ruby:2.5.1
 
-#RUN apt-get update -qq && apt-get install -y build-essential
+RUN apt-get update -qq && apt-get install -y build-essential
 
-RUN sudo apt-get install postgresql postgresql-contrib libpq-dev
+# RUN sudo apt-get install postgresql postgresql-contrib libpq-dev
 
 # postgres
 RUN apt-get install -y libpq-dev
