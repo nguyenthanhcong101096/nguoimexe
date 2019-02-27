@@ -1,0 +1,44 @@
+<li class="list-view__item">
+    <div class="card">
+      <!-- <%= link_to post_path(slug: post.slug_title) do %> -->
+        <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+        </div>
+      <!-- <% end %> -->
+      <div class="card__body">
+        <h2 class="headline card__headline"><%= post.title %></h2>
+        <div class="card__blocks">
+          <div class="card__block">
+            <p class="label">11 người đang xem</p>
+            <p class="text--md"><%= post.price %> đ</p>
+          </div>
+          <div class="card__block">
+            <p class="label">Tình trạng</p>
+            <p class="content">Đã sử dụng</p>
+          </div>
+          <div class="card__block">
+            <p class="label">Km đã đi</p>
+            <p class="content">14520 km</p>
+          </div>
+          <div class="card__block">
+            <p class="label">Dung tích</p>
+            <p class="content">1200 cc</p>
+          </div>
+          <div class="card__block">
+            <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+          </div>
+          <div class="card__block">
+            <p class="label">Màu Sắc</p>
+            <p class="content">Đen</p>
+          </div>
+          <div class="card__block">
+            <p class="label">Nơi Bán</p>
+            <p class="content">TP.Hồ Chí Minh</p>
+          </div>
+          <div class="card__block">
+            <p class="label">Hãng</p>
+            <p class="content">Harley-Davision</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
