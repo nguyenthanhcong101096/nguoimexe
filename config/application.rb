@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module Nguoimexe
   class Application < Rails::Application
     config.autoload_paths += Dir[Rails.root.join('lib')]
-
+    config.session_store :cookie_store, :key => 'user_id', :domain => :all
     config.active_record.protected_environments = %w[staging]
     config.assets.paths << Rails.root.join('app', 'assets', 'files')
     config.assets.paths << Rails.root.join('node_modules')

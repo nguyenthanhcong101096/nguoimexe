@@ -2,6 +2,7 @@
 <%= provide(:page_description, 'Miêu tả') %>
 <%= provide(:page_url, root_path) %>
 
+<%= render 'shared/header' %>
 <div class='horizontal content-body'>
   <%= render partial: 'shared/post', collection: @posts %>
   <div>
@@ -11,3 +12,4 @@
     <% end%>
   </div>
 </div>
+<h1><%= @t %> t</h1>

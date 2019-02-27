@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
 class UserSessionController < ApplicationController
+  def new 
+    redirect_to root_path if current_user
+  end
+  
   def create
     @user = User.find_by(email: params[:email])
     if @user&.valid_password?(params[:password])
       sign_in(@user)
       cookies.signed[:user_id] = @user.id
-
-      render json: { status: 'ok', message: 'Login success' }
+      redirect_to root_path
     else
-      render json: { status: 'error', message: 'email or pasword is incorrect' }
+      render :new
     end
   end
 
   def destroy
     sign_out(current_user)
+    cookies.delete :user_id
     redirect_to root_path
   end
 end
