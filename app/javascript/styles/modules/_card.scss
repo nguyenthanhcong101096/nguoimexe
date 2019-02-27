@@ -1,0 +1,51 @@
+.card {
+  display: table;
+
+  &__image,
+  &__body {
+    display: table-cell;
+  }
+
+  &__image {
+    width: 252px;
+    height: 156px;
+    margin-right: 24px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+  }
+
+  &__body {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  &__blocks {
+    @include flexbox(flex-end, flex-start);
+    flex-wrap: wrap;
+    margin-top: 48px;
+  }
+
+  &__block {
+    width: 23%;
+
+    &:nth-child(5),
+    &:first-child {
+      width: 31%;
+      padding-right: 32px;
+    }
+
+    &:nth-child(n + 5) {
+      margin-top: 16px;
+    }
+
+    .label {
+      @include font-size-text--sm();
+      text-transform: uppercase;
+    }
+
+    .content {
+      @include font-size-text();
+    }
+  }
+}

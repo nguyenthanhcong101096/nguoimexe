@@ -1,0 +1,24 @@
+.form-group {
+  + .form-group {
+    margin-top: 24px;
+  }
+}
+
+.form-body {
+  position: relative;
+}
+
+.form-label {
+  @include font-size-text--sm();
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.form-list {
+  @include flexbox(flex-start, center);
+
+  &__seperate {
+    color: $light-grey;
+    padding: 0 4px;
+  }
+}

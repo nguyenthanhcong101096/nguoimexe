@@ -1,0 +1,30 @@
+%headline {
+  color: $dark-color;
+  font-weight: 600;
+}
+
+@mixin font-size-headline--md() {
+  @extend %headline;
+  font-size: 24px;
+  line-height: 1;
+}
+
+@mixin font-size-headline() {
+  @extend %headline;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin font-size-text() {
+  font-size: 14px;
+  font-weight: 600;
+  color: $primary-color;
+  line-height: 1.14;
+}
+
+@mixin font-size-text--sm() {
+  font-size: 12px;
+  font-weight: 600;
+  color: $tertiary-color;
+  line-height: 1.45;
+}

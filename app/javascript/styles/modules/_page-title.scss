@@ -1,0 +1,18 @@
+.page-title {
+  @include clearfix();
+  margin-bottom: 16px;
+
+  &__text {
+    float: left;
+    padding-top: 8px;
+  }
+
+  &__actions {
+    @include flexbox(flex-start, center);
+    float: right;
+  }
+
+  &__action + &__action {
+    margin-left: 8px;
+  }
+}

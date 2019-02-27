@@ -1,0 +1,151 @@
+%form-control {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 40px;
+  color: $primary-color;
+  appearance: none;
+  background-color: $light-color;
+  border: 1px solid $whisper-color;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-input,
+.form-select {
+  @extend %form-control;
+
+  &.has-icon {
+    padding: 0 32px;
+
+    + svg {
+      @include y-centered();
+      z-index: 3;
+      left: 10px;
+    }
+  }
+}
+
+.form-input {
+  -moz-appearance: textfield;
+
+  &::placeholder {
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  &.search-box {
+    padding: 0 40px;
+    background-color: $whisper-color;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+  }
+}
+
+.form-select {
+  @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" width="10.625" height="10" viewBox="0 0 10.625 10"><path fill="#484848" fill-rule="evenodd" d="M7.94 3.1a.87.87 0 0 1 1.04.066c.28.249.31.643.073.925l-3.18 2.832a.867.867 0 0 1-1.113 0L1.58 4.09a.651.651 0 0 1 .074-.925.87.87 0 0 1 1.039-.066l2.624 2.329L7.94 3.093V3.1z"/></svg>');
+  background-position: right 12px center;
+  background-size: 10px;
+}
+
+// radio / checkbox
+input[type='radio'],
+input[type='checkbox'],
+input[type='file'] {
+  opacity: 0;
+  position: absolute;
+}
+
+.form-checkbox,
+.form-radio {
+  cursor: pointer;
+  font-size: 14px;
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    &:checked + span:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  span {
+    display: block;
+    line-height: 24px;
+    padding-left: 24px;
+    position: relative;
+
+    &:after {
+      left: 1px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:before {
+      background-color: $light-color;
+      height: 16px;
+      left: 0;
+      width: 16px;
+    }
+
+    &:after,
+    &:before {
+      @include y-centered();
+      content: '';
+    }
+  }
+}
+
+.form-radio {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  input[type='radio'] {
+    + span {
+      &:after,
+      &:before {
+        border-radius: 50%;
+      }
+
+      &:after {
+        background-color: $primary-color;
+        height: 12px;
+        width: 12px;
+      }
+
+      &:before {
+        border: 1px solid $light-grey;
+      }
+    }
+
+    &:checked + span:before {
+      border-color: $primary-color;
+    }
+  }
+}
+
+.form-checkbox {
+  input[type='checkbox'] {
+    + span {
+      &:after {
+        background: url('../images/ico_check.png') center/ 12px 9px no-repeat;
+        height: 9px;
+        width: 12px;
+      }
+
+      &:before {
+        border: 1px solid $light-grey;
+        border-radius: 2px;
+      }
+    }
+
+    &:checked + span:before {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+  }
+}

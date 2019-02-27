@@ -1,24 +1,15 @@
-@import './common/variables';
-@import './common/bootstrap';
-@import './common/mixins';
-@import './common/typography';
-@import './common/toast';
-@import './common/pagination';
-@import './application/base/base';
-@import './application/base/grid';
+// reset
+@import './base/minireset';
 
-@import './application/modules/header';
-@import './application/modules/alert';
-@import './application/modules/sidebar';
-@import './application/modules/button';
-@import './application/modules/form';
-@import './application/modules/table';
-@import './application/modules/filter';
-@import './application/modules/section';
-@import './application/modules/input';
-@import './application/modules/list';
-@import './application/modules/box';
-@import './application/modules/page_404';
+// variables && mixins
+@import './shared/variables';
+@import './shared/mixins';
 
+// base
+@import './base/base';
 
-@import './common/util';
+// layout
+@import './layout/layout';
+
+// modules
+@import './modules/modules'
