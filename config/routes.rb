@@ -14,16 +14,16 @@ Rails.application.routes.draw do
     get '/' => 'stores#index'
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+  devise_for :users, controllers: { 
+    omniauth_callbacks: 'callbacks',
+    sessions: 'user_session'
+   }
 
   resources :groups,   only: %i[index show],            param: :name
   resources :comments, only: %i[index create],          defaults: { format: :html }
   resources :follows,  only: %i[create destroy],        param: :user_id
   resources :messages, only: %i[index new show create]
   resources :blogs,    only: %i[index new show create], param: :slug
-
-  post 'signin'    => 'user_session#create'
-  get 'signout'    => 'user_session#destroy'
 
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'

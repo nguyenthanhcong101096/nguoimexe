@@ -94,7 +94,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
-
+    
   private
 
   def default_avatar
