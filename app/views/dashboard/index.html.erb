@@ -1,1 +1,327 @@
-<h1>d</h1>
+<div id="main" class="main">
+  <section class="page-title">
+    <div class="container">
+      <h1 class="headline--md page-title__text">Xe Máy</h1>
+      <div class="page-title__actions">
+        <div class="form-body page-title__action">
+          <select class="form-select has-icon">
+            <option value="newest">Mới Nhất Trước</option>
+            <option value="eldest">Cũ hơn</option>
+            <option value="expensive">Giá cao trước</option>
+            <option value="cheap">Giá thấp trước</option>
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path fill="#484848" fill-rule="evenodd" d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z"/>
+          </svg>
+        </div>
+        <div class="btn-group page-title__action">
+          <button class="btn--icon btn-group__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+              <path fill="#484848" fill-rule="evenodd" d="M2.667 3.333h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 0 1 0-1.334zm0 4h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 0 1 0-1.334zm0 4h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 1 1 0-1.334z"/>
+            </svg>
+          </button>
+          <button class="btn--icon btn-group__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+              <path fill="#484848" fill-rule="evenodd" d="M3.333 2H6c.736 0 1.333.597 1.333 1.333V6c0 .736-.597 1.333-1.333 1.333H3.333A1.333 1.333 0 0 1 2 6V3.333C2 2.6 2.6 2 3.333 2zm0 1.333V6H6V3.333H3.333zM10 2h2.667C13.403 2 14 2.597 14 3.333V6c0 .736-.597 1.333-1.333 1.333H10A1.333 1.333 0 0 1 8.667 6V3.333C8.667 2.6 9.267 2 10 2zm0 1.333V6h2.667V3.333H10zM3.333 8.667H6c.736 0 1.333.597 1.333 1.333v2.667C7.333 13.403 6.736 14 6 14H3.333A1.333 1.333 0 0 1 2 12.667V10c0-.733.6-1.333 1.333-1.333zm0 1.333v2.667H6V10H3.333zM10 8.667h2.667C13.403 8.667 14 9.264 14 10v2.667c0 .736-.597 1.333-1.333 1.333H10a1.333 1.333 0 0 1-1.333-1.333V10c0-.733.6-1.333 1.333-1.333zM10 10v2.667h2.667V10H10z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <form class="form">
+            <div class="form-group">
+              <p class="form-label">Địa Điểm</p>
+              <div class="form-body">
+                <select class="form-select has-icon" name="location">
+                  <option value="all">Toàn Quốc</option>
+                  <option value="hcm">Hồ Chí Minh</option>
+                  <option value="hn">Hà Nội</option>
+                  <option value="bd">Bình Định</option>
+                  <option value="kh">Khánh Hoà</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#484848" fill-rule="evenodd" d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="form-label">Nhãn Hiệu</p>
+              <div class="form-body">
+                <select class="form-select has-icon" name="brand">
+                  <option value="all">Tất cả</option>
+                  <option value="honda">Honda</option>
+                  <option value="yamaha">Yamaha</option>
+                  <option value="vinfast">Vinfast</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="form-label">Mức Giá (vnđ)</p>
+              <div class="form-body">
+                <div class="form-list">
+                  <input type="number" class="form-input" placeholder="Từ" name="first-price">
+                  <span class="form-list__seperate">-</span>
+                  <input type="number" class="form-input" placeholder="Đến" name="last-price">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="form-label">Màu sắc</p>
+              <div class="form-body">
+                <select class="form-select has-icon" name="colors">
+                  <option value="all">Tất cả</option>
+                  <option value="black">Đen</option>
+                  <option value="red">Đỏ</option>
+                  <option value="white">Trắng</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="form-label">Tình trạng sử dụng</p>
+              <div class="form-body">
+                <label class="form-checkbox">
+                  <input type="checkbox" name="status">
+                  <span>Mới</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="status">
+                  <span>Đã qua sử dụng</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn--submit btn--full">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-9">
+          <ul class="list-view">
+            <li class="list-view__item">
+              <div class="card">
+                <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+                </div>
+                <div class="card__body">
+                  <h2 class="headline card__headline">Harley davidson senventy two xl1200v HQCN</h2>
+                  <div class="card__blocks">
+                    <div class="card__block">
+                      <p class="label">11 người đang xem</p>
+                      <p class="text--md">23,118,000 đ</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Tình trạng</p>
+                      <p class="content">Đã sử dụng</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Km đã đi</p>
+                      <p class="content">14520 km</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Dung tích</p>
+                      <p class="content">1200 cc</p>
+                    </div>
+                    <div class="card__block">
+                      <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Màu Sắc</p>
+                      <p class="content">Đen</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Nơi Bán</p>
+                      <p class="content">TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Hãng</p>
+                      <p class="content">Harley-Davision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-view__item">
+              <div class="card">
+                <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+                </div>
+                <div class="card__body">
+                  <h2 class="headline card__headline">Cần bán : Freeway BSTP bao sang tên toàn quốc</h2>
+                  <div class="card__blocks">
+                    <div class="card__block">
+                      <p class="label">11 người đang xem</p>
+                      <p class="text--md">23,118,000 đ</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Tình trạng</p>
+                      <p class="content">Đã sử dụng</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Km đã đi</p>
+                      <p class="content">14520 km</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Dung tích</p>
+                      <p class="content">1200 cc</p>
+                    </div>
+                    <div class="card__block">
+                      <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Màu Sắc</p>
+                      <p class="content">Đen</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Nơi Bán</p>
+                      <p class="content">TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Hãng</p>
+                      <p class="content">Harley-Davision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-view__item">
+              <div class="card">
+                <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+                </div>
+                <div class="card__body">
+                  <h2 class="headline card__headline">Cần bán : Freeway BSTP bao sang tên toàn quốc</h2>
+                  <div class="card__blocks">
+                    <div class="card__block">
+                      <p class="label">11 người đang xem</p>
+                      <p class="text--md">23,118,000 đ</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Tình trạng</p>
+                      <p class="content">Đã sử dụng</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Km đã đi</p>
+                      <p class="content">14520 km</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Dung tích</p>
+                      <p class="content">1200 cc</p>
+                    </div>
+                    <div class="card__block">
+                      <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Màu Sắc</p>
+                      <p class="content">Đen</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Nơi Bán</p>
+                      <p class="content">TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Hãng</p>
+                      <p class="content">Harley-Davision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-view__item">
+              <div class="card">
+                <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+                </div>
+                <div class="card__body">
+                  <h2 class="headline card__headline">Cần bán : Freeway BSTP bao sang tên toàn quốc</h2>
+                  <div class="card__blocks">
+                    <div class="card__block">
+                      <p class="label">11 người đang xem</p>
+                      <p class="text--md">23,118,000 đ</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Tình trạng</p>
+                      <p class="content">Đã sử dụng</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Km đã đi</p>
+                      <p class="content">14520 km</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Dung tích</p>
+                      <p class="content">1200 cc</p>
+                    </div>
+                    <div class="card__block">
+                      <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Màu Sắc</p>
+                      <p class="content">Đen</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Nơi Bán</p>
+                      <p class="content">TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Hãng</p>
+                      <p class="content">Harley-Davision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-view__item">
+              <div class="card">
+                <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+                </div>
+                <div class="card__body">
+                  <h2 class="headline card__headline">Cần bán : Freeway BSTP bao sang tên toàn quốc</h2>
+                  <div class="card__blocks">
+                    <div class="card__block">
+                      <p class="label">11 người đang xem</p>
+                      <p class="text--md">23,118,000 đ</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Tình trạng</p>
+                      <p class="content">Đã sử dụng</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Km đã đi</p>
+                      <p class="content">14520 km</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Dung tích</p>
+                      <p class="content">1200 cc</p>
+                    </div>
+                    <div class="card__block">
+                      <button class="btn btn--primary btn--full">Liên hệ ngay</button>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Màu Sắc</p>
+                      <p class="content">Đen</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Nơi Bán</p>
+                      <p class="content">TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="card__block">
+                      <p class="label">Hãng</p>
+                      <p class="content">Harley-Davision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -13,7 +13,7 @@
 }
 
 @for $i from 1 through $col-num {
-  .col--sm-#{$i} {
+  .col-#{$i} {
     width: percentage($i / $col-num);
   }
 }
