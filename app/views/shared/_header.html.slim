@@ -8,8 +8,11 @@ header.header
         = render_notification_activity(current_user)
       li
         = render_notification_message(current_user)
-    li 
-      div[class="horizontal js-button-login"]
-        img[class="avatar-header mr-8" src=asset_pack_path('images/img_avatar.png')]
-        p.menu = t('.login')
-            
+      li 
+        a href="users/sign_out" Đăng xuất
+    - else
+      li 
+        div[class="horizontal js-button-login"]
+          img[class="avatar-header mr-8" src=asset_pack_path('images/img_avatar.png')]
+          p.menu = t('.login')
+              

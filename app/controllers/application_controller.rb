@@ -2,7 +2,6 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  before_action :check_subdomain
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
@@ -24,16 +23,6 @@ class ApplicationController < ActionController::Base
     render json: { message: 'Unprocessable Entity', errors: error_message }, status: :unprocessable_entity
   end
   
-  def check_subdomain
-    if request.subdomain == 'sale'
-      unless current_user
-        user = User.find(1)
-        sign_in(user)
-      end
-    else
-    end
-  end
-
   private
 
   def set_locale

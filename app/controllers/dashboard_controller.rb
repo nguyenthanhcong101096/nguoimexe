@@ -3,6 +3,6 @@
 class DashboardController < ApplicationController
   def index
     @posts = Post.all.limit(10)
-    @t = cookies.signed[:user_id]
+    @t = cookies[:name]
   end
 end

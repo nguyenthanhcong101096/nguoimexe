@@ -18,6 +18,7 @@ class UserSessionController < ApplicationController
 
   def destroy
     sign_out(current_user)
+    cookies.delete :user_id
     redirect_to root_path
   end
 end
