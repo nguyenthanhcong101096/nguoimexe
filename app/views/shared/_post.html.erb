@@ -1,9 +1,9 @@
 <li class="list-view__item">
     <div class="card">
-      <!-- <%= link_to post_path(slug: post.slug_title) do %> -->
+      <%= link_to post_path(slug: post.slug_title) do %>
         <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
         </div>
-      <!-- <% end %> -->
+      <% end %>
       <div class="card__body">
         <h2 class="headline card__headline"><%= post.title %></h2>
         <div class="card__blocks">
