@@ -19,11 +19,11 @@ class StatusChannel < ApplicationCable::Channel
   end
 
   def my_notifications
-    "user_online"
+    "online"
   end
   
   def render_html(user_id)
     html = ApplicationController.renderer.render(partial: 'shared/user', locals: {user: User.find(user_id)})
-    ActionCable.server.broadcast my_notifications, html: html, key: 'online', user_id: user_id
+    ActionCable.server.broadcast my_notifications, html: html, key: 'online', user_id: "user_#{user_id}"
   end
 end

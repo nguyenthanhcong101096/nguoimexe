@@ -1,10 +1,11 @@
 App.status = App.cable.subscriptions.create "StatusChannel",
   received: (data) ->
     active = $('.active')
-    userId = active.attr('user_id')
+    myself = active.attr('user_id')
+    klass  = $("#" + data['user_id'])
     
     if(data['key'] == 'online')
-      if(userId != (data['user_id']+""))
+      if(myself != (data['user_id']))
         active.append(data['html'])
     else
-      $("#" + data['user_id']).remove()
+      klass.remove()
