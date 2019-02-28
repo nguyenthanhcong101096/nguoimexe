@@ -12,15 +12,14 @@ class NotificationsChannel < ApplicationCable::Channel
     activities.update_all(read: true)
     update_count_notifications
   end
-  
+
   private
 
   def update_count_notifications
     ActionCable.server.broadcast my_notifications, type: 'read'
   end
-  
+
   def my_notifications
     "notifications_#{user_id}_channel"
   end
-
 end

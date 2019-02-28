@@ -14,10 +14,10 @@ Rails.application.routes.draw do
     get '/' => 'stores#index'
   end
 
-  devise_for :users, controllers: { 
+  devise_for :users, controllers: {
     omniauth_callbacks: 'callbacks',
     sessions: 'user_session'
-   }
+  }
 
   resources :groups,   only: %i[index show],            param: :name
   resources :comments, only: %i[index create],          defaults: { format: :html }
