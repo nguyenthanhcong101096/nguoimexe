@@ -35,11 +35,11 @@
         <li class="header__link list__item">
           <a href="#" class="link has-border">Đăng Bài</a>
         </li>
-        <%= render('shared/notifications') %>
-        <%= render('shared/messages') %>
+        <%= render_notification_activity(current_user) %>
+        <%= render_notification_message(current_user) %>
         <li class="header__link list__item">
           <button class="btn--icon">
-            <img class="header__avatar" src="<%= asset_pack_path('images/img_avatar.png') %>" alt="logo">
+            <img class="header__avatar" src="<%= current_user.avatar_url(:medium) %>" alt="logo">
           </button>
         </li>
       </ul>

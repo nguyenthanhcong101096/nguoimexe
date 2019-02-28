@@ -1,9 +1,19 @@
 App.notifications = App.cable.subscriptions.create "NotificationsChannel",
   received: (data) ->
-    notifications = $('#notifications');
-    counter = $('#notification-counter');
+    show_notification = $('#notifications');
+    dot = $('.btn-notification')
     
-    counter_notification  = parseInt(counter.text());
-    counter.text(counter_notification + 1);
-    notifications.after data['html'];
-      
+    if(data['type'] == 'read')
+      dot.removeClass('badge')
+      counter.text(0);
+    else
+      dot.addClass('badge')
+      show_notification.after data['html'];
+    
+  read_notifications: ->
+    @perform 'read_notifications'
+            
+  $(document).on 'click', '.btn-notification', (event) ->
+    App.notifications.read_notifications()
+
+    

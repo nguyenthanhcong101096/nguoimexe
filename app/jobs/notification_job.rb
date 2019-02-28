@@ -14,6 +14,6 @@ class NotificationJob < ApplicationJob
   end
 
   def render_notification_comment(activity)
-    ApplicationController.renderer.render(partial: 'posts/notification_comment', locals: { activity: activity })
+    ApplicationController.renderer.render(partial: 'shared/acitivity', locals: { activity: activity })
   end
 end
