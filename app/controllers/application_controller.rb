@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  
+
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
 
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def render_422(error_message)
     render json: { message: 'Unprocessable Entity', errors: error_message }, status: :unprocessable_entity
   end
-  
+
   private
 
   def set_locale

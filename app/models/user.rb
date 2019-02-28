@@ -58,7 +58,6 @@ class User < ApplicationRecord
 
   include ImageUploader::Attachment.new(:avatar)
 
-
   def follow?(user_id)
     following_ids.include?(user_id)
   end
@@ -94,7 +93,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
-    
+
   private
 
   def default_avatar

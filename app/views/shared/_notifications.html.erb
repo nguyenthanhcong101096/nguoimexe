@@ -1,11 +1,5 @@
 <li class="header__link list__item">
-  <button class="btn--icon badge">
+  <button class="btn--icon btn-notification <%= count > 0 ? 'badge' : '' %> ">
     <%= inline_svg('ico_notification.svg') %>
   </button>
 </li>
-
-<!-- .notify-header
-  img class="icon-24 mr-8" src=asset_pack_path('images/icon_notfi.png')
-  .counter-notify
-    h5.u-text-white style="background-color: red; border-radius: 50px;" id="notification-counter" = count_notify
- -->

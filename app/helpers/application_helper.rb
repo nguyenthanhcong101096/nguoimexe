@@ -10,9 +10,9 @@ module ApplicationHelper
       content_tag(:p, obj.errors.full_messages_for(key).first, class: 'form-input-hint')
     end
   end
-  
+
   def inline_svg(name)
-    file = File.open("app/javascript/images/#{name}", "rb")
+    file = File.open("app/javascript/images/#{name}", 'rb')
     raw file.read
   end
 end
