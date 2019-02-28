@@ -6,8 +6,13 @@ module ApplicationCable
 
     def connect
       self.user_id = find_verified_user.id
+      status('online')
     end
 
+    def disconnect
+      status('offline')
+    end
+      
     protected
 
     def find_verified_user
@@ -16,6 +21,10 @@ module ApplicationCable
       else
         reject_unauthorized_connection
       end
+    end
+    
+    def status(status)
+      User.find(user_id).update(status: status)
     end
   end
 end
