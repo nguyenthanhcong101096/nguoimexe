@@ -12,6 +12,9 @@
   </div>
 </div> -->
 
+
+<% if user_signed_in? %>
 <h1>Bạn bè đang online</h1>
 <%= render_user_online(current_user) %>
 <div class="active" user_id="user_<%= current_user.id %>"></div>
+<% end %>
