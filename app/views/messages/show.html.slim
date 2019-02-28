@@ -5,12 +5,7 @@
 .row
   .col-3
     .horizontal.space-between.pb-16
-      = link_to root_path do
-        img.icon-30.mr-8 src=asset_pack_path('images/img_back.png')
       h4.u-text-bold Messages
-      div.mr-8
-        = link_to new_message_url do
-          img.icon-30 src=asset_pack_path('images/img_new_msg.png')
     .conversations
       = render_conversations(current_user)
   .col-6
@@ -29,7 +24,6 @@
     .options.u-text-gray.pb-16
       h4.u-text-bold Options
       .horizontal.center.u-mt-8
-        img.icon-30 src=asset_pack_path('images/img_remove.png')
         h5.u-text-bold Xoá tin nhắn
-      
+
       

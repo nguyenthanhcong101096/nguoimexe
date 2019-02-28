@@ -14,6 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.text :avatar_data
       t.string :slug_name
       t.string :range, defualt: 'person'
+      t.string :status, default: 'offline' 
 
       t.integer :followers_count
       t.integer :following_count

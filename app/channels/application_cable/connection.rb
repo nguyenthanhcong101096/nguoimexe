@@ -8,6 +8,8 @@ module ApplicationCable
       self.user_id = find_verified_user.id
     end
 
+    def disconnect; end
+      
     protected
 
     def find_verified_user
