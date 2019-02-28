@@ -8,7 +8,8 @@ holo  = FactoryBot.create(:user, email: 'nguyenthanhcong1@gmail.com', phone: '03
 helo  = FactoryBot.create(:user, email: 'nguyenthanhcong3@gmail.com', phone: '0338529347', username: 'Trung Tâm Nhắn Tin', address: 'aaaa', password: 'password', password_confirmation: 'password')
 users = FactoryBot.create_list(:user, 5)
 
-follows = User.all.each { |user| FactoryBot.create(:follow, user: hola, target_user: user) }
+FactoryBot.create(:follow, user: hola, target_user: holo)
+FactoryBot.create(:follow, user: holo, target_user: hola)
 
 posts         = 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample ) }
 
