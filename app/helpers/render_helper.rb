@@ -17,7 +17,7 @@ module RenderHelper
     conversations = user.conversations
     render(partial: 'messages/conversation', collection: conversations)
   end
-  
+
   def render_user_online(user)
     users = user.following.where(status: 'online')
     render(partial: 'shared/user', collection: users)
