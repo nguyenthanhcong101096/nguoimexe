@@ -33,7 +33,7 @@
 <body>
   <%= render 'shared/header' %>
   <%= yield %>
-  <div class="following" following="<%= current_user.following.pluck(:id).join(',') %>"></div>
+  <%# <div class="following" following="<%= current_user.following.pluck(:id).join(',') %>"></div> %>
   <%= render 'shared/notifications_list' %>
   <%= javascript_pack_tag 'application' %>
 </body>
