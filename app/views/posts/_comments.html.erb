@@ -1,0 +1,31 @@
+<div class="block">
+  <div class="seperator seperator--centered">
+    <p class="seperator__text">Bình Luận</p>
+  </div>
+  <div id="render-comments" comment-channel="<%= post.id %>"></div>
+  <div class="block__body js-comment-body">
+    <div class="comment-latest" id="comment-latest"></div>
+    <%= render partial: 'comment', collection: comments %>
+  </div>
+  <% if post.comments.count > 10 %>
+  <div class="block__actions text--centered">
+    <button class="btn--link js-btn-comment-loadmore" data-post-id="<%= post.id %>" data-comment-min-id="<%= comments.last.id %>" >
+      Xem Thêm
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+        <path fill="#FF6B02" fill-rule="evenodd" d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z"/>
+      </svg>
+    </button>
+  </div>
+  <% end %>
+</div>
+
+<div class="block">
+  <div class="form-group">
+    <div class="form-body">
+      <textarea class="form-area js-comment-box" placeholder="Bình luận của bạn..."></textarea>
+    </div>
+  </div>
+  <div class="form-group text--right">
+    <button class="btn btn--primary" data-post-id="<%= post.id %>" id="btn-create-comment" >Đăng Bình Luận</button>
+  </div>
+</div>
