@@ -1,11 +1,13 @@
-.form-group {
-  + .form-group {
-    margin-top: 24px;
-  }
+.form-group + .form-group {
+  margin-top: 32px;
 }
 
 .form-body {
   position: relative;
+
+  + .form-body {
+    margin-top: 8px;
+  }
 }
 
 .form-label {

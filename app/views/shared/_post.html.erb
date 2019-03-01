@@ -1,44 +1,46 @@
 <li class="list-view__item">
   <div class="card">
-    <%= link_to post_path(slug: post.slug_title) do %>
+    <%= link_to post_path(slug: post.slug_title), class: 'card__link' do %>
       <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
       </div>
-    <% end %>
-    <div class="card__body">
-      <h2 class="headline card__headline"><%= post.title %></h2>
-      <div class="card__blocks">
-        <div class="card__block">
-          <p class="label">11 người đang xem</p>
-          <p class="text--md"><%= post.price %> đ</p>
-        </div>
-        <div class="card__block">
-          <p class="label">Tình trạng</p>
-          <p class="content"><%= post.status_of_vehicle %></p>
-        </div>
-        <div class="card__block">
-          <p class="label">Km đã đi</p>
-          <p class="content"><%= post.km %> km</p>
-        </div>
-        <div class="card__block">
-          <p class="label">Dung tích</p>
-          <p class="content"><%= post.capacity %></p>
-        </div>
-        <div class="card__block">
-          <button class="btn btn--secondary btn--md btn--full">Liên hệ ngay</button>
-        </div>
-        <div class="card__block">
-          <p class="label">Màu Sắc</p>
-          <p class="content"><%= post.color %></p>
-        </div>
-        <div class="card__block">
-          <p class="label">Nơi Bán</p>
-          <p class="content"><%= post.address_sale %></p>
-        </div>
-        <div class="card__block">
-          <p class="label">Hãng</p>
-          <p class="content">Harley-Davision</p>
+      <div class="card__body">
+        <h2 class="headline"><%= truncate(post.title, length: 55) %></h2>
+        <p class="text--xs text--grey mt-4">20 tháng 1, 2019</p>
+        <div class="card__blocks">
+          <div class="card__block">
+            <p class="text--md"><%= post.price %> đ</p>
+            <p class="label">Có thể thương lượng</p>
+          </div>
+          <div class="card__block">
+            <div class="card__block-inner">
+              <p class="label">Tình trạng</p>
+              <p class="content"><%= post.status_of_vehicle %></p>
+            </div>
+            <div class="card__block-inner">
+              <p class="label">Km đã đi</p>
+              <p class="content"><%= post.km %> km</p>
+            </div>
+            <div class="card__block-inner">
+              <p class="label">Dung tích</p>
+              <p class="content">1200 cc</p>
+            </div>
+            <div class="card__block-inner">
+              <p class="label">Hãng</p>
+              <p class="content">Harley-Davision</p>
+            </div>
+            <div class="card__block-inner">
+              <p class="label">Nơi Bán</p>
+              <p class="content"><%= post.address_sale %></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
+    <button class="btn--icon btn--mark">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"/>
+      </svg>
+    </button>
   </div>
 </li>

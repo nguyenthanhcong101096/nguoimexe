@@ -1,3 +1,21 @@
+.main-head {
+  @include clearfix();
+  margin-top: 24px;
+
+  .main-headline {
+    float: left;
+    padding-top: 8px;
+  }
+
+  .main-actions {
+    float: right;
+  }
+
+  .main-action + .main-action {
+    margin-left: 12px;
+  }
+}
+
 .main-content {
   margin-top: 32px;
   padding-bottom: 80px;

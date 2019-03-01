@@ -165,3 +165,41 @@ input[type='file'] {
     }
   }
 }
+
+.form-radio-images {
+  @include flexbox(space-between, flex-start);
+  flex-wrap: wrap;
+}
+
+.form-radio-image {
+  @include font-size-text--sm();
+  display: block;
+  width: calc(50% - 2px);
+  padding: 8px;
+  background-color: $light-color;
+  border: 1px solid $light-grey;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+
+  &:nth-child(n + 3) {
+    margin-top: 4px;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  span {
+    @include absolute-full();
+    border-radius: 5px;
+  }
+
+  input[type='radio']:checked {
+    + span {
+      background-color: $secondary-color;
+      opacity: .6;
+    }
+  }
+}

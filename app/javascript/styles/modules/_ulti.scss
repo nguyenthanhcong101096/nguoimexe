@@ -6,6 +6,10 @@
   @include font-size-text--sm();
 }
 
+.text--xs {
+  @include font-size-text--xs();
+}
+
 .text--grey {
   color: $aluminium-color;
 }

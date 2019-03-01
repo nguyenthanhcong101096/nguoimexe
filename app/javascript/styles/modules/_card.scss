@@ -1,8 +1,8 @@
 .card {
-  display: table;
+  position: relative;
 
   &__link {
-    display: block;
+    display: table;
   }
 
   &__image,
@@ -12,8 +12,8 @@
 
   &__image {
     @include background-image();
-    width: 252px;
-    height: 156px;
+    width: 276px;
+    height: 160px;
     margin-right: 24px;
     border-radius: 5px;
   }
@@ -24,22 +24,21 @@
   }
 
   &__blocks {
-    @include flexbox(flex-end, flex-start);
-    flex-wrap: wrap;
-    margin-top: 40px;
+    @include clearfix();
+    margin-top: 32px;
   }
 
   &__block {
-    width: 23%;
-
-    &:nth-child(5),
     &:first-child {
-      width: 31%;
-      padding-right: 32px;
+      width: 35%;
+      float: left;
     }
 
-    &:nth-child(n + 5) {
-      margin-top: 18px;
+    &:last-child {
+      @include flexbox(flex-end, flex-start);
+      flex-wrap: wrap;
+      float: right;
+      width: 65%;
     }
 
     .label {
@@ -49,6 +48,18 @@
 
     .content {
       @include font-size-text--sm();
+    }
+  }
+
+  &__block-inner {
+    width: 33.3333%;
+
+    &:last-child {
+      width: 66.6666%;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 16px;
     }
   }
 }
