@@ -1,8 +1,0 @@
-.u-mb-32
-  .horizontal
-    img.icon-40.radius.mr-8 src=comment.user_avatar_url(:medium)
-    div.width-100.section style="background-color: #f8f8f8; padding: 4px; border-radius: 5px;"
-      .horizontal.center
-        h4.u-text-orange.u-text-bold.mr-8 = comment.user_username
-        h6.u-text-bold.u-text-gray = distance_of_time_in_words(comment.created_at, Time.now)
-      h4.u-mt-8 = comment.context

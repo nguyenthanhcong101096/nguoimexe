@@ -118,103 +118,33 @@
             </div>
           </div>
 
-          <div class="block">
-            <div class="seperator seperator--centered">
-              <p class="seperator__text">Bình Luận</p>
-            </div>
-            <div class="block__body">
-              <div class="comment">
-                <div class="comment__avatar">
-                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
-                </div>
-                <div class="comment__body">
-                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
-                  <p class="comment__text">Động cơ V8 dung tích 5 lít hút khí tự nhiên có công suất 472 mã lực, Lexus RC F 2020 là chiếc xe xờ póp chuấn mực của thế giơi. Than</p>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__avatar">
-                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
-                </div>
-                <div class="comment__body">
-                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
-                  <p class="comment__text">Động cơ V8 dung tích 5 lít hút khí tự nhiên có công suất 472 mã lực, Lexus RC F 2020 là chiếc xe xờ póp chuấn mực của thế giơi. Than</p>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__avatar">
-                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
-                </div>
-                <div class="comment__body">
-                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
-                  <p class="comment__text">Chiếc này ra cùng thời điểm với Mustang Shelby GT500. Mustang thì cũng V8, mà 720 HP, tăng tốc 0-100km/h khoảng 3 giây. Hộp số 7 cấp dual clutch. Nhún thì là MagneRide. Lexus ra chiếc này làm trò cười cho dân chơi xe rồi.</p>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__avatar">
-                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
-                </div>
-                <div class="comment__body">
-                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
-                  <p class="comment__text">giờ như civic luôn, nhiều mảnh ghép như xe đồ chơi</p>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment__avatar">
-                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
-                </div>
-                <div class="comment__body">
-                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
-                  <p class="comment__text">Toi se mua Toyota khi ho thay bo phan thiet ke</p>
-                </div>
-              </div>
-            </div>
-            <div class="block__actions text--centered">
-              <button class="btn--link">
-                Xem Thêm
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
-                  <path fill="#FF6B02" fill-rule="evenodd" d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div class="block">
-            <div class="form-group">
-              <div class="form-body">
-                <textarea class="form-area" placeholder="Bình luận của bạn..."></textarea>
-              </div>
-            </div>
-            <div class="form-group text--right">
-              <button class="btn btn--primary">Đăng Bình Luận</button>
-            </div>
-          </div>
+          <%= render partial: 'comments', locals: { comments: @comments, post: @post } %>
         </div>
 
         <div class="col-4">
           <div class="box">
             <div class="box__group">
-              <h3 class="headline--md">25.800.000 đ</h3>
+              <h3 class="headline--md"><%= @post.price %> đ</h3>
               <p class="text--sm text--grey mt-4">Có Thể Thương Lượng</p>
             </div>
             <div class="seperator box__group"></div>
             <div class="writer box__group">
               <div class="writer__avatar">
-                <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                <img src="<%= asset_url(@post.user_avatar_url(:medium)) %>" alt="avatar">
               </div>
               <div class="writer__body">
-                <p class="writer__name">Trương Minh Ngọc</p>
-                <p class="writer__date">20 Tháng 1, 2019</p>
+                <p class="writer__name"><%= @post.user_username %></p>
+                <p class="writer__date"><%= @post.user_created_at %></p>
               </div>
             </div>
             <ul class="box__group information-list">
               <li class="information-list__item">
                 <p class="label">Điện Thoại</p>
-                <p class="content">1800 6099</p>
+                <p class="content"><%= @post.user_phone %></p>
               </li>
               <li class="information-list__item">
                 <p class="label">Email</p>
-                <p class="content">Username@1pac.vn</p>
+                <p class="content"><%= @post.user_email %></p>
               </li>
             </ul>
             <div class="box__group">

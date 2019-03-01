@@ -30,7 +30,7 @@ class Post < ApplicationRecord
 
   before_create :slug
 
-  delegate :username, :id, :avatar_url, to: :user, prefix: true
+  delegate :username, :id, :avatar_url, :email, :phone, :created_at, to: :user, prefix: true
   delegate :name, to: :vehicle_kind, prefix: true
 
   include ImageUploader::Attachment.new(:featured_image)

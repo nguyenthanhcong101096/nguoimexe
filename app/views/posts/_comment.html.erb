@@ -1,0 +1,9 @@
+<div class="comment">
+  <div class="comment__avatar">
+    <img src="<%= comment.user_avatar_url(:medium) %>" alt="avatar">
+  </div>
+  <div class="comment__body">
+    <h3 class="comment__name"><%= comment.user_username %><span> –  <%= distance_of_time_in_words(comment.created_at, Time.now) %></span></h3>
+    <p class="comment__text"><%= comment.context %></p>
+  </div>
+</div>
