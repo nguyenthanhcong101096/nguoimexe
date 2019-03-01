@@ -3,7 +3,7 @@ App.status = App.cable.subscriptions.create "StatusChannel",
     online_area = $('.active')
     myself      = online_area.attr('user_id')
     klass       = $("##{data['user_id']}")
-    following   = online_area.attr('following')
+    following   = $('.following').attr('following')
     
     online_offline(data, klass, online_area, myself, following)
     
