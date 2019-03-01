@@ -9,7 +9,7 @@ module ApplicationCable
     end
 
     def disconnect; end
-      
+
     protected
 
     def find_verified_user
