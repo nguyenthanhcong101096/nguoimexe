@@ -1,17 +1,18 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  phone                  :string           not null
+#  email                  :string
+#  phone                  :string
 #  encrypted_password     :string           default(""), not null
 #  address                :string
 #  username               :string
 #  avatar_data            :text
 #  slug_name              :string
 #  range                  :string
+#  status                 :string           default("offline")
 #  followers_count        :integer
 #  following_count        :integer
 #  reset_password_token   :string
@@ -52,7 +53,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
+  # validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
 
   enumerize :range, in: %i[enterprise person], scope: true
 
@@ -85,12 +86,14 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      password = Devise.friendly_token[0, 20]
       user.type_account = 'email'
       user.email = auth.email
       user.username = auth.email
       user.provider = auth.provider
       user.uid = auth.uid
-      user.password = Devise.friendly_token[0, 20]
+      user.password = password
+      user.password_confirmation = password
     end
   end
 

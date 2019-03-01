@@ -1,17 +1,18 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  phone                  :string           not null
+#  email                  :string
+#  phone                  :string
 #  encrypted_password     :string           default(""), not null
 #  address                :string
 #  username               :string
 #  avatar_data            :text
 #  slug_name              :string
 #  range                  :string
+#  status                 :string           default("offline")
 #  followers_count        :integer
 #  following_count        :integer
 #  reset_password_token   :string

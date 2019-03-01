@@ -9,10 +9,12 @@
   </div>
   <% if post.comments.count > 10 %>
   <div class="block__actions text--centered">
-    <button class="btn--link js-btn-comment-loadmore" data-post-id="<%= post.id %>" data-comment-min-id="<%= comments.last.id %>" >
+    <button class="btn--link js-btn-comment-loadmore" data-post-id="<%= post.id %>"
+      data-comment-min-id="<%= comments.last.id %>">
       Xem Thêm
       <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
-        <path fill="#FF6B02" fill-rule="evenodd" d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z"/>
+        <path fill="#FF6B02" fill-rule="evenodd"
+          d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z" />
       </svg>
     </button>
   </div>
@@ -26,6 +28,6 @@
     </div>
   </div>
   <div class="form-group text--right">
-    <button class="btn btn--primary" data-post-id="<%= post.id %>" id="btn-create-comment" >Đăng Bình Luận</button>
+    <button class="btn btn--primary" data-post-id="<%= post.id %>" id="btn-create-comment">Đăng Bình Luận</button>
   </div>
 </div>

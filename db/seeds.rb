@@ -3,9 +3,9 @@ VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
 # USER
-hola  = FactoryBot.create(:user, email: 'nguyenthanhcong@gmail.com', phone: '0338529345', username: 'Nguyễn Thành Công', address: 'aaaa', password: 'password', password_confirmation: 'password')
-holo  = FactoryBot.create(:user, email: 'nguyenthanhcong1@gmail.com', phone: '0338529346', username: 'Thiên Kim', address: 'aaaa', password: 'password', password_confirmation: 'password')
-helo  = FactoryBot.create(:user, email: 'nguyenthanhcong3@gmail.com', phone: '0338529347', username: 'Trung Tâm Nhắn Tin', address: 'aaaa', password: 'password', password_confirmation: 'password')
+hola  = FactoryBot.create(:user, email: 'user1@gmail.com', phone: '0338529345', username: 'Nguyễn Thành Công', address: 'aaaa', password: 'password', password_confirmation: 'password')
+holo  = FactoryBot.create(:user, email: 'user2@gmail.com', phone: '0338529346', username: 'Thiên Kim', address: 'aaaa', password: 'password', password_confirmation: 'password')
+helo  = FactoryBot.create(:user, email: 'user3@gmail.com', phone: '0338529347', username: 'Trung Tâm Nhắn Tin', address: 'aaaa', password: 'password', password_confirmation: 'password')
 users = FactoryBot.create_list(:user, 5)
 
 FactoryBot.create(:follow, user: hola, target_user: holo)
