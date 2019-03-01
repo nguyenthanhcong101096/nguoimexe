@@ -1,0 +1,42 @@
+.grid-images {
+  @include flexbox(flex-start, center);
+  margin: -2px;
+}
+
+.grid-image {
+  width: 50%;
+  height: 500px;
+
+  &__block {
+    @include background-image();
+    height: 100%;
+    border: 2px solid $light-color;
+
+    &.has-more {
+      position: relative;
+
+      &:after {
+        @include absolute-full();
+        content: '';
+        background-image: linear-gradient(to bottom, rgba(74, 74, 74, 0.5), rgba(74, 74, 74, 0.5));
+      }
+    }
+  }
+
+  &__over {
+    @include font-size-headline--lg();
+    @include centered();
+    color: $light-color;
+    z-index: 5;
+  }
+
+  + .grid-image {
+    @include flexbox(flex-start, flex-start);
+    flex-wrap: wrap;
+
+    .grid-image__block {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}

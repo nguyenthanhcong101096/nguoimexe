@@ -2,74 +2,227 @@
 <%= provide(:page_description, @post.title)%>
 <%= provide(:page_url, posts_url(id: @post.id))%>
 <%= provide(:page_image, @post.featured_image_url(:medium))%>
-  <div class="content-body">
-    <div class="horizontal space-between">
-      <div class="box big">
-        <div class="mr-16">
-          <h4 class="u-text-gray">Quận bắc từ liêm, Hà nội</h1>
-            <h3 class="u-text-bold">Honda Airblade Fi 125 chính chủ mới 95%</h3>
-            <div class="horizontal u-mt-24">
-              <div class="horizontal btn w-150 mr-16">
-                
-                <h4 class="u-text-gray u-text-bold">Theo dõi</h5>
-              </div>
 
-              <div class="horizontal btn w-150 mr-16">
-                
-                <h4 class="u-text-gray u-text-bold">Bình luận</h5>
-              </div>
-
-              <div class="horizontal btn w-150">
-                
-                <h4 class="u-text-gray u-text-bold">Chia sẽ</h5>
-              </div>
-            </div>
-
-            <div class="horizontal center u-mt-32">
-              <h4 class="u-text-bold width-10">Mô tả</h4>
-              <div class="diving"></div>
-            </div>
-
-            <h4 class="u-mt-16">
-              <%= @post.describe %>
-            </h4>
-
-            <div class="horizontal center u-mt-32">
-              <h4 class="u-text-bold width-30">Thông tin chi tiết</h4>
-              <div class="diving"></div>
-            </div>
-
-            <div class="horizontal center u-mt-32">
-              <h4 class="u-text-bold width-15">Bình luận</h4>
-              <div class="diving"></div>
-            </div>
-            <%= render partial: 'comments', locals: { comments: @comments, post: @post } %>
-        </div>
+<div id="main" class="main">
+  <section class="grid-images">
+    <div class="grid-image">
+      <div class="grid-image__block" style="background-image: url(<%= asset_pack_path('images/img_moto-preview_01.jpg') %>)">
       </div>
+    </div>
+    <div class="grid-image">
+      <div class="grid-image__block" style="background-image: url(<%= asset_pack_path('images/img_moto-preview_02.jpg') %>)">
+      </div>
+      <div class="grid-image__block" style="background-image: url(<%= asset_pack_path('images/img_moto-preview_03.jpg') %>)">
+      </div>
+      <div class="grid-image__block" style="background-image: url(<%= asset_pack_path('images/img_moto-preview_04.jpg') %>)">
+      </div>
+      <div class="grid-image__block has-more" style="background-image: url(<%= asset_pack_path('images/img_moto-preview_05.jpg') %>)">
+        <span class="grid-image__over">+5</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="width-30">
-        <div class="box border pb-24">
-          <h3 class="u-text-bold">25.800.000 đ</h3>
-          <h4 class="u-text-gray">Có thể thương lượng</h4>
-          <div class="diving u-mt-24"></div>
-          <div class="horizontal center u-mt-24">
-            <img class="icon-60 radius mr-8" src="<%= @post.user_avatar_url(:medium)%>" alt="avatar">
-            <div>
-              <h4 class="u-text-bold"><%= @post.user_username %></h4>
-              <h4 class="u-text-gray">20 Tháng 1, 2019</h4>
+  <section class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div class="block">
+            <p class="text--sm text--grey">Quận Bắc Từ Liêm, Hà Nội</p>
+            <h2 class="block__headline headline--lg">Honda Airblade Fi 125 chính chủ mới 95%</h2>
+
+            <div class="block__actions">
+              <button class="btn btn--secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <path fill="currentColor" fill-rule="evenodd" d="M14.633 14.717a6.667 6.667 0 0 1-9.433 0l-4.117-4.134a.833.833 0 0 1 0-1.183l4.125-4.125a6.667 6.667 0 0 1 9.434 0L18.767 9.4a.833.833 0 0 1 0 1.183l-4.125 4.125-.009.009zm-8.25-1.184a5 5 0 0 0 7.067 0L16.983 10 13.45 6.467a5 5 0 0 0-7.067 0L2.833 10l3.542 3.533h.008zm3.534-.2a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666zm0-1.666a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334z"/>
+                </svg>
+                Bỏ Theo Dõi
+              </button>
+              <button class="btn btn--primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <path fill="currentColor" fill-rule="evenodd" d="M1.667 12.5V4.167c0-.917.75-1.667 1.666-1.667h13.334c.92 0 1.666.746 1.666 1.667v12.5a.833.833 0 0 1-1.416.583l-3.1-3.083H3.333c-.92 0-1.666-.747-1.666-1.667zm15-8.333H3.333V12.5h10.834c.22.003.43.093.583.25l1.917 1.908V4.167z"/>
+                </svg>
+                Bình Luận
+              </button>
+              <button class="btn btn--primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <path fill="currentColor" fill-rule="evenodd" d="M15.833 5.342L7.25 13.925a.833.833 0 1 1-1.167-1.183l8.567-8.575h-2.983a.833.833 0 1 1 0-1.667h5c.46 0 .833.373.833.833v5a.833.833 0 1 1-1.667 0V5.342zm-1.666 6.325a.833.833 0 1 1 1.666 0v4.166c0 .92-.746 1.667-1.666 1.667h-10c-.92 0-1.667-.746-1.667-1.667v-10c0-.916.75-1.666 1.667-1.666h4.166a.833.833 0 0 1 0 1.666H4.167v10h10v-4.166z"/>
+                </svg>
+                Chia Sẽ
+              </button>
+
             </div>
           </div>
-          <div class="horizontal u-mt-24 space-between">
-            <h4>Điện thoại</h4>
-            <h4 class="u-text-bold">180023 2938</h4>
+
+          <div class="block">
+            <div class="seperator seperator--centered">
+              <p class="seperator__text">Mô tả</p>
+            </div>
+            <div class="block__body">
+              <p>Mình có chiếc xe chính chủ cần bán</p>
+              <p>Xe còn nguyên bản 100% máy móc zin hết</p>
+              <p>Xe đi giữ gìn và bảo dưỡng thường xuyên nên ah chị cứ yên tâm</p>
+              <p>Mua bán và xem xe tại nhà luôn</p>
+              <p>Ai có nhu cầu xin lh trực tiếp cho em</p>
+            </div>
+            <div class="block__actions">
+              <button class="btn--link">
+                Xem Thêm
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                  <path fill="#FF6B02" fill-rule="evenodd" d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z"/>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class="horizontal u-mt-24 space-between">
-            <h4>Email</h4>
-            <h4 class="u-text-bold">Username@1pac.vn</h4>
+
+          <div class="block">
+            <div class="seperator seperator--centered">
+              <p class="seperator__text">Thông Tin Chi Tiết</p>
+            </div>
+            <div class="block__body">
+              <ul class="block__list information-list">
+                <li class="information-list__item">
+                  <p class="label">Hãng xe</p>
+                  <p class="content">Honda</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Dòng xe</p>
+                  <p class="content">Air Blade</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Đời Xe</p>
+                  <p class="content">2018</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Dung tích</p>
+                  <p class="content">149cc</p>
+                </li>
+              </ul>
+              <ul class="block__list information-list">
+                <li class="information-list__item">
+                  <p class="label">Năm đăng ký</p>
+                  <p class="content">2015</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Số Km đã đi</p>
+                  <p class="content">1000 Km</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Tình trạng</p>
+                  <p class="content">Đã qua sử dụng</p>
+                </li>
+                <li class="information-list__item">
+                  <p class="label">Loại Xe</p>
+                  <p class="content">Tay ga</p>
+                </li>
+              </ul>
+            </div>
           </div>
-          <button class="btn bg-orange u-mt-24">Gọi ngay</button>
+
+          <div class="block">
+            <div class="seperator seperator--centered">
+              <p class="seperator__text">Bình Luận</p>
+            </div>
+            <div class="block__body">
+              <div class="comment">
+                <div class="comment__avatar">
+                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                </div>
+                <div class="comment__body">
+                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
+                  <p class="comment__text">Động cơ V8 dung tích 5 lít hút khí tự nhiên có công suất 472 mã lực, Lexus RC F 2020 là chiếc xe xờ póp chuấn mực của thế giơi. Than</p>
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment__avatar">
+                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                </div>
+                <div class="comment__body">
+                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
+                  <p class="comment__text">Động cơ V8 dung tích 5 lít hút khí tự nhiên có công suất 472 mã lực, Lexus RC F 2020 là chiếc xe xờ póp chuấn mực của thế giơi. Than</p>
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment__avatar">
+                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                </div>
+                <div class="comment__body">
+                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
+                  <p class="comment__text">Chiếc này ra cùng thời điểm với Mustang Shelby GT500. Mustang thì cũng V8, mà 720 HP, tăng tốc 0-100km/h khoảng 3 giây. Hộp số 7 cấp dual clutch. Nhún thì là MagneRide. Lexus ra chiếc này làm trò cười cho dân chơi xe rồi.</p>
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment__avatar">
+                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                </div>
+                <div class="comment__body">
+                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
+                  <p class="comment__text">giờ như civic luôn, nhiều mảnh ghép như xe đồ chơi</p>
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment__avatar">
+                  <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+                </div>
+                <div class="comment__body">
+                  <h3 class="comment__name">Olivia Arribas<span> –  19 giờ trước</span></h3>
+                  <p class="comment__text">Toi se mua Toyota khi ho thay bo phan thiet ke</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__actions text--centered">
+              <button class="btn--link">
+                Xem Thêm
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                  <path fill="#FF6B02" fill-rule="evenodd" d="M7.219 3.1a.734.734 0 0 1 .944.066c.255.249.283.643.067.925L5.34 6.923a.734.734 0 0 1-1.013 0L1.437 4.09a.697.697 0 0 1 .066-.925.734.734 0 0 1 .945-.066l2.385 2.329L7.22 3.093V3.1z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="form-group">
+              <div class="form-body">
+                <textarea class="form-area" placeholder="Bình luận của bạn..."></textarea>
+              </div>
+            </div>
+            <div class="form-group text--right">
+              <button class="btn btn--primary">Đăng Bình Luận</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="box">
+            <div class="box__group">
+              <h3 class="headline--md">25.800.000 đ</h3>
+              <p class="text--sm text--grey mt-4">Có Thể Thương Lượng</p>
+            </div>
+            <div class="seperator box__group"></div>
+            <div class="writer box__group">
+              <div class="writer__avatar">
+                <img src="<%= asset_pack_path('images/img_avatar.png') %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name">Trương Minh Ngọc</p>
+                <p class="writer__date">20 Tháng 1, 2019</p>
+              </div>
+            </div>
+            <ul class="box__group information-list">
+              <li class="information-list__item">
+                <p class="label">Điện Thoại</p>
+                <p class="content">1800 6099</p>
+              </li>
+              <li class="information-list__item">
+                <p class="label">Email</p>
+                <p class="content">Username@1pac.vn</p>
+              </li>
+            </ul>
+            <div class="box__group">
+              <button class="btn btn--full btn--secondary">Gọi Ngay</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>

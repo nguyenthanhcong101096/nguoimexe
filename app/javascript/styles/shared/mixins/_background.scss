@@ -38,3 +38,8 @@
   str-length($search)), $search, $replace),
   $string);
 }
+
+@mixin background-image() {
+  background-position: center;
+  background-size: cover;
+}

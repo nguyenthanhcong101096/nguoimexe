@@ -1,0 +1,27 @@
+.block {
+  &__headline {
+    margin-top: 8px;
+  }
+
+  &__actions {
+    margin-top: 24px;
+  }
+
+  &__body {
+    @include clearfix();
+    margin-top: 32px;
+  }
+
+  &__list {
+    width: calc(50% - 16px);
+    float: left;
+  }
+
+  &__list + &__list {
+    margin-left: 32px;
+  }
+
+  + .block {
+    margin-top: 40px;
+  }
+}

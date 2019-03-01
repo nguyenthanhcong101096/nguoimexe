@@ -1,11 +1,6 @@
 %form-control {
   display: block;
   width: 100%;
-  height: 40px;
-  padding: 0 8px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 40px;
   color: $primary-color;
   appearance: none;
   background-color: $light-color;
@@ -15,7 +10,8 @@
 }
 
 .form-input,
-.form-select {
+.form-select,
+.form-area {
   @extend %form-control;
 
   &.has-icon {
@@ -27,6 +23,15 @@
       left: 10px;
     }
   }
+}
+
+.form-input,
+.form-select {
+  height: 40px;
+  padding: 0 8px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .form-input {
@@ -49,6 +54,17 @@
   @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" width="10.625" height="10" viewBox="0 0 10.625 10"><path fill="#484848" fill-rule="evenodd" d="M7.94 3.1a.87.87 0 0 1 1.04.066c.28.249.31.643.073.925l-3.18 2.832a.867.867 0 0 1-1.113 0L1.58 4.09a.651.651 0 0 1 .074-.925.87.87 0 0 1 1.039-.066l2.624 2.329L7.94 3.093V3.1z"/></svg>');
   background-position: right 12px center;
   background-size: 10px;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.form-area {
+  height: 160px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 // radio / checkbox
@@ -79,7 +95,7 @@ input[type='file'] {
     position: relative;
 
     &:after {
-      left: 1px;
+      left: 2px;
       opacity: 0;
       visibility: hidden;
     }

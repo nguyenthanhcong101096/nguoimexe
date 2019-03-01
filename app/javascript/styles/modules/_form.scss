@@ -9,7 +9,7 @@
 }
 
 .form-label {
-  @include font-size-text--sm();
+  @include font-size-text--xs();
   margin-bottom: 4px;
   text-transform: uppercase;
 }
