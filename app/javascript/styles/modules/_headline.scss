@@ -1,3 +1,7 @@
+.headline--lg {
+  @include font-size-headline--lg();
+}
+
 .headline--md {
   @include font-size-headline--md();
 }
