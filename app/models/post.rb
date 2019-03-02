@@ -25,6 +25,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :vehicle_kind
+  belongs_to :city
 
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
@@ -34,6 +35,7 @@ class Post < ApplicationRecord
 
   delegate :username, :id, :avatar_url, :email, :phone, :created_date, to: :user, prefix: true
   delegate :name, to: :vehicle_kind, prefix: true
+  delegate :name, to: :city, prefix: true
 
   include ImageUploader::Attachment.new(:featured_image)
 
@@ -41,6 +43,9 @@ class Post < ApplicationRecord
     created_at.strftime('%d %b. %Y')
   end
 
+  def address_sale
+    city.province_name + city_name
+  end
   private
 
   def slug

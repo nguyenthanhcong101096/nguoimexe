@@ -17,7 +17,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :year_of_registration, default: 'Unknown'
       t.string :km, default: 'Unknown'
       t.string :slug_title
-
+      t.bigint :city_id
+      
       t.timestamps
     end
 
