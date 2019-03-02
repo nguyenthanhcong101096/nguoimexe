@@ -44,10 +44,9 @@
               <div class="form-body">
                 <select class="form-select has-icon" name="location">
                   <option value="all">Toàn Quốc</option>
-                  <option value="hcm">Hồ Chí Minh</option>
-                  <option value="hn">Hà Nội</option>
-                  <option value="bd">Bình Định</option>
-                  <option value="kh">Khánh Hoà</option>
+                  <%= Province.all.each do |province| %>
+                  <option value="<%= province.id %>"><%= province.name %></option>
+                  <% end %>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#484848" fill-rule="evenodd" d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z"/>
