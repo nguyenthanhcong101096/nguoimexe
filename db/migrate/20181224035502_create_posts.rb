@@ -18,6 +18,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :km, default: 'Unknown'
       t.string :slug_title
       t.bigint :city_id
+      t.string :color, default: 'Unknown'
       
       t.timestamps
     end

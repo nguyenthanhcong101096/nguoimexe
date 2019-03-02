@@ -40,5 +40,7 @@ FactoryBot.define do
     status_of_vehicle 'Da su dung'
     year_of_registration '2011'
     km '10300'
+    price 153000999
+    color 'Mau do'
   end
 end
