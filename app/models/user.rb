@@ -98,11 +98,10 @@ class User < ApplicationRecord
     end
   end
 
-  
   def created_date
     created_at.strftime('%d %b. %Y')
   end
-  
+
   private
 
   def default_avatar

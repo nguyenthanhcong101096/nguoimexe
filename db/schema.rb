@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190220015755) do
+ActiveRecord::Schema.define(version: 20190302080811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20190220015755) do
     t.string   "slug_title"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.bigint   "provinces"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provinces"], name: "index_cities_on_provinces", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -146,6 +154,12 @@ ActiveRecord::Schema.define(version: 20190220015755) do
     t.datetime "updated_at",                                null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
     t.index ["vehicle_kind_id"], name: "index_posts_on_vehicle_kind_id", using: :btree
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_chats", force: :cascade do |t|
