@@ -58,11 +58,7 @@
               <p class="seperator__text">Mô tả</p>
             </div>
             <div class="block__body">
-              <p>Mình có chiếc xe chính chủ cần bán</p>
-              <p>Xe còn nguyên bản 100% máy móc zin hết</p>
-              <p>Xe đi giữ gìn và bảo dưỡng thường xuyên nên ah chị cứ yên tâm</p>
-              <p>Mua bán và xem xe tại nhà luôn</p>
-              <p>Ai có nhu cầu xin lh trực tiếp cho em</p>
+              <%= @post.describe %>
             </div>
             <div class="block__actions">
               <button class="btn--link">
@@ -90,29 +86,29 @@
                 </li>
                 <li class="information-list__item">
                   <p class="label">Đời Xe</p>
-                  <p class="content">2018</p>
+                  <p class="content"><%= @post.car_life %></p>
                 </li>
                 <li class="information-list__item">
                   <p class="label">Dung tích</p>
-                  <p class="content">149cc</p>
+                  <p class="content"><%= @post.capacity %></p>
                 </li>
               </ul>
               <ul class="block__list information-list">
                 <li class="information-list__item">
                   <p class="label">Năm đăng ký</p>
-                  <p class="content">2015</p>
+                  <p class="content"><%= @post.year_of_registration %></p>
                 </li>
                 <li class="information-list__item">
                   <p class="label">Số Km đã đi</p>
-                  <p class="content">1000 Km</p>
+                  <p class="content"><%= @post.km %> Km</p>
                 </li>
                 <li class="information-list__item">
                   <p class="label">Tình trạng</p>
-                  <p class="content">Đã qua sử dụng</p>
+                  <p class="content"><%= @post.status_of_vehicle %></p>
                 </li>
                 <li class="information-list__item">
                   <p class="label">Loại Xe</p>
-                  <p class="content">Tay ga</p>
+                  <p class="content"><%= @post.range_of_vehicle %></p>
                 </li>
               </ul>
             </div>
@@ -133,7 +129,7 @@
               </div>
               <div class="writer__body">
                 <p class="writer__name"><%= @post.user_username %></p>
-                <p class="writer__date"><%= @post.user_created_at %></p>
+                <p class="writer__date"><%= @post.user_created_date %></p>
               </div>
             </div>
             <ul class="box__group information-list">
