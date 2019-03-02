@@ -9,10 +9,13 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.bigint :vehicle_kind_id, null: false
       t.string :status, null: false, default: 'spending'
       t.text :featured_image_data
-      t.string :product_date, default: 'Unknown'
-      t.string :brand, null: false, default: 'Unknown'
-      t.float :registration, null: false, default: false
+      t.string :car_life, default: 'Unknown'
+      t.string :capacity, default: 'Unknown'
+      t.string :range_of_vehicle, default: 'Unknown'
+      t.string :status_of_vehicle, def: 'Unknown'
       t.float :price, null: false, default: 0.0
+      t.string :year_of_registration, default: 'Unknown'
+      t.string :km, default: 'Unknown'
       t.string :slug_title
 
       t.timestamps
