@@ -1,3 +1,5 @@
+require_relative 'fixtures/provinces_cities'
+
 # KIND VEHICLE
 VEHICLE_KIND = %i[oto moto bike other]
 VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }

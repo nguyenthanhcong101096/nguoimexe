@@ -1,3 +1,3 @@
 class City < ApplicationRecord
-  belongs_to: province
+  belongs_to :province
 end
