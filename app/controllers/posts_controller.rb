@@ -22,6 +22,10 @@ class PostsController < ApplicationController
     @comments = @post.comments.limit(5).order(id: :desc)
   end
 
+  def search
+    @posts = Post.all.limit(10).order(created_at: :desc)
+  end
+  
   private
 
   def set_post
