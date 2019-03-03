@@ -1,0 +1,14 @@
+<%= form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f| %>
+<%= f.text_field :title, placeholder: 'Nhập tiêu đề' %>
+<%= f.text_field :describe, placeholder: 'Mô tả' %>
+<%= f.text_field :price, placeholder: 'Giá tiền' %>
+<%= f.select :vehicle_kind_id, options_from_collection_for_select(VehicleKind.all, "id", "name"), include_blank: "Chọn Loại" %>
+<%= f.select :car_life, 1950..Date.current.year, include_blank: "Năm sản xuất" %>
+<%= f.select :year_of_registration, 1950..Date.current.year, include_blank: "Năm đăng kí xe" %>
+<%= f.select :capacity, %w[100cc 150cc 200cc], include_blank: "Dung tích" %>
+<%= f.select :range_of_vehicle, ['Tay ga', 'Xe số'], include_blank: "Kiểu xe" %>
+<%= f.select :status_of_vehicle, ['Xe mới', 'Đã sử dụng'], include_blank: "Trình trạng sử dụng" %>
+<%= f.select :km, 1..50, include_blank: "Số km đi được" %>
+<%= f.select :city_id, options_from_collection_for_select(Province.first.cities, "id", "name"), include_blank: "Chọn thành phố" %>
+<%= f.submit 'tạo bài viết' %>
+<% end %>
