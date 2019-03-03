@@ -44,7 +44,7 @@ class Post < ApplicationRecord
   end
 
   def address_sale
-    city.province_name + city_name
+    "#{city.province_name}, #{city_name}"
   end
   private
 
