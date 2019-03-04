@@ -1,8 +1,8 @@
 {
   "application.css": "/packs/application-c8500cb7f3d325ff16ee25f077c15ac5.css",
   "application.css.map": "/packs/application-c8500cb7f3d325ff16ee25f077c15ac5.css.map",
-  "application.js": "/packs/application-1ce5bf5c57e97abd03d6.js",
-  "application.js.map": "/packs/application-1ce5bf5c57e97abd03d6.js.map",
+  "application.js": "/packs/application-2b8e345035f9c53b1202.js",
+  "application.js.map": "/packs/application-2b8e345035f9c53b1202.js.map",
   "images/ico_arrow-down.svg": "/packs/images/ico_arrow-down-dd92a981beb5df099d9709e7ec529c59.svg",
   "images/ico_arrow-down_orange.svg": "/packs/images/ico_arrow-down_orange-f50d901c484d091261c331418f90a0e3.svg",
   "images/ico_brand.svg": "/packs/images/ico_brand-7ebdf98a7f6e7162bc93c5ed222e2ce8.svg",
@@ -29,5 +29,10 @@
   "writer.css": "/packs/writer-c8500cb7f3d325ff16ee25f077c15ac5.css",
   "writer.css.map": "/packs/writer-c8500cb7f3d325ff16ee25f077c15ac5.css.map",
   "writer.js": "/packs/writer-35a6767812950fcb76a0.js",
-  "writer.js.map": "/packs/writer-35a6767812950fcb76a0.js.map"
+  "writer.js.map": "/packs/writer-35a6767812950fcb76a0.js.map",
+  "images/ico_bicycle.png": "/packs/images/ico_bicycle-b7120e4b701b42da8b0f6766eb07bc24.png",
+  "images/ico_bookmark.svg": "/packs/images/ico_bookmark-7ebdf98a7f6e7162bc93c5ed222e2ce8.svg",
+  "images/ico_car.png": "/packs/images/ico_car-e8ee12562a36efc22b65321fcfd86b11.png",
+  "images/ico_moto.png": "/packs/images/ico_moto-0f7911b423eaf06993cf59f7e42d83f1.png",
+  "images/ico_other.png": "/packs/images/ico_other-ba1e6891ef4c612dfb041dc0964f2f90.png"
 }

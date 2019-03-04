@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.all.limit(10).order(created_at: :desc)
+    @posts = Post.search_by_full_name(params[:q])
   end
   
   private
