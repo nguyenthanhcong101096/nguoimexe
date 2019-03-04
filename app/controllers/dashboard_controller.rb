@@ -2,6 +2,6 @@
 
 class DashboardController < ApplicationController
   def index
-    @posts = Post.all.limit(10).order(created_at: :desc)
+    @posts = Post.with_kind(params[:type])
   end
 end

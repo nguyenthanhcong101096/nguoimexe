@@ -3,34 +3,30 @@
 <%= provide(:page_url, root_path) %>
 
 <div id="main" class="main">
-  <section class="page-title">
+  <section class="main-head">
     <div class="container">
-      <h1 class="headline--md page-title__text">Xe Máy</h1>
-      <div class="page-title__actions">
-        <div class="form-body page-title__action">
+      <ul class="list-inline main-actions">
+        <li class="form-body list-inline__item main-action">
+          <select class="form-select has-icon">
+            <option value="expensive">Cao đến thấp</option>
+            <option value="cheap">Thấp đến cao</option>
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path fill="#484848" fill-rule="evenodd"
+              d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z" />
+          </svg>
+        </li>
+        <li class="form-body list-inline__item main-action">
           <select class="form-select has-icon">
             <option value="newest">Mới Nhất Trước</option>
             <option value="eldest">Cũ hơn</option>
-            <option value="expensive">Giá cao trước</option>
-            <option value="cheap">Giá thấp trước</option>
           </select>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <path fill="#484848" fill-rule="evenodd" d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z"/>
+            <path fill="#484848" fill-rule="evenodd"
+              d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z" />
           </svg>
-        </div>
-        <div class="btn-group page-title__action">
-          <button class="btn--icon btn-group__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-              <path fill="#484848" fill-rule="evenodd" d="M2.667 3.333h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 0 1 0-1.334zm0 4h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 0 1 0-1.334zm0 4h10.666a.667.667 0 0 1 0 1.334H2.667a.667.667 0 1 1 0-1.334z"/>
-            </svg>
-          </button>
-          <button class="btn--icon btn-group__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-              <path fill="#484848" fill-rule="evenodd" d="M3.333 2H6c.736 0 1.333.597 1.333 1.333V6c0 .736-.597 1.333-1.333 1.333H3.333A1.333 1.333 0 0 1 2 6V3.333C2 2.6 2.6 2 3.333 2zm0 1.333V6H6V3.333H3.333zM10 2h2.667C13.403 2 14 2.597 14 3.333V6c0 .736-.597 1.333-1.333 1.333H10A1.333 1.333 0 0 1 8.667 6V3.333C8.667 2.6 9.267 2 10 2zm0 1.333V6h2.667V3.333H10zM3.333 8.667H6c.736 0 1.333.597 1.333 1.333v2.667C7.333 13.403 6.736 14 6 14H3.333A1.333 1.333 0 0 1 2 12.667V10c0-.733.6-1.333 1.333-1.333zm0 1.333v2.667H6V10H3.333zM10 8.667h2.667C13.403 8.667 14 9.264 14 10v2.667c0 .736-.597 1.333-1.333 1.333H10a1.333 1.333 0 0 1-1.333-1.333V10c0-.733.6-1.333 1.333-1.333zM10 10v2.667h2.667V10H10z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -38,71 +34,109 @@
     <div class="container">
       <div class="row">
         <div class="col-3">
-          <form class="form">
-            <div class="form-group">
-              <p class="form-label">Địa Điểm</p>
-              <div class="form-body">
-                <%= select_tag "location", options_from_collection_for_select(Province.all, "id", "name"), class: "form-select has-icon", include_blank: "Toàn Quốc" %>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#484848" fill-rule="evenodd" d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="form-label">Nhãn Hiệu</p>
-              <div class="form-body">
-                <select class="form-select has-icon" name="brand">
-                  <option value="all">Tất cả</option>
-                  <option value="honda">Honda</option>
-                  <option value="yamaha">Yamaha</option>
-                  <option value="vinfast">Vinfast</option>
-                </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="form-label">Mức Giá (vnđ)</p>
-              <div class="form-body">
-                <div class="form-list">
-                  <input type="number" class="form-input" placeholder="Từ" name="first-price">
-                  <span class="form-list__seperate">-</span>
-                  <input type="number" class="form-input" placeholder="Đến" name="last-price">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="form-label">Màu sắc</p>
-              <div class="form-body">
-                <select class="form-select has-icon" name="colors">
-                  <option value="all">Tất cả</option>
-                  <option value="black">Đen</option>
-                  <option value="red">Đỏ</option>
-                  <option value="white">Trắng</option>
-                </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="form-label">Tình trạng sử dụng</p>
-              <div class="form-body">
-                <label class="form-checkbox">
-                  <input type="checkbox" name="status">
-                  <span>Mới</span>
+          <div class="form-group">
+            <p class="form-label">Loại Phương tiện</p>
+            <div class="form-body">
+              <div class="form-radio-images">
+                <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'moto')) do %>
+                  <input type="radio" name="type">
+                  <span></span>
+                  <img src="<%= asset_pack_path('images/ico_moto.png') %>" alt="vehicle" width="50">
+                  <% end %>
+                  <p>Xe Máy</p>
                 </label>
-                <label class="form-checkbox">
-                  <input type="checkbox" name="status">
-                  <span>Đã qua sử dụng</span>
+                <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'oto')) do %>
+                  <input type="radio" name="type">
+                  <span></span>
+                  <img src="<%= asset_pack_path('images/ico_car.png') %>" alt="vehicle" width="50">
+                  <% end %>
+                  <p>Ô Tô</p>
+                </label>
+                <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'bike')) do %>
+                  <input type="radio" name="type">
+                  <span></span>
+                  <img src="<%= asset_pack_path('images/ico_bicycle.png') %>" alt="vehicle" width="50">
+                  <% end %>
+                  <p>Xe Đạp</p>
+                </label>
+                <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'other')) do %>
+                  <input type="radio" name="type">
+                  <span></span>
+                  <img src="<%= asset_pack_path('images/ico_other.png') %>" alt="vehicle" width="50">
+                  <% end %>
+                  <p>Khác</p>
                 </label>
               </div>
             </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn--tertiary btn--full" value="Áp Dụng">
+          </div>
+          <div class="form-group">
+            <p class="form-label">Địa Điểm</p>
+            <div class="form-body">
+              <%= select_tag "location", options_from_collection_for_select(Province.all, "id", "name"), class: "form-select has-icon", include_blank: "Toàn Quốc" %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z" />
+              </svg>
             </div>
-          </form>
+            <div class="form-body">
+              <select class="form-select has-icon" name="location">
+                <option value="all">Quận</option>
+                <option value="hcm">Quận 1</option>
+                <option value="hn">Quận 2</option>
+                <option value="bd">Bình Thạnh</option>
+                <option value="kh">Phú Nhuận</option>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z" />
+              </svg>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="form-label">Nhãn Hiệu</p>
+            <div class="form-body">
+              <select class="form-select has-icon" name="brand">
+                <option value="all">Tất cả</option>
+                <option value="honda">Honda</option>
+                <option value="yamaha">Yamaha</option>
+                <option value="vinfast">Vinfast</option>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M12.667 6.667v4c.736 0 1.333.597 1.333 1.333v1.333c0 .737-.597 1.334-1.333 1.334H3.333A1.333 1.333 0 0 1 2 13.333V12c0-.733.6-1.333 1.333-1.333v-4A1.333 1.333 0 0 1 2 5.333v-.666a.667.667 0 0 1 .367-.6L7.7 1.4a.667.667 0 0 1 .6 0l5.333 2.667a.667.667 0 0 1 .367.6v.666c0 .737-.597 1.334-1.333 1.334zm-4 0H7.333v4h1.334v-4zm2.666 0H10v4h1.333v-4zM6 6.667H4.667v4H6v-4zM3.333 5.08v.253h9.334V5.08L8 2.747 3.333 5.08zm0 6.92v1.333h9.334V12H3.333z" />
+              </svg>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="form-label">Mức Giá (vnđ)</p>
+            <div class="form-body">
+              <div class="form-list">
+                <input type="number" class="form-input" placeholder="Từ" name="first-price">
+                <span class="form-list__seperate">-</span>
+                <input type="number" class="form-input" placeholder="Đến" name="last-price">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="form-label">Tình trạng sử dụng</p>
+            <div class="form-body">
+              <label class="form-checkbox">
+                <input type="checkbox" name="status">
+                <span>Mới</span>
+              </label>
+              <label class="form-checkbox">
+                <input type="checkbox" name="status">
+                <span>Đã qua sử dụng</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn--tertiary btn--full" value="Áp Dụng">
+          </div>
         </div>
 
         <div class="col-9">
