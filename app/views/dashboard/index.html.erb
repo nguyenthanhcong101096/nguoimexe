@@ -12,7 +12,8 @@
             <option value="cheap">Thấp đến cao</option>
           </select>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <path fill="#484848" fill-rule="evenodd" d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z"/>
+            <path fill="#484848" fill-rule="evenodd"
+              d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z" />
           </svg>
         </li>
         <li class="form-body list-inline__item main-action">
@@ -21,7 +22,8 @@
             <option value="eldest">Cũ hơn</option>
           </select>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <path fill="#484848" fill-rule="evenodd" d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z"/>
+            <path fill="#484848" fill-rule="evenodd"
+              d="M1.533 5.133a.667.667 0 0 1-.2-.466V2c0-.368.299-.667.667-.667h12c.368 0 .667.299.667.667v2.667a.667.667 0 0 1-.2.466L10 9.613v1.72a.667.667 0 0 1-.2.467l-2.667 2.667A.667.667 0 0 1 6 14V9.607L1.533 5.14v-.007zm1.134-2.466v1.726L7.133 8.86c.128.125.2.295.2.473v3.06l1.334-1.333V9.333a.667.667 0 0 1 .2-.466l4.466-4.48v-1.72H2.667z" />
           </svg>
         </li>
       </ul>
@@ -37,27 +39,35 @@
             <div class="form-body">
               <div class="form-radio-images">
                 <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'moto')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_moto.png') %>" alt="vehicle" width="50">
+                  <% end %>
                   <p>Xe Máy</p>
                 </label>
                 <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'oto')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_car.png') %>" alt="vehicle" width="50">
+                  <% end %>
                   <p>Ô Tô</p>
                 </label>
                 <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'bike')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_bicycle.png') %>" alt="vehicle" width="50">
+                  <% end %>
                   <p>Xe Đạp</p>
                 </label>
                 <label class="form-radio-image">
+                  <%= link_to(sales_url(type: 'other')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_other.png') %>" alt="vehicle" width="50">
+                  <% end %>
                   <p>Khác</p>
                 </label>
               </div>
@@ -68,7 +78,8 @@
             <div class="form-body">
               <%= select_tag "location", options_from_collection_for_select(Province.all, "id", "name"), class: "form-select has-icon", include_blank: "Toàn Quốc" %>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path fill="#484848" fill-rule="evenodd" d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z"/>
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z" />
               </svg>
             </div>
             <div class="form-body">
@@ -80,7 +91,8 @@
                 <option value="kh">Phú Nhuận</option>
               </select>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path fill="#484848" fill-rule="evenodd" d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z"/>
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M3.76 10.907a6 6 0 1 1 8.48 0L8.473 14.68a.667.667 0 0 1-.946 0L3.76 10.907zm7.54-.94a4.667 4.667 0 1 0-6.6 0l3.3 3.3 3.3-3.3zM8 9.333A2.667 2.667 0 1 1 8 4a2.667 2.667 0 0 1 0 5.333zM8 8a1.333 1.333 0 1 0 0-2.667A1.333 1.333 0 0 0 8 8z" />
               </svg>
             </div>
           </div>
@@ -94,7 +106,8 @@
                 <option value="vinfast">Vinfast</option>
               </select>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path fill="#484848" fill-rule="evenodd" d="M12.667 6.667v4c.736 0 1.333.597 1.333 1.333v1.333c0 .737-.597 1.334-1.333 1.334H3.333A1.333 1.333 0 0 1 2 13.333V12c0-.733.6-1.333 1.333-1.333v-4A1.333 1.333 0 0 1 2 5.333v-.666a.667.667 0 0 1 .367-.6L7.7 1.4a.667.667 0 0 1 .6 0l5.333 2.667a.667.667 0 0 1 .367.6v.666c0 .737-.597 1.334-1.333 1.334zm-4 0H7.333v4h1.334v-4zm2.666 0H10v4h1.333v-4zM6 6.667H4.667v4H6v-4zM3.333 5.08v.253h9.334V5.08L8 2.747 3.333 5.08zm0 6.92v1.333h9.334V12H3.333z"/>
+                <path fill="#484848" fill-rule="evenodd"
+                  d="M12.667 6.667v4c.736 0 1.333.597 1.333 1.333v1.333c0 .737-.597 1.334-1.333 1.334H3.333A1.333 1.333 0 0 1 2 13.333V12c0-.733.6-1.333 1.333-1.333v-4A1.333 1.333 0 0 1 2 5.333v-.666a.667.667 0 0 1 .367-.6L7.7 1.4a.667.667 0 0 1 .6 0l5.333 2.667a.667.667 0 0 1 .367.6v.666c0 .737-.597 1.334-1.333 1.334zm-4 0H7.333v4h1.334v-4zm2.666 0H10v4h1.333v-4zM6 6.667H4.667v4H6v-4zM3.333 5.08v.253h9.334V5.08L8 2.747 3.333 5.08zm0 6.92v1.333h9.334V12H3.333z" />
               </svg>
             </div>
           </div>
