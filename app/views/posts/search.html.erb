@@ -7,9 +7,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <ul class="list-view">
-            <%= render partial: 'shared/post', collection: @posts %>
-          </ul>
+          <% if @posts.count > 0 %>
+            <h2 class="headline card__headline">Có "<%= @posts.count %>" kết quả tìm kiếm cho "<%= params[:q]%>"</h1>
+            <br/>
+            <ul class="list-view">
+              <%= render partial: 'shared/post', collection: @posts %>
+            </ul>
+            <% else %>
+            <h2 class="headline card__headline">Không có kết quả tìm kiếm cho từ "<%= params[:q]%> "</h2>
+            <% end %>
         </div>
       </div>
     </div>

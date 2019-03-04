@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search_by_full_name(params[:q])
+    @posts = Post.fulltext_search(params[:q])
   end
   
   private
