@@ -26,7 +26,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :vehicle_kind
   belongs_to :city
-  
+
   has_many :provinces, through: :city
   has_many :comments, as: :commentable
   has_many :likes, as: :likeable
@@ -40,16 +40,16 @@ class Post < ApplicationRecord
 
   include ImageUploader::Attachment.new(:featured_image)
   include PgSearch
-  
+
   pg_search_scope :fulltext_search,
                   against: [:title],
-                  order_within_rank: "posts.updated_at ASC",
+                  order_within_rank: 'posts.updated_at ASC',
                   associated_against: {
                     city: [:name],
                     provinces: [:name],
                     vehicle_kind: [:name]
                   }
-                  
+
   def created_date
     created_at.strftime('%d %b. %Y')
   end
@@ -57,6 +57,7 @@ class Post < ApplicationRecord
   def address_sale
     "#{city.province_name}, #{city_name}"
   end
+
   private
 
   def slug

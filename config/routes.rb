@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :posts,    only: %i[new create show],       param: :slug do
     get '/search' => 'posts#search', on: :collection, as: :search
   end
-  
+
   get '/sales'     => 'dashboard#index'
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'

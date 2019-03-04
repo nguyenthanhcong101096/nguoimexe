@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
-  
+
   before_action :set_post, only: %i[show]
 
   def new
@@ -25,13 +25,13 @@ class PostsController < ApplicationController
   def search
     @posts = Post.fulltext_search(params[:q])
   end
-  
+
   private
 
   def set_post
     @post = Post.find_by!(slug_title: params[:slug])
   end
-  
+
   def post_params
     params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
   end
