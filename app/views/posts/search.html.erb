@@ -1,0 +1,23 @@
+<%= provide(:page_title, 'Người mê xe - Website Mua Bán, Rao Vặt Trực Tuyến Hàng Đầu Của Người Chơi Xe') %>
+<%= provide(:page_description, 'Người Mê Xê - Website mua bán rao vặt của người Việt với hàng ngàn món hời đang được rao bán mỗi ngày. Đăng tin mua bán UY TÍN, NHANH CHÓNG, AN TOÀN.') %>
+<%= provide(:page_url, root_path) %>
+
+<div id="main" class="main">
+  <section class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <% if @posts.count > 0 %>
+            <h2 class="headline card__headline">Có "<%= @posts.count %>" kết quả tìm kiếm cho "<%= params[:q]%>"</h1>
+            <br/>
+            <ul class="list-view">
+              <%= render partial: 'shared/post', collection: @posts %>
+            </ul>
+            <% else %>
+            <h2 class="headline card__headline">Không có kết quả tìm kiếm cho từ "<%= params[:q]%> "</h2>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

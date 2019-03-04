@@ -23,10 +23,10 @@
   <div class="header__ultility">
     <div class="header__search-box">
       <div class="form-body">
-        <input type="text" class="form-input search-box has-icon" placeholder="Tìm Kiếm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <path fill="#484848" fill-rule="evenodd" d="M13.6 12.417l4.492 4.5a.833.833 0 0 1-1.184 1.166L12.425 13.6a6.667 6.667 0 1 1 1.175-1.175v-.008zm-5.267.916a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/>
-        </svg>
+        <%= form_tag search_posts_path, method: 'GET' do |form| %>
+          <input type="text" id="q" name="q" class="form-input search-box has-icon" placeholder="Tìm Kiếm với thành phố, quận/huyện">
+          <%= inline_svg('ico_search.svg') %>
+        <% end %>
       </div>
     </div>
     <% if user_signed_in? %>
@@ -45,7 +45,7 @@
       </ul>
     </div>
     <% else %>
-
+    <a href='/users/sign_in'>Chưa đăng nhập</a>
     <% end %>
   </div>
 </header>
