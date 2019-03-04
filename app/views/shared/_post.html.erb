@@ -1,8 +1,9 @@
+<% if post.is_a?(Post) %>
 <li class="list-view__item">
   <div class="card">
     <%= link_to post_path(slug: post.slug_title) do %>
-      <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
-      </div>
+    <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+    </div>
     <% end %>
     <div class="card__body">
       <h2 class="headline card__headline"><%= post.title %></h2>
@@ -42,3 +43,11 @@
     </div>
   </div>
 </li>
+<% else %>
+<div class="card__block">
+  <p class="label"><%= post.user_username %></p>
+  <p class="content"><%= post.title %></p>
+</div>
+<br/>
+<div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)"></div>
+<% end %>
