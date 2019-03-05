@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  constraints(SubdomainAdmin) do
-    get '/' => 'admin#index'
-  end
-
+  draw :api
+  draw :admin
+  
   devise_for :users, controllers: {
     omniauth_callbacks: 'callbacks',
     sessions: 'user_session'
