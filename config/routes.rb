@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get '/search' => 'posts#search', on: :collection, as: :search
   end
 
-  get '/sales'     => 'dashboard#index'
+  get '/sales'     => 'dashboard#index', defaults: { format: :html }
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'
 

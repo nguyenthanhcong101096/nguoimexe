@@ -60,6 +60,20 @@ class Post < ApplicationRecord
     "#{city.province_name}, #{city_name}"
   end
 
+  # def order_type(type = nil)
+  #   q = all
+  #   q = q.order(created_at: :desc) if type 'latest'
+  #   q
+  # end
+  
+  def self.filter(params)
+    q = all
+    q = q.where(city_id: params[:city_id])                       if params[:city_id].present?
+    q = q.where(price: [params[:price_min]..params[:price_max]]) if params[:price_min].present?
+    q = q.where(status_of_vehicle: params[:status_of_vehicle])   if params[:status_of_vehicle].present?
+    q
+  end
+  
   private
 
   def slug

@@ -30,4 +30,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = params_locale || cookies['locale'] || I18n.default_locale
     cookies['locale'] = I18n.locale.to_s
   end
+  
+  def call_api?
+    params[:type_format] == 'json'
+  end
 end
