@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   draw :api
   draw :admin
-  
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'callbacks',
     sessions: 'user_session'

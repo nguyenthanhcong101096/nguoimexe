@@ -46,7 +46,7 @@ gem 'html2slim'
 
 gem 'kaminari'
 gem 'ransack'
-gem 'bootstrap-kaminari-views' 
+gem 'bootstrap-kaminari-views'
 
 gem 'counter_culture'
 gem 'enumerize'
