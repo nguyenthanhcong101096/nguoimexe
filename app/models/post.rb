@@ -50,14 +50,38 @@ class Post < ApplicationRecord
                     vehicle_kind: [:name]
                   }
 
-  scope :with_kind, -> (kind) { kind ? VehicleKind.with_kind(kind).posts : all } 
-                  
+  scope :with_kind, ->(kind) { kind ? VehicleKind.with_kind(kind).posts : all }
+
   def created_date
     created_at.strftime('%d %b. %Y')
   end
 
   def address_sale
     "#{city.province_name}, #{city_name}"
+  end
+
+  def self.filter(params)
+    q = all
+    q = q.where(city_id: params[:city_id])                       if params[:city_id].present?
+    q = q.where(price: [params[:price_min]..params[:price_max]]) if params[:price_min].present?
+    q = q.where(status_of_vehicle: params[:status_of_vehicle])   if params[:status_of_vehicle].present?
+    q = q.with_ordered(params)
+    q
+  end
+
+  def self.with_ordered(params)
+    case params[:sort]
+    when 'latest'
+      order(created_at: :desc)
+    when 'order'
+      order(created_at: :asc)
+    when 'highest_price'
+      order(price: :desc)
+    when 'lowest_price'
+      order(price: :asc)
+    else
+      order(created_at: :desc)
+    end
   end
 
   private

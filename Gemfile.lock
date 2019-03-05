@@ -58,6 +58,9 @@ GEM
     awesome_print (1.8.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bugsnag (6.11.0)
       concurrent-ruby (~> 1.0)
     builder (3.2.3)
@@ -157,6 +160,18 @@ GEM
     json (2.1.0)
     jsonapi-renderer (0.2.0)
     jwt (2.1.0)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     letter_avatar (0.3.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -267,6 +282,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -387,6 +407,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   annotate
+  bootstrap-kaminari-views
   bugsnag
   byebug
   capistrano (~> 3.6.0)
@@ -408,6 +429,7 @@ DEPENDENCIES
   html2slim
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   letter_avatar
   listen
   logglier
@@ -422,6 +444,7 @@ DEPENDENCIES
   rails (~> 5.0.7)
   rails-controller-testing
   rails_best_practices
+  ransack
   redis (~> 3.0)
   rspec-its
   rspec-json_matcher

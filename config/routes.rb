@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  constraints(SubdomainAdmin) do
-    get '/' => 'admin#index'
-  end
+  draw :api
+  draw :admin
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'callbacks',
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
     get '/search' => 'posts#search', on: :collection, as: :search
   end
 
-  get '/sales'     => 'dashboard#index'
+  get '/sales'     => 'dashboard#index', defaults: { format: :html }
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'
 
