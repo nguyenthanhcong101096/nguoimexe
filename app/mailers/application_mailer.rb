@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['gmail_username']
+  default from: 'nguoimexesys@gmail.com'
 
   def reset_password_email(user)
     @user = user

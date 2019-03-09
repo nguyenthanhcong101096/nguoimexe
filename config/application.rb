@@ -30,7 +30,6 @@ module Nguoimexe
       user_name: 'nguoimexesys@gmail.com',
       password: 'Ngthanhcong1',
       authentication: 'plain',
-      domain: 'nguoimexe.com',
       enable_starttls_auto: true
     }
   end
