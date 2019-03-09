@@ -1,9 +1,9 @@
 <h2>Log in</h2>
-
 <%= form_tag user_session_path do %>
   <%= text_field_tag :email %>
   <%= password_field_tag :password %>
   <%= submit_tag %>
 <% end %>
 <%= link_to 'with google',user_google_oauth2_omniauth_authorize_path %>
-<%= render "users/shared/links" %>
+</br>
+<%= link_to 'quên mật khẩu', forget_password_reset_passwords_path %>
