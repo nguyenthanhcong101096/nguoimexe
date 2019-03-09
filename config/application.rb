@@ -27,8 +27,8 @@ module Nguoimexe
     config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',
       port: 587,
-      user_name: ENV['gmail_username'],
-      password: ENV['gmail_password'],
+      user_name: 'nguoimexesys@gmail.com',
+      password: 'Ngthanhcong1',
       authentication: 'plain',
       domain: 'nguoimexe.com',
       enable_starttls_auto: true
