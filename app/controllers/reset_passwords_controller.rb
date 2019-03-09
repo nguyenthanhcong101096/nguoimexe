@@ -6,6 +6,8 @@ class ResetPasswordsController < ApplicationController
 
   def edit; end
 
+  def forget_password; end
+  
   def update
     @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
     if @user.save
@@ -16,8 +18,6 @@ class ResetPasswordsController < ApplicationController
       render :edit
     end
   end
-
-  def forget_password; end
 
   def send_mail
     @user = User.find_by(email: params[:email])
