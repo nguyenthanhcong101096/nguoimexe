@@ -89,8 +89,8 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       password = Devise.friendly_token[0, 20]
       user.type_account = 'email'
-      user.email = auth.email
-      user.username = auth.email
+      user.email = auth.info.email
+      user.username = auth.info.email
       user.provider = auth.provider
       user.uid = auth.uid
       user.password = password
