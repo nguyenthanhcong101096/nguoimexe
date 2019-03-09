@@ -6,8 +6,11 @@ class ResetPasswordsController < ApplicationController
 
   def edit; end
 
+  def forget_password; end
+  
   def update
     @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
+    binding.pry
     if @user.save
       sign_in(@user)
       cookies.signed[:user_id] = @user.id
@@ -16,8 +19,6 @@ class ResetPasswordsController < ApplicationController
       render :edit
     end
   end
-
-  def forget_password; end
 
   def send_mail
     @user = User.find_by(email: params[:email])
