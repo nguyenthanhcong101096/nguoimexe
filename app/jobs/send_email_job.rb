@@ -5,6 +5,6 @@ class SendEmailJob < ApplicationJob
 
   def perform(user)
     @user = user
-    UserMailer.reset_password_email(@user).deliver_later
+    UserMailer.reset_password_email(@user).deliver_now
   end
 end
