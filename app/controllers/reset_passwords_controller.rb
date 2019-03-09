@@ -10,7 +10,6 @@ class ResetPasswordsController < ApplicationController
   
   def update
     @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
-    binding.pry
     if @user.save
       sign_in(@user)
       cookies.signed[:user_id] = @user.id
