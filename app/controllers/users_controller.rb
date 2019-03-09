@@ -5,13 +5,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: %(show)
 
   def update; end
-  
+
   def show; end
 
   def profile; end
 
   def change_password; end
-  
+
   private
 
   def set_user

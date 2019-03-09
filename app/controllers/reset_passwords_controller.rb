@@ -7,7 +7,7 @@ class ResetPasswordsController < ApplicationController
   def edit; end
 
   def forget_password; end
-  
+
   def update
     @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
     if @user.save
