@@ -7,5 +7,3 @@ CLOUD_NAME: ttlcong
 API_KEY: '827644732153184'
 API_SECRET: TJxEiKSWK00Vgz5Z-MDWbwiknhc
 FOLDER: 'nguoimexe'
-# Cloudinary::Uploader.upload(img, :public_id => "my_dog", :overwrite => true)
-# Cloudinary::Api.delete_resources(['nguoimexe/my_dog'])

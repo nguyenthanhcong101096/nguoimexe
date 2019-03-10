@@ -10,11 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.create(post_params)
+    PostService.new(current_user, post_params, 'post').create
     redirect_to root_path
-    # if post.save
-    #   PostImage.create(post_imageable: post, post_image_data: params[:image])
-    # end
   end
 
   def show
