@@ -40,6 +40,9 @@ class Post < ApplicationRecord
   delegate :name, to: :vehicle_kind, prefix: true
   delegate :name, to: :city, prefix: true
 
+  validates :title,    presence: true
+  validates :describe, presence: true
+
   include ImageUploader::Attachment.new(:featured_image)
   include PgSearch
 
