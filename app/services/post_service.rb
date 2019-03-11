@@ -37,7 +37,7 @@ class PostService
     images.each do |image|
       file_upload = Cloudinary::Uploader.upload(resize_image(image), folder: 'nguoimexe', public_id: image.original_filename, overwrite: true)
 
-      PostImage.create(post_imageable: post, url: file_upload['url'], public_id: image.original_filename)
+      PostImage.create(post_imageable: post, url: file_upload['secure_url'], public_id: image.original_filename)
     end
   end
 
