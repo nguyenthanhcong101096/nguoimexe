@@ -60,6 +60,10 @@ class Post < ApplicationRecord
     "#{city.province_name}, #{city_name}"
   end
 
+  def images
+    post_images.pluck(:url)
+  end
+
   def self.filter(params)
     q = all
     q = q.where(city_id: params[:city_id])                       if params[:city_id].present?

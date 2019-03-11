@@ -2,3 +2,8 @@ GMAIL_USER: 'nguoimexesys@gmail.com'
 GMAIL_PASSWORD: 'Ngthanhcong1'
 GOOGLE_CLIENT_ID: '940492105837-g0qkk5hieu1ede677i5pceack1kttbmp.apps.googleusercontent.com'
 GOOGLE_SECRET: 'GczD38ybLyfNHKvXNkmYvkEk'
+
+CLOUD_NAME: ttlcong
+API_KEY: '827644732153184'
+API_SECRET: TJxEiKSWK00Vgz5Z-MDWbwiknhc
+FOLDER: 'nguoimexe'

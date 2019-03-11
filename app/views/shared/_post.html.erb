@@ -1,7 +1,7 @@
 <li class="list-view__item">
   <div class="card">
     <%= link_to post_path(slug: post.slug_title), class: 'card__link' do %>
-      <div class="card__image" style="background-image: url(<%= asset_pack_path('images/img_moto-dummy.jpg') %>)">
+      <div class="card__image" style="background-image: url(<%= post.images.first %>)">
       </div>
       <div class="card__body">
         <h2 class="headline"><%= truncate(post.title, length: 55) %></h2>

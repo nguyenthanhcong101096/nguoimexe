@@ -10,11 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.create(post_params)
+    PostService.new(current_user, params, 'post').create
     redirect_to root_path
-    # if post.save
-    #   PostImage.create(post_imageable: post, post_image_data: params[:image])
-    # end
   end
 
   def show
@@ -30,9 +27,5 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by!(slug_title: params[:slug])
-  end
-
-  def post_params
-    params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
   end
 end
