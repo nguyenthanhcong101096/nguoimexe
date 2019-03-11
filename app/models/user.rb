@@ -52,7 +52,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
   # validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: 'bad format' }
 
