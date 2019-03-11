@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    PostService.new(current_user, post_params, 'post').create
+    PostService.new(current_user, params, 'post').create
     redirect_to root_path
   end
 
@@ -27,9 +27,5 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by!(slug_title: params[:slug])
-  end
-
-  def post_params
-    params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
   end
 end

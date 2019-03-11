@@ -13,11 +13,11 @@ users = FactoryBot.create_list(:user, 5)
 FactoryBot.create(:follow, user: hola, target_user: holo)
 FactoryBot.create(:follow, user: holo, target_user: hola)
 
-posts         = 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample, city: City.all.sample ) }
+#posts         = 30.times  { FactoryBot.create(:post, user: User.all.sample, vehicle_kind: VehicleKind.all.sample, city: City.all.sample ) }
 
 blog          = FactoryBot.create(:blog, user_id: hola.id, mod: 'motosg', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan')
 
-comments_post = 100.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: Post.all.sample) }
+#comments_post = 100.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: Post.all.sample) }
 comments_blog = 50.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: blog) }
 
 # CONVERSATIONS

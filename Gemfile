@@ -14,6 +14,7 @@ gem 'omniauth-google-oauth2'
 gem 'shrine'
 gem 'letter_avatar'
 gem 'cloudinary'
+gem 'mini_magick'
 
 gem 'bugsnag'
 

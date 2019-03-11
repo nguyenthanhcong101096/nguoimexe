@@ -10,5 +10,8 @@
 <%= f.select :status_of_vehicle, ['Xe mới', 'Đã sử dụng'], include_blank: "Trình trạng sử dụng" %>
 <%= f.select :km, 1..50, include_blank: "Số km đi được" %>
 <%= f.select :city_id, options_from_collection_for_select(Province.first.cities, "id", "name"), include_blank: "Chọn thành phố" %>
-<%= f.submit 'tạo bài viết' %>
+<%= f.file_field :images, multiple: true %>
+<label for="images">upload</label>
+<h1>ssssssssss</h1>
+<button>tạo</button>
 <% end %>
