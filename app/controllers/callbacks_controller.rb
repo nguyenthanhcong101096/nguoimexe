@@ -12,14 +12,17 @@ class CallbacksController < ApplicationController
   private
   
   def generic_callback
-    @identity = User.from_omniauth(request.env["omniauth.auth"])
+    auth      = request.env["omniauth.auth"] 
+    @identity = User.from_omniauth(auth)
 
     user = @identity || current_user
     if user.persisted?
       cookies.signed[:user_id] = user.id
       sign_in_and_redirect user
     else
-      redirect_to root_path
+      user = User.find_by(email: auth.info.email)
+      cookies.signed[:user_id] = user.id
+      sign_in_and_redirect user
     end
   end
 end
