@@ -3,7 +3,6 @@ App.chat = App.cable.subscriptions.create "StreamMessageChannel",
     message_channel = $('.js-create-message').attr('conversation-id')
     message_new  = $('.messages')
     message_last = $('#js-last-message')
-    your_message = message_new.attr('message-of')
     
     if(message_channel == "#{data['message_channel']}")
       message_last.text(data['last_message'])
