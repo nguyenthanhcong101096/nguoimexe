@@ -8,22 +8,11 @@
       h4.u-text-bold Messages
     .conversations
       = render_conversations(current_user)
-  .col-6
+  .col-9
     .messages message-of=current_user.id
       - @conversation.messages.order(created_at: :asc).each do |message|
         = render partial: 'message', locals: { message: message } 
     .horizontal.center.pb-16
-      input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="border-radius: 50px; height: auto;"
-  .col-3
-    .information
-      .horizontal.center.pb-16 style="border-bottom: 1px solid #eee;"
-        img.icon-40.radius.mr-8 src=@conversation.with_user(current_user).avatar_url(:medium)
-        div
-          h4.u-text-bold = @conversation.with_user(current_user).username
-          h5 = @conversation.with_user(current_user).address
-    .options.u-text-gray.pb-16
-      h4.u-text-bold Options
-      .horizontal.center.u-mt-8
-        h5.u-text-bold Xoá tin nhắn
+      input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="height: 50px; width: 300px"
 
       

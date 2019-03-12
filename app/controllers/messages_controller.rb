@@ -4,9 +4,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_message, only: %i[show]
 
-  def index
-    @conversation = Conversation.find(current_user.conversation_ids[0])
-  end
+  def index; end
 
   def new; end
 

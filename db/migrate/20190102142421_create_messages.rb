@@ -5,13 +5,13 @@ class CreateMessages < ActiveRecord::Migration[5.0]
     create_table :messages do |t|
       t.text :msg
       t.bigint :conversation_id, null: false
-      t.bigint :user_id, null: false
+      t.bigint :sender_id, null: false
       t.boolean :read, default: false
 
       t.timestamps
     end
 
-    add_index :messages, :user_id
+    add_index :messages, :sender_id
     add_index :messages, :conversation_id
   end
 end

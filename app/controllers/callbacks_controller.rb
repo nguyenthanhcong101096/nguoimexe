@@ -4,15 +4,15 @@ class CallbacksController < ApplicationController
   def google_oauth2
     generic_callback
   end
-  
+
   def facebook
     generic_callback
   end
-  
+
   private
-  
+
   def generic_callback
-    auth      = request.env["omniauth.auth"] 
+    auth      = request.env['omniauth.auth']
     @identity = User.from_omniauth(auth)
 
     user = @identity || current_user
