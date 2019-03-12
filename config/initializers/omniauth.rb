@@ -5,7 +5,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            ENV['GOOGLE_CLIENT_ID'],
            ENV['GOOGLE_SECRET'],
            scope: 'email'
-  
+
   provider :facebook,
            ENV['FACEBOOK_APP_ID'],
            ENV['FACEBOOK_APP_SECRET'],

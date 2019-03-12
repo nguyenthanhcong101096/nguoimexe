@@ -40,7 +40,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :user_chats, dependent: :destroy, foreign_key: :sender_id
   has_many :conversations, through: :user_chats, foreign_key: :sender_id
-  
+
   has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
   has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
 
