@@ -22,9 +22,9 @@ comments_blog = 50.times { comment = FactoryBot.create(:comment, user: User.all.
 
 # CONVERSATIONS
 conversations  = FactoryBot.create_list(:conversation, 3)
-conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.first.id) }
-conversation_2 = [hola, helo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.second.id) }
-conversation_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, user_id: user.id, conversation_id: conversations.last.id) }
+conversation_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversations.first.id) }
+conversation_2 = [hola, helo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversations.second.id) }
+conversation_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversations.last.id) }
 
 messages_1 = 15.times { FactoryBot.create(:message, conversation_id: conversations.first.id, sender_id: [hola, holo].sample.id) }
 messages_2 = 15.times { FactoryBot.create(:message, conversation_id: conversations.second.id, sender_id: [hola, helo].sample.id) }
