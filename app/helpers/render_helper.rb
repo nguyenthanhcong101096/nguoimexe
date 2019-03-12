@@ -14,7 +14,7 @@ module RenderHelper
   end
 
   def render_conversations(user)
-    conversations = user.conversations
+    conversations = user.conversation
     render(partial: 'messages/conversation', collection: conversations)
   end
 
