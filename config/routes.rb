@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get '/sales'     => 'dashboard#index', defaults: { format: :html }
   get '/'          => 'pages#index', as: 'root'
   get '*path'      => 'pages#page_404'
+  match "/500"     => 'pages#page_500', via: :all
 
   mount ActionCable.server => '/cable'
 end
