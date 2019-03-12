@@ -17,5 +17,6 @@ class MessagesController < ApplicationController
   def set_message
     @check = current_user.conversation_ids.include?(params[:id].to_i)
     @conversation = Conversation.find(params[:id])
+    cookies.signed[:room_id] = @conversation.id
   end
 end
