@@ -21,8 +21,4 @@ class Conversation < ApplicationRecord
   def last_message
     messages.last
   end
-
-  def count_msg_not_read(user)
-    with_user(user).messages.where(conversation: self, read: false).count
-  end
 end

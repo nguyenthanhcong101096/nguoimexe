@@ -1,5 +1,4 @@
-.conversation.horizontal.pb-8
-  img.icon-30.radius.mr-8 src=message.user_avatar_url(:medium)
-  div
-    pre = message.msg
-    h6.u-text-gray = distance_of_time_in_words(message.created_at, Time.now)
+.conversation style="display: flex"
+  img style="height: 30px; width: 30px;" src=message.sender_avatar_url(:medium)
+  pre = message.msg
+
