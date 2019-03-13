@@ -6,3 +6,5 @@
   .conversation style="display: flex; margin: 10px;"
     img style="height:30px; width: 30px;" src=message.sender_avatar_url(:medium)
     pre = message.msg
+- if message.attachment_data
+    div style="background-image: url(#{message.attachment_data}); height:100px; width: 100px;  display: block; background-size: contain; background-repeat: no-repeat;"

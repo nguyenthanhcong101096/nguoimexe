@@ -27,7 +27,7 @@ Rails.application.configure do
 
   config.public_file_server.enabled = true
 
-  config.consider_all_requests_local = true
+  # config.consider_all_requests_local = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
