@@ -1,0 +1,6 @@
+<%= form_for @message do |f| %>
+  <%= f.text_area :msg %>
+  <%= f.file_field :attachment %>
+  <label for="attachment">Upload</label>
+  <%= f.submit %>
+<% end %>
