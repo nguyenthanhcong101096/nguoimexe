@@ -22,16 +22,17 @@ App.chat = App.cable.subscriptions.create({channel: "StreamMessageChannel"},
         reader.onload = (e) => App.chat.send_message(conversation_id, msg, e.target.result)  
         reader.readAsDataURL(image)   
       else
-        App.chat.send_message(conversation_id, event.target.value)  
+        App.chat.send_message(conversation_id, msg)  
       event.target.value = ""
       event.preventDefault()
       
   $(document).on 'change', '#picture', (event) ->
     $files = $('#picture')
-    image = $files[0].files[0] if ($files[0].files && $files[0].files[0])
+    image  = $files[0].files[0] if ($files[0].files && $files[0].files[0])
     return unless image?
     $imagePreview = $('#image')
-    if (window.File && window.FileReader && window.FileList && window.Blob)
+    
+    if image
       reader = new FileReader()
       reader.onload = (e) => $imagePreview.css('background-image', "url(#{e.target.result})").text('')
       reader.readAsDataURL(image)
