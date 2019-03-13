@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: post_images
@@ -8,6 +7,8 @@
 #  post_image_data     :text
 #  post_imageable_id   :integer
 #  post_imageable_type :string
+#  url                 :string           default("Unknow")
+#  public_id           :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

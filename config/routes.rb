@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :groups,    only: %i[index show],            param: :name
   resources :comments,  only: %i[index create],          defaults: { format: :html }
   resources :follows,   only: %i[create destroy],        param: :user_id
-  resources :messages,  only: %i[index new show create]
+  resources :messages,  only: %i[index new show create], param: :name
   resources :blogs,     only: %i[index new show create], param: :slug
   resources :posts,     only: %i[new create show],       param: :slug do
     get '/search' => 'posts#search', on: :collection, as: :search

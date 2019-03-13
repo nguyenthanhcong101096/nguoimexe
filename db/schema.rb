@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20190302080811) do
   end
 
   create_table "conversations", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -166,14 +167,14 @@ ActiveRecord::Schema.define(version: 20190302080811) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_chats", force: :cascade do |t|
+  create_table "room_chats", force: :cascade do |t|
     t.bigint   "conversation_id", null: false
     t.bigint   "sender_id",       null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["conversation_id"], name: "index_user_chats_on_conversation_id", using: :btree
-    t.index ["sender_id", "conversation_id"], name: "index_user_chats_on_sender_id_and_conversation_id", unique: true, using: :btree
-    t.index ["sender_id"], name: "index_user_chats_on_sender_id", using: :btree
+    t.index ["conversation_id"], name: "index_room_chats_on_conversation_id", using: :btree
+    t.index ["sender_id", "conversation_id"], name: "index_room_chats_on_sender_id_and_conversation_id", unique: true, using: :btree
+    t.index ["sender_id"], name: "index_room_chats_on_sender_id", using: :btree
   end
 
   create_table "user_groups", force: :cascade do |t|
