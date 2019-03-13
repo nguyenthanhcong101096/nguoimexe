@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
@@ -17,7 +16,10 @@
 #  status_of_vehicle    :string
 #  price                :float            default(0.0), not null
 #  year_of_registration :string           default("Unknown")
+#  km                   :string           default("Unknown")
 #  slug_title           :string
+#  city_id              :bigint(8)
+#  color                :string           default("Unknown")
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #

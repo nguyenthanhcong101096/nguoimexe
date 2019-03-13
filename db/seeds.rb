@@ -25,9 +25,9 @@ conversation_1  = FactoryBot.create(:conversation, name: 'thien-kim')
 conversation_2  = FactoryBot.create(:conversation, name: 'thanh-cong')
 conversation_3  = FactoryBot.create(:conversation, name: 'test1')
 
-room_1 = [hola, holo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversation_1.id) }
-room_2 = [hola, helo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversation_2.id) }
-room_3 = [holo, helo].each { |user| FactoryBot.create(:user_chat, sender_id: user.id, conversation_id: conversation_3.id) }
+room_1 = [hola, holo].each { |user| FactoryBot.create(:room_chat, sender_id: user.id, conversation_id: conversation_1.id) }
+room_2 = [hola, helo].each { |user| FactoryBot.create(:room_chat, sender_id: user.id, conversation_id: conversation_2.id) }
+room_3 = [holo, helo].each { |user| FactoryBot.create(:room_chat, sender_id: user.id, conversation_id: conversation_3.id) }
 
 messages_room_1 = 15.times { FactoryBot.create(:message, conversation_id: conversation_1.id, sender_id: [hola, holo].sample.id) }
 messages_room_2 = 15.times { FactoryBot.create(:message, conversation_id: conversation_2.id, sender_id: [hola, helo].sample.id) }
