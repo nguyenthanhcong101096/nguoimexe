@@ -9,14 +9,12 @@ class MessagesController < ApplicationController
   def new; end
 
   def show
-    redirect_to messages_path unless @check
   end
 
   private
 
   def set_message
-    @check = current_user.conversation_ids.include?(params[:id].to_i)
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.find_by!(name: params[:name])
     cookies.signed[:room_id] = @conversation.id
   end
 end
