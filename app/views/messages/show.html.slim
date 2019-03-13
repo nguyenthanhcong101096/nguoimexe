@@ -11,7 +11,4 @@
   .col-9
     .messages message-of=current_user.id
       = render partial: 'message', collection: @conversation.messages.order(created_at: :asc)
-    .horizontal.center.pb-16
-      input.form-control.mr-8.js-create-message  conversation-id=@conversation.id placeholder="Nhập tin nhắn" style="height: 50px; width: 300px"
-
-
+    = render 'message_box'

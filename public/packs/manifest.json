@@ -1,8 +1,8 @@
 {
   "application.css": "/packs/application-83698bc3df713aa4a968c7c039b8d10b.css",
   "application.css.map": "/packs/application-83698bc3df713aa4a968c7c039b8d10b.css.map",
-  "application.js": "/packs/application-856babf5217681767a13.js",
-  "application.js.map": "/packs/application-856babf5217681767a13.js.map",
+  "application.js": "/packs/application-2cd6fcb72ff31ceec63c.js",
+  "application.js.map": "/packs/application-2cd6fcb72ff31ceec63c.js.map",
   "images/ico_arrow-down.svg": "/packs/images/ico_arrow-down-dd92a981beb5df099d9709e7ec529c59.svg",
   "images/ico_arrow-down_orange.svg": "/packs/images/ico_arrow-down_orange-f50d901c484d091261c331418f90a0e3.svg",
   "images/ico_bicycle.png": "/packs/images/ico_bicycle-b7120e4b701b42da8b0f6766eb07bc24.png",
@@ -31,9 +31,9 @@
   "images/img_moto-preview_04.jpg": "/packs/images/img_moto-preview_04-efeeb8c34ecbb629b15677f07f3b3fab.jpg",
   "images/img_moto-preview_05.jpg": "/packs/images/img_moto-preview_05-c8c17d8d0cf8c028a32ff22ebdd23a46.jpg",
   "images/og.jpg": "/packs/images/og-41e1a1ff733054bed8ab7dc2cc6e5c3e.jpg",
+  "images/og.png": "/packs/images/og-6ce9023a76d2b784828ce3f187460863.png",
   "writer.css": "/packs/writer-83698bc3df713aa4a968c7c039b8d10b.css",
   "writer.css.map": "/packs/writer-83698bc3df713aa4a968c7c039b8d10b.css.map",
-  "writer.js": "/packs/writer-94885f29203f271098a7.js",
-  "writer.js.map": "/packs/writer-94885f29203f271098a7.js.map",
-  "images/og.png": "/packs/images/og-6ce9023a76d2b784828ce3f187460863.png"
+  "writer.js": "/packs/writer-0c6b330f569a6ec27fac.js",
+  "writer.js.map": "/packs/writer-0c6b330f569a6ec27fac.js.map"
 }

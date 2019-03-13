@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20190302080811) do
 
   create_table "messages", force: :cascade do |t|
     t.text     "msg"
+    t.text     "attachment_data"
     t.bigint   "conversation_id",                 null: false
     t.bigint   "sender_id",                       null: false
     t.boolean  "read",            default: false
