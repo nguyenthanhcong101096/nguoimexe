@@ -1,19 +1,20 @@
+<%= link_to post_url(post.slug_title) do %>
 <div class="col-4">
-    <div class="card card--md">
-      <a href="#" class="card__link">
-        <div class="card__image" style="background-image: url(<%= post.images[0] %>)"></div>
-      </a>
-      <div class="card__body">
-        <a href="#" class="card__link"><h2 class="card__title"><%= post.title %></h2></a>
-        <p class="text--xs text--grey"><%= post.created_date %></p>
-      </div>
-      <div class="card__footer">
-        <h3 class="text--md"><%= post.price %></h3>
-        <button class="btn--icon btn--mark">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"></path>
-          </svg>
-        </button>
-      </div>
+  <div class="card card--md">
+    <div class="card__image" style="background-image: url(<%= post.images[0] %>)"></div>
+    <div class="card__body">
+      <a href="#" class="card__link"><h2 class="card__title card__link""><%= post.title %></h2></a>
+      <p class="text--xs text--grey"><%= post.created_date %></p>
+    </div>
+    <div class="card__footer">
+      <h3 class="text--md"><%= post.price %></h3>
+      <button class="btn--icon btn--mark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"></path>
+        </svg>
+      </button>
     </div>
   </div>
+</div>
+<% end %>
+
