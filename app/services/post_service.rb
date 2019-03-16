@@ -20,7 +20,12 @@ class PostService
 
   def create_post
     post = @current_user.posts.create(post_params)
-    upload_to_cloudinary(post, @params[:post][:images])
+    if post.valid?
+      upload_to_cloudinary(post, @params[:post][:images])
+      true
+    else
+      false
+    end
   end
 
   def create_newsfeed

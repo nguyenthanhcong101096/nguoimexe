@@ -27,8 +27,8 @@
       <div class="block">
         <div class="block__head">
           <h2 class="headline--lg"><%= @post.title %></h2>
-          <h3 class="text--xl">15.800.000 đ</h3>
-          <p class="text--sm text--grey">20 Tháng 1, 2019 - <%= @post.address_sale %></p>
+          <h3 class="text--xl"><%= @post.price %> đ</h3>
+          <p class="text--sm text--grey"><%= @post.created_date %> - <%= @post.address_sale %></p>
         </div>
         <div class="block__actions">
           <ul class="link-list">
@@ -98,7 +98,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Đời Xe</p>
-                        <p>2016</p>
+                        <p><%= @post.car_life %></p>
                       </div>
                     </div>
                   </div>
@@ -111,7 +111,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Loại xe</p>
-                        <p>Xe côn tay</p>
+                        <p><%= @post.range_of_vehicle %></p>
                       </div>
                     </div>
                   </div>
@@ -125,7 +125,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Tình trạng</p>
-                        <p>Đã sử dụng</p>
+                        <p><%= @post.status_of_vehicle %></p>
                       </div>
                     </div>
                   </div>
@@ -138,7 +138,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Dung tích</p>
-                        <p>1000 cc</p>
+                        <p><%= @post.capacity %></p>
                       </div>
                     </div>
                   </div>
@@ -151,7 +151,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Km đã đi</p>
-                        <p>24152 km</p>
+                        <p><%= @post.km %></p>
                       </div>
                     </div>
                   </div>
@@ -164,7 +164,7 @@
                       </div>
                       <div class="card__body">
                         <p class="text--grey">Năm đăng ký</p>
-                        <p>2017</p>
+                        <p><%= @post.year_of_registration %></p>
                       </div>
                     </div>
                   </div>

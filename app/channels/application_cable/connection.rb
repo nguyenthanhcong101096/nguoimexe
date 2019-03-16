@@ -21,7 +21,7 @@ module ApplicationCable
         reject_unauthorized_connection
       end
     end
-    
+
     def current_conversation
       cookies.signed[:room_id]
     end

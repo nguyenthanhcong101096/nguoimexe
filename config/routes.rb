@@ -29,9 +29,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/sales'     => 'dashboard#index', defaults: { format: :html }
-  get '/'          => 'pages#index', as: 'root'
-  get '*path'      => 'pages#page_404'
+  # get '/sales'     => 'dashboard#index', defaults: { format: :html }
+  get '/' => 'dashboard#index', as: 'root'
+  get '*path' => 'pages#page_404'
 
   mount ActionCable.server => '/cable'
 end

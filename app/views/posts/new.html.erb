@@ -62,43 +62,43 @@
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Chọn Loại Phương tiện <span class="form-text-error">(Bắt buộc)</span></p>
-                  <%= f.select(:vehicle_kind_id, options_from_collection_for_select(VehicleKind.all, "id", "name"), { include_blank: "Chọn loại phương tiện..."}, { class: "form-select"}) %>
+                  <%= f.select(:vehicle_kind_id, options_from_collection_for_select(VehicleKind.all, "id", "name"), { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Năm sản xuất</p>
-                  <%= f.select(:car_life, 1950..Date.current.year, { include_blank: "Chọn Năm..."}, { class: "form-select"}) %>
+                  <%= f.select(:car_life, 1950..Date.current.year, { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Năm đăng kí xe</p>
-                  <%= f.select(:year_of_registration, 1950..Date.current.year, { include_blank: "Chọn Năm..."}, { class: "form-select"}) %>
+                  <%= f.select(:year_of_registration, 1950..Date.current.year, { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Dung tích</p>
-                  <%= f.select(:capacity, %w[100cc 150cc 200cc], { include_blank: "Phân Khối"}, { class: "form-select"}) %>
+                  <%= f.select(:capacity, %w[100cc 150cc 200cc], { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Tình trạng sử dụng</p>
-                  <%= f.select(:status_of_vehicle, ['Xe mới', 'Đã sử dụng'], { include_blank: "Tình Trạng"}, { class: "form-select"}) %>
+                  <%= f.select(:status_of_vehicle, ['Xe mới', 'Đã sử dụng'], { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Số km đã đi</p>
-                  <%= f.select(:km, 1..50, { include_blank: "Xem trên mặt đồng hồ..."}, { class: "form-select"}) %>
+                  <%= f.select(:km, %w[100km 500km 1000km 5000km 10000km 15000km].each_with_object([]) { |k, o| o << "Trên #{k}" }, { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group form-group--vertical">
                   <p class="form-label">Loại xe</p>
-                  <%= f.select(:range_of_vehicle, ['Xe ga', 'Xe số'], { include_blank: "Xe ga, Xe số"}, { class: "form-select"}) %>
+                  <%= f.select(:range_of_vehicle, ['Xe ga', 'Xe số'], { }, { class: "form-select"}) %>
                 </div>
               </div>
               <div class="col-6">
