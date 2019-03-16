@@ -10,9 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    PostService.new(current_user, params, 'post').create
-    # ValidateService.new(post, 'post').perform
-    redirect_to root_path
+    response = PostService.new(current_user, params, 'post').create
+    response ? (redirect_to root_path) : (render :new)
   end
 
   def show
