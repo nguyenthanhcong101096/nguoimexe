@@ -1,10 +1,13 @@
 App.chat = App.cable.subscriptions.create({channel: "StreamMessageChannel"},
   received: (data) ->
-    message_new  = $('.messages')
-    message_last = $('#js-last-message')
+    $message_new  = $('.messages')
+    $message_last = $('#js-last-message')
     
-    message_last.text(data['last_message'])
-    message_new.append data['html']
+    $message_last.text(data['last_message'])
+    if $message_new.attr('user_id') == data['user_id']
+      $message_new.append data['right_html']
+    else
+      $message_new.append data['left_html']
     $(".messages").scrollTop($(".messages")[0].scrollHeight);
   
   send_message: (conversation_id, msg, img) ->

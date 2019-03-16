@@ -9,6 +9,6 @@
     .conversations
       = render_conversations(current_user)
   .col-9
-    .messages message-of=current_user.id
+    .messages user_id=current_user.id
       = render partial: 'message', collection: @conversation.messages.order(created_at: :asc)
     = render 'message_box'
