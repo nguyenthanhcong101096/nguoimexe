@@ -99,6 +99,28 @@ namespace :deploy do
       end
     end
   end
+  
+  desc 'Backup database'
+  task :db_backup do
+    on roles(:app) do
+      within release_path do
+        with(rails_env: fetch(:stage)) do
+          execute 'pg_dump -F c -v -U nguoimexe nguoimexe_production -f /home/deploy/nguoimexe/nguoimexe_backup.psql'
+        end
+      end
+    end
+  end
+  
+  desc 'Restore database'
+  task :db_restore do
+    on roles(:app) do
+      within release_path do
+        with(rails_env: fetch(:stage)) do
+          execute 'pg_restore -d nguoimexe_production /home/deploy/nguoimexe/nguoimexe_backup.psql -c -U nguoimexe'
+        end
+      end
+    end
+  end
 end
 
 before('deploy:assets:precompile', 'npm:install')
