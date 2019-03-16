@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all.limit(8)
+    @posts = Post.all
     @comments = @post.comments.limit(5).order(id: :desc)
   end
 
