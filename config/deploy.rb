@@ -127,7 +127,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute 'whenever --update-crontab nguoimexe'
+          execute "cd #{release_path} && whenever --update-crontab nguoimexe"
         end
       end
     end
