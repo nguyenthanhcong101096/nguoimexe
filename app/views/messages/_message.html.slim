@@ -1,9 +1,9 @@
 -if message.sender == current_user
-  .conversation.pb-8 style="text-align: right;"
+  .conversation.pb-8 style="text-align: right; background-color: #ccc; margin-left: 30%;"
     h5 = message.msg
     h6.u-text-gray = distance_of_time_in_words(message.created_at, Time.now)
 - else
-  .conversation style="display: flex; margin: 10px;"
+  .conversation style="display: flex; margin: 10px; background-color: #ccc; margin-right: 30%;"
     img style="height:30px; width: 30px;" src=message.sender_avatar_url(:medium)
     pre = message.msg
 - if message.attachment_data
