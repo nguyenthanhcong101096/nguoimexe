@@ -1,38 +1,17 @@
-= provide(:page_title, 'Tạo bài viết mới')
-= provide(:page_description, 'Describe')
-= provide(:page_url, new_post_path)
-
-.row
-  .col-3
-    = render 'shared/left_bar'
-  .col-9
-    div class='horizontal' style="padding-left:32px; padding-right:32px;"
-      div class='post-create'
-        = form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f|
-          = f.text_field :title, class: 'form-control no-border font-size-14 u-text-bold', placeholder: 'Nhập tiêu đề'
-          div class='editor'
-            div class="quill font-size-14" id="editor-container"
-            input[id='content' name="post[content]" hidden value="cong"]
-            .images.pb-8
-              h4.u-text-bold HÌNH ẢNH (Tối đa 6 ảnh)
-              .horizontal.u-mt-8
-                input[type="file" class="js-writer-avatar" name="pictures[]" id="pictures" multiple]
-                label for="pictures"
-                  img[id="pictures-preview" class="img-post" src=asset_pack_path('images/img_add_picture.png')]
-                = f.fields_for :pictures do |p|
-                  = p.file_field :post_img, multiple: true, name: "pictures[post_img][]"
-                .list-pictures.horizontal
-            .category.pb-8
-              h4.u-text-bold LOẠI XE
-              .horizontal.u-mt-8
-                pre.mr-8 #Oto
-                pre.mr-8 #Moto
-                pre.mr-8 #Bike
-                pre.mr-8 #Other
-            .certificate.pb-8
-              h4.u-text-bold GIẤY TỜ
-              h4.u-mt-8.u-text-red Vehicle Registration Certificate
-            .price.pb-8
-              h4.u-text-bold GIÁ BÁN
-              h4.u-mt-8.u-text-red 125.000.000VNĐ
-            button.btn-submit.u-mt-16 Tạo bài viết
+<%= form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f| %>
+<%= f.text_field :title, placeholder: 'Nhập tiêu đề' %>
+<%= f.text_field :describe, placeholder: 'Mô tả' %>
+<%= f.text_field :price, placeholder: 'Giá tiền' %>
+<%= f.select :vehicle_kind_id, options_from_collection_for_select(VehicleKind.all, "id", "name"), include_blank: "Chọn Loại" %>
+<%= f.select :car_life, 1950..Date.current.year, include_blank: "Năm sản xuất" %>
+<%= f.select :year_of_registration, 1950..Date.current.year, include_blank: "Năm đăng kí xe" %>
+<%= f.select :capacity, %w[100cc 150cc 200cc], include_blank: "Dung tích" %>
+<%= f.select :range_of_vehicle, ['Tay ga', 'Xe số'], include_blank: "Kiểu xe" %>
+<%= f.select :status_of_vehicle, ['Xe mới', 'Đã sử dụng'], include_blank: "Trình trạng sử dụng" %>
+<%= f.select :km, 1..50, include_blank: "Số km đi được" %>
+<%= f.select :city_id, options_from_collection_for_select(Province.first.cities, "id", "name"), include_blank: "Chọn thành phố" %>
+<%= f.file_field :images, multiple: true %>
+<label for="images">upload</label>
+<h1>ssssssssss</h1>
+<button>tạo</button>
+<% end %>
