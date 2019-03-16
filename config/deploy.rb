@@ -105,7 +105,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute 'pg_dump -F c -v -U nguoimexe -h localhost nguoimexe_production -f /home/deploy/nguoimexe/nguoimexe_backup.psql'
+          execute 'pg_dump -F c -v -U nguoimexe nguoimexe_production -f /home/deploy/nguoimexe/nguoimexe_backup.psql'
         end
       end
     end
