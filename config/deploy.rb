@@ -121,6 +121,17 @@ namespace :deploy do
       end
     end
   end
+  
+  desc 'Update Crontab'
+  task :update_crontab do
+    on roles(:app) do
+      within release_path do
+        with(rails_env: fetch(:stage)) do
+          execute 'whenever --update-crontab nguoimexe'
+        end
+      end
+    end
+  end
 end
 
 before('deploy:assets:precompile', 'npm:install')
