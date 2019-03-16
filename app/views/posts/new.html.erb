@@ -1,17 +1,148 @@
-<%= form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f| %>
-<%= f.text_field :title, placeholder: 'Nhập tiêu đề' %>
-<%= f.text_field :describe, placeholder: 'Mô tả' %>
-<%= f.text_field :price, placeholder: 'Giá tiền' %>
-<%= f.select :vehicle_kind_id, options_from_collection_for_select(VehicleKind.all, "id", "name"), include_blank: "Chọn Loại" %>
-<%= f.select :car_life, 1950..Date.current.year, include_blank: "Năm sản xuất" %>
-<%= f.select :year_of_registration, 1950..Date.current.year, include_blank: "Năm đăng kí xe" %>
-<%= f.select :capacity, %w[100cc 150cc 200cc], include_blank: "Dung tích" %>
-<%= f.select :range_of_vehicle, ['Tay ga', 'Xe số'], include_blank: "Kiểu xe" %>
-<%= f.select :status_of_vehicle, ['Xe mới', 'Đã sử dụng'], include_blank: "Trình trạng sử dụng" %>
-<%= f.select :km, 1..50, include_blank: "Số km đi được" %>
-<%= f.select :city_id, options_from_collection_for_select(Province.first.cities, "id", "name"), include_blank: "Chọn thành phố" %>
-<%= f.file_field :images, multiple: true %>
-<label for="images">upload</label>
-<h1>ssssssssss</h1>
-<button>tạo</button>
-<% end %>
+<div id="main" class="main">
+  <div class="main-content">
+    <div class="container">
+      <h1 class="headline--lg">Tạo bài viết mới</h1>
+
+      <form>
+        <div class="form-group form-register form-group--horizontal">
+          <div class="form-label">
+            <p>Tiêu đề bài viết</p>
+            <p>Mô tả khái quát thông tin của bài viết</p>
+          </div>
+          <div class="form-body">
+            <input class="form-input" type="text" placeholder="Tiêu đề bài viết...">
+          </div>
+        </div>
+
+        <div class="form-group form-register form-group--horizontal">
+          <div class="form-label">
+            <p>Giá bán</p>
+            <p>Giá bán nên thực tế, đơn vị tính theo tiền đồng việt nam (vd: 24.000.000) - đơn vị tiền sẽ tự thêm.</p>
+          </div>
+          <div class="form-body">
+            <input class="form-input" type="number" placeholder="Nhập giá bán...">
+          </div>
+        </div>
+
+        <div class="form-group form-register form-group--horizontal">
+          <div class="form-label">
+            <p>Hình ảnh <span class="form-text-error">(Nên là hình của cùng một xe)</span></p>
+            <p>Tối thiểu 5 ảnh, nên chọn ít nhất 5 góc chụp khác nhau đề thuận tiện cho người xem và bài viết dễ được chú ý hơn.</p>
+          </div>
+          <div class="form-body">
+            <label class="form-upload">
+              <input type="file">
+              <span>+</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group form-register form-group--horizontal">
+          <div class="form-label">
+            <p>Mô tả <span class="form-text-error">(Không bắt buộc)</span></p>
+            <p>Thông tin chi tiết về phương tiện đang được rao bán, những điều người xem cần chú ý.</p>
+          </div>
+          <div class="form-body">
+            <textarea class="form-area" placeholder="Tối thiểu 20 chữ..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-group form-register form-group--horizontal">
+          <div class="form-label">
+            <p>Thông tin chi tiết</p>
+            <p>Nên điền thông tin chính xác để dễ dàng cho người xem cũng như tăng độ tin cậy của bài post.</p>
+          </div>
+          <div class="form-body">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Năm sản xuất</p>
+                  <select class="form-select">
+                    <option value="">Năm</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Năm đăng kí xe</p>
+                  <select class="form-select">
+                    <option value="">Năm</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Dung tích</p>
+                  <select class="form-select">
+                    <option value="">Phân khối</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Tình trạng sử dụng</p>
+                  <select class="form-select">
+                    <option value="">Tình trạng</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Số km đã đi</p>
+                  <select class="form-select">
+                    <option value="">Xem trên mặt đồng hồ...</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Loại xe</p>
+                  <select class="form-select">
+                    <option value="">Xe ga, xe số...</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Hãng Xe</p>
+                  <select class="form-select">
+                    <option value="">Hãng sản xuất</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Mẫu xe</p>
+                  <select class="form-select">
+                    <option value="">Winner, Exciter...</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Tỉnh, Thành phố</p>
+                  <select class="form-select">
+                    <option value="">Tỉnh, Thành phố</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-group--vertical">
+                  <p class="form-label">Quận, huyện</p>
+                  <select class="form-select">
+                    <option value="">Quận, huyện</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-register form-group--horizontal text--right">
+          <button class="btn btn--primary">Xem Trước</button>
+          <input type="submit" class="btn btn--tertiary" value="Đăng Bài">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

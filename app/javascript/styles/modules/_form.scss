@@ -33,18 +33,18 @@
   &--horizontal {
     font-size: 0;
 
-    .form-label,
-    .form-body {
+    > .form-label,
+    > .form-body {
       display: inline-block;
       vertical-align: middle;
     }
 
-    .form-label {
+    > .form-label {
       width: 80px;
       color: $primary-color;
     }
 
-    .form-body {
+    > .form-body {
       width: calc(100% - 80px);
       padding-left: 16px;
     }
@@ -52,6 +52,43 @@
     + .form-group--horizontal {
       margin-top: 16px;
     }
+  }
+}
+
+.form-register {
+  padding: 40px 0;
+
+  + .form-register {
+    margin-top: 0;
+    border-top: 1px solid $light-grey;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  > .form-body {
+    width: 55%;
+  }
+
+  > .form-label {
+    width: 45%;
+    padding-right: 80px;
+    vertical-align: top;
+
+    p {
+      font-size: 16px;
+
+      + p {
+        font-weight: 400;
+        margin-top: 8px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .col-6:nth-child(n + 3) {
+    margin-top: 24px;
   }
 }
 
