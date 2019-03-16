@@ -10,7 +10,6 @@
 #  updated_at :datetime         not null
 #
 
-
 class Province < ApplicationRecord
   has_many :cities, dependent: :destroy
 end

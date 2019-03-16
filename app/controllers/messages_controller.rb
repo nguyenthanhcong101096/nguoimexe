@@ -7,11 +7,11 @@ class MessagesController < ApplicationController
   def index; end
 
   def new; end
-  
+
   def create
     # Message.create(sender_id: 1, msg: params[:message][:msg], conversation_id: 1, attachment: params[:message][:attachment])
   end
-  
+
   def show
     @message = @conversation.messages.new
   end

@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #
 
-
 class City < ApplicationRecord
   has_many :posts, dependent: :destroy
 

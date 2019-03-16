@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #
 
-
 class CitySerializer < ActiveModel::Serializer
   attributes :id, :name
 end

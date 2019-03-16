@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: messages
@@ -20,6 +21,6 @@ class Message < ApplicationRecord
   after_create_commit { RenderMessageJob.perform_later self }
 
   delegate :username, :id, :avatar_url, to: :sender, prefix: true
-  
+
   include ImageUploader::Attachment.new(:attachment)
 end
