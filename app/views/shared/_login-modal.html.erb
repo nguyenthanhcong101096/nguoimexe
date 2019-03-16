@@ -17,7 +17,7 @@
     </div>
     
     <div class="modal__form" >
-      <%= form_tag user_session_path, { style: "display: none" } do %>
+      <%= form_tag user_session_path do %>
         <div class="form-group form-group--horizontal">
           <p class="form-label">Email / SĐT</p>
           <div class="form-body">
@@ -53,7 +53,7 @@
         </div>
       <% end %>
 
-      <form >
+      <form style="display: none">
         <div class="form-group form-group--horizontal">
           <p class="form-label">Họ Tên</p>
           <div class="form-body">
