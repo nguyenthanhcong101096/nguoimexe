@@ -12,6 +12,7 @@ class UserSessionController < ApplicationController
       cookies.signed[:user_id] = @user.id
       redirect_to root_path
     else
+      flash[:error] = 'Tài khoản hoặc mật khẩu không đúng'
       render :new
     end
   end
