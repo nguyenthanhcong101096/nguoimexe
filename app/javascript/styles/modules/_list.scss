@@ -19,20 +19,3 @@
     border-top: 1px solid $light-grey;
   }
 }
-
-.information-list {
-  &__item {
-    @include flexbox(space-between, center);
-    padding-top: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed $light-grey;
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    .content {
-      font-weight: 500;
-    }
-  }
-}

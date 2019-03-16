@@ -1,11 +1,4 @@
 .writer {
-  @include flexbox(flex-start, center);
-
-  &__avatar,
-  &__body {
-
-  }
-
   &__avatar {
     width: 64px;
     height: 64px;
@@ -18,15 +11,8 @@
     }
   }
 
-  &__body {
-    padding-left: 16px;
-  }
-
   &__name {
-    font-weight: 500;
-  }
-
-  &__date {
-    @include font-size-text--xs();
+    @include font-size-headline--md();
+    margin-top: 16px;
   }
 }

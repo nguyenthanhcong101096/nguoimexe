@@ -1,15 +1,16 @@
 .block {
-  &__headline {
-    margin-top: 8px;
+  @include clearfix();
+
+  &__head {
+    width: 696px;
+    float: left;
   }
 
   &__actions {
-    margin-top: 24px;
-  }
-
-  &__body {
-    @include clearfix();
-    margin-top: 32px;
+    width: calc(100% - 696px);
+    padding-top: 8px;
+    float: right;
+    text-align: right;
   }
 
   &__list {
@@ -21,7 +22,18 @@
     margin-left: 32px;
   }
 
-  + .block {
+  &__inner + &__inner {
     margin-top: 40px;
+  }
+
+  &__inner-head {
+    @include font-size-headline();
+    margin-bottom: 16px;
+  }
+
+  + .block {
+    margin: 40px 0;
+    padding: 40px 0;
+    border-top: 1px solid $light-grey;
   }
 }

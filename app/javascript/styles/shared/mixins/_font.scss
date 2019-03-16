@@ -3,10 +3,16 @@
   font-weight: 600;
 }
 
-@mixin font-size-headline--lg() {
+@mixin font-size-headline--xl() {
   @extend %headline;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+@mixin font-size-headline--lg() {
+  color: $dark-color;
   font-size: 32px;
-  line-height: 1.1875;
+  line-height: 1.25;
 }
 
 @mixin font-size-headline--md() {
@@ -17,8 +23,8 @@
 
 @mixin font-size-headline() {
   @extend %headline;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 @mixin font-size-text--sm() {

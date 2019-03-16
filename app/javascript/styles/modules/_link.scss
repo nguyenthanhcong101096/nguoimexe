@@ -30,3 +30,31 @@
     }
   }
 }
+
+.link-list {
+  font-size: 0;
+
+  &__item {
+    display: inline-block;
+    font-size: 14px;
+
+    a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    + .link-list__item {
+      margin-left: 24px;
+    }
+  }
+
+  &--lg {
+    .link-list__item {
+      font-size: 16px;
+
+      + .link-list__item {
+        margin-left: 32px;
+      }
+    }
+  }
+}

@@ -13,10 +13,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 0;
-  }
-
-  &__links {
-    border-left: 1px solid $light-grey;
     border-right: 1px solid $light-grey;
   }
 
@@ -34,12 +30,14 @@
   }
 
   &__ultility {
-    @include flexbox(flex-start, center);
+    @include flexbox(space-between, center);
+    flex: 1 0 auto;
     padding-left: 24px;
+    border-left: 1px solid $light-grey;
   }
 
   &__search-box {
-    width: 640px;
+    flex: 1 0 auto;
   }
 
   &__avatar {

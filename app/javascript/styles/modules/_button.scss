@@ -51,6 +51,7 @@
 }
 
 .btn--primary {
+  font-size: 14px;
   color: $primary-color;
   background-color: $light-color;
   border: 1px solid $whisper-color;
@@ -85,11 +86,11 @@
 }
 
 .btn--mark {
-  padding: 7px 6px;
+  padding: 12px 10px;
   border: 1px solid $light-grey;
   border-radius: 4px;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   z-index: 5;
 }

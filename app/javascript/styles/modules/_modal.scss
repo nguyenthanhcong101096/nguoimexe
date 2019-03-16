@@ -1,0 +1,27 @@
+.modal-wrapper {
+  @include flexbox(center, center);
+  min-height: 100vh;
+  background-color: $tertiary-color;
+  box-shadow: 0 1px 2px 0 rgba(22, 38, 61, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.modal {
+  padding: 8px 32px 32px;
+  background-color: $light-color;
+  min-width: 560px;
+
+  &__actions {
+    @include flexbox(space-between, center);
+    border-bottom: 1px solid $light-grey;
+  }
+
+  &__form {
+    margin-top: 24px;
+  }
+}

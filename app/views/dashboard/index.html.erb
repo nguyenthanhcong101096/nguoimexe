@@ -34,46 +34,37 @@
     <div class="container">
       <div class="row">
         <div class="col-3">
-          <div class="form-group">
-            <p class="form-label">Loại Phương tiện</p>
+          <div class="form-group form-group--vertical">
             <div class="form-body">
               <div class="form-radio-images">
                 <label class="form-radio-image">
-                  <%= link_to(sales_url(type: 'moto')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_moto.png') %>" alt="vehicle" width="50">
-                  <% end %>
                   <p>Xe Máy</p>
                 </label>
                 <label class="form-radio-image">
-                  <%= link_to(sales_url(type: 'oto')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_car.png') %>" alt="vehicle" width="50">
-                  <% end %>
                   <p>Ô Tô</p>
                 </label>
                 <label class="form-radio-image">
-                  <%= link_to(sales_url(type: 'bike')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_bicycle.png') %>" alt="vehicle" width="50">
-                  <% end %>
                   <p>Xe Đạp</p>
                 </label>
                 <label class="form-radio-image">
-                  <%= link_to(sales_url(type: 'other')) do %>
                   <input type="radio" name="type">
                   <span></span>
                   <img src="<%= asset_pack_path('images/ico_other.png') %>" alt="vehicle" width="50">
-                  <% end %>
                   <p>Khác</p>
                 </label>
               </div>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--vertical">
             <p class="form-label">Địa Điểm</p>
             <div class="form-body">
               <%= select_tag "location", options_from_collection_for_select(Province.all, "id", "name"), class: "form-select has-icon", include_blank: "Toàn Quốc" %>
@@ -96,7 +87,7 @@
               </svg>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--vertical">
             <p class="form-label">Nhãn Hiệu</p>
             <div class="form-body">
               <select class="form-select has-icon" name="brand">
@@ -111,17 +102,29 @@
               </svg>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--vertical">
             <p class="form-label">Mức Giá (vnđ)</p>
             <div class="form-body">
+              <select class="form-select has-icon" name="price">
+                <option value="all">Tất cả</option>
+                <option value="1">< 5.000.000 vnđ</option>
+                <option value="2">< 10.000.000 vnđ</option>
+                <option value="3">< 15.000.000 vnđ</option>
+              </select>
+            </div>
+            <%# <div class="form-body">
               <div class="form-list">
-                <input type="number" class="form-input" placeholder="Từ" name="first-price">
+                <input type="number" class="form-input" placeholder="Từ" name="first-price" disabled>
                 <span class="form-list__seperate">-</span>
-                <input type="number" class="form-input" placeholder="Đến" name="last-price">
+                <input type="number" class="form-input" placeholder="Đến" name="last-price" disabled>
               </div>
             </div>
+            <div class="form-body">
+              <input value="25000" min="500000" max="5000000000" step="500" type="range">
+              <input value="25000" min="500000" max="5000000000" step="500" type="range">
+            </div> %>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--vertical">
             <p class="form-label">Tình trạng sử dụng</p>
             <div class="form-body">
               <label class="form-checkbox">
@@ -134,13 +137,13 @@
               </label>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--vertical">
             <input type="submit" class="btn btn--tertiary btn--full" value="Áp Dụng">
           </div>
         </div>
 
         <div class="col-9">
-          <ul class="list-view">
+          <ul class="list-view pl-24">
             <%= render partial: 'shared/post', collection: @posts %>
           </ul>
           <%= paginate @posts %>
