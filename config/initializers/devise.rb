@@ -43,7 +43,7 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   config.authentication_keys = [:email]
 
-  config.scoped_views = true
+  # config.scoped_views = true
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the

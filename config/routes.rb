@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   draw :api
   draw :admin
 
-  devise_for :users, skip: %i[password], controllers: {
+  devise_for :users, skip: %i[password registrations], controllers: {
     omniauth_callbacks: 'callbacks',
     sessions: 'user_session'
   }
 
+  resources :users
   resources :groups,    only: %i[index show],            param: :name
   resources :comments,  only: %i[index create],          defaults: { format: :html }
   resources :follows,   only: %i[create destroy],        param: :user_id
