@@ -24,7 +24,7 @@ gem 'rails', '~> 5.0.7'
 
 gem 'puma'
 gem 'figaro'
-gem 'backup'
+gem 'whenever'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
