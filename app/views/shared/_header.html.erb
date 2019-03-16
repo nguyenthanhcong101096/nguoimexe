@@ -5,14 +5,14 @@
     </a>
   </div>
 
-  <ul class="list-inline header__links">
-    <li class="header__link list-inline__item">
+  <ul class="header__links link-list">
+    <li class="link-list__item">
       <a href="#" class="link has-border is-active">Mua Bán</a>
     </li>
-    <li class="header__link list-inline__item">
+    <li class="link-list__item">
       <a href="#" class="link has-border">Trải nghiệm</a>
     </li>
-    <li class="header__link list-inline__item">
+    <li class="link-list__item">
       <a href="#" class="link has-border">Tin Tức</a>
     </li>
   </ul>
@@ -26,23 +26,30 @@
         <% end %>
       </div>
     </div>
-    <% if user_signed_in? %>
     <div class="header__actions">
-      <ul class="header__links list-inline">
-        <li class="header__link list-inline__item">
-          <a href="/posts/new" class="link has-border">Đăng Bài</a>
-        </li>
-        <%= render_notification_activity(current_user) %>
-        <%= render_notification_message(current_user) %>
-        <li class="header__link list-inline__item">
-          <button class="btn--icon">
-            <img class="header__avatar" src="<%= current_user.avatar_url(:medium) %>" alt="logo">
-          </button>
-        </li>
-      </ul>
+      <% if user_signed_in? %>
+        <ul class="header__links link-list">
+          <li class="link-list__item">
+            <a href="/posts/new" class="link has-border">Đăng Bài</a>
+          </li>
+          <%= render_notification_activity(current_user) %>
+          <%= render_notification_message(current_user) %>
+          <li class="link-list__item">
+            <button class="btn--icon">
+              <img class="header__avatar" src="<%= current_user.avatar_url(:medium) %>" alt="logo">
+            </button>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="header__links link-list">
+          <li class="link-list__item">
+            <a href="/posts/new" class="link has-border">Đăng Kí</a>
+          </li>
+          <li class="link-list__item">
+            <a href="/posts/new" class="link has-border">Đăng Nhập</a>
+          </li>
+        </ul>
+      <% end %>
     </div>
-    <% else %>
-    <a href='/users/sign_in'>Chưa đăng nhập</a>
-    <% end %>
   </div>
 </header>

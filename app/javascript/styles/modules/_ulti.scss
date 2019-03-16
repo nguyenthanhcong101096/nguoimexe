@@ -1,4 +1,12 @@
+.text--xl {
+  @include font-size-headline--xl();
+}
+
 .text--md {
+  @include font-size-headline--md();
+}
+
+.text--bold {
   @include font-size-headline();
 }
 
@@ -24,6 +32,14 @@
 
 .mt-4 {
   margin-top: 4px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.pl-24 {
+  padding-left: 24px;
 }
 
 .pagination {

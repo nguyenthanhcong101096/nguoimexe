@@ -1,0 +1,13 @@
+.media {
+  @include flexbox(flex-start, center);
+
+  + .media {
+    margin-top: 8px;
+  }
+
+  &--sm {
+    .media__body {
+      padding-left: 12px;
+    }
+  }
+}
