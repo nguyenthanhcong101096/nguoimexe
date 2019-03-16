@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     PostService.new(current_user, params, 'post').create
-    ValidateService.new(post, 'post').perform
+    # ValidateService.new(post, 'post').perform
     redirect_to root_path
   end
 
