@@ -34,16 +34,12 @@
           <ul class="link-list">
             <li class="link-list__item">
               <button class="btn--icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path fill="#ACB5BD" fill-rule="evenodd" d="M6.377 15.04a3.417 3.417 0 0 1-5.806-2.469 3.429 3.429 0 0 1 5.806-2.468l10.217-5.109a3.429 3.429 0 1 1 1.029 2.046L7.406 12.149c.034.28.034.564 0 .845l10.217 5.109a3.417 3.417 0 0 1 5.806 2.468 3.429 3.429 0 1 1-6.835-.422L6.377 15.04z"/>
-                </svg>
+                  <%= social_share(@post) %>
               </button>
             </li>
             <li class="link-list__item">
               <button class="btn--icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path fill="#ACB5BD" fill-rule="evenodd" d="M9.2 14.4H2.4V24H0V0h14.4l.4 2.4H24l-3.6 7.2 3.6 7.2H9.6z"/>
-                </svg>
+                  <%= inline_svg('ico_flag.svg') %>
               </button>
             </li>
           </ul>
