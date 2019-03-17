@@ -98,3 +98,93 @@ type_format | json or html
 price_min | min price 
 price_max | max price
 sort | sort with price or created date
+
+# Brand & Models Vehicle
+## Show Brand
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "name": "bike",
+    "brands": [
+      { "id": 24, "Bike sport" },
+      { "id": 25, "Electric Bicycle" }
+    ]
+  }
+```
+### HTTP Request
+
+`GET http://localhost:5000/api/v1/vehicle_kinds/:id`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of vehicle of kind
+
+## Show models of brand vehicle
+> The above command returns JSON structured like this:
+
+```json
+  {
+  "id": 1,
+  "name": "Honda",
+  "vehicle_models": [
+    {
+      "id": 1,
+      "name": "Vision"
+    },
+    {
+      "id": 2,
+      "name": "sh"
+    },
+    {
+      "id": 3,
+      "name": "Cub"
+    },
+    {
+      "id": 4,
+      "name": "Air Blade"
+    },
+    {
+      "id": 5,
+      "name": "Lead"
+    },
+    {
+      "id": 6,
+      "name": "Dream"
+    },
+    {
+      "id": 7,
+      "name": "Wave"
+    },
+    {
+      "id": 8,
+      "name": "SH Mode"
+    },
+    {
+      "id": 9,
+      "name": "Future"
+    },
+    {
+      "id": 10,
+      "name": "Winner"
+    },
+    {
+      "id": 11,
+      "name": "Other"
+    }
+  ]
+}
+
+```
+
+### HTTP Request
+
+`GET http://localhost:5000/api/v1/brands/:id`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of brand vehicle
