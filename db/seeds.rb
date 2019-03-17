@@ -1,10 +1,6 @@
 require_relative 'fixtures/provinces_cities'
 require_relative 'fixtures/brand_vehicle_models'
 
-# KIND VEHICLE
-VEHICLE_KIND = %i[oto moto bike other]
-VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
-
 # USER
 hola  = FactoryBot.create(:user, email: 'user1@gmail.com', phone: '0338529345', username: 'Nguyễn Thành Công', address: 'aaaa', password: 'password', password_confirmation: 'password')
 holo  = FactoryBot.create(:user, email: 'user2@gmail.com', phone: '0338529346', username: 'Thiên Kim', address: 'aaaa', password: 'password', password_confirmation: 'password')

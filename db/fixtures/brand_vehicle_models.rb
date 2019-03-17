@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+# KIND VEHICLE
+VEHICLE_KIND = %i[oto moto bike other]
+VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
 read_json_moto = JSON.parse(File.read('moto_brand.json'))
 read_json_moto.each do |bra|
