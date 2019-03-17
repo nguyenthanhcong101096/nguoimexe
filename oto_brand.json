@@ -1,0 +1,170 @@
+{
+  "TOYOTA": {
+    "name": "Toyota",
+    "mode": {
+      "vios": "vios",
+      "Yaris": "Yaris",
+      "Zace": "Zace",
+      "Fortuner": "Fortuner",
+      "Corolla_Altis": "Corolla Altis",
+      "Wigo": "Wigo",
+      "Innova": "Innova",
+      "Land_Cruiser": "Land Cruiser",
+      "Hightlander": "Hightlander",
+      "Camry": "Camry",
+      "Hilux": "Hilux",
+      "Other": "Other"
+    }
+  },
+  "KIA": {
+    "name": "Kia",
+    "mode": {
+      "Morning": "Morning",
+      "Sorento": "Sorento",
+      "Carens": "Carens",
+      "Cerato": "Cerato",
+      "Sedona": "Sedona",
+      "Forte": "Forte",
+      "K3": "K3",
+      "Rondo": "Rondo",
+      "Pride": "Pride",
+      "Rio": "Rio",
+      "Optima": "Optima",
+      "Other": "Other"
+    }
+  },
+  "MAZSA": {
+    "name": "Mazda",
+    "mode": {
+      "3": "3",
+      "BT_50": "BT 50",
+      "CX_9": "CX 9",
+      "CX_5": "CX 5",
+      "323": "323",
+      "CX_3": "CX 3",
+      "2": "2",
+      "Premacy": "Premacy",
+      "6": "6",
+      "626": "626",
+      "other": "Other"
+    }
+  },
+  "CHEVROLET": {
+    "name": "Chevrolet",
+    "mode": {
+      "Cruze": "Cruze",
+      "Colorado": "Colorado",
+      "Lacetti": "Lacetti",
+      "Spark": "Spark",
+      "Captiva": "Captiva",
+      "Trax": "Trax",
+      "Trallblazer": "Trallblazer",
+      "Orlando": "Orlando",
+      "Camaro": "Camaro",
+      "Aveo": "Aveo",
+      "Matiz": "Matiz",
+      "Other": "Other"
+    }
+  },
+  "FORD": {
+    "name": "Ford",
+    "mode": {
+      "Ranger": "Ranger",
+      "Focus": "Focus",
+      "Laser": "Laser",
+      "Ecosport": "Ecosport",
+      "Transit": "Transit",
+      "Mondeo": "Mondeo",
+      "Explorer": "Explorer",
+      "Fiesta": "Fiesta",
+      "Mustang": "Mustang",
+      "Everest": "Everest",
+      "Escape": "Escape",
+      "Other": "Other"
+    }
+  },
+  "HYUNDAI": {
+    "name": "Hyundai",
+    "mode": {
+      "Grand_i10": "Grand i10",
+      "i20": "i20",
+      "Avante": "Avante",
+      "Elantra": "Elantra",
+      "Santa_fe": "Santa Fe",
+      "Starex": "Starex",
+      "Accent": "Accent",
+      "Sonata": "Sonata",
+      "County": "County",
+      "Tucson": "Tucson",
+      "GetZ": "Get Z",
+      "Other": "Other"
+    }
+  },
+  "Honda": {
+    "name": "Honda",
+    "mode": {
+      "City": "City",
+      "Jazz": "Jazz",
+      "Civic": "Civic",
+      "CR_V": "CR V",
+      "Odyssey": "Odyssey",
+      "Accord": "Accord",
+      "Other": "Other"
+    }
+  },
+  "MERCEDES": {
+    "name": "Mercedes",
+    "mode": {
+      "C_Class": "C Class",
+      "GLC": "GLC",
+      "GL_Class": "GL Class",
+      "S_Class": "S Class",
+      "Sprinter": "Sprinter",
+      "E_Class": "E Class",
+      "GLK_Class": "GLK Class",
+      "Other": "Other"
+    }
+  },
+  "Mitsubishi": {
+    "name": "Mitsubishi",
+    "mode": {
+      "Outlander": "Outlander",
+      "Triton": "Triton",
+      "Zinger": "Zinger",
+      "Attrage": "Attrage",
+      "Jolie": "Jolie",
+      "Mirage": "Mirage",
+      "Grandis": "Grandis",
+      "Pajero": "Pajero",
+      "Lander": "Lander",
+      "Other": "Other"
+    }
+  },
+  "BMW": {
+    "name": "BMW",
+    "mode": {
+      "3_Series": "3 Series",
+      "5_Series": "5 Series",
+      "2_Series": "2 Series",
+      "X6": "X6",
+      "7_Series": "7 Series",
+      "i8": "i8",
+      "X5": "X5",
+      "4_Series": "4 Series",
+      "Other": "Other"
+    }
+  },
+  "Lexus": {
+    "name": "Lexus",
+    "mode": {
+      "RX": "RX",
+      "NX": "NX",
+      "GS": "GS",
+      "LX": "LX",
+      "LS": "LS",
+      "ES": "ES",
+      "GX": "GX",
+      "Other": "Other"
+    }
+  }
+}
