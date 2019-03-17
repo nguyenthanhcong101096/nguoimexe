@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
@@ -21,6 +20,7 @@
 #  slug_title           :string
 #  city_id              :bigint(8)
 #  color                :string           default("Unknown")
+#  views_count          :integer          default(0), not null
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
