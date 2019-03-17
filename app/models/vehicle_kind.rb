@@ -15,7 +15,7 @@ class VehicleKind < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :brands, dependent: :destroy
-  
+
   enumerize :name, in: %i[oto moto bike other], scope: true
 
   scope :with_kind, ->(kind) { find_by!(name: kind) }
