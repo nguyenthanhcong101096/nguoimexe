@@ -1,4 +1,5 @@
 require_relative 'fixtures/provinces_cities'
+require_relative 'fixtures/brand_vehicle_models'
 
 # KIND VEHICLE
 VEHICLE_KIND = %i[oto moto bike other]
