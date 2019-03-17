@@ -2,18 +2,16 @@
 
 # == Schema Information
 #
-# Table name: vehicle_models
+# Table name: provinces
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  brand_id   :bigint(8)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
+class VehicleKindSerializer < ActiveModel::Serializer
+  has_many :brands
 
-FactoryBot.define do
-  factory :vehicle_model do
-    name { 'MyString' }
-  end
+  attributes :name
 end
