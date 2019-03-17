@@ -31,9 +31,10 @@ class Post < ApplicationRecord
   belongs_to :city
 
   has_many :provinces, through: :city
-  has_many :comments, as: :commentable
-  has_many :likes, as: :likeable
-  has_many :post_images, as: :post_imageable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :likes, as: :likeable, dependent: :destroy
+  has_many :post_images, as: :post_imageable, dependent: :destroy
+  has_many :post_views, dependent: :destroy
 
   before_create :slug
 

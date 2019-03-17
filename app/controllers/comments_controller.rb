@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[index create]
+  before_action :set_post, only: %i[index]
 
   def index
     @comments = @post.comments.where('id < ?', params[:min_id]).limit(5).order(id: :desc)

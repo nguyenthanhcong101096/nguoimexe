@@ -87,9 +87,7 @@ end
 
 group :staging, :production do
   gem 'logglier'
-  gem 'bugsnag'
   gem 'lograge'
-  gem 'pg'
 end
 
 group :test do
