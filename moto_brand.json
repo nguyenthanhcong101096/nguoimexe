@@ -1,0 +1,196 @@
+{
+  "HONDA": {
+    "name": "Honda",
+    "mode": {
+      "VISION": "Vision",
+      "SH": "sh",
+      "CUB": "Cub",
+      "AIR_BLADE": "Air Blade",
+      "LEAD": "Lead",
+      "DREAM": "Dream",
+      "WAVE": "Wave",
+      "SH_MODE": "SH Mode",
+      "FUTURE": "Future",
+      "WINNER": "Winner",
+      "OTHER": "Other"
+    }
+  },
+  "YAMAHA": {
+    "name": "Yamaha",
+    "mode": {
+      "EXCITER": "Exiter",
+      "FZ": "FZ",
+      "LUVLAS": "Luvlas",
+      "JANUS": "Janus",
+      "NVX": "Nvx",
+      "NOZZA": "Nozza",
+      "SIRIUS": "Sirius",
+      "GRANDE": "Grande",
+      "NOUVO": "Nouvo",
+      "YAMAHA": "Yamaha",
+      "JUPITER": "Jupiter",
+      "OHTER": "Other"
+    }
+  },
+  "SUZUKI": {
+    "name": "Suzuki",
+    "mode": {
+      "GSX": "GSX",
+      "SATRIA": "Satria",
+      "IMPULSE": "Impulse",
+      "RAIDER": "Raider",
+      "GN": "GN",
+      "VIVA": "Viva",
+      "SPORT_XIPO": "Sport Xipo",
+      "GZ": "GZ",
+      "GD": "GD",
+      "AXELO": "Axelo",
+      "HAYATE": "Hayate",
+      "OHTER": "Other"
+    }
+  },
+  "PIAGGIO": {
+    "name": "Piaggio",
+    "mode": {
+      "VESPA": "Vespa",
+      "LX": "LX",
+      "BEVERLY": "Beverly",
+      "LIBERTY": "Liberty",
+      "PRIMAVERA": "Primavera",
+      "VESPA_S125": "Vespa S125",
+      "SPRINT": "Sprint",
+      "FLY": "Fly",
+      "ZIP": "Zip",
+      "GTS": "GTS",
+      "OTHER": "Other"
+    }
+  },
+  "KAWASAKI": {
+    "name": "Kawasaki",
+    "mode": {
+      "Z1000": "Z1000",
+      "VULCAN": "Vulcan",
+      "Z650": "Z650",
+      "Z300": "Z300",
+      "MAX": "Max",
+      "W650": "W650",
+      "NINJA": "Ninja",
+      "ESTRELLA": "Estrella",
+      "BOSS": "Boss",
+      "Z800": "Z800",
+      "Z900": "Z900",
+      "OTHER": "Other"
+    }
+  },
+  "SYM": {
+    "name": "SYM",
+    "mode": {
+      "ATTLIA": "Attalia",
+      "ANGELA": "Angela",
+      "JOYRIDE": "Joyride",
+      "WOLF": "Wolf",
+      "VENUS": "Venus",
+      "ENJOY": "ENJOY",
+      "SHARK": "Shark",
+      "GALAXY": "Galaxy",
+      "BONUS": "Bonus",
+      "ELEGANT": "Elegant",
+      "STAR": "STAR",
+      "OTHER": "Other"
+    }
+  },
+  "DUCATI": {
+    "name": "Ducati",
+    "mode": {
+      "MONSTER": "Monster",
+      "899_PANIGALE": "889 Panigale",
+      "STREETFIGHTER": "Streetfighter",
+      "SCRAMBLER": "Scrambler",
+      "1199_PANIGALE": "1199 Panigale",
+      "MULTISTRADA": "Multistrada",
+      "HYPERMOTARD": "Hypermotard",
+      "DIAVEI": "Diavel",
+      "OTHER": "other"
+    }
+  },
+  "BENELLI": {
+    "name": "Benelli",
+    "mode": {
+      "TNT": "TNT",
+      "BN_600I": "BN 600i",
+      "VLM": "VLM",
+      "BN_302": "BN 302",
+      "T15": "T15",
+      "CAFFE_NERO": "Caffe Nero",
+      "TRK": "TRK",
+      "302R": "302R",
+      "OTHER": "Other"
+    }
+  },
+  "BRIXTON": {
+    "name": "Brixton",
+    "mode": {
+      "BX_150": "BX 150",
+      "BX_125": "BX 125",
+      "OTHER": "Other"
+    }
+  },
+  "KYMCO": {
+    "name": "Kymco",
+    "mode": {
+      "LIKA_FI": "Lika Fi",
+      "CANDY_S": "Candy S",
+      "PEOPLE_16_FI": "People 16 Fi",
+      "k_PIPE": "K Pipe",
+      "JOCKEY_FI": "Jockey Fi",
+      "PEOPLE_S_Fi": "People S Fi",
+      "CANDY_HI": "Candy Hi",
+      "LIKE_MMC": "Like MMC",
+      "OTHER": "Other"
+    }
+  },
+  "KTM": {
+    "name": "KTM",
+    "mode": {
+      "DUKE_390": "Duke 390",
+      "DUKE_200": "Duke 200",
+      "RC_200": "RC 200",
+      "RC_250": "RC 250",
+      "390": "390",
+      "RC_390": "RC 390",
+      "DUKE_250": "Duke 250",
+      "OTHER": "Other"
+    }
+  },
+  "TRUMP": {
+    "name": "Trump",
+    "mode": {
+      "Adventurer": "Adventurer",
+      "Baby_Speed": "Baby Speed",
+      "Bonneville": "Bonneville",
+      "Daytona_600": "Daytona 600",
+      "Daytona_955i": "Daytona 955i",
+      "Legend": "Legend",
+      "Rocket_III": "Rocket III",
+      "Speed_Four": "Speed Four",
+      "Speed_Triple": "Speed Triple",
+      "Thruxton_900": "Thruxton 900",
+      "Thunderbird": "Thunderbird",
+      "Tiger": "Tiger",
+      "Trophy_1200": "Trophy 1200",
+      "Trophy_900": "Trophy 900",
+      "TT_600": "TT 600",
+      "Daytona_650": "Daytona 650",
+      "America": "America",
+      "SpeedMaster": "SpeedMaster",
+      "Scrambler": "Scrambler",
+      "Daytona_675": "Daytona 675",
+      "Street_Triple": "Street Triple",
+      "Tiger_800": "Tiger 800",
+      "Thruxton_865": "Thruxton 865",
+      "Tiger_1200": "Tiger 1200",
+      "Tiger_1215": "Tiger 1215",
+      "Trophy_1215": "Trophy 1215"
+    }
+  }
+}

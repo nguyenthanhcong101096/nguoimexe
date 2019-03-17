@@ -14,6 +14,7 @@ class VehicleKind < ApplicationRecord
   extend Enumerize
 
   has_many :posts, dependent: :destroy
+  has_many :brands, dependent: :destroy
 
   enumerize :name, in: %i[oto moto bike other], scope: true
 

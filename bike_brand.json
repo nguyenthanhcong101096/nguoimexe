@@ -1,0 +1,22 @@
+{
+  "Bike_Sport": {
+    "name": "Bike Sport",
+    "mode": {
+      "x1": "Xe đạp địa hình",
+      "x2": "Touring",
+      "x3": "Xe thể thao mini",
+      "x4": "Fixed gear",
+      "x5": "BMX",
+      "x6": "Xe Đua",
+      "other": "Other"
+    }
+  },
+  "BikeElectonic": {
+    "name": "Electric Bicycle",
+    "mode": {
+      "X1": "Xe đạp điện",
+      "X2": "Xe máy điện",
+      "X3": "Xe điện khác"
+    }
+  }
+}
