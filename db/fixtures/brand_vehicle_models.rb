@@ -29,3 +29,8 @@ read_json_bike.each do |bra|
     FactoryBot.create(:vehicle_model, brand: brand_bike, name: mod[1])
   end
 end
+
+#Other
+
+other = FactoryBot.create(:brand, name: "Other", vehicle_kind_id: 4)
+FactoryBot.create(:vehicle_model: brand: other, name: "Other")
