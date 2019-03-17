@@ -16,7 +16,8 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.all
-    @comments = @post.comments.limit(5).order(id: :desc)
+
+    PostView.create!(post_id: @post.id, user_id: current_user&.id, ip_address: request.remote_ip) if countable?
   end
 
   def search
@@ -27,5 +28,13 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by!(slug_title: params[:slug])
+  end
+
+  def countable?
+    post_view = PostView.find_by(post_id: @post.id, ip_address: request.remote_ip)
+    return true unless post_view
+    return true if post_view.created_at < PostView.threshold
+
+    false
   end
 end

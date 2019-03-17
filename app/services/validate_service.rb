@@ -22,7 +22,6 @@ class ValidateService
 
     keys = TYPE_ERRORS_OF_VALIDATE.find { |v| v[:type] == @type }[:keys]
     errors = full_errors(keys)
-    binding.pry
     { errors: errors, status: errors.present? ? 'error' : 'ok' }
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302080811) do
+ActiveRecord::Schema.define(version: 20190317042315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,18 @@ ActiveRecord::Schema.define(version: 20190302080811) do
     t.datetime "updated_at",                             null: false
   end
 
+  create_table "post_views", force: :cascade do |t|
+    t.integer  "post_id",    null: false
+    t.integer  "user_id"
+    t.inet     "ip_address", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id", "ip_address"], name: "index_post_views_on_post_id_and_ip_address", using: :btree
+    t.index ["post_id", "user_id"], name: "index_post_views_on_post_id_and_user_id", using: :btree
+    t.index ["post_id"], name: "index_post_views_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_post_views_on_user_id", using: :btree
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "describe"
@@ -156,6 +168,7 @@ ActiveRecord::Schema.define(version: 20190302080811) do
     t.string   "slug_title"
     t.bigint   "city_id"
     t.string   "color",                default: "Unknown"
+    t.integer  "views_count",          default: 0,          null: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree

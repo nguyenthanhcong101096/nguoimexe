@@ -25,9 +25,9 @@ class Blog < ApplicationRecord
   before_create :slug
 
   belongs_to :user
-  has_many :comments, as: :commentable
-  has_many :likes, as: :likeable
-  has_many :post_images, as: :post_imageable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :likes, as: :likeable, dependent: :destroy
+  has_many :post_images, as: :post_imageable, dependent: :destroy
 
   scope :with_mod, ->(mod) { where(mod: mod) }
   scope :with_kid, ->(kind) { where(kind: kind) }

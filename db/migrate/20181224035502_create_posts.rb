@@ -19,6 +19,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :slug_title
       t.bigint :city_id
       t.string :color, default: 'Unknown'
+      t.integer :views_count, null: false, default: 0
 
       t.timestamps
     end

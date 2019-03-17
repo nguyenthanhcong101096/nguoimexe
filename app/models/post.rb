@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
@@ -21,6 +20,7 @@
 #  slug_title           :string
 #  city_id              :bigint(8)
 #  color                :string           default("Unknown")
+#  views_count          :integer          default(0), not null
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
@@ -31,9 +31,10 @@ class Post < ApplicationRecord
   belongs_to :city
 
   has_many :provinces, through: :city
-  has_many :comments, as: :commentable
-  has_many :likes, as: :likeable
-  has_many :post_images, as: :post_imageable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :likes, as: :likeable, dependent: :destroy
+  has_many :post_images, as: :post_imageable, dependent: :destroy
+  has_many :post_views, dependent: :destroy
 
   before_create :slug
 

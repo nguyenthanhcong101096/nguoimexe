@@ -1,11 +1,11 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: messages
 #
 #  id              :integer          not null, primary key
 #  msg             :text
+#  attachment_data :text
 #  conversation_id :bigint(8)        not null
 #  sender_id       :bigint(8)        not null
 #  read            :boolean          default(FALSE)

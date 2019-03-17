@@ -99,7 +99,7 @@ namespace :deploy do
       end
     end
   end
-  
+
   desc 'Backup database'
   task :db_backup do
     on roles(:app) do
@@ -110,7 +110,7 @@ namespace :deploy do
       end
     end
   end
-  
+
   desc 'Restore database'
   task :db_restore do
     on roles(:app) do
@@ -121,7 +121,7 @@ namespace :deploy do
       end
     end
   end
-  
+
   desc 'Update Crontab'
   task :update_crontab do
     on roles(:app) do

@@ -38,6 +38,7 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :post_views, dependent: :destroy
   has_many :room_chats, dependent: :destroy, foreign_key: :sender_id
   has_many :conversations, through: :room_chats, foreign_key: :sender_id
 
