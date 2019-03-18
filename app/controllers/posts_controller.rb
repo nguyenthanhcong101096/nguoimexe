@@ -22,9 +22,7 @@ class PostsController < ApplicationController
     @posts = Post.fulltext_search(params[:q])
   end
 
-  def preview
-    @post = Post.first
-  end
+  def preview; end
 
   private
 
@@ -58,6 +56,10 @@ class PostsController < ApplicationController
   end
 
   def preview_images
-    params[:post][:images].each_with_object([]) { |k, o| o << k.tempfile.path }
+    params[:post][:images].each_with_object([]) do |file, arr|
+      name = file.original_filename.parameterize
+      File.open(Rails.root.join('public', 'uploads', name), 'wb') { |f| f.write(file.read) }
+      arr << name
+    end
   end
 end
