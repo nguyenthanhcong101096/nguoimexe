@@ -2,7 +2,6 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create preview]
-
   before_action :set_post, only: %i[show]
 
   def new
@@ -57,7 +56,7 @@ class PostsController < ApplicationController
   def previews_params
     params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
   end
-  
+
   def preview_images
     params[:post][:images].each_with_object([]) { |k, o| o << k.tempfile.path }
   end
