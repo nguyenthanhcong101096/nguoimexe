@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   def post_params
     params_post = params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
     params_pics = params[:post][:images]
-    
+
     { params_post: params_post, params_pics: params_pics }
   end
 
