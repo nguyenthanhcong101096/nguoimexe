@@ -19,9 +19,9 @@ class PostService
   end
 
   def create_post
-    post = @current_user.posts.create(post_params)
+    post = @current_user.posts.create(@params[:params_post])
     if post.valid?
-      upload_to_cloudinary(post, @params[:post][:images])
+      upload_to_cloudinary(post, @params[:params_pics])
       true
     else
       false
@@ -54,9 +54,5 @@ class PostService
 
   def delete_img_cloudinary
     @post.post_images { |_image| Cloudinary::Api.delete_resources(['nguoimexe/my_dog']) }
-  end
-
-  def post_params
-    @params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
   end
 end
