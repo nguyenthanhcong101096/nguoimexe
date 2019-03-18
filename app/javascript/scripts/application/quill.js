@@ -3,7 +3,7 @@ export const configEditor = () => {
     [{ 'align': [] }],
     [{ 'header': [1, 2, 3] }],
     ['bold', 'italic', 'underline'],
-    ['image', 'video'],
+    // ['image', 'video'],
     ['link']
   ];
 
@@ -11,7 +11,7 @@ export const configEditor = () => {
   
   if(!form) return
   var quill = new Quill('#editor-container', {
-    placeholder: 'Viết nội dung vào đây',
+    placeholder: '    Viết nội dung vào đây',
     theme: 'bubble',
     modules: {
       toolbar: toolbarOptions
@@ -19,7 +19,7 @@ export const configEditor = () => {
   });
 
   form.onsubmit = function () {
-    var postContentInput = document.querySelector('#content');
+    var postContentInput = document.querySelector('#post_describe');
     postContentInput.value = quill.root.innerHTML;
   };
 }

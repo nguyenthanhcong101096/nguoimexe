@@ -48,7 +48,8 @@
             <p>Thông tin chi tiết về phương tiện đang được rao bán, những điều người xem cần chú ý.</p>
           </div>
           <div class="form-body">
-            <%= f.text_area :describe, class: "form-area", placeholder: "Tối thiểu 20 chữ..." %>
+            <div id="editor-container" class="form-area" style="height: 100px; width: 100%;"></div>
+            <%= f.hidden_field :describe %>
           </div>
         </div>
   
