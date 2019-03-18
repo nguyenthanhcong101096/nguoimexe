@@ -1,24 +1,24 @@
-<%= provide(:page_title, params[:title])%>
+<%= provide(:page_title, "Preview #{params[:title]}")%>
 <%= provide(:page_description, params[:title])%>
 
 <div id="main" class="main">
-  <section class="grid-images">
-    <div class="grid-image">
-      <div class="grid-image__block" style="background-image: url(<%= @post.images[0] %>)">
+    <section class="grid-images">
+      <div class="grid-image">
+        <div class="grid-image__block" style="background-image: url(<%= @post.images[0] %>)">
+        </div>
       </div>
-    </div>
-    <div class="grid-image">
-      <div class="grid-image__block" style="background-image: url(<%= @post.images[1] %>)">
+      <div class="grid-image">
+        <div class="grid-image__block" style="background-image: url(<%= @post.images[1] %>)">
+        </div>
+        <div class="grid-image__block" style="background-image: url(<%= @post.images[2] %>)">
+        </div>
+        <div class="grid-image__block" style="background-image: url(<%= @post.images[3] %>)">
+        </div>
+        <div class="grid-image__block has-more" style="background-image: url(<%= @post.images[4] %>)">
+          <span class="grid-image__over">+5</span>
+        </div>
       </div>
-      <div class="grid-image__block" style="background-image: url(<%= @post.images[2] %>)">
-      </div>
-      <div class="grid-image__block" style="background-image: url(<%= @post.images[3] %>)">
-      </div>
-      <div class="grid-image__block has-more" style="background-image: url(<%= @post.images[4] %>)">
-        <span class="grid-image__over">+5</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <section class="main-content">
     <div class="container">
@@ -32,7 +32,7 @@
           <ul class="link-list">
             <li class="link-list__item">
               <button class="btn--icon">
-                  <%= social_share(@post) %>
+                  <%= inline_svg('ico_share.svg') %>
               </button>
             </li>
             <li class="link-list__item">
@@ -41,7 +41,7 @@
               </button>
             </li>
           </ul>
-          <p class="text--grey mt-16"><%= @post.views_count %> lượt xem</p>
+          <p class="text--grey mt-16">100 lượt xem</p>
         </div>
       </div>
 
