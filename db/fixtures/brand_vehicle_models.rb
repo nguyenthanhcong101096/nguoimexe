@@ -5,7 +5,7 @@ VEHICLE_KIND.each { |kind| FactoryBot.create(:vehicle_kind, name: kind) }
 
 read_json_moto = JSON.parse(File.read('moto_brand.json'))
 read_json_moto.each do |bra|
-  brand_moto = FactoryBot.create(:brand, name: bra[1]['name'], vehicle_kind_id: 1)
+  brand_moto = FactoryBot.create(:brand, name: bra[1]['name'], vehicle_kind_id: 2)
 
   bra[1]['mode'].each do |mod|
     FactoryBot.create(:vehicle_model, brand: brand_moto, name: mod[1])
@@ -14,7 +14,7 @@ end
 
 read_json_oto = JSON.parse(File.read('oto_brand.json'))
 read_json_oto.each do |bra|
-  brand_oto = FactoryBot.create(:brand, name: bra[1]['name'], vehicle_kind_id: 2)
+  brand_oto = FactoryBot.create(:brand, name: bra[1]['name'], vehicle_kind_id: 1)
 
   bra[1]['mode'].each do |mod|
     FactoryBot.create(:vehicle_model, brand: brand_oto, name: mod[1])

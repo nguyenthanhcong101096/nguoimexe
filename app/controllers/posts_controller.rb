@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
-
+  before_action :authenticate_user!, only: %i[new create preview]
   before_action :set_post, only: %i[show]
 
   def new
@@ -10,8 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    response = PostService.new(current_user, params, 'post').create
-    response ? (redirect_to root_path) : (render :new)
+    handle_submit_action
   end
 
   def show
@@ -22,6 +20,10 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.fulltext_search(params[:q])
+  end
+
+  def preview
+    @post = Post.first
   end
 
   private
@@ -36,5 +38,26 @@ class PostsController < ApplicationController
     return true if post_view.created_at < PostView.threshold
 
     false
+  end
+
+  def handle_submit_action
+    if params[:submit_type] == 'preview'
+      redirect_to preview_posts_url(previews_params.merge(images: preview_images))
+    elsif params[:submit_type] == 'save'
+      respone = PostService.new(current_user, params, 'post').create
+      if respone
+        redirect_to root_path
+      else
+        render :new
+      end
+    end
+  end
+
+  def previews_params
+    params.require(:post).permit(:title, :describe, :vehicle_kind_id, :car_life, :capacity, :range_of_vehicle, :status_of_vehicle, :price, :year_of_registration, :km, :city_id)
+  end
+
+  def preview_images
+    params[:post][:images].each_with_object([]) { |k, o| o << k.tempfile.path }
   end
 end

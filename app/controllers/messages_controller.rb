@@ -8,9 +8,7 @@ class MessagesController < ApplicationController
 
   def new; end
 
-  def create
-    # Message.create(sender_id: 1, msg: params[:message][:msg], conversation_id: 1, attachment: params[:message][:attachment])
-  end
+  def create; end
 
   def show
     @message = @conversation.messages.new
