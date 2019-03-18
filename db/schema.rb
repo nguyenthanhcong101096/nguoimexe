@@ -161,23 +161,23 @@ ActiveRecord::Schema.define(version: 20190317102650) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "describe"
-    t.bigint   "user_id",                                   null: false
-    t.bigint   "vehicle_kind_id",                           null: false
-    t.string   "status",               default: "spending", null: false
+    t.bigint   "user_id",                                  null: false
+    t.bigint   "vehicle_kind_id",                          null: false
+    t.string   "status",               default: "draft",   null: false
     t.text     "featured_image_data"
     t.string   "car_life",             default: "Unknown"
     t.string   "capacity",             default: "Unknown"
     t.string   "range_of_vehicle",     default: "Unknown"
     t.string   "status_of_vehicle"
-    t.float    "price",                default: 0.0,        null: false
+    t.float    "price",                default: 0.0,       null: false
     t.string   "year_of_registration", default: "Unknown"
     t.string   "km",                   default: "Unknown"
     t.string   "slug_title"
     t.bigint   "city_id"
     t.string   "color",                default: "Unknown"
-    t.integer  "views_count",          default: 0,          null: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.integer  "views_count",          default: 0,         null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
     t.index ["vehicle_kind_id"], name: "index_posts_on_vehicle_kind_id", using: :btree
   end
