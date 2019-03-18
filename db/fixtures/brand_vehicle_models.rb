@@ -33,4 +33,4 @@ end
 #Other
 
 other = FactoryBot.create(:brand, name: "Other", vehicle_kind_id: 4)
-FactoryBot.create(:vehicle_model: brand: other, name: "Other")
+FactoryBot.create(:vehicle_model, git abrand: other, name: "Other")
