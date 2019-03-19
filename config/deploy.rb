@@ -139,7 +139,7 @@ namespace :maintenance do
   task :enable do
     on primary :db do
       within release_path do
-        execute "mv maintenance_off.html maintenance_on.html"
+        execute "cd nguoimexe && mv maintenance_off.html maintenance_on.html"
       end
     end
   end
@@ -148,7 +148,7 @@ namespace :maintenance do
   task :disable do
     on primary :db do
       within release_path do
-        execute "mv maintenance_on.html maintenance_off.html"
+        execute "cd nguoimexe && mv maintenance_on.html maintenance_off.html"
       end
     end
   end
