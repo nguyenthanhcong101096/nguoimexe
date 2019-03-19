@@ -2,7 +2,8 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-
+  before_action :maintenance, if: -> { Settings.maintenance.include?('true') }
+  
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
 
@@ -12,18 +13,25 @@ class ApplicationController < ActionController::Base
 
   def not_found
     respond_to do |f|
-      f.html { render 'pages/page_404', layout: 'application', status: :not_found }
+      f.html { render 'pages/page_404', layout: 'page', status: :not_found }
       f.json { render json: { message: 'Not Found' }, status: :not_found }
     end
   end
 
   def internal_server_error
     respond_to do |f|
-      f.html { render 'pages/page_500', layout: 'pages', status: :not_found }
+      f.html { render 'pages/page_500', layout: 'page', status: :not_found }
       f.json { render json: { message: 'internal server error' }, status: :not_found }
     end
   end
 
+  def maintenance
+    respond_to do |f|
+      f.html { render file: 'public/503.html', layout: 'page', status: '503' }
+      f.json { render json: { message: 'Internal Server Error' }, status: '503' }
+    end
+  end
+  
   def render_422(error_message)
     render json: { message: 'Unprocessable Entity', errors: error_message }, status: :unprocessable_entity
   end
