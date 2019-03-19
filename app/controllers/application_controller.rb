@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  before_action :maintenance, if: -> { Settings.maintenance.include?('true') }
+  # before_action :maintenance, if: -> { Settings.maintenance.include?('true') }
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
