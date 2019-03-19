@@ -10,7 +10,7 @@
           <%= link_to post_path(slug: post.slug_title), class: 'product__link' do %>
             <h2 class="headline"><%= truncate(post.title, length: 55) %></h2>
           <% end %>
-          <p class="text--grey mt-4">20 tháng 1, 2019</p>
+          <p class="text--grey mt-4"><%= post.created_date %></p>
         </div>
         <div class="product__price">
           <p class="headline--md"><%= post.price %> đ</p>
