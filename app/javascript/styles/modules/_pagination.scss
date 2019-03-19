@@ -1,0 +1,35 @@
+.pagination {
+  margin: 25px auto 0;
+  padding: 5px 10px;
+  display: table;
+  border: 1px solid $color-true-gray;
+  border-radius: $radius;
+  background: $color-white;
+
+
+  li {
+    display: table-cell;
+    list-style: none;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  a {
+    color: $color-warm-gray;
+
+    &:hover,
+    &.active {
+      color: $color-black;
+    }
+  }
+
+  svg {
+    vertical-align: text-top;
+  }
+
+  .next,
+  .prev {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
