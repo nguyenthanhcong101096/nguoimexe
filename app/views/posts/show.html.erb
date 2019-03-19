@@ -1,7 +1,7 @@
 <%= provide(:page_title, @post.title)%>
 <%= provide(:page_description, @post.title)%>
 <%= provide(:page_url, posts_url.concat("/#{@post.slug_title}"))%>
-<%= provide(:page_image, @post.images[0])%>
+<%= provide(:page_image, @post.images.first)%>
 
 <div id="main" class="main">
   <section class="grid-images">
