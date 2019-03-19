@@ -55,6 +55,8 @@ set :puma_preload_app, false
 # Global options
 set :ssh_options, forward_agent: true
 
+set :maintenance_template_path, File.expand_path("../../app/views/layouts/maintenance.html.erb", __FILE__)
+
 namespace :npm do
   desc 'Run rake npm install'
   task :install do
