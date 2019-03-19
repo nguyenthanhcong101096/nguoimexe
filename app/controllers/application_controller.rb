@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :set_locale
   before_action :maintenance, if: -> { Settings.maintenance.include?('true') }
+  before_action :set_locale 
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from AppErrors::Error409, with: :conflict
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   def maintenance
     respond_to do |f|
       f.html { render file: 'public/503.html', layout: 'page', status: '503' }
-      f.json { render json: { message: 'Internal Server Error' }, status: '503' }
+      f.json { render json: { message: 'Server Maintenance' }, status: '503' }
     end
   end
   
