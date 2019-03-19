@@ -134,6 +134,26 @@ namespace :deploy do
   end
 end
 
+namespace :maintenance do
+  desc 'Switch current project into maintenance mode'
+  task :enable do
+    on primary :db do
+      within release_path do
+        execute "mv maintenance_off.html maintenance_on.html"
+      end
+    end
+  end
+ 
+  desc 'Turn off current project maintenance mode'
+  task :disable do
+    on primary :db do
+      within release_path do
+        execute "mv maintenance_on.html maintenance_off.html"
+      end
+    end
+  end
+end
+
 before('deploy:assets:precompile', 'npm:install')
 
 # pg_dump -F c -v -U postgres -h localhost nguoimexe_development -f ~/Desktop/nguoimexe/test_db.psql
