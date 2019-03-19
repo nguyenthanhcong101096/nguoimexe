@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+
   <%= csrf_meta_tags %>
   <%= stylesheet_pack_tag 'application' %>
   <%= action_cable_meta_tag %>
@@ -29,7 +30,6 @@
   <meta property="og:description" content="<%= yield(:page_description) %>">
   <meta property="og:url" content="<%= yield(:page_url) %>">
   <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : asset_pack_path('images/og.jpg') %>">
-  <meta property="og:image:secure_url" content="<%= yield(:page_image).present? ? yield(:page_image) : asset_pack_path('images/og.jpg') %>">
   <meta property="og:type" content='website'>
   <meta property="fb:app_id" content="2042355395872320">
 </head>
