@@ -2,8 +2,6 @@
 
 require 'capistrano/setup'
 require 'capistrano/deploy'
-require "capistrano/maintenance"
-
 require 'capistrano/rvm'
 # require 'capistrano/chruby'
 # require 'capistrano/rbenv'
