@@ -135,3 +135,6 @@ namespace :deploy do
 end
 
 before('deploy:assets:precompile', 'npm:install')
+
+# pg_dump -F c -v -U postgres -h localhost nguoimexe_development -f ~/Desktop/nguoimexe/test_db.psql
+# pg_restore -d nguoimexe_development ~/Desktop/nguoimexe/test_db.psql -c -U postgres
