@@ -53,9 +53,11 @@ const activeModalTab = dataTarget => {
 const closeModal = () => {
   modalWrapper().classList.remove('has-animation')
   setTimeout(() => { modalWrapper().classList.add('hidden') }, 100)
+  document.body.classList.remove('disabled-scroll')
 }
 
 const openModal = () => {
   modalWrapper().classList.remove('hidden')
   setTimeout(() => { modalWrapper().classList.add('has-animation') }, 100)
+  document.body.classList.add('disabled-scroll')
 }
