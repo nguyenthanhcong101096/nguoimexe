@@ -9,12 +9,20 @@
   bottom: 0;
   top: 0;
   z-index: 100;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+
+  &.has-animation {
+    opacity: 1;
+  }
 }
 
 .modal {
   padding: 8px 32px 32px;
   background-color: $light-color;
   min-width: 560px;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 
   &__actions {
     @include flexbox(space-between, center);
