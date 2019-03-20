@@ -138,7 +138,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute "cd nguoimexe/shared/log && nano production.log"
+          execute "cd nguoimexe/shared/log && tail -f production.log"
         end
       end
     end
