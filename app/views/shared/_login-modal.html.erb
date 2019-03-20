@@ -1,23 +1,23 @@
-<div class="modal-wrapper" style="display: none">
+<div class="modal-wrapper hidden js-modal-wrapper">
   <div class="modal">
     <div class="modal__actions">
       <ul class="link-list link-list--lg">
         <li class="link-list__item">
-          <a href="#" class="link has-border is-active">Đăng Nhập</a>
+          <a href="#" class="link has-border js-btn-modal-tab is-active" data-target="login-form">Đăng Nhập</a>
         </li>
         <li class="link-list__item">
-          <a href="#" class="link has-border">Đăng ký</a>
+          <a href="#" class="link has-border js-btn-modal-tab" data-target="register-form">Đăng ký</a>
         </li>
       </ul>
-      <button class="btn--icon">
+      <button class="btn--icon js-btn-close-modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path fill="#21252B" fill-rule="evenodd" d="M4.491 20.651a11.429 11.429 0 1 1 16.16-16.16c4.332 4.485 4.27 11.613-.139 16.021-4.408 4.409-11.536 4.47-16.02.14zm1.612-1.611A9.148 9.148 0 1 0 19.04 6.103 9.148 9.148 0 0 0 6.103 19.04zm11.314-9.703l-3.234 3.234 3.234 3.235-1.611 1.611-3.235-3.234-3.234 3.234-1.611-1.611 3.234-3.235-3.234-3.234 1.611-1.611 3.234 3.234 3.235-3.234 1.611 1.611z"/>
         </svg>
       </button>
     </div>
-    
-    <div class="modal__form" >
-      <%= form_tag user_session_path do %>
+
+    <div class="modal__form">
+      <%= form_tag user_session_path, { id: 'login-form' } do %>
         <div class="form-group form-group--horizontal">
           <p class="form-label">Email / SĐT</p>
           <div class="form-body">
@@ -53,7 +53,7 @@
         </div>
       <% end %>
 
-      <form >
+      <form id="register-form" class="hidden">
         <div class="form-group form-group--horizontal">
           <p class="form-label">Họ Tên</p>
           <div class="form-body">
