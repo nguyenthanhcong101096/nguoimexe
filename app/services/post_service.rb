@@ -48,7 +48,7 @@ class PostService
 
   def resize_image(image)
     img = MiniMagick::Image.open(File.open(image.tempfile))
-    img.resize('1000x1000')
+    img.resize('750x500')
     img.path
   end
 
