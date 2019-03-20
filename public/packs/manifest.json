@@ -1,8 +1,8 @@
 {
-  "application.css": "/packs/application-913e4408df21f13804a0b4599352a163.css",
-  "application.css.map": "/packs/application-913e4408df21f13804a0b4599352a163.css.map",
-  "application.js": "/packs/application-0c640528db270819bf4a.js",
-  "application.js.map": "/packs/application-0c640528db270819bf4a.js.map",
+  "application.css": "/packs/application-3d7b686dd566a670b92f4e9e13307e1d.css",
+  "application.css.map": "/packs/application-3d7b686dd566a670b92f4e9e13307e1d.css.map",
+  "application.js": "/packs/application-eee4e3f44b928854836c.js",
+  "application.js.map": "/packs/application-eee4e3f44b928854836c.js.map",
   "images/ico_arrow-down.svg": "/packs/images/ico_arrow-down-dd92a981beb5df099d9709e7ec529c59.svg",
   "images/ico_arrow-down_orange.svg": "/packs/images/ico_arrow-down_orange-f50d901c484d091261c331418f90a0e3.svg",
   "images/ico_arrow-left.svg": "/packs/images/ico_arrow-left-8e28022540c323aad7f31cbe04ca8cf7.svg",
@@ -47,5 +47,6 @@
   "images/img_moto-preview_04.jpg": "/packs/images/img_moto-preview_04-efeeb8c34ecbb629b15677f07f3b3fab.jpg",
   "images/img_moto-preview_05.jpg": "/packs/images/img_moto-preview_05-c8c17d8d0cf8c028a32ff22ebdd23a46.jpg",
   "images/og.jpg": "/packs/images/og-a756cce05e9d364012b302eda80373cc.jpg",
-  "images/og.png": "/packs/images/og-33cb02995355c71948a6e786ed65b19e.png"
+  "images/og.png": "/packs/images/og-33cb02995355c71948a6e786ed65b19e.png",
+  "images/test.jpg": "/packs/images/test-affdae9420698b709476836f6e0bf0f2.jpg"
 }

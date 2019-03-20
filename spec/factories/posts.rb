@@ -28,14 +28,14 @@
 
 FactoryBot.define do
   factory :post do
-    title { Faker::Lorem.paragraph }
-    describe 'ddd'
+    title { Faker::Lorem.sentence }
+    describe { Faker::Lorem.paragraph }
     car_life '2010'
     capacity '200cc'
-    range_of_vehicle 'Tay ga'
-    status_of_vehicle 'Da su dung'
+    range_of_vehicle 'Tay Ga'
+    status_of_vehicle 'Đã sử dụng'
     year_of_registration '2011'
-    km '10300'
+    km '1500KM'
     price 153000999
     color 'Mau do'
   end

@@ -1,7 +1,7 @@
 <li class="list-view__item">
   <div class="product">
     <%= link_to post_path(slug: post.slug_title), class: 'product__link' do %>
-      <div class="product__image" style="background-image: url(<%= post.images[0] %>)">
+      <div class="product__image" style="background-image: url(<%= asset_pack_path('images/test.jpg') %>)">
       </div>
     <% end %>
     <div class="product__body">
