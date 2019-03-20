@@ -2,7 +2,7 @@
 
 class DashboardController < ApplicationController
   def index
-    @posts = Post.with_kind(params[:type]).filter(params).page(params[:page]).per(5)
+    @posts = Post.with_kind(params[:type]).filter(params).page(params[:page]).per(10)
 
     if call_api?
       block = render_to_string(partial: 'shared/post', collection: @posts)
