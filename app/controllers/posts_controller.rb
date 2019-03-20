@@ -27,8 +27,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    # @post = Post.find_by!(slug_title: params[:slug])
-    @post = Post.last
+    @post = Post.find_by!(slug_title: params[:slug])
   end
 
   def countable?
