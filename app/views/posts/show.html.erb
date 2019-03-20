@@ -1,5 +1,5 @@
 <%= provide(:page_title, @post.title)%>
-<%= provide(:page_description, @post.title)%>
+<%= provide(:page_description, 'Người Mê Xê - Website mua bán rao vặt của người Việt với hàng ngàn món hời đang được rao bán mỗi ngày. Đăng tin mua bán UY TÍN, NHANH CHÓNG, AN TOÀN.') %>
 <%= provide(:page_url, posts_url.concat("/#{@post.slug_title}"))%>
 <%= provide(:page_image, image_url(@post.images.first))%>
 
