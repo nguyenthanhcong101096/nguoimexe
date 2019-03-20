@@ -15,6 +15,10 @@ body {
   color: $body-font-color;
   background-color: $light-color;
   overflow-x: hidden;
+
+  &.disabled-scroll {
+    overflow-y: hidden;
+  }
 }
 
 a {

@@ -1,7 +1,7 @@
 .modal-wrapper {
   @include flexbox(center, center);
   min-height: 100vh;
-  background-color: $tertiary-color;
+  background-color: rgba($dark-color, .7);
   box-shadow: 0 1px 2px 0 rgba(22, 38, 61, 0.2);
   position: fixed;
   left: 0;
@@ -9,12 +9,20 @@
   bottom: 0;
   top: 0;
   z-index: 100;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+
+  &.has-animation {
+    opacity: 1;
+  }
 }
 
 .modal {
   padding: 8px 32px 32px;
   background-color: $light-color;
   min-width: 560px;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 
   &__actions {
     @include flexbox(space-between, center);
