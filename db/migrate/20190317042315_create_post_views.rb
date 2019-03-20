@@ -4,15 +4,12 @@ class CreatePostViews < ActiveRecord::Migration[5.0]
   def change
     create_table :post_views do |t|
       t.integer :post_id, null: false
-      t.integer :user_id
       t.inet :ip_address, null: false
 
       t.timestamps
     end
 
     add_index :post_views, :post_id
-    add_index :post_views, :user_id
-    add_index :post_views, %i[post_id user_id]
     add_index :post_views, %i[post_id ip_address]
   end
 end

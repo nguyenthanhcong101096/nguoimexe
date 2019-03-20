@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all
 
-    PostView.create!(post_id: @post.id, user_id: current_user&.id, ip_address: request.remote_ip) if countable?
+    PostView.create!(post_id: @post.id, ip_address: request.remote_ip) if countable?
   end
 
   def search

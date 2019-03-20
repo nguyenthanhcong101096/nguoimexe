@@ -148,14 +148,11 @@ ActiveRecord::Schema.define(version: 20190317102650) do
 
   create_table "post_views", force: :cascade do |t|
     t.integer  "post_id",    null: false
-    t.integer  "user_id"
     t.inet     "ip_address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id", "ip_address"], name: "index_post_views_on_post_id_and_ip_address", using: :btree
-    t.index ["post_id", "user_id"], name: "index_post_views_on_post_id_and_user_id", using: :btree
     t.index ["post_id"], name: "index_post_views_on_post_id", using: :btree
-    t.index ["user_id"], name: "index_post_views_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|

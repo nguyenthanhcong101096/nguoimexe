@@ -132,6 +132,17 @@ namespace :deploy do
       end
     end
   end
+  
+  desc 'Log Production'
+  task :log do
+    on roles(:app) do
+      within release_path do
+        with(rails_env: fetch(:stage)) do
+          execute "cd nguoimexe/shared/log && nano production.log"
+        end
+      end
+    end
+  end
 end
 
 namespace :maintenance do
