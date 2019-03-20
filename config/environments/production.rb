@@ -25,7 +25,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = ['https://nguoimexe.com']
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.public_file_server.enabled = true
+  # config.public_file_server.enabled = true
 
   # config.consider_all_requests_local = true
 
