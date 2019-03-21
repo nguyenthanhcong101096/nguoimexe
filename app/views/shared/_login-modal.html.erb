@@ -17,27 +17,26 @@
     </div>
 
     <div class="modal__form">
-      <%= form_tag user_session_path, { id: 'login-form' } do %>
+      <div class="login-form">
         <div class="form-group form-group--horizontal">
           <p class="form-label">Email / SĐT</p>
           <div class="form-body">
-            <%= text_field_tag :email, nil, { class: 'form-input', placeholder: 'Nhập email' } %>
+            <input type="text" id="email" name="email" class="form-input" placeholder="Nhập địa chỉ email"/>
           </div>
-          <p class="form-hint form-text-error"></p>
         </div>
 
         <div class="form-group form-group--horizontal">
           <p class="form-label">Mật Khẩu</p>
           <div class="form-body">
-            <%= password_field_tag :password, nil, { class: 'form-input', placeholder: 'Nhập mật khẩu' } %>
+            <input type="password" id="password" name="password" class="form-input" placeholder="Nhập mật khẩu"/>
           </div>
-          <p class="form-hint form-text-error"><%= flash[:error] %></p>
+          <p class="form-hint form-text-error js-text-error"></p>
         </div>
 
         <div class="form-group form-group--horizontal">
           <p class="form-label"></p>
           <div class="form-body">
-            <%= submit_tag 'Đăng nhập', {class: 'btn btn--full btn--primary' } %>
+            <button class="btn btn--full btn--primary js-btn-login">Đăng nhập</button>
             <div class="mt-16">
               <%= link_to 'Đăng nhập bằng Google', user_google_oauth2_omniauth_authorize_path, class: 'btn btn--full btn--tertiary' %>
             </div>
@@ -51,46 +50,46 @@
           <p class="form-label"></p>
           <p class="form-body text--sm">Quên mật khẩu ? <a class="link" href="/reset_passwords/forget_password"> Bấm vào đây</a></p>
         </div>
-      <% end %>
+      </div>
 
-      <form id="register-form" class="hidden">
+      <div id="register-form" class="hidden">
         <div class="form-group form-group--horizontal">
           <p class="form-label">Họ Tên</p>
           <div class="form-body">
-            <input class="form-input" type="text" placeholder="Được dùng để định danh">
+            <input class="form-input" id="signup_username" name="signup_username" type="text" placeholder="Được dùng để định danh">
           </div>
-          <p class="form-hint form-text-error">Thông báo lỗi</p>
+          <p class="form-hint form-text-error js-error-username"></p>
         </div>
 
         <div class="form-group form-group--horizontal">
           <p class="form-label">Email / SĐT</p>
           <div class="form-body">
-            <input class="form-input" type="text" placeholder="Nhập email hoặc số điện thoại">
+            <input class="form-input" type="text" id="signup_email" name="signup_email" placeholder="Nhập email đăng kí">
           </div>
-          <p class="form-hint form-text-error">Thông báo lỗi</p>
+          <p class="form-hint form-text-error js-error-email"></p>
         </div>
 
         <div class="form-group form-group--horizontal">
           <p class="form-label">Mật Khẩu</p>
           <div class="form-body">
-            <input class="form-input" type="password" placeholder="Nhập mật khẩu tối thiểu 6 kí tự">
+            <input class="form-input" type="password" id="signup_password" name="signup_password" placeholder="Nhập mật khẩu tối thiểu 6 kí tự">
           </div>
-          <p class="form-hint form-text-error">Thông báo lỗi</p>
+          <p class="form-hint form-text-error js-error-password"></p>
         </div>
 
         <div class="form-group form-group--horizontal">
           <p class="form-label"></p>
           <div class="form-body">
-            <input type="submit" value="Đăng Ký" class="btn btn--full btn--primary">
+            <button class="btn btn--full btn--primary js-btn-signup">Đăng Ký</button>
             <div class="mt-16">
-              <button class="btn btn--full btn--tertiary">Đăng Ký bằng Google</button>
+              <%= link_to 'Đăng Ký bằng Google', user_google_oauth2_omniauth_authorize_path, class: 'btn btn--full btn--tertiary' %>
             </div>
             <div class="mt-16">
-              <button class="btn btn--full btn--tertiary">Đăng Ký bằng Facebook</button>
+              <%= link_to 'Đăng Ký bằng Facebook', user_facebook_omniauth_authorize_path, class: 'btn btn--full btn--tertiary' %>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
