@@ -16,6 +16,6 @@
 
 FactoryBot.define do
   factory :post_image do
-    url { Faker::Avatar.image }
+    url 'https://picsum.photos/2000/1000/?random'
   end
 end
