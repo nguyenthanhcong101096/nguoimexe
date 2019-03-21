@@ -9,4 +9,6 @@ class DashboardController < ApplicationController
       render json: { block: block, meta: { next_page: @posts.next_page, type_format: 'json' } }, status: :ok
     end
   end
+  
+  def community; end
 end
