@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :describe
       t.bigint :user_id, null: false
       t.bigint :vehicle_kind_id, null: false
-      t.string :status, null: false, default: 'spending'
+      t.string :status, null: false, default: 0
       t.text :featured_image_data
       t.string :car_life, default: 'Unknown'
       t.string :capacity, default: 'Unknown'

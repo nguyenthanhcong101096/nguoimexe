@@ -48,7 +48,7 @@ class Post < ApplicationRecord
   validates :title,    presence: true
   validates :describe, presence: true
 
-  enumerize :status, in: %i[spending published reject sold], scope: true
+  enumerize :status, in: %i[spending published reject sold], default: :spending, scope: true
 
   include ImageUploader::Attachment.new(:featured_image)
   include PgSearch
@@ -62,10 +62,10 @@ class Post < ApplicationRecord
                     vehicle_kind: [:name]
                   }
 
-  default_scope -> { published }
+  # default_scope -> { published }
 
+  # scope :unscope_published, -> { unscope(where: :status) }
   scope :published, -> { where(status: :published) }
-  scope :unscope_published, -> { unscope(where: :status) }
   scope :reject,    -> { where(status: :reject) }
   scope :spending,  -> { where(status: :spending) }
   scope :with_kind, ->(kind) { kind ? VehicleKind.with_kind(kind).posts : all }

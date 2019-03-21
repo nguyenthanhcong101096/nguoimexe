@@ -137,7 +137,6 @@ ActiveRecord::Schema.define(version: 20190317102650) do
   end
 
   create_table "post_images", force: :cascade do |t|
-    t.text     "post_image_data"
     t.integer  "post_imageable_id"
     t.string   "post_imageable_type"
     t.string   "url",                 default: "Unknow"
@@ -160,7 +159,7 @@ ActiveRecord::Schema.define(version: 20190317102650) do
     t.string   "describe"
     t.bigint   "user_id",                                  null: false
     t.bigint   "vehicle_kind_id",                          null: false
-    t.string   "status",               default: "draft",   null: false
+    t.string   "status",               default: "0",       null: false
     t.text     "featured_image_data"
     t.string   "car_life",             default: "Unknown"
     t.string   "capacity",             default: "Unknown"

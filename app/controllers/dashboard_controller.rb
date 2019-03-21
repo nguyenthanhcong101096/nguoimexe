@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
   layout 'social', only: %i[community]
 
   def index
-    @posts = Post.unscope_published.with_kind(params[:type]).filter(params).page(params[:page]).per(10)
+    @posts = Post.with_kind(params[:type]).filter(params).page(params[:page]).per(10)
 
     if call_api?
       block = render_to_string(partial: 'shared/post', collection: @posts)
