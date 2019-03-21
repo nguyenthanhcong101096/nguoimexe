@@ -90,11 +90,12 @@ class User < ApplicationRecord
       password = Devise.friendly_token[0, 20]
       user.type_account = 'email'
       user.email = auth.info.email
-      user.username = auth.info.email
+      user.username = auth.info.name
       user.provider = auth.provider
       user.uid = auth.uid
       user.password = password
       user.password_confirmation = password
+      user.avatar = rewind(auth.info.image)
     end
   end
 
@@ -113,5 +114,13 @@ class User < ApplicationRecord
 
   def slug
     self.slug_name = username.parameterize
+  end
+  
+  def self.rewind(url)
+    file = Tempfile.new ['', ".#{url.split('.').last}"]
+    file.binmode
+    file.write open(url).read
+    file.rewind
+    file
   end
 end
