@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     sessions: 'user_session'
   }
 
-  resources :groups,    only: %i[index show],            param: :name
+  resources :stores,    only: %i[new index create show], param: :name
+  resources :groups,    only: %i[new index show create], param: :name
   resources :comments,  only: %i[index create],          defaults: { format: :html }
   resources :follows,   only: %i[create destroy],        param: :user_id
   resources :messages,  only: %i[index new show create], param: :name
