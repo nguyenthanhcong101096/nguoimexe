@@ -16,3 +16,23 @@ export const clickBtnLogin = () => {
       }).catch(error => { throw error })
   })
 }
+
+export const clickSignUp = () => {
+  delegate(document, '.js-btn-signup', 'click', (event) => {
+    let email = document.querySelector('#signup_email').value
+    let username = document.querySelector('#signup_username').value
+    let password = document.querySelector('#signup_password').value
+
+    axios.post('/api/v1/user_sessions/signup', { username: username, email: email, password: password })
+      .then(response => {
+        if (response.data.status === 'ok') {
+          window.location = window.location.href
+        } else {
+          console.log(response.data)
+          document.querySelector('.js-error-username').innerHTML = response.data.errors.username || ''
+          document.querySelector('.js-error-email').innerHTML = response.data.errors.email || ''
+          document.querySelector('.js-error-password').innerHTML = response.data.errors.password || ''
+        }
+      }).catch(error => { throw error })
+  })
+}

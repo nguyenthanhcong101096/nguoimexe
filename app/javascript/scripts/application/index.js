@@ -2,7 +2,7 @@ import { configEditor } from './quill';
 import { clickChangeLanguage, onClickBtnOpenUserNav } from './common'
 import { clickFollow } from './follow'
 import { onClickBtnCommentLoadMore } from './comment'
-import { clickBtnLogin } from './signup'
+import { clickBtnLogin, clickSignUp } from './signup'
 import { onChangeTabModal, onClickBtnCloseModal, onClickBtnOpenModal } from './modal'
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -21,4 +21,5 @@ window.addEventListener('DOMContentLoaded', function () {
   onClickBtnOpenUserNav()
   
   clickBtnLogin()
+  clickSignUp()
 })

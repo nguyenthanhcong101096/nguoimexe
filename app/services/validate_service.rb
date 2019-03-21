@@ -3,8 +3,8 @@
 class ValidateService
   TYPE_ERRORS_OF_VALIDATE = [
     { type: 'post', keys: %i[title describe] },
-    { type: 'sign_up', keys: %i[email password confirmation_password] },
-    { type: 'sign_in', keys: %i[email password] },
+    { type: 'signup', keys: %i[username email password] },
+    { type: 'signin', keys: %i[email password] },
     { type: 'newfeed', keys: %i[title] }
   ].freeze
 
@@ -13,7 +13,7 @@ class ValidateService
     @type  = type
   end
 
-  def perform
+  def excute!
     validattion
   end
 
