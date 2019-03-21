@@ -16,6 +16,6 @@
 
 FactoryBot.define do
   factory :post_image do
-    url 'https://picsum.photos/2000/1000/?random'
+    url { "https://picsum.photos/2000/1000/?image=#{rand(1..999)}" }
   end
 end
