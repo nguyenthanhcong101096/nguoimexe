@@ -1,5 +1,5 @@
 import { configEditor } from './quill';
-import { clickChangeLanguage } from './common'
+import { clickChangeLanguage, onClickBtnOpenUserNav } from './common'
 import { clickFollow } from './follow'
 import { onClickBtnCommentLoadMore } from './comment'
 
@@ -17,4 +17,6 @@ window.addEventListener('DOMContentLoaded', function () {
   onChangeTabModal()
   onClickBtnCloseModal()
   onClickBtnOpenModal()
+
+  onClickBtnOpenUserNav()
 })
