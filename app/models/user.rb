@@ -50,8 +50,8 @@ class User < ApplicationRecord
   before_create :default_avatar, unless: :avatar
   before_create :slug
 
-  validates :password, length: {minimum: 5, maximum: 20}
-  validates :password, presence: true
+  # validates :password, length: {minimum: 5, maximum: 20}
+  # validates :password, presence: true
   validates :username, presence: true
   
   devise :database_authenticatable, :registerable,
