@@ -34,7 +34,6 @@ class PostsController < ApplicationController
     post_view = PostView.find_by(post_id: @post.id, ip_address: request.remote_ip)
     return true unless post_view
     return true if post_view.created_at < PostView.threshold
-
     false
   end
 

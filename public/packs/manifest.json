@@ -1,8 +1,10 @@
 {
   "application.css": "/packs/application-3d7b686dd566a670b92f4e9e13307e1d.css",
   "application.css.map": "/packs/application-3d7b686dd566a670b92f4e9e13307e1d.css.map",
+
   "application.js": "/packs/application-eee4e3f44b928854836c.js",
   "application.js.map": "/packs/application-eee4e3f44b928854836c.js.map",
+
   "images/ico_arrow-down.svg": "/packs/images/ico_arrow-down-dd92a981beb5df099d9709e7ec529c59.svg",
   "images/ico_arrow-down_orange.svg": "/packs/images/ico_arrow-down_orange-f50d901c484d091261c331418f90a0e3.svg",
   "images/ico_arrow-left.svg": "/packs/images/ico_arrow-left-8e28022540c323aad7f31cbe04ca8cf7.svg",

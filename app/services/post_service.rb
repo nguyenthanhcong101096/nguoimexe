@@ -21,7 +21,7 @@ class PostService
   def create_post
     post = @current_user.posts.create(@params[:params_post])
     if post.valid?
-      upload_to_cloudinary(post, @params[:params_pics])
+      CloundinaryJob.set(wait: 1.week).perform_now(post, @params[:params_pics])
       true
     else
       false
