@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :provinces,     only: %i[show]
       resources :brands,        only: %i[show]
       resources :vehicle_kinds, only: %i[show]
+      resources :user_sessions, only: %i[create]
     end
   end
 end
