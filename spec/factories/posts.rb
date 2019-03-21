@@ -36,7 +36,7 @@ FactoryBot.define do
     status_of_vehicle 'Đã sử dụng'
     year_of_registration '2011'
     km '1500KM'
-    price Faker::Number.number(10)
+    price Faker::Number.number(9)
     color 'Mau do'
   end
 end
