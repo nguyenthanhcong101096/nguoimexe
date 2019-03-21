@@ -4,6 +4,8 @@ const modalWrapper = () => document.querySelector('.js-modal-wrapper')
 
 export const onChangeTabModal = () => {
   const btnModalTab = document.querySelectorAll('.js-btn-modal-tab')
+  if (!btnModalTab) return
+
   Array.prototype.slice.call(btnModalTab).forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault()
@@ -20,13 +22,18 @@ export const onChangeTabModal = () => {
 }
 
 export const onClickBtnCloseModal = () => {
-  document.querySelector('.js-btn-close-modal').addEventListener('click', function() {
+  const btnCloseModal = document.querySelector('.js-btn-close-modal')
+  if (!btnCloseModal) return
+
+  btnCloseModal.addEventListener('click', function() {
     closeModal()
   })
 }
 
 export const onClickBtnOpenModal = () => {
   const btnOpenModal = document.querySelectorAll('.js-btn-open-login-modal')
+  if (!btnOpenModal) return
+
   Array.prototype.slice.call(btnOpenModal).forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault()

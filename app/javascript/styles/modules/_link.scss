@@ -37,8 +37,9 @@
   &__item {
     display: inline-block;
     font-size: 14px;
+    position: relative;
 
-    a {
+    > a {
       padding-top: 20px;
       padding-bottom: 20px;
     }
