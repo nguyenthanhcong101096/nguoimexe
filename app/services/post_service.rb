@@ -38,19 +38,19 @@ class PostService
 
   private
 
-  def upload_to_cloudinary(post, images)
-    images.each do |image|
-      file_upload = Cloudinary::Uploader.upload(resize_image(image), folder: 'nguoimexe', public_id: image.original_filename, overwrite: true)
+  # def upload_to_cloudinary(post, images)
+  #   images.each do |image|
+  #     file_upload = Cloudinary::Uploader.upload(resize_image(image), folder: 'nguoimexe', public_id: image.original_filename, overwrite: true)
 
-      PostImage.create(post_imageable: post, url: file_upload['secure_url'], public_id: image.original_filename)
-    end
-  end
+  #     PostImage.create(post_imageable: post, url: file_upload['secure_url'], public_id: image.original_filename)
+  #   end
+  # end
 
-  def resize_image(image)
-    img = MiniMagick::Image.open(File.open(image.tempfile))
-    img.resize('750x500')
-    img.path
-  end
+  # def resize_image(image)
+  #   img = MiniMagick::Image.open(File.open(image.tempfile))
+  #   img.resize('750x500')
+  #   img.path
+  # end
 
   def delete_img_cloudinary
     @post.post_images { |_image| Cloudinary::Api.delete_resources(['nguoimexe/my_dog']) }
