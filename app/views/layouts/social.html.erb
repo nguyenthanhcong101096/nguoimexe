@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=1206">
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_pack_tag 'application' %>
+  <%= action_cable_meta_tag %>
+  <%= javascript_include_tag 'application' %>
+
+  <link rel="shortcut icon" type="image/x-icon" href="<%= asset_pack_path 'images/og.png' %>">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+  
+  <link rel="dns-prefetch" href="https://apis.google.com">
+  <link rel="dns-prefetch" href="https://accounts.google.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+
+  <title><%= yield(:page_title) %></title>
+  <meta name="description" content="<%= yield(:page_description) %>">
+  <meta name="application-name" content="Nguoimexe">
+  <link rel="manifest" href="manifest.json">
+  
+  <link rel="canonical" href="<%= yield(:page_url) %>">
+
+  <meta property="og:title" content="<%= yield(:page_title) %>">
+  <meta property="og:site_name" content="<%= yield(:page_title) %>">
+  <meta property="og:description" content="<%= yield(:page_description) %>">
+  <meta property="og:url" content="<%= yield(:page_url) %>">
+  <meta property="og:image" content="<%= yield(:page_image).present? ? yield(:page_image) : asset_pack_path('images/og.jpg') %>">
+  <meta property="og:type" content='website'>
+  <meta property="fb:app_id" content="2042355395872320">
+</head>
+
+<body>
+  <!-- <%= render 'shared/header' %>
+  <% unless user_signed_in? %>
+    <%= render 'shared/login-modal' %>
+  <% end %> -->
+  <%= yield %>
+  <%= render 'shared/following_ids' %>
+  <%= render 'shared/notifications_list' %>
+  <%= javascript_pack_tag 'application' %>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class DashboardController < ApplicationController
+ layout 'social', only: %i[community]
+ 
   def index
     @posts = Post.with_kind(params[:type]).filter(params).page(params[:page]).per(10)
 
