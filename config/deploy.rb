@@ -132,13 +132,13 @@ namespace :deploy do
       end
     end
   end
-  
+
   desc 'Log Production'
   task :log do
     on roles(:app) do
       within release_path do
         with(rails_env: fetch(:stage)) do
-          execute "cd nguoimexe/shared/log && tail -f production.log"
+          execute 'cd nguoimexe/shared/log && tail -f production.log'
         end
       end
     end
@@ -150,16 +150,16 @@ namespace :maintenance do
   task :enable do
     on primary :db do
       within release_path do
-        execute "cd nguoimexe && mv maintenance_off.html maintenance_on.html"
+        execute 'cd nguoimexe && mv maintenance_off.html maintenance_on.html'
       end
     end
   end
- 
+
   desc 'Turn off current project maintenance mode'
   task :disable do
     on primary :db do
       within release_path do
-        execute "cd nguoimexe && mv maintenance_on.html maintenance_off.html"
+        execute 'cd nguoimexe && mv maintenance_on.html maintenance_off.html'
       end
     end
   end

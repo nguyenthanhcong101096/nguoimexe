@@ -2,12 +2,13 @@
 
 # == Schema Information
 #
-# Table name: provinces
+# Table name: brands
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string
+#  vehicle_kind_id :bigint(8)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 class BrandSerializer < ActiveModel::Serializer

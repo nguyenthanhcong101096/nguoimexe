@@ -13,6 +13,12 @@
 #
 
 class UserGroup < ApplicationRecord
+  extend Enumerize
+
   belongs_to :user
   belongs_to :group
+
+  enumerize :role, in: %i[admin member], scope: true
+
+  scope :with_member, -> { where(role: :member) }
 end

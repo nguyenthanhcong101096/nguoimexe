@@ -9,7 +9,7 @@
 #  describe             :string
 #  user_id              :bigint(8)        not null
 #  vehicle_kind_id      :bigint(8)        not null
-#  status               :string           default("spending"), not null
+#  status               :string           default(NULL), not null
 #  featured_image_data  :text
 #  car_life             :string           default("Unknown")
 #  capacity             :string           default("Unknown")
@@ -29,7 +29,7 @@
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence(rand(2..10)).chomp('.') }
-    describe { Faker::Lorem.paragraphs(rand(3..10)).join("") }
+    describe { Faker::Lorem.paragraphs(rand(3..10)).join('') }
     car_life '2010'
     capacity '200cc'
     range_of_vehicle 'Tay Ga'

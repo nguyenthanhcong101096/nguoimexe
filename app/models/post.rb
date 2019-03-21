@@ -9,7 +9,7 @@
 #  describe             :string
 #  user_id              :bigint(8)        not null
 #  vehicle_kind_id      :bigint(8)        not null
-#  status               :string           default("spending"), not null
+#  status               :string           default(NULL), not null
 #  featured_image_data  :text
 #  car_life             :string           default("Unknown")
 #  capacity             :string           default("Unknown")
@@ -27,6 +27,8 @@
 #
 
 class Post < ApplicationRecord
+  extend Enumerize
+
   belongs_to :user
   belongs_to :vehicle_kind
   belongs_to :city
@@ -46,6 +48,8 @@ class Post < ApplicationRecord
   validates :title,    presence: true
   validates :describe, presence: true
 
+  enumerize :status, in: %i[spending published reject sold], scope: true
+
   include ImageUploader::Attachment.new(:featured_image)
   include PgSearch
 
@@ -58,6 +62,12 @@ class Post < ApplicationRecord
                     vehicle_kind: [:name]
                   }
 
+  default_scope -> { published }
+
+  scope :published, -> { where(status: :published) }
+  scope :unscope_published, -> { unscope(where: :status) }
+  scope :reject,    -> { where(status: :reject) }
+  scope :spending,  -> { where(status: :spending) }
   scope :with_kind, ->(kind) { kind ? VehicleKind.with_kind(kind).posts : all }
 
   def created_date

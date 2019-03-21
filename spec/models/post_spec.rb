@@ -9,7 +9,7 @@
 #  describe             :string
 #  user_id              :bigint(8)        not null
 #  vehicle_kind_id      :bigint(8)        not null
-#  status               :string           default("spending"), not null
+#  status               :string           default(NULL), not null
 #  featured_image_data  :text
 #  car_life             :string           default("Unknown")
 #  capacity             :string           default("Unknown")

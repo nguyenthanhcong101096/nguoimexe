@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: provinces
+# Table name: vehicle_kinds
 #
 #  id         :integer          not null, primary key
 #  name       :string

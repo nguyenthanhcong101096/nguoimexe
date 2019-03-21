@@ -30,7 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-  
   get '/community' => 'dashboard#community'
   get '/'          => 'dashboard#index', defaults: { format: :html }, as: 'root'
   get '*path'      => 'pages#page_404'
