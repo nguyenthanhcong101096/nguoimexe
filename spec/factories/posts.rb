@@ -28,15 +28,15 @@
 
 FactoryBot.define do
   factory :post do
-    title { Faker::Lorem.sentence }
-    describe { Faker::Lorem.paragraph }
+    title { Faker::Lorem.sentence(rand(2..10)).chomp('.') }
+    describe { Faker::Lorem.paragraphs(rand(3..10)).join("") }
     car_life '2010'
     capacity '200cc'
     range_of_vehicle 'Tay Ga'
     status_of_vehicle 'Đã sử dụng'
     year_of_registration '2011'
     km '1500KM'
-    price 153000999
+    price Faker::Number.number(10)
     color 'Mau do'
   end
 end

@@ -10,7 +10,12 @@ users = FactoryBot.create_list(:user, 5)
 FactoryBot.create(:follow, user: hola, target_user: holo)
 FactoryBot.create(:follow, user: holo, target_user: hola)
 
-blog          = FactoryBot.create(:blog, user_id: hola.id, mod: 'motosg', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan')
+posts = FactoryBot.create_list(:post, 20, user: hola, vehicle_kind_id: 1, city_id: 30)
+posts.each do |post|
+  FactoryBot.create_list(:post_image, 5, post_imageable: post)
+end
+
+blog  = FactoryBot.create(:blog, user_id: hola.id, mod: 'motosg', title: 'BLV Quang Huy: ‘Tuyển Việt Nam phải kiên nhẫn nếu muốn hạ Jordan')
 
 #comments_post = 100.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: Post.all.sample) }
 comments_blog = 50.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: blog) }

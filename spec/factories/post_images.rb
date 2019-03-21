@@ -16,5 +16,6 @@
 
 FactoryBot.define do
   factory :post_image do
+    url { Faker::Avatar.image }
   end
 end
