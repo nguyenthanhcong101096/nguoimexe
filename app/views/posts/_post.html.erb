@@ -7,7 +7,7 @@
       <p class="text--xs text--grey"><%= post.created_date %></p>
     </div>
     <div class="card__footer">
-      <h3 class="text--md"><%= post.price %></h3>
+      <h3 class="text--md"><%= number_to_currency(post.price, unit: "VNĐ", delimiter: ",", format: "%n %u") %></h3>
       <button class="btn--icon btn--mark">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
           <path fill="#484848" fill-rule="evenodd" d="M8 12.413l-4.367 2.18A.667.667 0 0 1 2.667 14V2.667c0-.734.6-1.334 1.333-1.334h8c.736 0 1.333.597 1.333 1.334V14a.667.667 0 0 1-.966.6L8 12.407v.006zm4-9.746H4V12.92l3.7-1.847a.667.667 0 0 1 .6 0L12 12.92V2.667z"></path>

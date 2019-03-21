@@ -13,7 +13,7 @@
           <p class="text--grey mt-4"><%= post.created_date %></p>
         </div>
         <div class="product__price">
-          <p class="headline--md"><%= post.price %> đ</p>
+          <p class="headline--md"><%= number_to_currency(post.price, unit: "VNĐ", delimiter: ",", format: "%n %u") %></p>
           <p class="text--sm text--grey mt-4">Có thể thương lượng</p>
           <button class="btn--icon btn--mark">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
