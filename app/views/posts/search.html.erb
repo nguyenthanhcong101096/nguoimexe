@@ -12,6 +12,7 @@
             <br/>
             <ul class="list-view">
               <%= render partial: 'shared/post', collection: @posts %>
+              <%= paginate @posts %>
             </ul>
             <% else %>
             <h2 class="headline card__headline">Không có kết quả tìm kiếm cho từ "<%= params[:q]%> "</h2>

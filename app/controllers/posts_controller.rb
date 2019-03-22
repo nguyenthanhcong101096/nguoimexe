@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.fulltext_search(params[:q])
+    @posts = Post.fulltext_search(params[:q]).page(params[:page]).per(10)
   end
 
   def preview; end
