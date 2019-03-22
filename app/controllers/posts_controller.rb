@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all.limit(10)
+    @posts = Post.all.limit(9)
 
     PostView.create!(post_id: @post.id, ip_address: request.remote_ip) if countable?
   end
