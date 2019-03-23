@@ -1,0 +1,40 @@
+.alert {
+  width: 680px;
+  font-weight: 600;
+  line-height: 1;
+  color: $light-color;
+  padding: 16px 48px 16px 16px;
+  position: relative;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 20;
+
+  &__action {
+    @include y-centered();
+    background-color: transparent;
+    right: 16px;
+
+    svg {
+      color: $light-color;
+    }
+  }
+
+  &--primary {
+    background-color: $primary-color;
+
+    .alert__action:hover svg {
+      color: $secondary-color;
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+
+    .alert__action:hover svg {
+      color: $primary-color;
+    }
+  }
+}
