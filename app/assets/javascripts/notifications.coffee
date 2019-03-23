@@ -8,7 +8,7 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
       dot.removeClass('badge')
     else
       dot.addClass('badge')
-      $new_notification.append data['html'];
+      $new_notification.after data['html'];
       $counter.text("Thông báo (#{data['counter']})");
     
   read_notifications: ->

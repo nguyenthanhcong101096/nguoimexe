@@ -25,6 +25,8 @@ class Message < ApplicationRecord
 
   include ImageUploader::Attachment.new(:attachment)
   
+  scope :read_message, ->(user) { where.not(sender: user).last.update(read: true) }
+  
   def created_date
     created_at.strftime('%b %d')
   end

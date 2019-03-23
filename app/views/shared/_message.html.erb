@@ -7,6 +7,8 @@
       <p class="writer__name"><%= message.with_user(current_user).username %><span class="writer__date"><%= message.last_message.created_date %></span></p>
       <p class="writer__text"><%= message.last_message.msg %></p>
     </div>
-    <span class="writer__badge"></span>
+    <%- unless message.check_read_message(current_user).read %>
+      <span class="writer__badge"></span>
+    <% end %>
   <% end %>
 </li>
