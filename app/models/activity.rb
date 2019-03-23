@@ -38,7 +38,6 @@ class Activity < ApplicationRecord
 
   def self.activity_message(kind, user_name)
     message = ACTIVITY_OF_KIND.find { |act| act[:kind] == kind }[:message]
-    user_name.concat(message)
   end
 
   def self.counter(user)

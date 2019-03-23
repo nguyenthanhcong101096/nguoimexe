@@ -4,12 +4,12 @@ class NotificationJob < ApplicationJob
   queue_as :default
 
   def perform(activity)
-    ActionCable.server.broadcast "notifications_#{activity.target_user.id}_channel", html: render_notification_comment(activity)
+    ActionCable.server.broadcast "notifications_#{activity.target_user.id}_channel", html: render_notification(activity)
   end
 
   private
 
-  def render_notification_comment(activity)
-    ApplicationController.renderer.render(partial: 'shared/acitivity', locals: { activity: activity })
+  def render_notification(activity)
+    ApplicationController.renderer.render(partial: 'shared/notification', locals: { notification: activity })
   end
 end

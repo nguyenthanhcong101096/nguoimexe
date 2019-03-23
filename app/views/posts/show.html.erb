@@ -195,7 +195,7 @@
           </div>
         </div>
       </div>
-
+      <%= render partial: 'comments', locals: { post: @post, comments: @post.comments } %>
       <div class="block">
         <p class="text--bold">Bài đăng khác</p>
         <div class="row">
