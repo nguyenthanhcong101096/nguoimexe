@@ -10,7 +10,7 @@ class Api::V1::UserSessionsController < Api::V1::BaseController
       render json: { messages: 'login fail', status: :not_found }
     end
   end
-  
+
   def signup
     user     = User.new(params_user)
     validate = ValidateService.new(user, 'signup').excute!
@@ -21,13 +21,13 @@ class Api::V1::UserSessionsController < Api::V1::BaseController
       render json: validate
     end
   end
-  
+
   private
-  
+
   def params_user
     params.permit(:email, :username, :password).merge(password_confirmation: params[:password])
   end
-  
+
   def cookies_and_sign_in(user)
     sign_in(user)
     cookies.signed[:user_id] = user.id

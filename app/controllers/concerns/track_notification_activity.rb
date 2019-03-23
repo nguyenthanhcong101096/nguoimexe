@@ -4,8 +4,6 @@ module TrackNotificationActivity
   extend ActiveSupport::Concern
 
   def push_notification(current_user, target_user, kind, url)
-    unless current_user == target_user
-      activity = Activity.track(current_user, target_user, kind, url)
-    end
+    activity = Activity.track(current_user, target_user, kind, url) unless current_user == target_user
   end
 end

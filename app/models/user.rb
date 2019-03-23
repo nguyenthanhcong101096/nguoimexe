@@ -53,7 +53,7 @@ class User < ApplicationRecord
   # validates :password, length: {minimum: 5, maximum: 20}
   # validates :password, presence: true
   validates :username, presence: true
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
@@ -119,7 +119,7 @@ class User < ApplicationRecord
   def slug
     self.slug_name = username.parameterize
   end
-  
+
   def self.rewind(url)
     file = Tempfile.new ['', ".#{url.split('.').last}"]
     file.binmode

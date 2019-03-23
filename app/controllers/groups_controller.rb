@@ -3,11 +3,11 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[show]
   layout 'social'
-  
+
   def index; end
-  
+
   def new; end
-  
+
   def show
     @posts = Blog.with_mod(@group.name)
   end

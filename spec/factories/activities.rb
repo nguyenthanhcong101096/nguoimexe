@@ -11,6 +11,7 @@
 #  message        :string
 #  url            :string
 #  read           :boolean          default(FALSE)
+#  check          :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

@@ -5,7 +5,6 @@
 # Table name: post_images
 #
 #  id                  :integer          not null, primary key
-#  post_image_data     :text
 #  post_imageable_id   :integer
 #  post_imageable_type :string
 #  url                 :string           default("Unknow")

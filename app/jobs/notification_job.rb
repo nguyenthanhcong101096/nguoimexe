@@ -12,7 +12,7 @@ class NotificationJob < ApplicationJob
   def render_notification(activity)
     ApplicationController.renderer.render(partial: 'shared/notification', locals: { notification: activity })
   end
-  
+
   def counter(activity)
     counter = Activity.where(target_user_id: activity.target_user, read: 'false').count
   end
