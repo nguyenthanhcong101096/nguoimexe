@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
 
   def show
     @conversation.messages.read_message(current_user)
+    @conversation.update(check: true)
   end
 
   private

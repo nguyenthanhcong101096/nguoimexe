@@ -2,7 +2,7 @@
 
 class NotificationsChannel < ApplicationCable::Channel
   def subscribed
-    stream_from my_notifications
+    stream_from my_channel
   end
 
   def unsubscribed; end
@@ -16,10 +16,10 @@ class NotificationsChannel < ApplicationCable::Channel
   private
 
   def update_count_notifications
-    ActionCable.server.broadcast my_notifications, type: 'read'
+    ActionCable.server.broadcast my_channel, type: 'read'
   end
 
-  def my_notifications
+  def my_channel
     "notifications_#{user_id}_channel"
   end
 end

@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20190317102650) do
     t.bigint   "conversation_id",                 null: false
     t.bigint   "sender_id",                       null: false
     t.boolean  "read",            default: false
+    t.boolean  "check",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
