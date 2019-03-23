@@ -2,8 +2,8 @@
 
 module RenderHelper
   def render_notification_activity(user)
-    notifications = Activity.where(target_user: user, read: false)
-    count = notifications.count
+    notifications = Activity.where(target_user: user).order(created_at: :desc).limit(8)
+    count = notifications.where(read: 'false').count
     render(partial: 'shared/notifications', locals: { notifications: notifications, count: count })
   end
 

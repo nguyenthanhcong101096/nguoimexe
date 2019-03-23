@@ -10,6 +10,8 @@
         <span class="writer__date"><%= notification.created_date %></span>
       </p>
     </div>
-    <span class="writer__badge"></span>
+    <%- unless notification.read %>
+      <span class="writer__badge"></span>
+    <% end %>
   </a>
 </li>
