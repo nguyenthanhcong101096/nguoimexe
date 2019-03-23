@@ -25,6 +25,8 @@ class Activity < ApplicationRecord
     { kind: 'like', message: ' đã thích bài viết của bạn' }
   ].freeze
 
+  delegate :username, :avatar_url, to: :user, prefix: true
+  
   def self.track(user, target_user, kind, url)
     user.activities.create(
       target_user: target_user,
@@ -41,5 +43,9 @@ class Activity < ApplicationRecord
 
   def self.counter(user)
     Activity.where(read: false, target_user: user).count
+  end
+  
+  def created_date
+    created_at.strftime('%b %d')
   end
 end
