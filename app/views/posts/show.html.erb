@@ -28,7 +28,7 @@
         <div class="block__head">
           <h2 class="headline--lg"><%= @post.title %></h2>
           <p class="headline--md"><%= number_to_currency(@post.price, unit: "VNĐ", delimiter: ",", precision: 0, format: "%n %u") %></p>
-          <p class="text--sm text--grey"><%= @post.created_date %> - <%= @post.address_sale %></p>
+          <p class="text--sm text--grey mt-4"><%= @post.created_date %> - <%= @post.address_sale %></p>
         </div>
         <div class="block__actions">
           <ul class="link-list">
@@ -154,11 +154,11 @@
           </div>
           <div class="col-4">
             <div class="box">
-              <div class="writer box__group">
+              <div class="writer writer--md box__group">
                 <div class="writer__avatar">
                   <img src="<%= asset_url(@post.user_avatar_url(:medium)) %>" alt="avatar">
                 </div>
-                <p class="writer__name"><%= @post.user_username %></p>
+                <p class="writer__body"><%= @post.user_username %></p>
               </div>
 
               <div class="box__group">

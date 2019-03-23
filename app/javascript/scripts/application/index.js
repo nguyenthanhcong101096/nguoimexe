@@ -1,5 +1,5 @@
 import { configEditor } from './quill';
-import { clickChangeLanguage, onClickBtnOpenDropdown } from './common'
+import { clickChangeLanguage, onClickBtnOpenDropdown, onClickBtnCloseAlert } from './common'
 import { clickFollow } from './follow'
 import { onClickBtnCommentLoadMore } from './comment'
 import { clickBtnLogin, clickSignUp } from './signup'
@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function () {
   onClickBtnOpenModal()
 
   onClickBtnOpenDropdown()
+  onClickBtnCloseAlert()
 
   clickBtnLogin()
   clickSignUp()

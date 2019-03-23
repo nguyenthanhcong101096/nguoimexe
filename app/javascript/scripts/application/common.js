@@ -1,4 +1,4 @@
-import { addCommonClass, removeActiveClass } from '../lib/utils'
+import { closest, addCommonClass, removeActiveClass } from '../lib/utils'
 
 export const clickChangeLanguage = () => {
   const btn = document.querySelector('.js-language-switcher')
@@ -35,4 +35,15 @@ const toggleDropdown = target => {
   const dropDownEle = document.querySelector(`.js-dropdown[data-dropdown=${target}]`)
   dropDownEle.classList.toggle('hidden')
   setTimeout(() => { dropDownEle.classList.toggle('has-animation') }, 100)
+}
+
+export const onClickBtnCloseAlert = () => {
+  const btnCloseAlert = document.querySelectorAll('.js-btn-close-alert')
+  if (!btnCloseAlert) return
+
+  Array.prototype.slice.call(btnCloseAlert).forEach(btn => {
+    btn.addEventListener('click', () => {
+      closest(btn, '.js-alert').classList.add('hidden')
+    })
+  })
 }

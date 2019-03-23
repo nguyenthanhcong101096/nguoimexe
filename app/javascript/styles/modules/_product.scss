@@ -8,6 +8,11 @@
     border-radius: 5px;
   }
 
+  &__headline {
+    height: 48px;
+    overflow-y: hidden;
+  }
+
   &__body {
     @include flexbox(flex-start, flex-start);
     padding-left: 24px;
