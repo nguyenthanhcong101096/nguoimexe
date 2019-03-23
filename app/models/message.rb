@@ -30,4 +30,5 @@ class Message < ApplicationRecord
   def created_date
     created_at.strftime('%b %d')
   end
+  
 end

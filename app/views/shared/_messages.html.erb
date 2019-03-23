@@ -1,13 +1,13 @@
 <li class="link-list__item is-expand">
-  <button class="btn--icon js-btn-open-dropdown <%= check > 0 ? 'badge' : '' %> " data-target="messages">
+  <button class="btn--icon btn-massages js-btn-open-dropdown <%= check ? 'badge' : '' %> " data-target="messages" user_id="<%= current_user.id %>">
     <%= inline_svg('ico_message.svg') %>
   </button>
 
   <ul class="dropdown dropdown--md js-dropdown hidden" data-dropdown="messages">
-    <li class="dropdown__item dropdown__header">Hộp thư (<%= check %>)</li>
-    <%= render partial: 'shared/message', collection: messages %>
+    <li class="dropdown__item dropdown__header">Hộp thư (<%= count %>)</li>
+    <%= render partial: 'shared/message', collection: messages, locals: { user: current_user } %>
     <li class="dropdown__item">
-      <button class="dropdown__link btn--link">XEM THÊM</button>
+      <button class="dropdown__link btn--link"><%= check %>XEM THÊM</button>
     </li>
   </ul>
 </li>

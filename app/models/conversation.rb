@@ -14,7 +14,7 @@ class Conversation < ApplicationRecord
   has_many :room_chats, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :room_members, through: :room_chats, source: :sender
-
+  
   def with_user(user)
     room_members.reject { |usr| usr == user }[0]
   end
