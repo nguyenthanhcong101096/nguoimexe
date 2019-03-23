@@ -1,15 +1,15 @@
 App.notifications = App.cable.subscriptions.create "NotificationsChannel",
   received: (data) ->
-    show_notification = $('#notifications');
     dot = $('.btn-notification')
     $new_notification = $('.js-new-notification')
+    $counter = $('.js-counter')
     
     if(data['type'] == 'read')
       dot.removeClass('badge')
-      counter.text(0);
     else
       dot.addClass('badge')
       $new_notification.append data['html'];
+      $counter.text("Thông báo (#{data['counter']})");
     
   read_notifications: ->
     @perform 'read_notifications'
