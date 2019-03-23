@@ -24,4 +24,8 @@ class Message < ApplicationRecord
   delegate :username, :id, :avatar_url, to: :sender, prefix: true
 
   include ImageUploader::Attachment.new(:attachment)
+  
+  def created_date
+    created_at.strftime('%b %d')
+  end
 end

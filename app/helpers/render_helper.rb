@@ -2,15 +2,15 @@
 
 module RenderHelper
   def render_notification_activity(user)
-    activities = Activity.where(target_user: user, read: false)
-    count = activities.count
-    render(partial: 'shared/notifications', locals: { activities: activities, count: count })
+    notifications = Activity.where(target_user: user, read: false)
+    count = notifications.count
+    render(partial: 'shared/notifications', locals: { notifications: notifications, count: count })
   end
 
   def render_notification_message(user)
-    activities = Activity.where(target_user: user, read: false)
-    count = activities.count
-    render(partial: 'shared/messages', locals: { activities: activities, count: count })
+    messages = user.conversations
+    count = messages.count
+    render(partial: 'shared/messages', locals: { messages: messages, count: count })
   end
 
   def render_conversations(user)
