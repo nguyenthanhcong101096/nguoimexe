@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20190317102650) do
     t.string   "message"
     t.string   "url"
     t.boolean  "read",           default: false
+    t.boolean  "check",          default: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
@@ -81,8 +82,9 @@ ActiveRecord::Schema.define(version: 20190317102650) do
 
   create_table "conversations", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "check",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "enterprises", force: :cascade do |t|

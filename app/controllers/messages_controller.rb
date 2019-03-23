@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   def create; end
 
   def show
-    @message = @conversation.messages.new
+    @conversation.messages.read_message(current_user)
   end
 
   private

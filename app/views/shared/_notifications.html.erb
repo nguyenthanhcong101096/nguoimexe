@@ -1,10 +1,11 @@
 <li class="link-list__item is-expand">
-  <button class="btn--icon btn-notification js-btn-open-dropdown <%= count > 0 ? 'badge' : '' %> " data-target="notifications">
+  <button class="btn--icon btn-notification js-btn-open-dropdown <%= check > 0 ? 'badge' : '' %> " data-target="notifications">
     <%= inline_svg('ico_notification.svg') %>
   </button>
 
   <ul class="dropdown dropdown--md js-dropdown hidden" data-dropdown="notifications">
-    <li class="dropdown__item dropdown__header">Thông báo (<%= count %>)</li>
+    <li class="dropdown__item dropdown__header js-counter">Thông báo (<%= count %>)</li>
+    <li class="dropdown__item js-new-notification"></li>
     <%= render partial: 'shared/notification', collection: notifications %>
     <li class="dropdown__item">
       <button class="dropdown__link btn--link">XEM THÊM</button>

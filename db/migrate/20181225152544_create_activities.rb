@@ -9,6 +9,7 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.string :message
       t.string :url
       t.boolean :read, default: false
+      t.boolean :check, default: false
       t.timestamps
     end
   end

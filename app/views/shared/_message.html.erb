@@ -1,5 +1,5 @@
 <li class="dropdown__item">
-  <a href="#" class="writer writer--default">
+  <%= link_to(message_path(name: message.name), class: 'writer writer--default') do %>
     <div class="writer__avatar">
       <img src="<%= message.with_user(current_user).avatar_url(:medium) %>" alt="avatar">
     </div>
@@ -7,6 +7,8 @@
       <p class="writer__name"><%= message.with_user(current_user).username %><span class="writer__date"><%= message.last_message.created_date %></span></p>
       <p class="writer__text"><%= message.last_message.msg %></p>
     </div>
-    <span class="writer__badge"></span>
-  </a>
+    <%- unless message.check_read_message(current_user).read %>
+      <span class="writer__badge"></span>
+    <% end %>
+  <% end %>
 </li>

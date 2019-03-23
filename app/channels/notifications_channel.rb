@@ -8,9 +8,9 @@ class NotificationsChannel < ApplicationCable::Channel
   def unsubscribed; end
 
   def read_notifications
-    activities = Activity.where(target_user_id: user_id, read: false)
-    # activities.update_all(read: true)
-    # update_count_notifications
+    activities = Activity.where(target_user_id: user_id, check: false)
+    activities.update_all(check: true)
+    update_count_notifications
   end
 
   private
