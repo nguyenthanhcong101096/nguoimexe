@@ -1,4 +1,4 @@
-const dropdown = () => document.querySelector('.js-dropdown')
+import { addCommonClass, removeActiveClass } from '../lib/utils'
 
 export const clickChangeLanguage = () => {
   const btn = document.querySelector('.js-language-switcher')
@@ -11,24 +11,28 @@ export const clickChangeLanguage = () => {
   })
 }
 
-export const onClickBtnOpenUserNav = () => {
-  const btnOpenUserNav = document.querySelector('.js-btn-open-user-nav')
-  if (!btnOpenUserNav) return
+export const onClickBtnOpenDropdown = () => {
+  const btnOpenDropdown = document.querySelectorAll('.js-btn-open-dropdown')
+  if (!btnOpenDropdown) return
 
-  btnOpenUserNav.addEventListener('click', function(e) {
-    e.preventDefault()
-    dropdown().classList.contains('hidden') ? openUserNav() : closeUserNav()
+  Array.prototype.slice.call(btnOpenDropdown).forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault()
 
-    return false
+      const dataTarget = btn.getAttribute('data-target')
+      if (!dataTarget) return
+      toggleDropdown(dataTarget)
+
+      return false
+    })
   })
 }
 
-const openUserNav = () => {
-  dropdown().classList.remove('hidden')
-  setTimeout(() => { dropdown().classList.add('has-animation') }, 100)
-}
+const toggleDropdown = target => {
+  addCommonClass(`.js-dropdown:not([data-dropdown=${target}])`, ['hidden'])
+  removeActiveClass(`.js-dropdown:not([data-dropdown=${target}])`, ['has-animation'])
 
-const closeUserNav = () => {
-  setTimeout(() => { dropdown().classList.remove('has-animation') }, 100)
-  dropdown().classList.add('hidden')
+  const dropDownEle = document.querySelector(`.js-dropdown[data-dropdown=${target}]`)
+  dropDownEle.classList.toggle('hidden')
+  setTimeout(() => { dropDownEle.classList.toggle('has-animation') }, 100)
 }

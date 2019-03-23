@@ -9,7 +9,7 @@ export const onChangeTabModal = () => {
   Array.prototype.slice.call(btnModalTab).forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault()
-      removeActiveClass('.js-btn-modal-tab', 'is-active')
+      removeActiveClass('.js-btn-modal-tab', ['is-active'])
       e.target.classList.add('is-active')
 
       const dataModalTarget = e.target.getAttribute('data-target')

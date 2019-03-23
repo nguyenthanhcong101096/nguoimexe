@@ -29,6 +29,16 @@ export const getSiblings = element => {
 
 export const removeActiveClass = (strElement, className) => {
   Array.prototype.slice.call(document.querySelectorAll(strElement)).forEach(element => {
-    element.classList.remove(className)
+    Array.prototype.map.call(className, c => {
+      element.classList.remove(c)
+    })
+  })
+}
+
+export const addCommonClass = (strElement, className) => {
+  Array.prototype.slice.call(document.querySelectorAll(strElement)).forEach(element => {
+    Array.prototype.map.call(className, c => {
+      element.classList.add(c)
+    })
   })
 }
