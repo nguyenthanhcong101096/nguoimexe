@@ -35,15 +35,21 @@
           <%= render_notification_activity(current_user) %>
           <%= render_notification_message(current_user) %>
           <li class="link-list__item">
-            <button class="btn--icon js-btn-open-user-nav">
-              <img class="header__avatar" src="<%= current_user.avatar_url(:medium) %>" alt="logo">
+            <button class="btn--icon js-btn-open-dropdown" data-target="user">
+              <img class="header__avatar" src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
             </button>
 
-            <ul class="dropdown hidden js-dropdown">
+            <ul class="dropdown hidden js-dropdown" data-dropdown="user">
+              <li class="dropdown__item dropdown__header">Hồ sơ</li>
               <li class="dropdown__item">
-                <a href="/users/profile">
-                  <%= current_user.username %>
-                  <span><%= current_user.email %></span>
+                <a href="/users/profile" class="writer writer--default">
+                  <div class="writer__avatar">
+                    <img src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
+                  </div>
+                  <div class="writer__body">
+                    <p class="writer__name expanded"><%= current_user.username %></p>
+                    <span><%= current_user.email %></span>
+                  </div>
                 </a>
               </li>
               <li class="dropdown__item">

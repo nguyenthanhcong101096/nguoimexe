@@ -1,5 +1,56 @@
-<li class="link-list__item">
-  <button class="btn--icon btn-notification <%= count > 0 ? 'badge' : '' %> ">
+<li class="link-list__item is-expand">
+  <button class="btn--icon btn-notification js-btn-open-dropdown <%= count > 0 ? 'badge' : '' %> " data-target="notifications">
     <%= inline_svg('ico_notification.svg') %>
   </button>
+
+  <ul class="dropdown dropdown--md js-dropdown hidden" data-dropdown="notifications">
+    <li class="dropdown__item dropdown__header">Thông báo (2)</li>
+    <li class="dropdown__item">
+      <a href="#" class="writer writer--default">
+        <div class="writer__avatar">
+          <img src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
+        </div>
+        <div class="writer__body">
+          <p class="writer__name">
+            <%= current_user.username %>
+            <span>đang theo dõi bạn</span>
+            <span class="writer__date">Mar 13</span>
+          </p>
+        </div>
+        <span class="writer__badge"></span>
+      </a>
+    </li>
+    <li class="dropdown__item">
+      <a href="#" class="writer writer--default">
+        <div class="writer__avatar">
+          <img src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
+        </div>
+        <div class="writer__body">
+          <p class="writer__name">
+            <%= current_user.username %>
+            <span> đã thích bài viết của bạn</span>
+            <span class="writer__date">Mar 13</span>
+          </p>
+        </div>
+        <span class="writer__badge"></span>
+      </a>
+    </li>
+    <li class="dropdown__item">
+      <a href="#" class="writer writer--default">
+        <div class="writer__avatar">
+          <img src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
+        </div>
+        <div class="writer__body">
+          <p class="writer__name">
+            Chúc mừng
+            <span>bài viết của bạn dã đã được kiểm duyệt thành công</span>
+            <span class="writer__date">Mar 13</span>
+          </p>
+        </div>
+      </a>
+    </li>
+    <li class="dropdown__item">
+      <button class="dropdown__link btn--link">XEM THÊM</button>
+    </li>
+  </ul>
 </li>

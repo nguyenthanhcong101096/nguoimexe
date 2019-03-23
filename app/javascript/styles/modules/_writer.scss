@@ -1,7 +1,13 @@
 .writer {
+  @include clearfix();
+  position: relative;
+
+  &__avatar,
+  &__body {
+    float: left;
+  }
+
   &__avatar {
-    width: 64px;
-    height: 64px;
     border-radius: 50%;
     overflow: hidden;
 
@@ -11,8 +17,65 @@
     }
   }
 
+  &__body {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
   &__name {
-    @include font-size-headline--md();
-    margin-top: 16px;
+    font-weight: 600;
+  }
+
+  &__date,
+  &__badge {
+    position: absolute;
+  }
+
+  &__date {
+    top: 4px;
+    right: -48px;
+    font-size: 12px;
+  }
+
+  &__badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $safety-orange;
+    bottom: 18px;
+    right: 12px;
+  }
+
+  &__text {
+    max-width: 224px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__info {
+    float: right;
+  }
+
+  &--default {
+    .writer__avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    .writer__name {
+      width: calc(100% - 48px);
+      position: relative;
+
+      &.expanded {
+        width: 100%;
+      }
+    }
+
+    .writer__body {
+      padding-left: 12px;
+      width: calc(100% - 48px);
+    }
   }
 }

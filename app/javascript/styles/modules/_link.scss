@@ -46,6 +46,10 @@
 
     + .link-list__item {
       margin-left: 24px;
+
+      &.is-expand {
+        padding: 6px 0;
+      }
     }
   }
 
