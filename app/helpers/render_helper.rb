@@ -10,9 +10,9 @@ module RenderHelper
 
   def render_notification_message(user)
     messages = user.conversations
-    check = messages.where(check: 'false').count
-    
-    render(partial: 'shared/messages', locals: { messages: messages, check: check })
+    count = messages.where(check: 'false').count
+    check = Message.where(conversation_id: messages.ids).where.not(sender: user).pluck(:check).uniq.include?(false)
+    render(partial: 'shared/messages', locals: { messages: messages, check: check, count: count })
   end
 
   def render_conversations(user)
