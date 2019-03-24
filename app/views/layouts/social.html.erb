@@ -36,13 +36,8 @@
 </head>
 
 <body>
-  <!-- <%= render 'shared/header' %>
-  <% unless user_signed_in? %>
-    <%= render 'shared/login-modal' %>
-  <% end %> -->
   <%= yield %>
   <%= render 'shared/following_ids' %>
-  <%= render 'shared/notifications_list' %>
   <%= javascript_pack_tag 'application' %>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </body>
