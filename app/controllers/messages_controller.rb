@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
   private
 
   def set_message
-    @conversation = Conversation.find_by!(name: params[:name])
+    @conversation = current_user.conversations.find_by!(name: params[:name])
     cookies.signed[:room_id] = @conversation.id
   end
 end
