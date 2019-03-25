@@ -24,7 +24,7 @@ class Conversation < ApplicationRecord
     messages.last
   end
 
-  def check_read_message(user)
+  def senders_last_message(user)
     messages.where.not(sender: user).last
   end
 end

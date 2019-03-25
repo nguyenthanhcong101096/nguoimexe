@@ -11,10 +11,10 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
       $new_notification.after data['html'];
       $counter.text("Thông báo (#{data['counter']})");
     
-  read_notifications: ->
-    @perform 'read_notifications'
+  click_dropdown_notifications: ->
+    @perform 'click_dropdown_notifications'
             
   $(document).on 'click', '.btn-notification', (event) ->
-    App.notifications.read_notifications()
+    App.notifications.click_dropdown_notifications()
 
     

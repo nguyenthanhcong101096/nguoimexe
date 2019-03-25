@@ -5,13 +5,11 @@ class MessagesChannel < ApplicationCable::Channel
     stream_from 'messages_channel'
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-  end
+  def unsubscribed; end
 
-  def read_messages
-    conversation_ids = User.find(user_id).conversation_ids
-    Message.where(conversation_id: conversation_ids).update_all(check: true)
+  def click_message_dropdown
+    conversations = current_user.conversations
+    conversations.each { |conversation| conversation.senders_last_message(current_user).update(check: true) }
     update_message_noti
   end
 
@@ -19,5 +17,9 @@ class MessagesChannel < ApplicationCable::Channel
 
   def update_message_noti
     ActionCable.server.broadcast 'messages_channel', type: 'read'
+  end
+  
+  def current_user
+    User.find(user_id)
   end
 end

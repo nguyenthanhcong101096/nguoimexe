@@ -8,8 +8,8 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     if user_id == data['target_user']
       $dot.addClass('badge')
     
-  read_messages: ->
-    @perform 'read_messages'
+  click_message_dropdown: ->
+    @perform 'click_message_dropdown'
             
   $(document).on 'click', '.btn-massages', (event) ->
-    App.messages.read_messages()
+    App.messages.click_message_dropdown()

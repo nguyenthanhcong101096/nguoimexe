@@ -7,7 +7,7 @@ class NotificationsChannel < ApplicationCable::Channel
 
   def unsubscribed; end
 
-  def read_notifications
+  def click_dropdown_notifications
     activities = Activity.where(target_user_id: user_id, check: false)
     activities.update_all(check: true)
     update_count_notifications
