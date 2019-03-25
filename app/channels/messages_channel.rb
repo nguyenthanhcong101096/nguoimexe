@@ -2,7 +2,7 @@
 
 class MessagesChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'messages_channel'
+    stream_from 'notification_messages_channel'
   end
 
   def unsubscribed; end
@@ -16,7 +16,7 @@ class MessagesChannel < ApplicationCable::Channel
   private
 
   def update_message_noti
-    ActionCable.server.broadcast 'messages_channel', type: 'read'
+    ActionCable.server.broadcast 'notification_messages_channel', type: 'read'
   end
 
   def current_user
