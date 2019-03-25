@@ -4,8 +4,8 @@ class RenderMessageJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    ActionCable.server.broadcast channel(message.conversation_id), render_message(message)
-    ActionCable.server.broadcast 'messages_channel', noti_message(message)
+    ActionCable.server.broadcast channel(message)[:room_channel], live_message(message)
+    ActionCable.server.broadcast channel(message)[:noti_message], noti_message(message)
   end
 
   private
@@ -18,21 +18,23 @@ class RenderMessageJob < ApplicationJob
     ApplicationController.renderer.render(partial: 'messages/new_message', locals: { message: message, type: 'left' })
   end
 
+  def dropdown_message(conversation, message)
+    ApplicationController.renderer.render(partial: 'shared/message', locals: { message: conversation, user: conversation.with_user(message.sender) })
+  end
+  
   def noti_message(message)
     conversation = message.conversation
     room_chat    = message.conversation_id.to_s
     target_user  = conversation.with_user(message.sender)
-    
-    html = ApplicationController.renderer.render(partial: 'shared/message', locals: { message: conversation, user: conversation.with_user(message.sender) })
-    
-    { target_user: target_user.id.to_s, html: html, room_chat: room_chat }
+
+    { target_user: target_user.id.to_s, html: dropdown_message(conversation, message), room_chat: room_chat }
   end
   
-  def render_message(message)
+  def live_message(message)
     { user_id: message.sender_id.to_s, last_message: message.msg, right_html: right_message(message), left_html: left_message(message) }
   end
   
-  def channel(room_id)
-    "message_channel_#{room_id}"
+  def channel(message)
+    { room_channel: "message_channel_#{message.conversation_id}", noti_message: 'notification_messages_channel' }
   end
 end
