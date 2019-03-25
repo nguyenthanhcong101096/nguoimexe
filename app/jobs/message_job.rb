@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RenderMessageJob < ApplicationJob
+class MessageJob < ApplicationJob
   queue_as :default
 
   def perform(message)
