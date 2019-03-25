@@ -39,9 +39,7 @@
 
 <body>
   <%= render 'shared/header' %>
-  <% unless user_signed_in? %>
-    <%= render 'shared/login-modal' %>
-  <% end %>
+  <%= render 'shared/login-modal' %>
   <%= yield %>
   <%= render 'shared/following_ids' %>
   <%= javascript_pack_tag 'application' %>

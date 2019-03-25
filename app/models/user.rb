@@ -36,10 +36,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :blogs, dependent: :destroy
-  has_many :activities, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :room_chats, dependent: :destroy, foreign_key: :sender_id
   has_many :conversations, through: :room_chats, foreign_key: :sender_id
+  has_many :activities, dependent: :destroy
 
   has_many :active_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :user_id
   has_many :passive_relationships, class_name: 'Follow', dependent: :destroy, foreign_key: :target_user_id
