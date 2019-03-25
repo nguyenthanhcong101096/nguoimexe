@@ -8,7 +8,7 @@ class StreamMessageChannel < ApplicationCable::Channel
   def unsubscribed; end
 
   def send_message(data)
-    attachment  = data['img'] ? data['img'] : nil
+    attachment  = data['img'] || nil
     new_message = sender.messages.create(conversation_id: data['conversation_id'], msg: data['msg'], attachment_data: attachment)
     new_message.conversation.update(check: false)
   end

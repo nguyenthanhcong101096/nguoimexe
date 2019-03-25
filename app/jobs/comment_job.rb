@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RenderCommentJob < ApplicationJob
+class CommentJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
