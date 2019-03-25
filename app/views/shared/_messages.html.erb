@@ -5,6 +5,7 @@
 
   <ul class="dropdown dropdown--md js-dropdown hidden" data-dropdown="messages">
     <li class="dropdown__item dropdown__header">Hộp thư (<%= count %>)</li>
+    <li class="dropdown__item js-new-message"></li>
     <%= render partial: 'shared/message', collection: conversations, locals: { user: current_user } %>
     <li class="dropdown__item">
       <button class="dropdown__link btn--link">XEM THÊM</button>
