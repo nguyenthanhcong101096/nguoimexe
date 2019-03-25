@@ -26,8 +26,9 @@ class MessageJob < ApplicationJob
     conversation = message.conversation
     room_chat    = message.conversation_id.to_s
     target_user  = conversation.with_user(message.sender)
-
-    { target_user: target_user.id.to_s, html: dropdown_message(conversation, message), room_chat: room_chat }
+    msg_not_read = target_user.conversations.where(check: false).count
+    
+    { target_user: target_user.id.to_s, html: dropdown_message(conversation, message), room_chat: room_chat, counter: msg_not_read }
   end
   
   def live_message(message)
@@ -35,6 +36,6 @@ class MessageJob < ApplicationJob
   end
   
   def channel(message)
-    { room_channel: "message_channel_#{message.conversation_id}", noti_message: 'notification_messages_channel' }
+    { room_channel: "room_chat_#{message.conversation_id}", noti_message: 'notification_messages_channel' }
   end
 end
