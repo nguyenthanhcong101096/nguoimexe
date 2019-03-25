@@ -5,7 +5,7 @@ module RenderHelper
     notifications = Activity.where(target_user: user).order(created_at: :desc)
     count         = notifications.where(read: 'false').count
     check_read    = notifications.where(check: 'false').count
-    
+
     render(partial: 'shared/notifications', locals: { notifications: notifications.limit(5), count: count, check: check_read })
   end
 
@@ -13,7 +13,7 @@ module RenderHelper
     conversations = user.conversations
     count         = conversations.where(check: 'false').count
     check_read    = conversations.each_with_object([]) { |k, o| o << k.senders_last_message(user).check }.uniq
-    
+
     render(partial: 'shared/messages', locals: { conversations: conversations, check: check_read.include?(false), count: count })
   end
 
