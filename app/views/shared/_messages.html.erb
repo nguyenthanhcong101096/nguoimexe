@@ -8,7 +8,7 @@
     <li class="dropdown__item js-new-message"></li>
     <%= render partial: 'shared/message', collection: conversations, locals: { user: current_user } %>
     <li class="dropdown__item">
-      <button class="dropdown__link btn--link">XEM THÊM</button>
+      <a href="/messages" class="dropdown__link btn--link">XEM THÊM</a>
     </li>
   </ul>
 </li>
