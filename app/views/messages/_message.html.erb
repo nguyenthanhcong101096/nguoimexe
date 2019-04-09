@@ -1,27 +1,25 @@
 <% if message.sender == current_user %>
 <div class="messages messages--sent">
-  <!-- <p class="messages__time"><%= distance_of_time_in_words(message.created_at, Time.now) %></p> -->
   <%- if message.attachment_data %>
   <div class="messages__thumbnail messages__thumbnail--sm">
     <img src="<%= asset_pack_path('images/img_moto-preview_05.jpg') %>" alt="messages thumb" class="messages__image">
     <img src="<%= asset_pack_path('images/img_moto-preview_01.jpg') %>" alt="messages thumb" class="messages__image">
     <img src="<%= asset_pack_path('images/img_moto-preview_04.jpg') %>" alt="messages thumb" class="messages__image">
   </div>
-  <% end %>
+  <%- else %>
   <p class="messages__text"><%= message.msg %></p>
+  <% end %>
   <img src="<%= message.sender_avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
 </div>
 <% else %>
 <div class="messages messages--received">
   <img src="<%= message.sender_avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
-  <p class="messages__text"><%= message.msg %></p>
   <%- if message.attachment_data %>
   <div class="messages__thumbnail messages__thumbnail--sm">
-    <img src="<%= asset_pack_path('images/img_moto-preview_05.jpg') %>" alt="messages thumb" class="messages__image">
-    <img src="<%= asset_pack_path('images/img_moto-preview_01.jpg') %>" alt="messages thumb" class="messages__image">
-    <img src="<%= asset_pack_path('images/img_moto-preview_04.jpg') %>" alt="messages thumb" class="messages__image">
+    <img src="<%= message.attachment_data %>" alt="messages thumb" class="messages__image">
   </div>
+  <%- else %>
+  <p class="messages__text"><%= message.msg %></p>
   <% end %>
-  <!-- <p class="messages__time"><%= distance_of_time_in_words(message.created_at, Time.now) %></p> -->
 </div>
 <% end %>

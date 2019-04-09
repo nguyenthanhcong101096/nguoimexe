@@ -1,8 +1,8 @@
 <div class="conversation__footer">
-  <div class="conversation__chatbox" contenteditable="true" placeholder="Viết cái gì..."></div>
+  <div class="conversation__chatbox js-create-message" conversation-id="<%= @conversation.id %>" contenteditable="true" placeholder="Nhập tin nhắn..."></div>
   <div class="conversation-action">
     <label class="form-upload form-upload--sm conversation-action__item js-image">
-      <input id="file-input" type="file"/>
+      <input type="file" id="picture" nam="picture">
       <span><%= inline_svg 'ico_photo.svg' %></span>
     </label>
     <button class="btn-default conversation-action__item">Gửi</button>
