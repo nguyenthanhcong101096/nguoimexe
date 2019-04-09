@@ -1,0 +1,77 @@
+.conversation {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 4px;
+
+  [contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    cursor: text;
+    color: $heathered-gray-color;
+  }
+
+  &__body {
+    overflow-y: auto;
+
+    &--sm {
+      height: calc(100vh - 112px);
+    }
+
+    &--lg {
+      padding: 32px 24px 24px;
+      height: calc(100vh - 160px);
+    }
+  }
+
+  &__footer {
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    border-top: 1px solid $catskill-gray-color;
+    background-color: $light-color;
+  }
+
+  &-action {
+    @include y-centered();
+    @include flexbox(center, center);
+    right: 16px;
+
+    &__item + &__item {
+      margin-left: 20px;
+    }
+  }
+
+  &__chatbox {
+    word-break: break-word;
+    outline: none;
+    max-height: 100px;
+    width: calc(100% - 100px);
+  }
+
+  &__search {
+    padding: 16px 12px;
+  }
+
+  &__headline {
+    background-color: $light-color;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid $catskill-gray-color;
+    padding: 12px;
+    position: relative;
+
+    svg {
+      @include y-centered();
+      right: 8px;
+    }
+  }
+
+  &__sidebar {
+    width: 360px;
+  }
+
+  &__container {
+    width: calc(100% - 360px);
+    border-left: 1px solid $catskill-gray-color;
+    position: relative;
+  }
+}

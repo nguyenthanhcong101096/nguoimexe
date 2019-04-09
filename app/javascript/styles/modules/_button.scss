@@ -95,3 +95,14 @@
   right: 0;
   z-index: 5;
 }
+
+.btn-default {
+  background-color: transparent;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+  font-size: $font-size-base;
+  cursor: pointer;
+  font-weight: 600;
+}

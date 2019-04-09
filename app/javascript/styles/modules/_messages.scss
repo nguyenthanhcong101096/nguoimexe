@@ -1,0 +1,80 @@
+.messages {
+  @include flexbox(flex-start, flex-start);
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &__text {
+    max-width: 644px;
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  &__time {
+    margin-top: auto;
+    font-size: 12px;
+    color: $heathered-gray-color;
+  }
+
+  &__thumbnail {
+    @include flexbox(flex-start, flex-start);
+    flex-wrap: wrap;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    &--lg {
+      .messages__image {
+        width: 408px;
+      }
+    }
+
+    &--sm {
+      width: 618px;
+
+      .messages__image {
+        width: calc((100% - 16px) / 3);
+        height: 150px;
+
+        + .messages__image {
+          &:not(:nth-child(4)) {
+            margin-left: 8px;
+          }
+
+          &:nth-child(n + 4) {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  &--received {
+    justify-content: flex-start;
+
+    .messages__text {
+      background-color: $snow-color;
+      border-radius: 0 8px 8px 8px;
+      margin-left: 16px;
+      margin-right: 8px;
+    }
+  }
+
+  &--sent {
+    justify-content: flex-end;
+
+    .messages__text {
+      background-color: $tuna-color;
+      color: $light-color;
+      border-radius: 8px 0 8px 8px;
+      margin-right: 16px;
+      margin-left: 8px;
+    }
+  }
+
+  + .messages {
+    margin-top: 24px;
+  }
+}
