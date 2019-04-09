@@ -1,4 +1,232 @@
 <%= provide(:page_title, 'Messenger') %>
 <%= provide(:page_description, 'Tin nhắn') %>
 
-# code html here
+<div id="main" class="main">
+  <div class="conversation">
+    <div class="conversation__sidebar">
+      <h3 class="conversation__headline">Messenger<%= inline_svg 'ico_pen.svg' %></h3>
+      <div class="conversation__body conversation__body--sm">
+        <div class="conversation__search">
+          <div class="form-body">
+            <input type="text" class="form-input search-box search-box--sm has-icon" placeholder="Tìm kiếm đoạn hội thoại">
+            <%= inline_svg('ico_search.svg') %>
+          </div>
+        </div>
+        <ul class="list-writer">
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="list-writer__item">
+            <%= link_to(message_path(name: Conversation.first.name), class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= Conversation.first.with_user(User.first).avatar_url(:medium) %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name"><%= Conversation.first.with_user(User.first).username %><span class="writer__date"><%= Conversation.first.last_message.created_date %></span></p>
+                <p class="writer__text"><%= Conversation.first.last_message.msg %></p>
+              </div>
+              <%- unless Conversation.first.senders_last_message(User.first).read %>
+                <span class="writer__badge"></span>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="conversation__container">
+      <h3 class="conversation__headline">Arina Belomestnykh<%= inline_svg 'ico_pen.svg' %></h3>
+      <div class="conversation__body conversation__body--lg">
+        <div class="messages messages--received">
+          <img src="<%= asset_pack_path('images/og.png') %>" alt="messages image" class="messages__avatar">
+          <p class="messages__text">If you are the owner, operator or manager of a restaurant or other type of establishment at which food is sold, you will regularly find yourself in the market for different products to stock your commercial kitchen. Chances are that you find yourself very frequently searching for cookware products for your commercial kitchen.</p>
+          <p class="messages__time">FEB 20, 2019, 1:04 PM</p>
+        </div>
+        <div class="messages messages--sent">
+          <p class="messages__time">5:40 PM</p>
+          <p class="messages__text">If you are the owner, operator or manager of a restaurant or other type of establishment at which food is sold, you will regularly find yourself in the market for different products to stock your commercial kitchen. Chances are that you find yourself very frequently searching for cookware products for your commercial kitchen.</p>
+          <img src="<%= asset_pack_path('images/og.png') %>" alt="messages image" class="messages__avatar">
+        </div>
+        <div class="messages messages--received">
+          <img src="<%= asset_pack_path('images/og.png') %>" alt="messages image" class="messages__avatar">
+          <div class="messages__thumbnail messages__thumbnail--sm">
+            <img src="<%= asset_pack_path('images/img_moto-preview_05.jpg') %>" alt="messages thumb" class="messages__image">
+            <img src="<%= asset_pack_path('images/img_moto-preview_01.jpg') %>" alt="messages thumb" class="messages__image">
+            <img src="<%= asset_pack_path('images/img_moto-preview_04.jpg') %>" alt="messages thumb" class="messages__image">
+            <img src="<%= asset_pack_path('images/img_moto-preview_03.jpg') %>" alt="messages thumb" class="messages__image">
+            <img src="<%= asset_pack_path('images/img_moto-preview_02.jpg') %>" alt="messages thumb" class="messages__image">
+            <img src="<%= asset_pack_path('images/img_moto-preview_01.jpg') %>" alt="messages thumb" class="messages__image">
+          </div>
+          <p class="messages__time">FEB 20, 2019, 1:04 PM</p>
+        </div>
+        <div class="messages messages--sent">
+          <p class="messages__time">FEB 20, 2019, 1:04 PM</p>
+          <div class="messages__thumbnail messages__thumbnail--lg">
+            <img src="<%= asset_pack_path('images/img_moto-preview_05.jpg') %>" alt="messages thumb" class="messages__image">
+          </div>
+          <img src="<%= asset_pack_path('images/og.png') %>" alt="messages image" class="messages__avatar">
+        </div>
+      </div>
+      <div class="conversation__footer">
+        <div class="conversation__chatbox" contenteditable="true" placeholder="Viết cái gì..."></div>
+        <div class="conversation-action">
+          <label class="form-upload form-upload--sm conversation-action__item js-image">
+            <input id="file-input" type="file"/>
+            <span><%= inline_svg 'ico_photo.svg' %></span>
+          </label>
+          <button class="btn-default conversation-action__item">Gửi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
