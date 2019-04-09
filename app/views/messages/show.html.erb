@@ -21,7 +21,7 @@
     <div class="conversation__container">
       <h3 class="conversation__headline"><%= @conversation.with_user(current_user).username %><%= inline_svg 'ico_pen.svg' %></h3>
       <div class="conversation__body conversation__body--lg">
-        <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc) %>
+        <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
       </div>
       <%= render 'message_box' %>

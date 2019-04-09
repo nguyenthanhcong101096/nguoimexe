@@ -1,4 +1,7 @@
-<% if message.sender == current_user %>
+<% type = local_assigns[:type] %>
+<% user = local_assigns[:user]%>
+
+<%- if type=="right" || message.sender == user %>
 <div class="messages messages--sent">
   <%- if message.attachment_data %>
   <div class="messages__thumbnail messages__thumbnail--sm">
