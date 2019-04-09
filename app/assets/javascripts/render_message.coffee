@@ -1,4 +1,4 @@
-App.chat = App.cable.subscriptions.create({channel: "StreamMessageChannel"},
+App.chat = App.cable.subscriptions.create "StreamMessageChannel",
   received: (data) ->
     $message_new  = $('.new-messages')
     $message_last = $('#js-last-message')
@@ -34,5 +34,3 @@ App.chat = App.cable.subscriptions.create({channel: "StreamMessageChannel"},
       reader = new FileReader()
       reader.onload = (e) => App.chat.send_message(conversation_id, '', e.target.result)
       reader.readAsDataURL(image)
-)
-
