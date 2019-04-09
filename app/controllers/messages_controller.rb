@@ -4,7 +4,9 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_message, only: %i[show]
 
-  def index; end
+  def index
+    @conversation = Conversation.first
+  end
 
   def new; end
 

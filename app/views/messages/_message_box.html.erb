@@ -1,10 +1,10 @@
-<div class="form-group">
-  <label id="preview" for="picture">
-    <h4>chon anh</h4>
-  </label>
-  <input type="file" id="picture" nam="picture">
-  <p>````````````````````````````````````````````````````````````````</p>
-  <div id="image" style="height:100px; width: 100px;  display: block; background-size: contain; background-repeat: no-repeat;"></div>
-  <input class="js-create-message" conversation-id="<%= @conversation.id %>" placeholder="Nhập tin nhắn"
-    style="height: 50px; width: 300px" />
+<div class="conversation__footer">
+  <div class="conversation__chatbox" contenteditable="true" placeholder="Viết cái gì..."></div>
+  <div class="conversation-action">
+    <label class="form-upload form-upload--sm conversation-action__item js-image">
+      <input id="file-input" type="file"/>
+      <span><%= inline_svg 'ico_photo.svg' %></span>
+    </label>
+    <button class="btn-default conversation-action__item">Gửi</button>
+  </div>
 </div>
