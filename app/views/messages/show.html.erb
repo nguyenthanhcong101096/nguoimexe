@@ -29,8 +29,8 @@
       <div class="conversation__body conversation__body--lg">
         <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
-        <div class="messages messages--received">
-          <img src="/uploads/store/88e4d08e05f5f260ba1a503efc25725b.png" alt="messages image" class="messages__avatar">
+        <div class="messages messages--received enter-message hidden">
+          <img src="<%= @conversation.with_user(current_user).avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
           <p class="messages__typing">
             <span class="messages__dot"></span>
             <span class="messages__dot"></span>
