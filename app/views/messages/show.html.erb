@@ -27,7 +27,7 @@
         <%= inline_svg 'ico_pen.svg' %>
       </div>
       <div class="conversation__body conversation__body--lg">
-        <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
+        <%= render partial: 'message', collection: @messages.reverse, locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
         <div class="messages messages--received enter-message hidden">
           <img src="<%= @conversation.with_user(current_user).avatar_url(:medium) %>" alt="messages image" class="messages__avatar">

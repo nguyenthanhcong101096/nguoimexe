@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
   def create; end
 
   def show
+    @messages = @conversation.messages.order(created_at: :desc).limit(20)
     @conversation.messages.read_message(current_user)
     @conversation.update(check: true)
   end
