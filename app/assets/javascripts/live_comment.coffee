@@ -1,4 +1,4 @@
-App.comments = App.cable.subscriptions.create "StreamCommentChannel",
+App.comments = App.cable.subscriptions.create "LiveCommentChannel",
   received: (data) ->
     comment_channel = $('#render-comments').attr('comment-channel')
     comment_latest  = $('#comment-latest')

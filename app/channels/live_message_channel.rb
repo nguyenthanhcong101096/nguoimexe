@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class StreamMessageChannel < ApplicationCable::Channel
+class LiveMessageChannel < ApplicationCable::Channel
   def subscribed
     stream_from "room_chat_#{room_id}"
   end
@@ -13,6 +13,10 @@ class StreamMessageChannel < ApplicationCable::Channel
     new_message.conversation.update(check: false)
   end
 
+  def enter_message(data)
+    ActionCable.server.broadcast "room_chat_#{room_id}", type: 'input', size: data['size'], user_id: user_id.to_s
+  end
+  
   private
 
   def sender

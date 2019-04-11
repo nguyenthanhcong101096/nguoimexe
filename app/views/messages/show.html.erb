@@ -24,7 +24,7 @@
         <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
       </div>
-      <h6 style="margin-left: 16px;">Đang nhập...</h6>
+      <h6 class="hidden enter-message" style="margin-left: 16px;">Đang nhập...</h6>
       <%= render 'message_box' %>
     </div>
   </div>
