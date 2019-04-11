@@ -6,7 +6,9 @@
     <div class="conversation__sidebar">
       <div class="conversation__head">
         <h3 class="conversation__headline">Messenger</h3>
-        <%= inline_svg 'ico_pen.svg' %>
+        <%= link_to(new_message_path) do %>
+        <%= inline_svg 'new-message.svg'%>
+        <% end %>
       </div>
       <div class="conversation__body conversation__body--sm">
         <div class="conversation__search">
