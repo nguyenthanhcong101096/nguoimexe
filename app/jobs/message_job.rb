@@ -11,15 +11,15 @@ class MessageJob < ApplicationJob
   private
 
   def right_message(message)
-    ApplicationController.renderer.render(partial: 'messages/new_message', locals: { message: message, type: 'right' })
+    ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message, type: 'right' })
   end
 
   def left_message(message)
-    ApplicationController.renderer.render(partial: 'messages/new_message', locals: { message: message, type: 'left' })
+    ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message, type: 'left' })
   end
 
   def dropdown_message(conversation, message)
-    ApplicationController.renderer.render(partial: 'shared/message', locals: { message: conversation, user: conversation.with_user(message.sender) })
+    ApplicationController.renderer.render(partial: 'shared/conversation', locals: { conversation: conversation, user: conversation.with_user(message.sender) })
   end
 
   def noti_message(message)

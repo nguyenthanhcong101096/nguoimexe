@@ -110,7 +110,7 @@ class User < ApplicationRecord
   private
 
   def default_avatar
-    file = File.open(LetterAvatar.generate(username, 300))
+    file = File.open(LetterAvatar.generate(username, 1000))
     self.avatar = file
   ensure
     File.delete(file.path)

@@ -25,6 +25,14 @@
   }
 }
 
+.form-input-default {
+  @extend %form-control;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  border: none;
+}
+
 .form-input,
 .form-select {
   height: 40px;
@@ -43,10 +51,17 @@
   }
 
   &.search-box {
-    padding: 0 40px;
     background-color: $whisper-color;
     box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-    font-size: 16px;
+
+    &--lg {
+      font-size: 16px;
+    }
+
+    &--sm {
+      height: 32px;
+      line-height: 32px;
+    }
   }
 }
 
@@ -77,6 +92,7 @@ input[type='checkbox'],
 input[type='file'] {
   opacity: 0;
   position: absolute;
+  left: -99999px;
 }
 
 .form-checkbox,
@@ -210,10 +226,6 @@ input[type='file'] {
 
 .form-upload {
   position: relative;
-  display: block;
-  width: 160px;
-  height: 160px;
-  background-color: $grey-color;
   cursor: pointer;
 
   &:hover {
@@ -222,8 +234,29 @@ input[type='file'] {
 
   span {
     @include centered();
+  }
+
+  &--lg {
+    width: 160px;
+    height: 160px;
+    background-color: $grey-color;
     display: block;
-    font-size: 32px;
-    color: $light-color;
+
+    span {
+      display: block;
+      font-size: 32px;
+      color: $light-color;
+    }
+  }
+
+  &--sm {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+    span {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

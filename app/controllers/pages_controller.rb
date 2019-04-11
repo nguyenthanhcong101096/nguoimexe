@@ -11,4 +11,6 @@ class PagesController < ApplicationController
   def page_404; end
 
   def page_500; end
+
+  def notifications; end
 end

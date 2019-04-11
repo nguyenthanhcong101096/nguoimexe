@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class StreamCommentChannel < ApplicationCable::Channel
+class LiveCommentChannel < ApplicationCable::Channel
   include TrackNotificationActivity
 
   def subscribed

@@ -19,7 +19,6 @@ class Message < ApplicationRecord
   belongs_to :conversation
   belongs_to :sender, foreign_key: :sender_id, class_name: User
 
-  validates :msg, presence: true
   after_create_commit { MessageJob.perform_later self }
 
   delegate :username, :id, :avatar_url, to: :sender, prefix: true

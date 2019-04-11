@@ -1,4 +1,4 @@
-<%= provide(:page_title, 'Messenger') %>
+<%= provide(:page_title, 'New messenger') %>
 <%= provide(:page_description, 'Tin nhắn') %>
 
 <div id="main" class="main">
@@ -23,14 +23,14 @@
     </div>
     <div class="conversation__container">
       <div class="conversation__head">
-        <h3 class="conversation__headline"><%= @conversation.with_user(current_user).username %></h3>
-        <%= inline_svg 'ico_pen.svg' %>
+        <div class="form-group form-group--horizontal">
+          <label class="form-label width-auto">To:</label>
+          <div class="form-body">
+            <input class="form-input-default" type="text" placeholder="Type the name of a person or group">
+          </div>
+        </div>
       </div>
-      <div class="conversation__body conversation__body--lg">
-          <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
-        <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
-      </div>
-      <%= render 'message_box' %>
+      <div class="conversation__body conversation__body--lg"></div>
     </div>
   </div>
 </div>

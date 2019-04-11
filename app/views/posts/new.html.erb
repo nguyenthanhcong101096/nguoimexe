@@ -6,7 +6,7 @@
     <div class="main-content">
       <div class="container">
         <h1 class="headline--lg">Tạo bài viết mới</h1>
-  
+
         <%= form_for(:post, url: posts_path, html: { id: 'some-form' }) do |f| %>
         <div class="form-group form-register form-group--horizontal">
           <div class="form-label">
@@ -17,7 +17,7 @@
             <%= f.text_field :title, class: "form-input", placeholder: 'Tiêu đề bài viết...' %>
           </div>
         </div>
-  
+
         <div class="form-group form-register form-group--horizontal">
           <div class="form-label">
             <p>Giá bán</p>
@@ -27,7 +27,7 @@
             <%= f.text_field :price, type: "number", class: "form-input" %>
           </div>
         </div>
-  
+
         <div class="form-group form-register form-group--horizontal">
           <div class="form-label">
             <p>Hình ảnh <span class="form-text-error">(Nên là hình của cùng một xe)</span></p>
@@ -35,13 +35,13 @@
               ý hơn.</p>
           </div>
           <div class="form-body">
-            <label class="form-upload">
+            <label class="form-upload form-upload--lg">
               <%= f.file_field :images, multiple: true %>
               <span>+</span>
             </label>
           </div>
         </div>
-  
+
         <div class="form-group form-register form-group--horizontal">
           <div class="form-label">
             <p>Mô tả <span class="form-text-error">(Không bắt buộc)</span></p>
@@ -52,7 +52,7 @@
             <%= f.hidden_field :describe %>
           </div>
         </div>
-  
+
         <div class="form-group form-register form-group--horizontal">
           <div class="form-label">
             <p>Thông tin chi tiết</p>
@@ -131,7 +131,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="form-group form-register form-group--horizontal text--right">
           <button class="btn btn--primary" name="submit_type" value="preview">Xem Trước</button>
           <button class="btn btn--primary" name="submit_type" value="save">Đăng bài</button>
@@ -140,4 +140,3 @@
       </div>
     </div>
   </div>
-  

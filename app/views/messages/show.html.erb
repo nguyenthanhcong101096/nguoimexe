@@ -11,12 +11,12 @@
       <div class="conversation__body conversation__body--sm">
         <div class="conversation__search">
           <div class="form-body">
-            <input type="text" class="form-input search-box search-box--sm has-icon"
-              placeholder="Tìm kiếm đoạn hội thoại">
+            <input type="text" class="form-input search-box search-box--sm has-icon" placeholder="Tìm kiếm đoạn hội thoại">
             <%= inline_svg('ico_search.svg') %>
           </div>
         </div>
         <ul class="list-writer">
+          <li class="list-writer__item js-new-message"></li>
           <%= render_conversations(current_user) %>
         </ul>
       </div>
@@ -27,8 +27,16 @@
         <%= inline_svg 'ico_pen.svg' %>
       </div>
       <div class="conversation__body conversation__body--lg">
-          <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
+        <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
+        <div class="messages messages--received">
+          <img src="/uploads/store/88e4d08e05f5f260ba1a503efc25725b.png" alt="messages image" class="messages__avatar">
+          <p class="messages__typing">
+            <span class="messages__dot"></span>
+            <span class="messages__dot"></span>
+            <span class="messages__dot"></span>
+          </p>
+        </div>
       </div>
       <%= render 'message_box' %>
     </div>

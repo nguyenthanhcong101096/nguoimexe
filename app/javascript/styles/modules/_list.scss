@@ -19,3 +19,31 @@
     border-top: 1px solid $light-grey;
   }
 }
+
+.list-writer {
+  &__item {
+    &:last-child {
+      border-bottom: 1px solid $light-grey;
+    }
+
+    a {
+      display: block;
+      padding: 12px;
+      color: $dark-color;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+
+      span {
+        font-weight: 400;
+        color: $color-warm-gray;
+      }
+    }
+  }
+
+  &__item + &__item {
+    border-top: 1px solid $light-grey;
+  }
+}
