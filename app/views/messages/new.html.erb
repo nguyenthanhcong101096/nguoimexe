@@ -6,7 +6,9 @@
     <div class="conversation__sidebar">
       <div class="conversation__head">
         <h3 class="conversation__headline">Messenger</h3>
-        <%= inline_svg 'ico_pen.svg' %>
+        <%= link_to(new_message_path) do %>
+        <%= inline_svg 'new-message.svg'%>
+        <% end %>
       </div>
       <div class="conversation__body conversation__body--sm">
         <div class="conversation__search">
@@ -17,6 +19,16 @@
           </div>
         </div>
         <ul class="list-writer">
+          <li class="list-writer__item" >
+            <%= link_to('', class: 'writer writer--default') do %>
+              <div class="writer__avatar">
+                <img src="<%= asset_pack_path('images/avatar_default.png') %>" alt="avatar">
+              </div>
+              <div class="writer__body">
+                <p class="writer__name">New message</p>
+              </div>
+            <% end %>
+          </li>            
           <%= render_conversations(current_user) %>
         </ul>
       </div>
@@ -30,7 +42,18 @@
           </div>
         </div>
       </div>
-      <div class="conversation__body conversation__body--lg"></div>
+      <div class="conversation__body conversation__body--lg">
+        <div class="conversation__footer">
+          <div class="conversation__chatbox" contenteditable="true" placeholder="Nhập tin nhắn..."></div>
+          <div class="conversation-action">
+            <label class="form-upload form-upload--sm conversation-action__item js-image">
+              <input type="file" id="picture" nam="picture">
+              <span><%= inline_svg 'ico_photo.svg' %></span>
+            </label>
+            <button class="btn-default conversation-action__item">Gửi</button>
+          </div>
+        </div>        
+      </div>
     </div>
   </div>
 </div>
