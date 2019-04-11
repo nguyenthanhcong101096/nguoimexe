@@ -19,7 +19,7 @@ class MessageJob < ApplicationJob
   end
 
   def dropdown_message(conversation, message)
-    ApplicationController.renderer.render(partial: 'shared/message', locals: { message: conversation, user: conversation.with_user(message.sender) })
+    ApplicationController.renderer.render(partial: 'shared/conversation', locals: { conversation: conversation, user: conversation.with_user(message.sender) })
   end
 
   def noti_message(message)

@@ -8,7 +8,9 @@ class MessagesController < ApplicationController
     @conversation = Conversation.first
   end
 
-  def new; end
+  def new
+    @conversation = Conversation.first
+  end
 
   def create; end
 

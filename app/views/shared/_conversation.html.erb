@@ -1,0 +1,14 @@
+<li class="dropdown__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
+  <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
+    <div class="writer__avatar">
+      <img src="<%= conversation.with_user(user).avatar_url(:medium) %>" alt="avatar">
+    </div>
+    <div class="writer__body">
+      <p class="writer__name"><%= conversation.with_user(user).username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
+      <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
+    </div>
+    <%- unless conversation.senders_last_message(user).read %>
+      <span class="writer__badge"></span>
+    <% end %>
+  <% end %>
+</li>

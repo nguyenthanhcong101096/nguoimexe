@@ -4,10 +4,8 @@
 <%- if type=="right" || message.sender == user %>
 <div class="messages messages--sent">
   <%- if message.attachment_data %>
-  <div class="messages__thumbnail messages__thumbnail--sm">
-    <img src="<%= asset_pack_path('images/img_moto-preview_05.jpg') %>" alt="messages thumb" class="messages__image">
-    <img src="<%= asset_pack_path('images/img_moto-preview_01.jpg') %>" alt="messages thumb" class="messages__image">
-    <img src="<%= asset_pack_path('images/img_moto-preview_04.jpg') %>" alt="messages thumb" class="messages__image">
+  <div class="messages__thumbnail messages__thumbnail--lg">
+  <img src="<%= message.attachment_data %>" alt="messages thumb" class="messages__image">
   </div>
   <%- else %>
   <p class="messages__text"><%= message.msg %></p>
@@ -18,8 +16,8 @@
 <div class="messages messages--received">
   <img src="<%= message.sender_avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
   <%- if message.attachment_data %>
-  <div class="messages__thumbnail messages__thumbnail--sm">
-    <img src="<%= message.attachment_data %>" alt="messages thumb" class="messages__image">
+  <div class="messages__thumbnail messages__thumbnail--lg">
+  <img src="<%= message.attachment_data %>" alt="messages thumb" class="messages__image">
   </div>
   <%- else %>
   <p class="messages__text"><%= message.msg %></p>

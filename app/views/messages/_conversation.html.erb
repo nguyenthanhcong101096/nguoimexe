@@ -1,4 +1,4 @@
-<li class="list-writer__item js-room-chat-<%= conversation.id %>">
+<li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
   <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
     <div class="writer__avatar">
       <img src="<%= conversation.with_user(current_user).avatar_url(:small) %>" alt="avatar">
