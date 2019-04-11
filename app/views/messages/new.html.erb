@@ -4,7 +4,10 @@
 <div id="main" class="main">
   <div class="conversation">
     <div class="conversation__sidebar">
-      <h3 class="conversation__headline">Messenger<%= inline_svg 'ico_pen.svg' %></h3>
+      <div class="conversation__head">
+        <h3 class="conversation__headline">Messenger</h3>
+        <%= inline_svg 'ico_pen.svg' %>
+      </div>
       <div class="conversation__body conversation__body--sm">
         <div class="conversation__search">
           <div class="form-body">
@@ -19,13 +22,15 @@
       </div>
     </div>
     <div class="conversation__container">
-      <h3 class="conversation__headline">
-        <%= @conversation.with_user(current_user).username %><%= inline_svg 'ico_pen.svg' %></h3>
-      <div class="conversation__body conversation__body--lg">
-          <%= render partial: 'message', collection: @conversation.messages.order(created_at: :asc), locals: { user: current_user } %>
-        <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
+      <div class="conversation__head">
+        <div class="form-group form-group--horizontal">
+          <label class="form-label width-auto">To:</label>
+          <div class="form-body">
+            <input class="form-input-default" type="text" placeholder="Type the name of a person or group">
+          </div>
+        </div>
       </div>
-      <%= render 'message_box' %>
+      <div class="conversation__body conversation__body--lg"></div>
     </div>
   </div>
 </div>

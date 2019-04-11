@@ -25,6 +25,14 @@
   }
 }
 
+.form-input-default {
+  @extend %form-control;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  border: none;
+}
+
 .form-input,
 .form-select {
   height: 40px;
