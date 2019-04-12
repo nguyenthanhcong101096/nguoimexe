@@ -58,6 +58,8 @@ gem 'counter_culture'
 gem 'enumerize'
 gem 'foreman'
 
+gem 'jwt'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
