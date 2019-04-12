@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Authenticable
+
   before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
