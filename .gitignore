@@ -54,6 +54,7 @@ Thumbs.db
 /config/master.key
 /config/database.yml
 /public/packs
+/public/packs/manifest.json
 /public/packs-test
 /public/uploads
 /node_modules

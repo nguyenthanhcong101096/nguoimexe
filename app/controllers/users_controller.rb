@@ -2,19 +2,17 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[profile]
-  before_action :set_user, only: %(show)
+  before_action :set_user, only: %i[show]
 
   def update; end
 
   def show; end
-
-  def profile; end
 
   def change_password; end
 
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(slug_name: params[:slug])
   end
 end
