@@ -18,17 +18,22 @@ class MessageJob < ApplicationJob
     ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message, type: 'left' })
   end
 
-  def dropdown_message(conversation, message)
-    ApplicationController.renderer.render(partial: 'shared/conversation', locals: { conversation: conversation, user: conversation.with_user(message.sender) })
+  def sender_conversation(conversation, message)
+    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, user: conversation.with_user(message.sender), type: 'sender' })
   end
 
+  def receiver_conversation(conversation, message)
+    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, user: conversation.with_user(message.sender), type: 'receiver' })
+  end
+  
   def noti_message(message)
     conversation = message.conversation
+    room_members = conversation.room_members.pluck(:id)
     room_chat    = message.conversation_id.to_s
     target_user  = conversation.with_user(message.sender)
     msg_not_read = target_user.conversations.where(check: false).count
 
-    { target_user: target_user.id.to_s, html: dropdown_message(conversation, message), room_chat: room_chat, counter: msg_not_read }
+    { room_members: room_members, receiver: target_user.id, sender_html: sender_conversation(conversation, message), receiver_html: receiver_conversation(conversation, message), room_chat: room_chat, counter: msg_not_read }
   end
 
   def live_message(message)

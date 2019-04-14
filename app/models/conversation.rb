@@ -33,8 +33,13 @@ class Conversation < ApplicationRecord
   end
 
   def check_read(user)
-    return false if count_receiver_message(user) > 0 && !senders_last_message(user)&.read
+    return true if count_receiver_message(user) > 0 && !senders_last_message(user)&.read
 
-    true
+    false
+  end
+  
+  def chat_groups?
+    return true if room_members.count > 2
+    return false
   end
 end
