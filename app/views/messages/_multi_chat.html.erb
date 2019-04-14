@@ -3,21 +3,20 @@
   <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
     <div class="writer__avatar"><img src="https://greenupload.com/images/2019/03/27/Screenshot_20190326-095253_Gallery.jpg" alt="avatar"></div>
     <div class="writer__body">
-      <p class="writer__name"><%= users.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
+      <p class="writer__name"><%= conversation.room_members.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
       <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
     </div>
   <% end %>
 </li>
 <% else %>
-  <% receives = conversation.with_users(users) %>
   <li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
     <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
       <div class="writer__avatar"><img src="https://greenupload.com/images/2019/03/27/Screenshot_20190326-095253_Gallery.jpg" alt="avatar"></div>
       <div class="writer__body">
-        <p class="writer__name"><%= receives.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
+        <p class="writer__name"><%= conversation.room_members.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
         <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
       </div>
-      <span class="<%= conversation.read_messages(receives) ? '' : 'writer__badge' %>"></span>
+      <span class="<%= conversation.read_messages(conversation.room_members - users) ? '' : 'writer__badge' %>"></span>
     <% end %>
   </li>
 <% end %>

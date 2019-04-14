@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
 
   def index
     @conversation = Conversation.first
+    @messages = @conversation.messages.order(created_at: :desc).limit(20)
   end
 
   def new
