@@ -32,14 +32,8 @@ class Conversation < ApplicationRecord
     messages.where.not(sender: user).count
   end
 
-  def check_read(user)
-    return true if count_receiver_message(user) > 0 && !senders_last_message(user)&.read
-
-    false
-  end
-  
   def read_messages(user)
-    messages.where.not(sender: user).last.read  
+    messages.where(sender: user).last.read  
   end
   
   def chat_groups?

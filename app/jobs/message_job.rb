@@ -19,11 +19,11 @@ class MessageJob < ApplicationJob
   end
 
   def conversation(conversation, message)
-    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, user: conversation.with_users(message.sender), type: "sent" })
+    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, users: conversation.with_users(message.sender), type: "sent" })
   end
   
   def receive_conversation(conversation, message)
-    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, user: conversation.with_users(message.sender), type: "receive" })
+    ApplicationController.renderer.render(partial: 'messages/conversation', locals: { conversation: conversation, users: conversation.with_users(message.sender), type: "receive" })
   end
   
   def noti_message(message)
