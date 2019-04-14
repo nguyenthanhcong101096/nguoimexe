@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   draw :api
   draw :admin
 
-  devise_for :users, skip: %i[password], controllers: {
-    omniauth_callbacks: 'callbacks',
-    sessions: 'user_session'
+  devise_for :users, skip: %i[password session registrations], controllers: {
+    omniauth_callbacks: 'callbacks'
   }
 
+  resources :users,     only: %i[show], param: :slug
   resources :stores,    only: %i[new index create show], param: :name
   resources :groups,    only: %i[new index show create], param: :name
   resources :comments,  only: %i[index create],          defaults: { format: :html }
@@ -21,11 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :auth, only: %i[create] do
-    post '/signup' => 'auth#signup', on: :collection
-  end
-
-  resources :users, only: %i[show], param: :email do
-    get '/profile' => 'users#profile', on: :collection
+    post '/signup'  => 'auth#signup',  on: :collection
+    get  '/log_out' => 'auth#log_out', on: :collection
   end
 
   resources :reset_passwords, only: %i[edit update], param: :token do

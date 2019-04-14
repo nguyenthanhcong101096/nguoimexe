@@ -2,4 +2,8 @@
 <%=provide(:page_description, 'Miêu tả') %>
 <%=provide(:page_url, root_path) %>
 
+<% if @user == current_user %>
 <h1>Profile</h1>
+<% else %>
+<h1>User</h1>
+<% end %>

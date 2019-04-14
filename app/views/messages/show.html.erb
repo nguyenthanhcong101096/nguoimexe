@@ -1,5 +1,6 @@
 <%= provide(:page_title, 'Messenger') %>
 <%= provide(:page_description, 'Tin nhắn') %>
+<% user = @conversation.with_user(current_user) %>
 
 <div id="main" class="main">
   <div class="conversation">
@@ -25,14 +26,16 @@
     </div>
     <div class="conversation__container">
       <div class="conversation__head">
-        <h3 class="conversation__headline"><%= @conversation.with_user(current_user).username %></h3>
+        <%= link_to(user_path(slug: user.slug_name)) do %>
+          <h3 class="conversation__headline"><%= user.username %></h3>
+        <% end %>
         <%= inline_svg 'ico_pen.svg' %>
       </div>
       <div class="conversation__body conversation__body--lg">
         <%= render partial: 'message', collection: @messages.reverse, locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
         <div class="messages messages--received enter-message hidden">
-          <img src="<%= @conversation.with_user(current_user).avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
+          <img src="<%= user.avatar_url(:medium) %>" alt="messages image" class="messages__avatar">
           <p class="messages__typing">
             <span class="messages__dot"></span>
             <span class="messages__dot"></span>

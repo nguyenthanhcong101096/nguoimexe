@@ -23,7 +23,13 @@ class AuthController < ApplicationController
       render json: validate
     end
   end
-
+  
+  def log_out
+    sign_out(current_user)
+    cookies.delete :user_id
+    redirect_to root_path
+  end
+  
   private
 
   def params_user

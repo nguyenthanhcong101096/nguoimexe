@@ -42,7 +42,7 @@
             <ul class="dropdown hidden js-dropdown" data-dropdown="user">
               <li class="dropdown__item dropdown__header">Hồ sơ</li>
               <li class="dropdown__item">
-                <a href="/users/profile" class="writer writer--default">
+                <%= link_to(user_path(slug: current_user.slug_name), class: "writer writer--default") do %>
                   <div class="writer__avatar">
                     <img src="<%= current_user.avatar_url(:medium) %>" alt="avatar">
                   </div>
@@ -50,7 +50,7 @@
                     <p class="writer__name expanded"><%= current_user.username %></p>
                     <span><%= current_user.email %></span>
                   </div>
-                </a>
+                <% end %>
               </li>
               <li class="dropdown__item">
                 <a href="/groups/new">
@@ -65,7 +65,7 @@
                 </a>
               </li>
               <li class="dropdown__item">
-                <a href="/users/sign_out">
+                <a href="/auth/log_out">
                   <%= inline_svg('ico_logout.svg') %>
                   Đăng xuất
                 </a>
