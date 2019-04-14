@@ -14,7 +14,7 @@ class LiveMessageChannel < ApplicationCable::Channel
   end
 
   def enter_message(data)
-    ActionCable.server.broadcast "room_chat_#{room_id}", type: 'input', size: data['size'], user_id: user_id.to_s
+    ActionCable.server.broadcast "room_chat_#{room_id}", type: 'input', size: data['size'], avatar: data['avatar'], user_id: user_id.to_s
   end
 
   private
