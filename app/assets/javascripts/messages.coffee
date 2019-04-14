@@ -5,16 +5,20 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     $new_message  = $('.js-new-message')
     $room_chat    = $(".js-room-chat-#{data['room_chat']}")
     
-    user_id       = $dot.attr('user_id')
+    user_id       = parseInt($dot.attr('user_id'))
     room_chat     = $room_chat.attr('room-chat')
     
     if(data['type'] == 'read')
       $dot.removeClass('badge')
-    if user_id == data['target_user']
-      $dot.addClass('badge')
+      
+    if data['room_members'].includes(user_id)
       if room_chat == data['room_chat']
         $room_chat.remove()
-      $new_message.after data['html']
+      if user_id == data['receiver']
+        $dot.addClass('badge')
+        $new_message.after data['receiver_html']
+      else
+        $new_message.after data['sender_html']
       $msg_not_read.text("Tin nhắn (#{data['counter']})")
     
   click_message_dropdown: ->
