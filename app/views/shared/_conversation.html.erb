@@ -7,7 +7,7 @@
       <p class="writer__name"><%= conversation.with_user(user).username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
       <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
     </div>
-    <%- unless conversation.senders_last_message(user).read %>
+    <%- unless conversation.check_read(user) %>
       <span class="writer__badge"></span>
     <% end %>
   <% end %>

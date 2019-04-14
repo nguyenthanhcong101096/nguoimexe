@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Api::V1::BaseController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_request!
 end

@@ -6,10 +6,15 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  rescue_from AppErrors::Error409, with: :conflict
+  rescue_from ActiveRecord::RecordNotUnique, with: :conflict
+  rescue_from AppErrors::Error403, with: :forbidden
 
   def conflict
     render json: { message: 'Conflict' }, status: :conflict
+  end
+
+  def forbidden
+    render json: { message: 'Forbidden' }, status: :forbidden
   end
 
   def not_found

@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     get '/preview' => 'posts#preview', on: :collection
   end
 
+  resources :auth, only: %i[create] do
+    post '/signup' => 'auth#signup', on: :collection
+  end
+
   resources :users, only: %i[show], param: :email do
     get '/profile' => 'users#profile', on: :collection
   end

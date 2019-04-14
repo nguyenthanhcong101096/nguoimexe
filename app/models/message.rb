@@ -22,10 +22,14 @@ class Message < ApplicationRecord
   after_create_commit { MessageJob.perform_later self }
 
   delegate :username, :id, :avatar_url, to: :sender, prefix: true
+  delegate :name, to: :conversation
 
   include ImageUploader::Attachment.new(:attachment)
 
-  scope :read_message, ->(user) { where.not(sender: user).last.update(read: true) }
+  def self.read_message(user)
+    messages = where.not(sender: user)
+    messages.last.update(read: true) if messages.count > 0
+  end
 
   def created_date
     created_at.strftime('%b %d')

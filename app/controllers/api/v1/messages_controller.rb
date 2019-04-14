@@ -2,6 +2,7 @@
 
 class Api::V1::MessagesController < Api::V1::BaseController
   before_action :set_conversation, only: %i[index]
+  before_action :receiver, only: %i[create]
 
   def index
     @messages   = @conversation.messages.where('id > ?', params[:min_id]).limit(15)
@@ -10,10 +11,8 @@ class Api::V1::MessagesController < Api::V1::BaseController
   end
 
   def create
-    conversation = Conversation.create(name: 'hohoho')
-    [current_user.id, params_message[:target_id]].each { |usr_id| conversation.roomt_chats.create(sender_id: usr_id) }
-    current_user.messages.create(params_message)
-    render json: { message: 'ok' }
+    message = MessageService.new(params_message).create
+    render json: { message: message, url: message_url(message.name) }, status: :ok
   end
 
   private
@@ -22,7 +21,11 @@ class Api::V1::MessagesController < Api::V1::BaseController
     @conversation = Conversation.find(params[:conversation_id])
   end
 
+  def receiver
+    @receiver = User.find(params[:receiver])
+  end
+
   def params_message
-    params.permit(:message, :attachment)
+    { sender: current_user, receiver: @receiver, message: params[:message] }
   end
 end
