@@ -1,17 +1,13 @@
-<% if type=="sent" %>
-    <li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
-      <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
-        <div class="writer__avatar"><img src="<%= users[0].avatar_url(:small) %>" alt="avatar"></div>
-        <div class="writer__body">
-          <p class="writer__name"><%= users[0].username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
-          <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
-        </div>
-      <% end %>
-    </li>
-<% else %>
-  <% receive = conversation.with_users(users.first) %>
-  <li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
-    <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
+<li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
+  <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
+    <% if type=="sent" %>
+      <div class="writer__avatar"><img src="<%= users[0].avatar_url(:small) %>" alt="avatar"></div>
+      <div class="writer__body">
+        <p class="writer__name"><%= users[0].username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
+        <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
+      </div>
+    <% else %>
+      <% receive = conversation.with_users(users.first) %>
       <div class="writer__avatar"><img src="<%= receive.first.avatar_url(:small) %>" alt="avatar"></div>
       <div class="writer__body">
         <p class="writer__name"><%= receive.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
@@ -19,5 +15,5 @@
       </div>
       <span class="<%= conversation.read_messages(receive) ? '' : 'writer__badge' %>"></span>
     <% end %>
-  </li>
-<% end %>
+  <% end %>
+</li>
