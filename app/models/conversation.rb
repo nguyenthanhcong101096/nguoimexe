@@ -38,7 +38,7 @@ class Conversation < ApplicationRecord
     false
   end
   
-  def test(user)
+  def read_messages(user)
     messages.where.not(sender: user).last.read  
   end
   

@@ -1,26 +1,5 @@
 <% if conversation.room_members.count > 2 %>
-<h1>nhóm</h1>
+  <%= render partial: 'messages/multi_chat',  locals: { type: type, conversation: conversation, user: user } %>
 <% else %>
-  <% if type=="sent" %>
-    <li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
-      <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
-        <div class="writer__avatar"><img src="<%= user[0].avatar_url(:small) %>" alt="avatar"></div>
-        <div class="writer__body">
-          <p class="writer__name"><%= user[0].username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
-          <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
-        </div>
-      <% end %>
-    </li>
-  <% else %>
-    <li class="list-writer__item js-room-chat-<%= conversation.id %>" room-chat="<%= conversation.id %>">
-      <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
-        <div class="writer__avatar"><img src="<%= conversation.with_users(user)[0].avatar_url(:small) %>" alt="avatar"></div>
-        <div class="writer__body">
-          <p class="writer__name"><%= conversation.with_users(user)[0].username %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
-          <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
-        </div>
-        <span class="<%= conversation.test(user) ? '' : 'writer__badge' %>"></span>
-      <% end %>
-    </li>
-  <% end %>
+  <%= render partial: 'messages/single_chat', locals: { type: type, conversation: conversation, user: user } %>
 <% end %>
