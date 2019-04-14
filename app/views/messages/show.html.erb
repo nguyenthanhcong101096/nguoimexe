@@ -1,6 +1,6 @@
 <%= provide(:page_title, 'Messenger') %>
 <%= provide(:page_description, 'Tin nhắn') %>
-<% user = @conversation.with_user(current_user) %>
+<% user = @conversation.with_users(current_user)[0] %>
 
 <div id="main" class="main">
   <div class="conversation">
