@@ -27,4 +27,14 @@ class Conversation < ApplicationRecord
   def senders_last_message(user)
     messages.where.not(sender: user).last
   end
+
+  def count_receiver_message(user)
+    messages.where.not(sender: user).count
+  end
+
+  def check_read(user)
+    return false if count_receiver_message(user) > 0 && !senders_last_message(user)&.read
+
+    true
+  end
 end

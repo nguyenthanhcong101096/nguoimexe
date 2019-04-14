@@ -9,7 +9,7 @@ class MessagesChannel < ApplicationCable::Channel
 
   def click_message_dropdown
     conversations = current_user.conversations
-    conversations.each { |conversation| conversation.senders_last_message(current_user).update(check: true) }
+    conversations.each { |conversation| conversation.senders_last_message(current_user)&.update(check: true) }
     update_message_noti
   end
 

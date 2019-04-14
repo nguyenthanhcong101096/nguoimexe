@@ -6,7 +6,7 @@ export const clickBtnLogin = () => {
     let email = document.querySelector('#email').value
     let password = document.querySelector('#password').value
 
-    axios.post('/api/v1/user_sessions', { email: email, password: password })
+    axios.post('/auth', { email: email, password: password })
       .then(response => {
         if (response.data.status === 'ok') {
           window.location = window.location.href
@@ -23,7 +23,7 @@ export const clickSignUp = () => {
     let username = document.querySelector('#signup_username').value
     let password = document.querySelector('#signup_password').value
 
-    axios.post('/api/v1/user_sessions/signup', { username: username, email: email, password: password })
+    axios.post('/auth/signup', { username: username, email: email, password: password })
       .then(response => {
         if (response.data.status === 'ok') {
           window.location = window.location.href

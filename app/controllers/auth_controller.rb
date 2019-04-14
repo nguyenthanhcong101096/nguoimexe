@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-class Api::V1::UserSessionsController < Api::V1::BaseController
+class AuthController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user&.valid_password?(params[:password])
+      cookies_and_sign_in(user)
       token = jwt_encode(sub: user.id)
       session[:access_token] = token
-      cookies_and_sign_in(user)
       render json: { messages: 'login success', status: :ok, token: token }
     else
       render json: { messages: 'login fail', status: :not_found }

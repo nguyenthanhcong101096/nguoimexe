@@ -12,7 +12,7 @@ module RenderHelper
   def render_notification_message(user)
     conversations = user.conversations
     count         = conversations.where(check: 'false').count
-    check_read    = conversations.each_with_object([]) { |k, o| o << k.senders_last_message(user).check }.uniq
+    check_read    = conversations.each_with_object([]) { |k, o| o << k.senders_last_message(user)&.check || true }.uniq
 
     render(partial: 'shared/messages', locals: { conversations: conversations, check: check_read.include?(false), count: count })
   end

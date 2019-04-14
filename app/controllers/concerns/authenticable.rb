@@ -7,7 +7,7 @@ module Authenticable
   ALGORITHM    = 'HS256'
   SECRET_KEY   = Rails.application.secrets.secret_key_base
 
-  def authenticate_user!
+  def authenticate_request!
     respond_to do |f|
       @current_user = User.find(jwt_decode['sub'])
       return
@@ -30,10 +30,6 @@ module Authenticable
 
   def jwt_decode
     JWT.decode(token, SECRET_KEY, true, algorithm: ALGORITHM).first
-  end
-
-  def current_user
-    @current_user
   end
 
   def payload(data)
