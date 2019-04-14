@@ -25,7 +25,7 @@
     </div>
     <div class="conversation__container">
       <div class="conversation__head">
-        <h3 class="conversation__headline"><%= @conversation.with_user(current_user).username %></h3>
+        <h3 class="conversation__headline"><%= @conversation.with_users(current_user).username %></h3>
         <%= inline_svg 'ico_pen.svg' %>
       </div>
       <div class="conversation__body conversation__body--lg">

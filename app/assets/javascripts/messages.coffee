@@ -7,19 +7,19 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     
     user_id       = parseInt($dot.attr('user_id'))
     room_chat     = $room_chat.attr('room-chat')
-    
+    console.log(data)
     if(data['type'] == 'read')
       $dot.removeClass('badge')
       
     if data['room_members'].includes(user_id)
       if room_chat == data['room_chat']
         $room_chat.remove()
-      if user_id == data['receiver']
+      if data['receiver'].includes(user_id)
         $dot.addClass('badge')
-        $new_message.after data['receiver_html']
+        $new_message.after data['receive_html']
       else
-        $new_message.after data['sender_html']
-      $msg_not_read.text("Tin nhắn (#{data['counter']})")
+        $new_message.after data['sent_html']        
+      # $msg_not_read.text("Tin nhắn (#{data['counter']})")
     
   click_message_dropdown: ->
     @perform 'click_message_dropdown'
