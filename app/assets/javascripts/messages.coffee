@@ -14,7 +14,7 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     if data['room_members'].includes(user_id)
       if room_chat == data['room_chat']
         $room_chat.remove()
-      if user_id == data['receiver']
+      if data['receiver'].includes(user_id)
         $dot.addClass('badge')
         $new_message.after data['receiver_html']
       else

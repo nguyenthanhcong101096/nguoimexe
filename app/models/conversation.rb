@@ -20,6 +20,10 @@ class Conversation < ApplicationRecord
     room_members.reject { |usr| usr == user }[0]
   end
 
+  def multi_users(user)
+    room_members.reject { |usr| usr == user }
+  end
+  
   def last_message
     messages.last
   end
