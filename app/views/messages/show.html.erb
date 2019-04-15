@@ -26,7 +26,7 @@
     </div>
     <div class="conversation__container">
       <div class="conversation__head">
-        <h3 class="conversation__headline"><%= user.pluck(:username).join(", ") %></h3>
+        <h3 class="conversation__headline"><%= @conversation.chat_groups? ? @conversation.name_groups : user.pluck(:username).join(", ") %></h3>
         <%= inline_svg 'ico_pen.svg' %>
       </div>
       <div class="conversation__body conversation__body--lg">
