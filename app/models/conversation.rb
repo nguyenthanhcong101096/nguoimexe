@@ -36,6 +36,10 @@ class Conversation < ApplicationRecord
     messages.where(sender: user).last.read  
   end
   
+  def name_groups
+    name_conversation.present? ? name_conversation : room_members.pluck(:username).join(", ")
+  end
+  
   def chat_groups?
     return true if room_members.count > 2
     return false
