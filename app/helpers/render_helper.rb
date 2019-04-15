@@ -19,7 +19,7 @@ module RenderHelper
 
   def render_conversations(user)
     conversations = user.conversations
-    render(partial: 'messages/conversation', collection: conversations, locals: { users: [user], type: "receive" })
+    render(partial: 'messages/conversation', collection: conversations, locals: { users: [user], type: 'receive' })
   end
 
   def render_user_online(user)

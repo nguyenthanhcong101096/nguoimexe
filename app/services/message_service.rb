@@ -10,12 +10,12 @@ class MessageService
     if receivers.count > 1
       create_room
     else
-      has_room_chat[:room] ? create_message : create_room
+      room_chat[:room] ? create_message : create_room
     end
   end
 
   def create_message
-    @sender.messages.create(params_message.merge(conversation_id: has_room_chat[:conversation]))
+    @sender.messages.create(params_message.merge(conversation_id: room_chat[:conversation]))
   end
 
   def create_room
@@ -27,22 +27,22 @@ class MessageService
   end
 
   private
-    
-  def has_room_chat
+
+  def room_chat
     has_room = @sender.conversations & receivers[0].conversations
     return { conversation: has_room.first.id, room: true } if has_room.present?
 
     {}
   end
-  
+
   def receivers
     User.where(id: @params[:receivers])
   end
-  
+
   def params_message
     @params.permit(:msg, :attachment)
   end
-  
+
   def params_conversation
     @params.permit(:name_conversation).merge(name: (0...100).map { rand(65..90).chr }.join)
   end
