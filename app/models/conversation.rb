@@ -33,7 +33,7 @@ class Conversation < ApplicationRecord
   end
 
   def read_messages(user)
-    messages.where(sender: user).last.read  
+    messages.where(sender: user)&.last&.read
   end
   
   def name_groups
