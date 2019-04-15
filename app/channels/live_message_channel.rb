@@ -10,7 +10,7 @@ class LiveMessageChannel < ApplicationCable::Channel
   def send_message(data)
     attachment  = data['img'] || nil
     new_message = sender.messages.create(conversation_id: data['conversation_id'], msg: data['msg'], attachment_data: attachment)
-    new_message.conversation.update(check: false)
+    new_message.conversation.update(check: false, updated_at: Date.current)
   end
 
   def enter_message(data)
