@@ -16,7 +16,7 @@ class MessagesChannel < ApplicationCable::Channel
   private
 
   def update_message_noti
-    ActionCable.server.broadcast 'notification_messages_channel', type: 'read'
+    ActionCable.server.broadcast 'notification_messages_channel', type: 'read', user_id: user_id
   end
 
   def current_user

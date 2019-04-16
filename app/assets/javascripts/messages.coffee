@@ -7,8 +7,8 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     
     user_id       = parseInt($dot.attr('user_id'))
     room_chat     = $room_chat.attr('room-chat')
-    console.log(data)
-    if(data['type'] == 'read')
+    
+    if(data['type'] == 'read' && user_id == data['user_id'])
       $dot.removeClass('badge')
       
     if data['room_members'].includes(user_id)
