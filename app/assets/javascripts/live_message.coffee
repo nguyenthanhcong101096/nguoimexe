@@ -1,5 +1,6 @@
 App.chat = App.cable.subscriptions.create "LiveMessageChannel",
   received: (data) ->
+    $messages_body = $('.conversation-messages')
     $message_new   = $('.new-messages')
     $enter_message = $('.enter-message')
     $avatar_user   = $('.typing-avatar')
@@ -13,6 +14,7 @@ App.chat = App.cable.subscriptions.create "LiveMessageChannel",
       else
         $enter_message.addClass('hidden')
       $message_new.append data['left_html']
+    $messages_body.scrollTop($messages_body[0].scrollHeight);
   
   send_message: (conversation_id, msg, img) ->
     @perform 'send_message', conversation_id: conversation_id, msg: msg, img: img

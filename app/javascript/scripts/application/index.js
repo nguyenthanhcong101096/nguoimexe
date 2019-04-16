@@ -4,6 +4,7 @@ import { clickFollow } from './follow'
 import { onClickBtnCommentLoadMore } from './comment'
 import { clickBtnLogin, clickSignUp } from './signup'
 import { onChangeTabModal, onClickBtnCloseModal, onClickBtnOpenModal } from './modal'
+import { loadMoreMessage } from './load_more'
 
 window.addEventListener('DOMContentLoaded', function () {
   configEditor()
@@ -23,4 +24,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   clickBtnLogin()
   clickSignUp()
+  
+  loadMoreMessage()
 })
