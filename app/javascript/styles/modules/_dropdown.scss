@@ -22,45 +22,6 @@
     z-index: -1;
   }
 
-  &__header {
-    @include font-size-text--xs();
-    padding: 4px 16px;
-    color: $dark-color;
-  }
-
-  &__item {
-    a {
-      display: block;
-      padding: 12px;
-      color: $dark-color;
-      font-weight: 600;
-
-      &:hover {
-        background-color: $light-grey;
-      }
-
-      span {
-        font-weight: 400;
-        color: $color-warm-gray;
-      }
-    }
-
-    svg {
-      vertical-align: middle;
-      margin-right: 16px;
-    }
-  }
-
-  &__item + &__item {
-    border-top: 1px solid $light-grey;
-  }
-
-  &__link {
-    padding: 16px;
-    width: 100%;
-    color: $dark-color;
-  }
-
   &.has-animation {
     top: calc(100% + 10px);
     opacity: 1;
