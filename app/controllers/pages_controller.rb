@@ -12,5 +12,7 @@ class PagesController < ApplicationController
 
   def page_500; end
 
-  def notifications; end
+  def notifications
+    @notifications = Activity.where(target_user: current_user).order(created_at: :desc).page(params[:page]).per(7)
+  end
 end

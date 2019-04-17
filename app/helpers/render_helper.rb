@@ -6,7 +6,7 @@ module RenderHelper
     count         = notifications.where(read: 'false').count
     check_read    = notifications.where(check: 'false').count
 
-    render(partial: 'shared/dropdown_notifications', locals: { notifications: notifications.limit(5), count: count, check: check_read })
+    render(partial: 'shared/dropdown_notifications', locals: { notifications: notifications.limit(8), count: count, check: check_read })
   end
 
   def render_notification_message(user)

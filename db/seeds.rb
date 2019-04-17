@@ -20,6 +20,10 @@ blog  = FactoryBot.create(:blog, user_id: hola.id, mod: 'motosg', title: 'BLV Qu
 #comments_post = 100.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: Post.all.sample) }
 comments_blog = 50.times { comment = FactoryBot.create(:comment, user: User.all.sample, commentable: blog) }
 
+
+# Activities
+20.times.each { FactoryBot.create(:activity, user_id: User.all.sample.id, target_user_id: 1) }
+
 # CONVERSATIONS
 conversation_1  = FactoryBot.create(:conversation, name: 'thien-kim')
 conversation_2  = FactoryBot.create(:conversation, name: 'thanh-cong')
