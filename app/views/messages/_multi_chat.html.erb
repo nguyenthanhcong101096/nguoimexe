@@ -2,7 +2,7 @@
   <%= link_to(message_path(name: conversation.name), class: 'writer writer--default') do %>
     <div class="writer__avatar"><img src="https://cdn.pose.com.vn/legacy/images/baiviet/201706/scrape_14980691862735_screen-shot-2017-06-21-at-1-30-40-am-1497983596194.png" alt="avatar"></div>
     <div class="writer__body">
-      <p class="writer__name"><%= conversation.room_members.pluck(:username).join(", ") %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
+      <p class="writer__name"><%= conversation.name_groups %><span class="writer__date"><%= conversation.last_message.created_date %></span></p>
       <p class="writer__text"><%= conversation.last_message.msg.blank? ? '[Hình Ảnh]' : conversation.last_message.msg %></p>
     </div>
     <% unless type=="sent" %>

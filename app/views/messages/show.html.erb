@@ -26,10 +26,10 @@
     </div>
     <div class="conversation__container">
       <div class="conversation__head">
-        <h3 class="conversation__headline"><%= user.pluck(:username).join(", ") %></h3>
+        <h3 class="conversation__headline"><%= @conversation.chat_groups? ? @conversation.name_groups : user.pluck(:username).join(", ") %></h3>
         <%= inline_svg 'ico_pen.svg' %>
       </div>
-      <div class="conversation__body conversation__body--lg">
+      <div class="conversation__body conversation__body--lg conversation-messages">
         <%= render partial: 'message', collection: @messages.reverse, locals: { user: current_user } %>
         <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
         <%= render partial: 'typing_message' %>

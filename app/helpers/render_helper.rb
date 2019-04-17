@@ -18,8 +18,8 @@ module RenderHelper
   end
 
   def render_conversations(user)
-    conversations = user.conversations
-    render(partial: 'messages/conversation', collection: conversations, locals: { users: [user], type: "receive" })
+    conversations = user.conversations.order(updated_at: :desc)
+    render(partial: 'messages/conversation', collection: conversations, locals: { users: [user], type: 'receive' })
   end
 
   def render_user_online(user)

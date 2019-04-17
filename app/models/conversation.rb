@@ -15,7 +15,7 @@ class Conversation < ApplicationRecord
   has_many :room_chats, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :room_members, through: :room_chats, source: :sender
-
+  
   def with_users(user)
     room_members.reject { |usr| usr == user }
   end
@@ -33,11 +33,17 @@ class Conversation < ApplicationRecord
   end
 
   def read_messages(user)
-    messages.where(sender: user).last.read  
+    msg = messages.where(sender: user)
+    msg.empty? ? true : msg.last.read
   end
-  
+
+  def name_groups
+    name_conversation.presence || room_members.pluck(:username).join(', ')
+  end
+
   def chat_groups?
     return true if room_members.count > 2
-    return false
+
+    false
   end
 end

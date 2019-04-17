@@ -81,10 +81,11 @@ ActiveRecord::Schema.define(version: 20190317102650) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.string   "name",                       null: false
-    t.boolean  "check",      default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",                              null: false
+    t.string   "name_conversation", default: ""
+    t.boolean  "check",             default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["name"], name: "index_conversations_on_name", unique: true, using: :btree
   end
 
