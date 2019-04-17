@@ -4,11 +4,11 @@
   </button>
 
   <ul class="dropdown dropdown--md js-dropdown hidden" data-dropdown="notifications">
-    <li class="dropdown__item dropdown__header js-counter">Thông báo (<%= count %>)</li>
-    <li class="dropdown__item js-new-notification"></li>
+    <li class="list-writer__item list-writer__header js-counter">Thông báo (<%= count %>)</li>
+    <li class="list-writer__item js-new-notification"></li>
     <%= render partial: 'shared/notification', collection: notifications %>
-    <li class="dropdown__item">
-      <a href="/notifications" class="dropdown__link btn--link">XEM THÊM</a>
+    <li class="list-writer__item">
+      <a href="/notifications" class="list-writer__link btn--link">XEM THÊM</a>
     </li>
   </ul>
 </li>

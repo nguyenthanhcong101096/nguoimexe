@@ -31,7 +31,7 @@
       </div>
       <div class="conversation__body conversation__body--lg">
         <%= render partial: 'message', collection: @messages.reverse, locals: { user: current_user } %>
-        <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
+        <div class="new-messages" user_id="<%= current_user.id %>"></div>
         <div class="messages messages--received enter-message hidden">
           <img src="https://greenupload.com/images/2019/03/27/Screenshot_20190326-095253_Gallery.jpg" alt="messages image" class="messages__avatar">
           <p class="messages__typing">

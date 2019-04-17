@@ -31,7 +31,7 @@
       </div>
       <div class="conversation__body conversation__body--lg conversation-messages">
         <%= render partial: 'message', collection: @messages.reverse, locals: { user: current_user } %>
-        <div class="new-messages mt-16" user_id="<%= current_user.id %>"></div>
+        <div class="new-messages" user_id="<%= current_user.id %>"></div>
         <%= render partial: 'typing_message' %>
       </div>
       <%= render 'message_box' %>
