@@ -7,7 +7,7 @@
 
 # Example:
 #
-set :output, '/home/deploy/nguoimexe/cron_log.log'
+set :output, '~/Desktop/cron_log.log'
 
 every 12.hours do
   command "PGPASSWORD='password' pg_dump -F c -v -U nguoimexe -h localhost nguoimexe_production -f /home/deploy/nguoimexe/nguoimexe_backup.psql"

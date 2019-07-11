@@ -89,6 +89,7 @@ group :development do
 end
 
 group :staging, :production do
+  gem 'listen'
   gem 'logglier'
   gem 'lograge'
 end
