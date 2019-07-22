@@ -3,16 +3,16 @@
 rbenv_ruby = File.read('.ruby-version').strip
 
 set :stage, :production
-server '13.231.194.111', user: 'deploy', roles: %w[app web]
+server '13.250.102.183', user: 'deploy', roles: %w[app web]
 
 set :application, 'wakuwaku'
-set :repo_url, 'git@github.com:1PACVietnam/wakuwaku.git'
+set :repo_url, 'git@github.com:nguyenthanhcong101096/nguoimexe.git'
 
 # Default branch is :master
-set :branch, 'staging'
+set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/wakuwaku.today/public_html'
+set :deploy_to, '/home/deploy/nguoimexe'
 
 # capistrano-rails
 set :rails_env, :production
