@@ -5,7 +5,7 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_cable.url = 'ws://localhost:5000/cable'
+  config.action_cable.url = 'ws://localhost:3000/cable'
   config.action_cable.allowed_request_origins = [%r{http://*}, %r{https://*}]
 
   config.action_dispatch.tld_length = 0
@@ -64,5 +64,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
