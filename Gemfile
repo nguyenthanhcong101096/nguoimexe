@@ -63,7 +63,6 @@ gem 'jwt'
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'pry-coolline'
   gem 'byebug', platform: :mri
 end
 

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    command: ['./scripts/server.sh']
+    volumes:
+      - '.:/nguoimexe'
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_NAME=nguoimexe_development
+      - DATABASE_USER=congnt
+      - DATABASE_PASSWORD=password
+      - RAILS_ENV=development
+      - DATABASE_HOSTNAME=psql
+      - REDIS_PORT=6379
+      - REDIS_HOST=redis://redis
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - psql
+      - redis
+
+  psql:
+    image: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./tmp/data:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=congnt
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./tmp/redis:/usr/local/etc/redis
