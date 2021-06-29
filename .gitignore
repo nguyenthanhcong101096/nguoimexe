@@ -52,7 +52,6 @@ Thumbs.db
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/config/database.yml
 /public/packs
 /public/packs/manifest.json
 /public/packs-test
